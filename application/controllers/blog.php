@@ -5,7 +5,7 @@ class blog extends FE_Controller {
     public function __construct() {
         parent::__construct();
         $this->perpage = 5;
-
+        $this->assigns->actived_menu = 'blogs';
     }
     public function index(){
         $this->assigns->site = array(

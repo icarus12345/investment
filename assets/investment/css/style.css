@@ -246,7 +246,7 @@ body.nav-collapsed{}
     margin-bottom: -4px;
 }
 .socials-menu{position: absolute;top: 15px;right: 60px;line-height: 30px;}
-.socials-menu>a{margin-left: 10px}
+.socials-menu>a{margin-left: 5px;font-size: 20px;}
 .home-content{
     position: relative;
     padding: 140px 0;

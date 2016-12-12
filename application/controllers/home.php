@@ -9,6 +9,7 @@ class home extends FE_Controller {
         $this->cdata_model->type = 'gallery';
     }
     public function index(){
+        $this->assigns->actived_menu = 'home';
         $this->assigns->sliders = $this->image_model->onGetByType('slider');
         $this->assigns->gallery_cates = $this->category_model->onGetByType($this->assigns->fecog['gallery']);
         $data = $this->cdata_model->getInCategories(null,1,100);
@@ -23,16 +24,19 @@ class home extends FE_Controller {
         $this->smarty->view( 'investment/home', $this->assigns );
     }
     public function policy(){
+        $this->assigns->actived_menu = 'policy';
         $this->content_model->type = '';
         $this->assigns->content_detail = $this->content_model->onGet(2);
         $this->smarty->view( 'investment/policy', $this->assigns );
     }
     public function teamcondition(){
+        $this->assigns->actived_menu = 'team';
         $this->content_model->type = '';
         $this->assigns->content_detail = $this->content_model->onGet(1);
         $this->smarty->view( 'investment/team', $this->assigns );
     }
     public function about(){
+        $this->assigns->actived_menu = 'about';
         $this->cdata_model->type = '';
         $item = $this->cdata_model->onGet(13);
         $this->assigns->cdata = $item;

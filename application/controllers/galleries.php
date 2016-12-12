@@ -9,6 +9,7 @@ class galleries extends FE_Controller {
         $this->cdata_model->type = 'gallery';
     }
     public function index(){
+        $this->assigns->actived_menu = 'gallery';
         $this->assigns->gallery_cates = $this->category_model->onGetByType($this->assigns->fecog['gallery']);
         $data = $this->cdata_model->getInCategories(null,1,100);
         foreach ($data as $value) {
@@ -22,6 +23,7 @@ class galleries extends FE_Controller {
         $this->smarty->view( 'investment/gallery', $this->assigns );
     }
     function detail($als=''){
+        $this->assigns->actived_menu = 'gallery';
         $item = $this->cdata_model->onGetByAlias($als);
         $this->assigns->gallery_data = $item;
         $this->smarty->view( 'investment/gallery-detail', $this->assigns );

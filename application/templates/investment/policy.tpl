@@ -17,9 +17,11 @@
                     <div class="tit-h1">PRIVACY <span>POLICY</span></div>
                     <div class="gray container">
                         <div class="col-sm-12 pull-bottom">
-                            [{$content_detail->content_desc|escape:'html'}]
                             <div class="space-line"></div>
                             <div class="hr2"></div>
+                            <div class="space-line"></div>
+                            <div class="space-line"></div>
+                            [{$content_detail->content_desc|escape:'html'}]
                             <div class="space-line"></div>
                             <div class="space-line"></div>
                             <ul class="a">

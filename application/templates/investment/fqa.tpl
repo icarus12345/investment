@@ -17,9 +17,11 @@
                     <div class="tit-h1">PROPERTY INVESTMENT <span>FQAs</span></div>
                     <div class="gray container">
                         <div class="col-sm-12 pull-bottom">
-                            We answer your frequently asked questions about property investment below. To discuss your individual circumstances, your local Mortgage Choice broker is always happy to chat with you.
                             <div class="space-line"></div>
                             <div class="hr2"></div>
+                            <div class="space-line"></div>
+                            <div class="space-line"></div>
+                            We answer your frequently asked questions about property investment below. To discuss your individual circumstances, your local Mortgage Choice broker is always happy to chat with you.
                             <div class="space-line"></div>
                             <div class="space-line"></div>
                             <ul class="a">

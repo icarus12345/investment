@@ -8,6 +8,7 @@ class fqa extends FE_Controller {
 
     }
     public function index(){
+        $this->assigns->actived_menu = 'fqa';
         $this->assigns->fqa_data = $this->data_model->onGetByType('fqa');
         $this->smarty->view( 'investment/fqa', $this->assigns );
     }

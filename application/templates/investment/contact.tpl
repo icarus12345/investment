@@ -59,8 +59,9 @@
                 <div class="space-line"></div>
                 <p class="gray pull-top pull-bottom">Linkedproperties provides advice, professional services and networking to fulfill your investment needs to the VietNam Marker</p>
                 <p class="gray pull-top pull-bottom">Please contact us for more information on our service and requests. We endeavor to get back to you within 48 hours.</p>
-
                 [{include file=$smarty.const.APPPATH|cat:"templates/investment/widget/sendrequest.tpl"}]
+                <div class="space-line"></div>
+                <div class="space-line"></div>
             </div>
             <div class="col-sm-6 pull-bottom">
                 <h3 class="h3-1">CONTACT LINKEDPROPERTIES</h3>

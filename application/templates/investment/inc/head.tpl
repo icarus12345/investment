@@ -14,16 +14,16 @@
                 </button>
             </div>
             <div class="socials-menu">
-                <a href="[{$settting_data.google|default:''}]"><span class="fa fa fa-google"></span></a>
+                <a href="[{$settting_data.google|default:''}]"><span class="fa fa fa-google-plus-square"></span></a>
                 <a href="[{$settting_data.google|default:''}]"><span class="fa fa fa-pinterest-square"></span></a>
-                <a href="[{$settting_data.twitter|default:''}]"><span class="fa fa fa-twitter"></span></a>
-                <a href="[{$settting_data.facebook|default:''}]"><span class="fa fa fa-facebook"></span></a>
+                <a href="[{$settting_data.twitter|default:''}]"><span class="fa fa fa-twitter-square"></span></a>
+                <a href="[{$settting_data.facebook|default:''}]"><span class="fa fa fa-facebook-square"></span></a>
             </div>
             <nav id="navigation" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href='/'>HOME</a></li>
-                    <li><a href='/about'>ABOUT</a></li>
-                    <li>
+                    <li data-menu="home"><a href='/'>HOME</a></li>
+                    <li data-menu="about"><a href='/about'>ABOUT</a></li>
+                    <li data-menu="investing">
                         <a href="/investing-vietnam" >INVESTING VIETNAM</a>
                         [{if $investment_cates}]
                         <ul class="dropdown-menu">
@@ -33,7 +33,7 @@
                         </ul>
                         [{/if}]
                     </li>
-                    <li>
+                    <li data-menu="service">
                         <a href="#" data-toggle="dropdown">SERVICES</a>
                         [{if $service_cates}]
                         <ul class="dropdown-menu">
@@ -43,14 +43,19 @@
                         </ul>
                         [{/if}]
                     </li>
-                    <li><a href='/blogs'>BLOG</a></li>
-                    <li><a href='/gallery'>GALLERY</a></li>
-                    <li><a href='/fqa'>FQA</a></li>
-                    <li><a href='/privacy-policy'>PRIVACY POLICY</a></li>
-                    <li><a href='/team-condition'>TEAM & CONDITIONS</a></li>
-                    <li><a href='/contact'>CONTACT</a></li>
+                    <li data-menu="blogs"><a href='/blogs'>BLOG</a></li>
+                    <li data-menu="gallery"><a href='/gallery'>GALLERY</a></li>
+                    <li data-menu="fqa"><a href='/fqa'>FQA</a></li>
+                    <li data-menu="policy"><a href='/privacy-policy'>PRIVACY POLICY</a></li>
+                    <li data-menu="team"><a href='/team-conditions'>TEAM & CONDITIONS</a></li>
+                    <li data-menu="contact"><a href='/contact'>CONTACT</a></li>
                 </ul>
             </nav>
     </div>
     <!-- Menu ] -->
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('[data-menu="[{$actived_menu|default:''}]"]').addClass('active');
+    })
+    </script>
 </header>

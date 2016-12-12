@@ -7,11 +7,13 @@ class invest extends FE_Controller {
         $this->content_model->type = $this->assigns->fecog['investment'];
     }
     public function index(){
+        $this->assigns->actived_menu = 'investing';
         $this->assigns->fqa_data = $this->data_model->onGetByType('fqa');
         $this->assigns->feature_blogs = $this->content_model->getFeature(null,1,4);
         $this->smarty->view( 'investment/invest', $this->assigns );
     }
     function detail($als=""){
+        $this->assigns->actived_menu = 'investing';
         foreach ($this->assigns->investment_cates as $value) {
             if($value->cat_alias == $als){
                 $this->assigns->category = $value;
@@ -29,6 +31,7 @@ class invest extends FE_Controller {
         $this->smarty->view( 'investment/invest-detail', $this->assigns );
     }
     function service($als=''){
+        $this->assigns->actived_menu = 'service';
         $this->content_model->type = $this->assigns->fecog['service'];
         foreach ($this->assigns->service_cates as $value) {
             if($value->cat_alias == $als){
