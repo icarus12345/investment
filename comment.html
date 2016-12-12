@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/assets/investment/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="/assets/investment/bootstrap/css/font-awesome.min.css?t=1">
+
+        <script type="text/javascript" src="/assets/investment/bootstrap/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/assets/investment/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/validation-engine/jquery.validationEngine.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/validation-engine/jquery.validationEngine-en.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/serializeObject.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/comment.js"></script>
+    </head>
+    <body>
+    <div style="width:600px;margin:auto;padding:20px">
+    <style type="text/css">
+    #commentBox{padding: 10px;background-color: #f0f0f0}
+    #commentBox:after{content: '';display: block;clear: both;}
+    #cmtFrm{
+        font-size: 12px;
+    }
+    #cmtFrm input{
+        border-radius: 0;
+        font-size: 12px;
+        padding: 4px 8px;
+        height: 28px;
+        display: block;
+        width: 100%;
+        border:1px solid #ccc;
+    }
+    #cmtFrm textarea{
+        border-radius: 0;
+        font-size: 12px;
+        padding: 4px 8px;
+        display: block;
+        width: 100%;
+        border:1px solid #ccc;
+    }
+    .cmtSend button{padding: 4px 8px;font-size: 12px;background: #ccc;border:0;}
+    .cmtSend,.cmtMessage{float: left;width: 100%;padding-bottom: 10px}
+    .cmtSend{padding: 0}
+    .cmtName,.cmtMail{float: left;width: 50%;padding-bottom: 10px}
+    .cmtName{padding-right: 5px;}
+    .cmtMail{padding-left: 5px;}
+    .cmt-item{box-shadow:1px 1px 10px rgba(0,0,0,.2);position: relative;padding: 5px 10px 5px 70px;margin-bottom: 10px;font-size: 12px;background: #fff;min-height: 60px}
+    .cmt-item>.cmt-avatar{position: absolute;background: #ccc;width: 60px;height: 60px;top: 0px;left: 0px;}
+    .cmt-item>.cmt-user{color: #777;padding-bottom: 5px;}
+    .cmt-item .cmt-name{margin-right: 20px;}
+    .cmt-item .cmt-time{float: right;font-style: italic;}
+    .cmt-item>.cmt-comment{
+        color: #777;padding: 0;margin: 0;color: #333;line-height: 1.5em;
+        white-space: pre-wrap; /* css-3 */ 
+        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */ 
+        white-space: -pre-wrap; /* Opera 4-6 */ 
+        white-space: -o-pre-wrap; /* Opera 7 */ 
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+    }
+    </style>
+        <div id="commentBox">
+            <div id="lstComment"></div>
+            <form id="cmtFrm" name="cmtFrm">
+                <input type="hidden" name="comment_key" value="0">
+                <input type="hidden" name="comment_status" value="true">
+                <div class="">
+                    <div class="cmtName">
+                        <input type="text" class="validate[required,maxSize[100]]" placeholder="Name" name="comment_name">
+                    </div>
+                    <div class="cmtMail">
+                        <input type="text" class="validate[required,custom[email],maxSize[100]]" placeholder="Email" name="comment_email">
+                    </div>
+                </div>
+                <div class="cmtMessage">
+                    <textarea rows="3" class="validate[required,maxSize[250]]" placeholder="Your message..."  name="comment_content"></textarea>
+                </div>
+                <div class="cmtSend">
+                    <button type="button" class="" id="cmtSubmit"><span>SEND</span></button>
+                </div>
+            </form>
+        </div>

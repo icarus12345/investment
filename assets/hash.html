@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://blog.beat8.info/samples/js/jquery.ba-hashchange.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('span').hide();
+    $(window).hashchange(function(){
+        if (location.hash) {
+            $('pre').html(location.hash)
+            $('a').show();
+            $(location.hash).hide();
+            $('span').hide();
+            $(location.hash).next().show();
+        }
+    });
+    $(window).hashchange();
+    $('a').click(function(){
+        $(this).hide()
+        $('span').hide();
+        $(this).next().show();
+    })
+
+});
+</script>
+<body>
+<table>
+    <tr>
+        <td></td>
+        <td><a id="top" href="#top">Top</a><span>Top</span></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a id="left" href="#left">Left</a><span>Left</span></td>
+        <td></td>
+        <td><a id="right" href="#right">Right</a><span>Right</span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a id="bottom" href="#bottom">Bottom</a><span>Bottom</span></td>
+        <td></td>
+    </tr>
+</table>
+<pre></pre>
+</body>
+</html>
