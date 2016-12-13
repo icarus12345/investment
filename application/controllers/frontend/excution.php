@@ -21,13 +21,20 @@ class excution extends FE_Controller {
                 $output["result"] = 1;
                 $output["message"]='Success !';
             }
+        } else {
+            $output["message"]='Please input comment form !';
         }
         $this->output->set_header('Content-type: application/json');
         $this->output->set_output(json_encode($output));
     }
-    function loadComment($key='0'){
+    function loadComment(){
+        $key = $this->input->post('key');
+        $page = (int) $this->input->post('page');
+        if(!$page) $page = 1;
+        $perpage = 5;
         $this->load->model('front/comment_model');
-        $this->assigns->comments = $this->comment_model->onGets($key);
+        $this->assigns->comments = $this->comment_model->onGets($key,$page,$perpage);
+        $this->assigns->paging = $this->_getPaging($page,$perpage,'loadComment(%d)');
         $this->smarty->view( 'plugin/comment', $this->assigns );
     }
     function sendMessage(){

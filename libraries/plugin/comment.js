@@ -1,8 +1,25 @@
+    function loadComment(page){
+        var key = document.cmtFrm.comment_key.value;
+        jQuery.ajax({
+            type: "POST",
+            cache:false,
+            timeout:10000,
+            data: {
+                key:key,
+                page:page
+            },
+            dataType: 'text',
+            url: '/frontend/excution/loadComment',
+            success: function(data_result) {
+                $('#lstComment').html(data_result)
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                $('#lstComment').html('Cant load comments.')
+            }
+        });
+    }
 $(document).ready(function(){
     
-    function loadComment(){
-        $('#lstComment').load('/frontend/excution/loadComment')
-    }
     $('#cmtSubmit').click(function(){
         if( $('#cmtFrm').validationEngine('validate') === false){
             alert('Please complete input data.');
