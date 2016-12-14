@@ -37,6 +37,7 @@
         <meta property="article:author" content="[{$settting_data['fakebook-fanpage']|default:''}]">
         <meta property="article:publisher" content="[{$settting_data['fakebook-fanpage']|default:''}]">
 
+        <meta name="p:domain_verify" content="611142a2af6e2ee6d83075699bf8e6f9"/>
         <meta name="geo.region" content="VN" />
         <meta name="geo.placename" content="HCM" />
         <meta name="geo.position" content="10.792166;106.679810" />

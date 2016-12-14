@@ -15,9 +15,10 @@
             </div>
             <div class="socials-menu">
                 <a href="[{$settting_data.google|default:''}]"><span class="fa fa fa-google-plus-square"></span></a>
-                <a href="[{$settting_data.google|default:''}]"><span class="fa fa fa-pinterest-square"></span></a>
+                <a href="[{$settting_data.pinterest|default:''}]"><span class="fa fa fa-pinterest-square"></span></a>
                 <a href="[{$settting_data.twitter|default:''}]"><span class="fa fa fa-twitter-square"></span></a>
                 <a href="[{$settting_data.facebook|default:''}]"><span class="fa fa fa-facebook-square"></span></a>
+                <a href="[{$settting_data.rss|default:''}]"><span class="fa fa fa-rss"></span></a>
             </div>
             <nav id="navigation" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
