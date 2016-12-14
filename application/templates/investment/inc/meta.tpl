@@ -51,6 +51,8 @@
         <link rel="stylesheet" type="text/css" href="/assets/investment/plugin/swipebox/swipebox-dark-1.3.css" >
         <link rel="stylesheet" type="text/css" href="/assets/investment/css/style.css"/>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/libraries/metronic/theme/assets/global/plugins/bootstrap-toastr/toastr.min.css"/>
+
 
         <script type="text/javascript" src="/assets/investment/bootstrap/js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="/assets/investment/bootstrap/js/bootstrap.js"></script>
@@ -58,6 +60,8 @@
         <script type="text/javascript" src="/assets/investment/plugin/jquery.nailthumb.1.1.js"></script>
         <script type="text/javascript" src="/assets/investment/plugin/jquery.lazyload.min.js"></script>
         <script type="text/javascript" src="/assets/investment/js/main.js"></script>
+        <script src="/libraries/metronic/theme/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/serializeObject.js"></script>
         <script type="text/javascript" src="/libraries/plugin/validation-engine/jquery.validationEngine.js"></script>
         <script type="text/javascript" src="/libraries/plugin/validation-engine/jquery.validationEngine-en.js"></script>
         <!--[if IE]>

@@ -3,19 +3,19 @@
                     <ul>
                         <li>
                             <div>
-                                <form id="subcribeFrm" name="subcribeFrm" class="validationFrm">
+                                <form id="subcriberFrm" name="subcriberFrm" class="validationFrm">
                                     <div class="pull-top pull-bottom">
                                         <div class=" control-group ">
-                                            <input type="text" class="form-control validate[required,maxSize[50]]" placeholder="Name">
+                                            <input type="text" class="form-control validate[required,maxSize[50]]" placeholder="Name" name="subcriber_name">
                                         </div>
                                     </div>
                                     <div class="pull-bottom pull-top">
                                         <div class="control-group">
-                                            <input type="text" class="form-control validate[required,custom[email]]" placeholder="Email" >
+                                            <input type="text" class="form-control validate[required,custom[email]]" placeholder="Email" name="subcriber_email">
                                         </div>
                                     </div>
                                     <div class=" pull-top">
-                                    <button type="submit" class="btn btn-orange btn-block"><span>Submit</span></button>
+                                    <button type="button" onclick="subcriber()" class="btn btn-orange btn-block"><span>Submit</span></button>
                                     </div>
                                 </form>
                             </div>
