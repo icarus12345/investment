@@ -23,21 +23,21 @@ class CI_Phpmailer extends PHPMailer {
         // enable SMTP authentication
         $this->SMTPAuth = FALSE;
         // sets the prefix to the servier
-        $this->SMTPSecure = 'tls';//ssl
+        $this->SMTPSecure = 'ssl';//ssl
         $this->Mailer  = 'smtp';
         // sets GMAIL as the SMTP server
-        $this->Host = 'smtp.gmail.com';
+        $this->Host = 'ns8943.dotvndns.vn';
         // set the SMTP port for the GMAIL server
-        $this->Port = 587;//465;//587
+        $this->Port = 465;//465;//587
         // GMAIL username
-        $this->Username = "khuongxuantruong@gmail.com";
+        $this->Username = "admin@linkedproperties.net";
         // GMAIL password
-        $this->Password = 'shaphia1900';
+        $this->Password = 'RUVM1649bsfj';
         $this->SetFrom($this->Username, $this->Username);
     }
 
     function send_mail($to,$subject, $message, $priority = 3) {
-		//mail('khuongxuantruong@gmail.com', $message, $message);
+        //mail('khuongxuantruong@gmail.com', $message, $message);
         $this->init_mail();
         $this->Priority = $priority;
         $this->Subject = $subject;
@@ -45,6 +45,6 @@ class CI_Phpmailer extends PHPMailer {
         //$this->AddAddress($recipient);
         $this->AddAddress($to);
         return $this->Send();
-		
+        
     }
 }

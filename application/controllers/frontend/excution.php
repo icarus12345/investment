@@ -10,6 +10,14 @@ class excution extends FE_Controller {
         $output["result"] = -1;
         $output["message"]='Fail ! Please try again .';
         $params = $this->input->post('params');
+        $time = $this->session->userdata('time');
+        if($time){
+            if(time() - $time < 60){
+                $output["message"]='Fail ! Please again';
+                $wait = true;
+            }
+        }
+        if(!$wait)
         if(
             !empty($params['comment_key']) &&
             !empty($params['comment_name']) &&
@@ -20,6 +28,7 @@ class excution extends FE_Controller {
             if($status){
                 $output["result"] = 1;
                 $output["message"]='Success !';
+                $this->session->set_userdata('time', time());
             }
         } else {
             $output["message"]='Please input comment form !';
@@ -37,27 +46,89 @@ class excution extends FE_Controller {
         $this->assigns->paging = $this->_getPaging($page,$perpage,'loadComment(%d)');
         $this->smarty->view( 'plugin/comment', $this->assigns );
     }
+    function getCaptcha(){
+        $output["result"] = -1;
+        $this->createCaptcha(true);
+        $output["captcha"] = $_SESSION['captcha']['image'];
+        $this->output->set_output(json_encode($output));
+    }
+    function createCaptcha($re=false){
+        if(!$re)
+            if($_SESSION['captcha']){
+                if(time()-7200 < $_SESSION['captcha']['time'])
+                return;
+            }
+        $cap_parm = array(
+            'length'  => 4,
+            'img_path'  => APPPATH.'../captcha/',
+            'img_url'   => '/captcha/',
+            //'font_path' => './path/to/fonts/texb.ttf',
+            'img_width' => 80,
+            'img_height' => 30,
+            'expiration' => 7200
+            );
+        $this->load->helper('captcha');
+        $_SESSION['captcha'] = create_captcha($cap_parm);
+    }
     function sendMessage(){
         $output["result"] = -1;
-        $output["message"]='Vui lòng thử lại sau !';
+        $output["message"]='Bad Request !';
         $params = $this->input->post('params');
-        if(is_array($params['contact_data'])){
-            $tmp['name'] = $params['contact_data'][0];
-            $tmp['quantity'] = $params['contact_data'][1];
-            $tmp['address'] = $params['contact_data'][2];
-            $params['contact_data'] = json_encode($tmp);
+        $time = $this->session->userdata('time');
+        if($time){
+            if(time() - $time < 60){
+                $output["message"]='Fail ! Please try again';
+                $wait = true;
+            }
         }
-        if($this->contact_model->onInsert($params)){
-            $output["result"] = 1;
-            if($params['contact_type']=='Order')
-                $output["message"]='Cảm ơn bạn đã đặt hàng. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.';
-            if($params['contact_type']=='Contact us')
-                $output["message"]='Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.';
-            $this->sendLetter();
-        }else{
-            $output["message"]='Gửi yêu cầu thất bại ! Vui lòng thử lại sau.';
+        if(!$wait)
+        if(
+            !empty($params['contact_name']) &&
+            !empty($params['contact_email']) &&
+            !empty($params['contact_subject']) &&
+            !empty($params['contact_message'])
+            ){
+            if($this->contact_model->onInsert($params)){
+                $output["result"] = 1;
+                $output["message"]='Success !';
+                $this->session->set_userdata('time', time());
+                $this->sendLetter();
+            }else{
+                $output["message"]='Fail .';
+            }
+        } else {
+            $output["message"]='Please input request form !';
         }
-        
+        $this->output->set_header('Content-type: application/json');
+        $this->output->set_output(json_encode($output));
+    }
+
+    function subcriber(){
+        $output["result"] = -1;
+        $output["message"]='Bad Request !';
+        $params = $this->input->post('params');
+        $time = $this->session->userdata('time');
+        if($time){
+            if(time() - $time < 60){
+                $output["message"]='Fail ! Please try again';
+                $wait = true;
+            }
+        }
+        if(!$wait)
+        if(
+            !empty($params['subcriber_email'])
+            ){
+            $this->subcriber_model = new Core_Model('_subcriber','subcriber_','id');
+            if($this->subcriber_model->onInsert($params)){
+                $output["result"] = 1;
+                $output["message"]='Success !';
+                $this->session->set_userdata('time', time());
+            }else{
+                $output["message"]='Fail .';
+            }
+        } else {
+            $output["message"]='Please input email !';
+        }
         $this->output->set_header('Content-type: application/json');
         $this->output->set_output(json_encode($output));
     }
@@ -72,41 +143,36 @@ class excution extends FE_Controller {
     //         $mailer->send_mail($mailer->prm['To']->Value,$subject,$body);
     //     }
     // }
+    function sendMail(){
+        $this->load->library('CI_Phpmailer');
+        $mailer = new CI_Phpmailer();
+        // $mailer->prm = $this->setting_model->getByType('mailer');
+        // if($mailer->prm['Send Message']->Value=='true'){
+        //     $this->assigns->item = $this->input->post('params');
+        //     $subject = "PushClimbing - You have new request at ". date('d/m/Y');
+        //     $body = $this->smarty->view( 'pushclimbing/mailbody', $this->assigns, true );
+        //     $mailer->send_mail($mailer->prm['To']->Value,$subject,$body);
+        // }
+        $mailer->send_mail('khuongxuantruong@gmail.com','SUBJECT OF EMAIL','BODY OF EMAIL');
+    }
     function sendLetter(){
         $params = $this->input->post('params');
-        $url = "http://banhyeu.com/home/sendMessageFromBanhNgon";
-        if($params['contact_type']=='Order'){
-            $name = $params['contact_data'][0];
-            $quantity = $params['contact_data'][1];
-            $address = $params['contact_data'][2];
-            $contact_message = $params['contact_message'];
-            $msg = "Bạn có yêu cầu đặt hàng mới từ Bánh Ngon Online<br/>";
-            $msg .= "Đặt bánh <b>{$name}</b><br/>";
-            $msg .= "Số lượng <b>{$quantity}</b><br/>";
-            $msg .= "Địa chỉ <b>{$address}</b><br/>";
-            $msg .= "Nội dung <b>{$contact_message}</b><br/>";
-        }else if($params['contact_type']=='Contact us'){
-            $address = $params['contact_data'];
-            $contact_subject = $params['contact_subject'];
-            $contact_message = $params['contact_message'];
-            $msg = "Bạn có yêu cầu mới từ Bánh Ngon Online<br/>";
-            $msg .= "Địa chỉ <b>{$address}</b><br/>";
-            $msg .= "Tiêu đề <b>{$contact_subject}</b><br/>";
-            $msg .= "Nội dung <b>{$contact_message}</b><br/>";
-        }else{
-            $msg = "Bạn có yêu cầu mới từ Bánh Ngon Online<br/> Không rõ yêu cầu đặt hàng là gì.<br/>";
+        switch ($params['contact_type']) {
+            case 'contact':
+            case 'request':
+                $this->assigns->params = $params;
+                $body = $this->smarty->view( 'mailtemplate/body_contact', $this->assigns, true );
+                $subject = "VIETNAM'S PROPERTY INVESTMENT - You have new request at ". date('d/m/Y');
+                $this->load->library('CI_Phpmailer');
+                $mailer = new CI_Phpmailer();
+                $mailer->send_mail('info@linkedproperties.net',$subject,$body);
+                break;
+            
+            default:
+                # code...
+                break;
         }
-        $msg .= "Vui lòng truy cập vô CMS(quản trị) Bánh Ngon Online để xem chi tiết yêu cầu.";
-        $post_params = array(
-            'Params'=>array(
-                'Name'      => $params['contact_name'],
-                'Phone'     => $params['contact_phone'],
-                'Mail'      => $params['contact_email'],
-                'Message'   => $msg
-            )
-        );
-        $rs = @do_post_request($url,$post_params);
-//         echo $rs;
+        
     }
 }
 ?>

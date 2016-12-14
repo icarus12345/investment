@@ -170,3 +170,55 @@ $(window).resize(function(){
 		$(this.parentNode).nailthumb();
 	});
 });
+function sendRequest(){
+    if( $('#sendRequestFrm').validationEngine('validate') === false){
+        toastr['warning']('Please complete input data.', 'Warning !');
+        return false;
+    }
+    var params =$('#sendRequestFrm').serializeObject();
+    jQuery.ajax({
+        type: "POST",
+        cache:false,
+        timeout:10000,
+        data: {params:params},
+        dataType: 'json',
+        url: '/frontend/excution/sendMessage',
+        success: function(data_result) {
+            if(data_result.result>0){
+                toastr['success'](data_result.message, 'Message !');
+                document.sendRequestFrm.reset();
+            } else {
+                toastr['warning'](data_result.message, 'Warning !');
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            toastr['warning']('Sorry. Your request could not be completed. Please check your input data and try again.','Error !');
+        }
+    });
+}
+function subcriber(){
+    if( $('#subcriberFrm').validationEngine('validate') === false){
+        toastr['warning']('Please complete input data.', 'Warning !');
+        return false;
+    }
+    var params =$('#subcriberFrm').serializeObject();
+    jQuery.ajax({
+        type: "POST",
+        cache:false,
+        timeout:10000,
+        data: {params:params},
+        dataType: 'json',
+        url: '/frontend/excution/subcriber',
+        success: function(data_result) {
+            if(data_result.result>0){
+                toastr['success'](data_result.message, 'Message !');
+                document.subcriberFrm.reset();
+            } else {
+                toastr['warning'](data_result.message, 'Warning !');
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            toastr['warning']('Sorry. Your request could not be completed. Please check your input data and try again.','Error !');
+        }
+    });
+}

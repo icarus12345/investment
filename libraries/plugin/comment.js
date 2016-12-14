@@ -34,11 +34,19 @@ $(document).ready(function(){
             dataType: 'json',
             url: '/frontend/excution/addComment',
             success: function(data_result) {
-                document.cmtFrm.reset();
-                loadComment();
+                if(data_result.result>0){
+                    document.cmtFrm.reset();
+                    loadComment();
+                } else {
+                    if(toastr)
+                        toastr['warning'](data_result.message, 'Warning !');
+                    else alert(data_result.message)
+                }
             },
             error: function(xhr, ajaxOptions, thrownError) {
-                alert('Sorry. Your request could not be completed. Please check your input data and try again.');
+                if(toastr)
+                    toastr['warning']('Sorry. Your request could not be completed. Please check your input data and try again.', 'Warning !');
+                else('Sorry. Your request could not be completed. Please check your input data and try again.');
             }
         });
         
