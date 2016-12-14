@@ -464,11 +464,11 @@ function BrowseServer(elementid) {
             $('#kc-finder-popup').hide();
         };
         if($('#kc-finder-popup').length==0){
-            window.open(base_url + 'libraries/kcfinder/browse.php?lang=vi&type=image', 'kcfinder_textbox',
+            window.open(base_url + 'libraries/kcfinder/browse.php?lang=en&type=image', 'kcfinder_textbox',
                 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=1, scrollbars=0, width=700, height=500'
             );
         }else{
-            $('#kc-finder-popup .kc-finder-content').html('<iframe name="kcfinder_iframe" src="'+base_url + 'libraries/kcfinder/browse.php?lang=vi&type=image'+'" style="width:100%;height:100%;position:absolute;top:0;left:0;border:0;margin:0;padding:0"/>')
+            $('#kc-finder-popup .kc-finder-content').html('<iframe name="kcfinder_iframe" src="'+base_url + 'libraries/kcfinder/browse.php?lang=en&type=image'+'" style="width:100%;height:100%;position:absolute;top:0;left:0;border:0;margin:0;padding:0"/>')
             $('#kc-finder-popup').show();
         }
     } catch (e) {
@@ -614,3 +614,69 @@ function accountdialog() {
 $(document).ready(function(){
     
 });
+
+function loadSeo(seo_key){
+    if (pending > 0)return;
+        
+    httpRequest({
+        'url'         :   '/dashboard/cp/seo/editpanel',
+        'data'        :   {
+            'seo_key'  :   seo_key
+        },
+        'callback'    :   function(rsdata){
+            if(rsdata.result<0){
+                addNotice(rsdata.message,'error');
+            }else{
+                $('#entry-container').html(rsdata.htmlreponse);
+                $('#seoForm').validationEngine({
+                    'scroll': false,
+                    'isPopup' : true,
+                    validateNonVisibleFields:true
+                });
+                uidialog({
+                    'message' : $('#entry-container'),
+                    'title': 'SEO',
+                    'dialogClass':'metronic-modal',
+                    'width':'480px',
+                    'type':'notice',
+                    'buttons' : [{
+                        'text': 'Done',
+                        'class': 'ui-btn',
+                        'click': function() {
+                            commitSeo()
+                        }
+                    },{
+                        'text': 'Cancel',
+                        'class': 'ui-btn',
+                        'click': function() {
+                            $(this).dialog("close");
+                        }
+                    }]
+                }).open();
+            }
+        }
+    }).call();
+};
+function commitSeo(){
+    if( $('#seoForm').validationEngine('validate') === false){
+        addNotice('Please complete input data.','warning');
+        return false;
+    }
+    var Id = $('#SeoEntryId').val();
+    var Params = $('#seoForm').serializeObject();
+    httpRequest({
+        'url': '/dashboard/cp/seo/oncommit',
+        'data': {
+            'Id': Id,
+            'Params': Params
+        },
+        'callback': function(rsdata) {
+            if (rsdata.result < 0) {
+                addNotice(rsdata.message,'error');
+            } else {
+                addNotice(rsdata.message,'success');
+                $('#entry-container').dialog("close");
+            }
+        }
+    }).call();
+}

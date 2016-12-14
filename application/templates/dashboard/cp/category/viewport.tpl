@@ -71,6 +71,7 @@
                                     [{/if}]
                                     <li data-action="delete" id="jqxDeleteAction"><i class="fa fa-trash-o"></i> Delete Selected Row</li>
                                     <li data-action="view" id="jqxViewAction"><i class="fa fa-eye"></i> View Selected Row</li>
+                                    <li data-action="seo" id="jqxSeoAction"><i class="fa fa-eye"></i> SEO</li>
                                 </ul>
                             </div>
                         </div>

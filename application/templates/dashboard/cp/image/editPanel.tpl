@@ -50,6 +50,18 @@
                   >[{$item->image_desc|quotes_to_entities|default:''}]</textarea>
 
     </div>
+    <div class="control-group pull-bottom">
+        <div>
+            URL :
+        </div>
+        <input type="text" class="form-control validate[required,minSize[4],maxSize[255]]" 
+               placeholder="Url"
+               name="image_url"
+               data-prompt-position="topLeft:0,20"
+               value="[{$item->image_url|quotes_to_entities|default:''}]"
+               />
+
+    </div>
     <div class="row half">
         <!-- <div class="col-sm-6 half">
             <div class="control-group pull-bottom">

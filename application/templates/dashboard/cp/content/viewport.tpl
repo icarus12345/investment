@@ -74,6 +74,7 @@
                                     </li>
                                     [{/if}]
                                     <li data-action="view" id="jqxViewAction"><i class="fa fa-eye"></i> View Entry</li>
+                                    <li data-action="seo" id="jqxSeoAction"><i class="fa fa-eye"></i> View Entry</li>
                                 </ul>
                             </div>
                         </div>

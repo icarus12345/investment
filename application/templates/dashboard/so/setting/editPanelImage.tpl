@@ -55,7 +55,7 @@
                             ><i class="fa fa-image"></i> Browse Image</button>
                         </div>
                     </div> 
-                    <div class="code">[{$item->data_desc}]</div>
+                    <textarea name="data_desc" class="code" style="border:0;display:block;width:100%">[{$item->data_desc}]</textarea>
                 </form>
             </div>
             <div class="clearfix"></div>

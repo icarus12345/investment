@@ -5,7 +5,7 @@
                     <div class="home-content">
                         <div class="lab">[{$foo->image_title|escape:'html'}]</div>
                         <div class="tit">[{$foo->image_desc|escape:'html'}]</div>
-                        <div class="btn btn-warning"><span>VIEW MORE</span></div>
+                        <a href="[{$foo->image_url|escape:'html'}]" class="btn btn-warning"><span>VIEW MORE</span></a>
                     </div>
                 </div>
                 [{/foreach}]

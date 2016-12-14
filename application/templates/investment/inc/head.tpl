@@ -2,8 +2,8 @@
     <!-- Menu [ -->
     <div class="">
             <div class="navbar-header">
-                <a href="/" class="navbar-brand">
-                    VIETNAM'S PROPERTY INVESTMENT
+                <a href="/" class="navbar-brand a">
+                    Vietnam Property Investment
                 </a>
                 <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navigation">
                     <span>
@@ -48,7 +48,7 @@
                     <li data-menu="gallery"><a href='/gallery'>GALLERY</a></li>
                     <li data-menu="fqa"><a href='/fqa'>FQA</a></li>
                     <li data-menu="policy"><a href='/privacy-policy'>PRIVACY POLICY</a></li>
-                    <li data-menu="team"><a href='/team-conditions'>TEAM & CONDITIONS</a></li>
+                    <li data-menu="team"><a href='/team-conditions'>TEAMS & CONDITIONS</a></li>
                     <li data-menu="contact"><a href='/contact'>CONTACT</a></li>
                 </ul>
             </nav>

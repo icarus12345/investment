@@ -21,13 +21,8 @@
                             <div class="hr2"></div>
                             <div class="space-line"></div>
                             <div class="space-line"></div>
-                            We answer your frequently asked questions about property investment below. To discuss your individual circumstances, your local Mortgage Choice broker is always happy to chat with you.
+                            <i>We answer your frequently asked questions about property investment below. To discuss your individual circumstances, your local Mortgage Choice broker is always happy to chat with you.</i>
                             <div class="space-line"></div>
-                            <div class="space-line"></div>
-                            <ul class="a">
-                            <li><a href="/privacy-policy" class="a">Privacy Policy</a>
-                            <li><a href="/team-conditions" class="a">Team and Conditons</a>
-                            </ul>
                             <div class="space-line"></div>
                         </div>
                     </div>

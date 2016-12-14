@@ -172,10 +172,10 @@ a,a:link,a:active{color: inherit;}
 }
 .modal-content{border-radius: 3px}
 .navbar{
-    color: #ccc
+    color: #ccc;
 }
 .navbar-brand:hover,
-.navbar-brand{height: 60px;width: auto;display: inline-block;padding: 15px 10px;line-height: 30px;color: #fff;}
+.navbar-brand{height: 60px;width: auto;display: inline-block;padding: 15px 10px;line-height: 30px;font-weight: bold;}
 .navbar-nav{margin: auto;max-width: 1200px;display: block;float: none;}
 .navbar-nav > li{}
 .navbar-nav > li>a{padding: 10px 20px}
@@ -292,6 +292,7 @@ body.nav-collapsed{}
 .about-box .left .tit::after{background: #ffba00;display: block;content: '';}
 .about-box .right{text-align: justify;}
 .f32{font-size: 32px}
+.f30{font-size: 30px}
 .f24{font-size: 24px}
 .f20{font-size: 20px}
 .f18{font-size: 18px}
@@ -534,9 +535,10 @@ footer .foot-menu{padding: 20px 0;background: #000;}
 .invest-items .nailthumb-mark{display: block;background: rgba(0,0,0,.3);}
 .invest-items .nailthumb-mark>div{
     position: absolute;bottom: 0;left: 0;width: 100%;padding: 0px 0px 40px 0px;color: #fff;text-align: center;text-transform: uppercase;
+    color: #ffc600;font-weight: bold;
 
 }
-.invest-items .nailthumb-mark>div:after{position: absolute;content: '';display: block;bottom: 20px;left: 0;width: 100%;height: 20px;background:url(../images/hr-white.png) no-repeat center;}
+.invest-items .nailthumb-mark>div:after{position: absolute;content: '';display: block;bottom: 20px;left: 0;width: 100%;height: 20px;background:url(../images/hr.png) no-repeat center;}
 .invest-box{position: relative;}
 .invest-box:after{content: '';display: block;clear: both;}
 .invest-box>.thumb{width: 50%;float: left;}

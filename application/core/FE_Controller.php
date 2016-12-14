@@ -39,7 +39,12 @@ class FE_Controller extends CI_Controller {
         // $this->assigns->languages = $this->iLanguage->load('all',$this->assigns->lang,true);
         
     }
-    
+    function loadSeo($seo_key=''){
+        $query = $this->db
+            ->where("seo_key", $seo_key)
+            ->get('_seo');
+        $this->assigns->seo = $query->row();
+    }
     
     function nothing(){}
     function _addView($table='',$prefix='',$id){

@@ -7,6 +7,7 @@ class invest extends FE_Controller {
         $this->content_model->type = $this->assigns->fecog['investment'];
     }
     public function index(){
+        $this->loadSeo("invest");
         $this->assigns->actived_menu = 'investing';
         $this->assigns->fqa_data = $this->data_model->onGetByType('fqa');
         $this->assigns->feature_blogs = $this->content_model->getFeature(null,1,4);
@@ -17,6 +18,7 @@ class invest extends FE_Controller {
         foreach ($this->assigns->investment_cates as $value) {
             if($value->cat_alias == $als){
                 $this->assigns->category = $value;
+                $this->loadSeo("category-$value->cat_id");
             }
         }
         $contents = $this->content_model->getInCategories($this->assigns->category->cat_value,1,100);
@@ -36,6 +38,7 @@ class invest extends FE_Controller {
         foreach ($this->assigns->service_cates as $value) {
             if($value->cat_alias == $als){
                 $this->assigns->category = $value;
+                $this->loadSeo("category-$value->cat_id");
             }
         }
         $contents = $this->content_model->getInCategories($this->assigns->category->cat_value,1,100);

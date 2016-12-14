@@ -5,7 +5,7 @@
                 <div class="col-md-6 cls">
                     <div class="row">
                         <div class="col-sm-6 col-xs-12">
-                            <a href="/" class="foot-logo f16">VIETNAMS<br/>PROPERTY INVESTMENT</a>
+                            <a href="/" class="foot-logo f16">Vietnam <br/>Property Investment</a>
                             <div class="wicon">
                                 <i class="fa fa-map-marker f18"></i> 
                                 Australia - Sydney<br/>
@@ -72,10 +72,10 @@
                         <div class="">
                             Enter your email address to subscribe our notification of our new post & features by property investment.
                         </div>
-                        <form id="subcribeFrm" name="subcribeFrm" class="validationFrm">
+                        <form id="subcribeFrm2" name="subcribeFrm2" class="validationFrm">
                         <div class="input-group">
-                          <input type="text" class="form-control validate[required,custom[email]]" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                          <span class="input-group-addon" id="basic-addon2"><span class="fa fa-paper-plane-o"></span></span>
+                          <input type="text" name="subcriber_email" class="form-control validate[required,custom[email]]" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                          <span class="input-group-addon" id="basic-addon2" onclick="subcriber2()"><span class="fa fa-paper-plane-o"></span></span>
                         </div>
                         </form>
                     </div>
@@ -93,7 +93,7 @@
                             <li><a href="/blogs">Blog</a></li>
                             <li><a href="/fqa">FAQ</a></li>
                             <li><a href="/privacy-policy">Privacy Policy</a></li>
-                            <li><a href="/team-conditions">Team & Conditions</a></li>
+                            <li><a href="/team-conditions">Teams & Conditions</a></li>
                             <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>

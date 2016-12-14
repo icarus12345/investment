@@ -222,3 +222,29 @@ function subcriber(){
         }
     });
 }
+function subcriber2(){
+    if( $('#subcriberFrm2').validationEngine('validate') === false){
+        toastr['warning']('Please complete input data.', 'Warning !');
+        return false;
+    }
+    var params =$('#subcriberFrm2').serializeObject();
+    jQuery.ajax({
+        type: "POST",
+        cache:false,
+        timeout:10000,
+        data: {params:params},
+        dataType: 'json',
+        url: '/frontend/excution/subcriber',
+        success: function(data_result) {
+            if(data_result.result>0){
+                toastr['success'](data_result.message, 'Message !');
+                document.subcriberFrm2.reset();
+            } else {
+                toastr['warning'](data_result.message, 'Warning !');
+            }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            toastr['warning']('Sorry. Your request could not be completed. Please check your input data and try again.','Error !');
+        }
+    });
+}

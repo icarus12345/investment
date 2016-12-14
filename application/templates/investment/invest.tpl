@@ -28,7 +28,7 @@
                         <a href="/investing-vietnam/[{$foo->cat_alias|escape:'html'}]" 
                             
                             class="nailthumb-mark">
-                            <div class="f20">[{$foo->cat_title|escape:'html'}]</div>
+                            <div class="f24">[{$foo->cat_title|escape:'html'}]</div>
                         </a>
                     </div>
                 </div>

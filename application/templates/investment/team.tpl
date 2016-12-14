@@ -2,10 +2,10 @@
 [{include file=$smarty.const.APPPATH|cat:"templates/investment/inc/head.tpl"}]
 <div class="banner-box">
     <div class="tit">
-        <div class="f32">TEAM AND CONDITION</div>
+        <div class="f32">TEAMS AND CONDITION</div>
         <ul>
             <li>Home</li>
-            <li><a href="#">Team and Condition</a></li>
+            <li><a href="#">Teams and Condition</a></li>
         </ul>
     </div>
 </div>
@@ -21,13 +21,8 @@
                             <div class="hr2"></div>
                             <div class="space-line"></div>
                             <div class="space-line"></div>
-                            [{$content_detail->content_desc|escape:'html'}]
+                            <i>[{$content_detail->content_desc|escape:'html'}]</i>
                             <div class="space-line"></div>
-                            <div class="space-line"></div>
-                            <ul class="a">
-                            <li><a href="/privacy-policy" class="a">Privacy Policy</a>
-                            <li><a href="/team-conditions" class="a">Team and Conditons</a>
-                            </ul>
                             <div class="space-line"></div>
                         </div>
                         <link rel="stylesheet" type="text/css" href="/libraries/ckeditor/contents.css">

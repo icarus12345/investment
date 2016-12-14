@@ -46,7 +46,7 @@
                             name="data_content"
                             >[{$item->data_content|quotes_to_entities|default:''}]</textarea>
                     </div>
-                    <div class="code">[{$item->data_desc}]</div>
+                    <textarea name="data_desc" class="code" style="border:0;display:block;width:100%">[{$item->data_desc}]</textarea>
                 </form>
             </div>
             <div class="clearfix"></div>

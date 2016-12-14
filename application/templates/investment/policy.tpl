@@ -21,13 +21,8 @@
                             <div class="hr2"></div>
                             <div class="space-line"></div>
                             <div class="space-line"></div>
-                            [{$content_detail->content_desc|escape:'html'}]
+                            <i>[{$content_detail->content_desc|escape:'html'}]</i>
                             <div class="space-line"></div>
-                            <div class="space-line"></div>
-                            <ul class="a">
-                            <li><a href="/faq" class="a">FAQs</a>
-                            <li><a href="/team-conditions" class="a">Team and Conditons</a>
-                            </ul>
                             <div class="space-line"></div>
                         </div>
                         <link rel="stylesheet" type="text/css" href="/libraries/ckeditor/contents.css">

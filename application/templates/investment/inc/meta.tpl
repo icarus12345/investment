@@ -4,9 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel='shortcut icon' href='/favicon.ico' />
         <meta name="viewport" content="width=device-width; initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-        <title>[{$site.title|default:$settting_data['title-of-website']}]</title>
-        <meta name="description" content="[{$site.desc|default:$settting_data.description}]"/>
-        <meta name="keywords" content="[{$site.keyword|default:$settting_data.keyword}]"/>
+        <title>[{$seo->seo_social_title|default:$settting_data['title-of-website']}]</title>
+        <meta name="description" content="[{$seo->seo_social_desc|default:$settting_data.description}]"/>
+        <meta name="keywords" content="[{$seo->seo_social_keyword|default:$settting_data.keyword}]"/>
         <meta property="place:location:latitude" content="10.792048"/>
         <meta property="place:location:longitude" content="106.679982"/>
         <meta property="business:contact_data:street_address" content="Lê Quý Đôn"/>
@@ -16,23 +16,23 @@
         <meta property="business:contact_data:email" content="[{$settting_data.email|default:''}]"/>
         <meta property="business:contact_data:phone_number" content="[{$settting_data.phone|default:''}]"/>
         <meta property="business:contact_data:website" content="[{''|base_url}]"/>
-        <meta itemprop="name" content="[{$site.title|default:$settting_data['title-of-website']}]"/>
-        <meta itemprop="description" content="[{$site.desc|default:$settting_data.keyword}]"/>
-        <meta itemprop="image" content="[{$site.image|default:$settting_data['image-250x250']}]"/>
+        <meta itemprop="name" content="[{$seo->seo_social_title|default:$settting_data['title-of-website']}]"/>
+        <meta itemprop="description" content="[{$seo->seo_social_desc|default:$settting_data.description}]"/>
+        <meta itemprop="image" content="[{$seo->seo_social_image|default:$settting_data['image-250x250']}]"/>
 
         <meta name="twitter:card" content="summary"/>  <!-- Card type -->
         <meta name="twitter:site" content="[{''|base_url}]"/>
-        <meta name="twitter:title" content="[{$site.title|default:$settting_data['title-of-website']}]">
-        <meta name="twitter:description" content="[{$site.desc|default:$settting_data.keyword}]"/>
+        <meta name="twitter:title" content="[{$seo->seo_social_title|default:$settting_data['title-of-website']}]">
+        <meta name="twitter:description" content="[{$seo->seo_social_desc|default:$settting_data.description}]"/>
         <meta name="twitter:creator" content="[{''|base_url}]"/>
-        <meta name="twitter:image:src" content="[{$site.image|default:$settting_data['image-250x250']}]"/>
+        <meta name="twitter:image:src" content="[{$seo->seo_social_image|default:$settting_data['image-250x250']}]"/>
         <meta name="twitter:domain" content="[{''|base_url}]"/>
 
         <meta property="og:url" content="[{''|base_url}]">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="[{$site.title|default:$settting_data['title-of-website']}]">
-        <meta property="og:image" content="[{$site.image|default:$settting_data['image-250x250']}]"/>
-        <meta property="og:description" content="[{$site.desc|default:$settting_data.keyword}]">
+        <meta property="og:title" content="[{$seo->seo_social_title|default:$settting_data['title-of-website']}]">
+        <meta property="og:image" content="[{$seo->seo_social_image|default:$settting_data['image-250x250']}]"/>
+        <meta property="og:description" content="[{$seo->seo_social_desc|default:$settting_data.description}]">
         <meta property="og:site_name" content="[{''|base_url}]">
         <meta property="article:author" content="[{$settting_data['fakebook-fanpage']|default:''}]">
         <meta property="article:publisher" content="[{$settting_data['fakebook-fanpage']|default:''}]">
