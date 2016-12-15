@@ -5,9 +5,20 @@
     id="SeoEntryId"
     />
 <form name="seoForm" id="seoForm" target="integration_asynchronous">
+    [{if $seo_key}]
     <input type="hidden" name="seo_key" id="seo_key" 
            value="[{$item->seo_key|default:$seo_key|default:''}]"/>
-
+    [{else}]
+    <div class="pull-bottom control-group">
+        <div>Key :(*)</div>
+        <input type="text" class="form-control validate[required]" 
+               placeholder="Key"
+               name="seo_key"
+               data-prompt-position="topLeft:0,20"
+               value="[{$item->seo_key|quotes_to_entities|default:''}]"
+               />
+    </div>
+    [{/if}]
     <div class="pull-bottom control-group">
         <div>Title :(*)</div>
         <input type="text" class="form-control validate[required,minSize[4],maxSize[255]]" 

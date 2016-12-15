@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+    if(window.innerWidth>960) $('.navbar-toggle').click();
     $(window).scroll(function(){
         if($(this).scrollTop()>0){
             $('#navbar').addClass('is-fix-top');
