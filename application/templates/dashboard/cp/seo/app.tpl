@@ -373,36 +373,29 @@ var APP = function() {
     	addNotice('This function to requires an administrative account.<br/>Please check your authority, and try again.','warning');
     	return;
     	[{/if}]
-    	if(rowIndex)
-    	var _data = $(me.jqxgrid).jqxGrid('getrowdata', rowIndex);
+        var _data
+    	if(rowIndex != undefined)
+    	_data = $(me.jqxgrid).jqxGrid('getrowdata', rowIndex);
     	if (pending > 0)return;
             $('#entry-container').html('...');
             httpRequest({
                 'url'         :   me.entryEditUri + me.entryType,
                 'data'        :   {
-                    'seo_key'  :   rowIndex?_data.seo_key:null
+                    'seo_key'  :   _data?_data.seo_key:null
                 },
                 'callback'    :   function(rsdata){
                     if(rsdata.result<0){
                         addNotice(rsdata.message,'error');
                     }else{
                         $('#entry-container').html(rsdata.htmlreponse);
-                        $('#entryForm').validationEngine({
+                        $('#seoForm').validationEngine({
                             'scroll': false,
                             'isPopup' : me.isEntryDialog,
                             validateNonVisibleFields:true
                         });
                         $('#entryForm .selectpicker').selectpicker();
-                        $('#entryForm').validationEngine({'scroll': false});
-                        $('#entryForm [data-toggle="popover"]').popover({
-                            html:true
-                        })
-                        if(me.isEntryDialog){
-                        	showEntryDialog(Id==0?'Add Item':'Edit Item');
-                        }else{
-                        	$('#entry-container').show();
-                        	$('#entry-list').hide();
-                        }
+                        showEntryDialog(Id==0?'Add Item':'Edit Item');
+                        
                         // $( "#sortable" ).sortable({placeholder: "ui-state-highlight"});
                         // $( "#sortable" ).disableSelection();
                     }
@@ -443,12 +436,12 @@ var APP = function() {
     	$(me.jqxgrid).jqxGrid('updatebounddata');
     };
     this.onSave = function(){
-    	if( $('#entryForm').validationEngine('validate') === false){
+    	if( $('#seoForm').validationEngine('validate') === false){
     		addNotice('Please complete input data.','warning');
     		return false;
     	}
-        var Id = $('#EntryId').val();
-        var Params =$('#entryForm').serializeObject();
+        var Id = $('#SeoEntryId').val();
+        var Params =$('#seoForm').serializeObject();
         me.onCommit(me.entryCommitUri,Params,Id,function(rsdata){
             if(rsdata.result>0){
                 me.refreshList();
