@@ -5,7 +5,7 @@
             json = {},
             push_counters = {},
             patterns = {
-                "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
+                "validate": /^[a-zA-Z_][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
                 "key":      /[a-zA-Z0-9_]+|(?=\[\])/g,
                 "push":     /^$/,
                 "fixed":    /^\d+$/,

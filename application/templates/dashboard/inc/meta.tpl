@@ -53,6 +53,7 @@
 		<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 		
 		<script type="text/javascript" src="/libraries/ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/serializeObject.js"></script>
 
 		<script src="/libraries/metronic/theme/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="/libraries/metronic/theme/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>

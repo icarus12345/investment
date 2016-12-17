@@ -880,6 +880,20 @@ legend{padding: 0 4px;line-height: 20px;font-size: 12px;border: 0;width: auto;ma
   max-width: 320px;
   max-height: 220px;
 }
+fieldset {
+    min-width: 0;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border: 1px solid #ccc;
+}
+legend{    
+    margin-bottom: 10px;
+    font-size: inherit;
+    line-height: inherit;
+    border:0;
+    width: auto;
+    padding: 0 10px
+}
 .input-group .input-group-addon:last-child{cursor: pointer;}
 .jqwidget-entry-setting{
     position: absolute;;top: 0;left: 0;

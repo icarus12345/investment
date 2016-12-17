@@ -2661,7 +2661,21 @@ Page Loading
         border: 1px solid #000;
     } 
 }
-
+fieldset {
+    min-width: 0;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border: 1px solid #ddd;
+}
+legend{    
+    margin-bottom: 10px;
+    font-size: inherit;
+    line-height: inherit;
+    border:0;
+    width: auto;
+    padding: 0 10px;
+    margin: 0
+}
 .bg-cover{
     background-repeat: no-repeat;
     background-position: center;
