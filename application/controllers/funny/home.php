@@ -6,6 +6,10 @@ class home extends FE_Controller {
         parent::__construct();
     }
     public function index(){
-        $this->smarty->view( 'funny/template', $this->assigns );
+        $this->assigns->entrys = $this->serialize_model->onGets();
+        $this->smarty->view( 'funny/home', $this->assigns );
+    }
+    function modal(){
+        $this->smarty->view( 'funny/modal', $this->assigns );
     }
 }

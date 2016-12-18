@@ -7,37 +7,10 @@ class FE_Controller extends CI_Controller {
         $this->assigns = new stdClass();
         $this->load->library('pagination');
         $this->load->model('front/category_model');
-        $this->load->model('front/image_model');
-        $this->load->model('front/product_model');
-        $this->load->model('front/album_model');
-        $this->load->model('front/content_model');
-        $this->load->model('front/data_model');
-        $this->assigns->fecog = array(
-            'blog'=> 'blog',
-            'partner'=> 'partner',
-            'gallery'=> 'gallery',
-            'investment'=> 'investment',
-            'service'=> 'service',
-        );
-        $this->content_model->type = $this->assigns->fecog['blog'];
-        $this->assigns->settting_data = $this->data_model->loadData('scake');
+        $this->load->model('dashboard/cp/serialize_model');
+        $this->serialize_model->status = 'true';
         if(!$this->input->is_ajax_request()){
-            $this->assigns->blog_cates = $this->category_model->onGetByType($this->assigns->fecog['blog']);
-            $this->assigns->investment_cates = $this->category_model->onGetByType($this->assigns->fecog['investment']);
-            $this->assigns->service_cates = $this->category_model->onGetByType($this->assigns->fecog['service']);
-            $this->assigns->partners = $this->image_model->onGetByType($this->assigns->fecog['partner']);
-            $this->assigns->feature_blogs = $this->content_model->getFeature(null,1,6);
         }
-
-        // $pos = strpos($_SERVER['SERVER_NAME'], 'en.');
-        // if ($pos === false) {
-        //     $this->assigns->lang = 'vi';
-        // }else{
-        //     $this->assigns->lang = 'en';
-        // }
-        // $this->iLanguage =new CI_Language();
-        // $this->assigns->languages = $this->iLanguage->load('all',$this->assigns->lang,true);
-        
     }
     function loadSeo($seo_key=''){
         $query = $this->db

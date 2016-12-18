@@ -1,0 +1,241 @@
+#lightbulb {
+  font-size: 100px;
+  display: block;
+  text-align: center;
+}
+
+h1 {
+  padding: 10px;
+  margin: 0;
+}
+
+.chat-user-avatar {
+  font-size: 40px;
+  background: #ccc;
+  padding: 5px 10px;
+}
+
+.feature-icon {
+  font-size: 44px;
+  padding: 0;
+  line-height: 68px;
+  width: 72px;
+  text-align: center;
+  opacity: .8;
+  border: 3px solid;
+  border-radius: 200px;
+  height: 72px;
+  margin-bottom: 20px;
+}
+
+.feature-icon.fa-gamepad {
+  line-height: 60px;
+}
+
+.feature-icon.fa-tachometer {
+  line-height: 60px;
+}
+
+.app-content-loading {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: relative;
+}
+
+.loading-spinner {
+  position: absolute;
+  font-size: 50px;
+  left: 50%;
+  top: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
+}
+
+.carousel-example-content {
+  position: absolute;
+  font-size: 50px;
+  line-height: 50px;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  margin-top: -50px;
+}
+
+
+.carousel-item {
+  display: block;
+  color: #444;
+  background: #f4f4f4;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.carousel {
+  padding: 20px;
+  overflow: visible;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: visible;
+}
+
+.carousel>.item, .carousel-item {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.carousel-item {
+  -webkit-transition: -webkit-transform 500ms;
+  -moz-transition: -moz-transform 500ms;
+  transition: transform 500ms;
+}
+
+[drag-to-dismiss]{
+  transform: translate(0,0); /* NOTE: this is required to prevent mobile webkit issues */ 
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  -moz-transition: opacity 300ms, -moz-transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  opacity: 1;
+}
+
+.notices-container {
+  overflow-x: hidden;
+}
+
+.dismiss {
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  -moz-transition: opacity 300ms, -moz-transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  opacity: 0.5;
+}
+
+.dismitted {
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  -moz-transition: opacity 300ms, -moz-transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  opacity: 0;
+}
+
+
+pre {
+  text-align: left !important;
+}
+
+input.scrollable-header {
+  border-bottom: 3px solid #ccc;
+}
+
+.toucharea {width: 100%; height: 100%;}
+.app-content-loading{background: #3d3d3d}
+.app-body{
+    background: #353535;
+    color: #ccc
+}
+.navbar-app{
+    background-color: #333;
+    border-color: #484848;
+    color: #ccc;
+}
+.navbar-app .btn{color: inherit;text-transform: none;}
+.navbar-app .btn:hover{color: inherit;text-transform: none;}
+a.list-group-item,
+.list-group-item {
+    padding: 10px;
+    background-color: #3d3d3d;
+    color: #9e9e9e;
+    border-bottom:1px solid rgba(0,0,0,.1); /*#484848*/
+}
+.app-content .list-group-item{padding: 0px;border-bottom-width: 20px}
+.app-content .list-group-item:last-child{border-bottom-width: 0px}
+.app-content .list-group-item:hover{padding: 0px;color: #ebebeb}
+.app-content .list-group-item h4{padding: 10px;margin: 0;font-weight: normal;font-size: 16px;}
+.app-content .list-group-item.actived{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border-bottom: 0;
+    overflow: auto;
+}
+a.list-group-item:hover{
+    background-color: #474747;
+    color: #ccc;
+}
+.list-group:last-child{margin-bottom: 0}
+
+.social-action{border-top:1px solid rgba(0,0,0,.1);}
+.social-action:after{content: '';display: block;clear: both;}
+.social-action>div{
+    height: 40px;min-width: 40px;border-right:1px solid rgba(0,0,0,.1);
+    float: left;cursor: pointer;
+    line-height: 18px;padding: 10px;
+}
+.social-action>div:hover{color: #fff}
+.social-action>div.pull-right{
+    border-right-width: 0;border-left:1px solid rgba(0,0,0,.1);
+}
+.frame{position: relative;padding-bottom: 75%}
+.frame>iframe{position: absolute;top:0;left: 0;width: 100%;height: 100%;border:0;}
+.pull-top{padding-top: 10px;}
+.pull-bottom{padding-bottom: 10px}
+.frm > div{padding: 10px;}
+.frm label{display: block;margin-bottom: 0;font-weight: normal;font-size: 13px;color: #999}
+.form-control{
+    border-radius: 0;background: #333;
+    border: 1px solid #484848;
+    color: #ccc;
+}
+input.ng-invalid, textarea.ng-invalid, .ng-dirty input.ng-invalid{border-color: #E91E63}
+.frm [role="alert"]{
+    position: relative;
+    margin-top: 10px;
+    color: #E91E63;
+    font-size: 12px;
+    border: 1px solid rgba(233, 30, 99, 0.29);
+    padding: 4px 8px;
+    background: #333;
+}
+.frm [role="alert"]:before{content: '';display: block;position: absolute;left: 20px;top: 0;border-bottom: 10px solid rgba(233, 30, 99, 0.29);border-left: 10px solid transparent;border-right: 10px solid transparent;margin-top: -10px;}
+.frm [role="alert"]:after{content: '';display: block;position: absolute;left: 20px;top: 0;border-bottom: 10px solid #333;border-left: 10px solid transparent;border-right: 10px solid transparent;margin-top: -9px;}
+.modal{
+    color: #ccc
+}
+.modal-overlay{
+    background: rgba(0,0,0,.9)
+}
+.modal-overlay .modal-header{border-bottom-color: #333;}
+.modal-overlay .modal-dialog{padding: 0;position: relative;height: 100%;overflow: hidden;margin: 0}
+.modal-overlay .modal-content{height: 100%;position: relative;padding-top: 60px;padding-bottom: 0px;}
+.modal-overlay .modal-header{position: absolute;top: 0;left: 0;width: 100%;}
+.modal-overlay .modal-footer{position: absolute;bottom: 0;left: 0;width: 100%;}
+.modal-overlay .modal-body{max-height: 100%;overflow: auto;padding: 0;margin: 0;position: absolute;top: 60px;width: 100%;bottom: 0;left: 0;}
+@media (min-width: 992px){
+    /*.modal-overlay{left: 300px}*/
+}
