@@ -98,7 +98,7 @@
                     </ul>
                 </div>
                 <div class="col-md-4 text-right">
-                VIETNAMS PROPERTY INVESTMENT &copy; 2016
+                v2v Investment Company Limited &copy; 2016
                 </div>
             </div>
         </div>
