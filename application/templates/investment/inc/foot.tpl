@@ -15,8 +15,8 @@
                             <div class="space-line"></div>
                             <div class="wicon">
                                 <i class="fa fa-phone f16"></i> 
-                                Australia: +90 547 854 14 57<br/>
-                                Vietnam: +84 163 322 3508
+                                Australia: +61 414 323 109 / +61 468 398 109.<br/>
+                                Vietnam: +84 945 882 281
                             </div>
                             <div class="space-line"></div>
                             <div class="space-line"></div>
@@ -93,7 +93,7 @@
                             <li><a href="/blogs">Blog</a></li>
                             <li><a href="/fqa">FAQ</a></li>
                             <li><a href="/privacy-policy">Privacy Policy</a></li>
-                            <li><a href="/team-conditions">Teams & Conditions</a></li>
+                            <li><a href="/team-conditions">Terms & Conditions</a></li>
                             <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>

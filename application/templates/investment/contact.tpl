@@ -55,7 +55,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 pull-bottom cls">
-                <h3 class="h3-1">GET IN TOUCH WIDTH US</h3>
+                <h3 class="h3-1">GET IN TOUCH WITH US</h3>
                 <div class="space-line"></div>
                 <p class="gray pull-top pull-bottom">Linkedproperties provides advice, professional services and networking to fulfill your investment needs to the VietNam Marker</p>
                 <p class="gray pull-top pull-bottom">Please contact us for more information on our service and requests. We endeavor to get back to you within 48 hours.</p>
@@ -79,7 +79,8 @@
                     <script type="text/javascript">
                         google.maps.event.addDomListener(window, 'load', init);
                         function init() {
-                            var latlon = [-33.8688197, 151.2092955]; // 151.20929550000005&lat=-33.8688197
+                            // 
+                            var latlon = [ [{$settting_data['google-map']}] ]; // 151.20929550000005&lat=-33.8688197
                             var lat  = latlon[0], lon = latlon[1];
                             // Basic options for a simple Google Map
                             // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions

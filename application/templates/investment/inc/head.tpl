@@ -46,9 +46,9 @@
                     </li>
                     <li data-menu="blogs"><a href='/blogs'>BLOG</a></li>
                     <li data-menu="gallery"><a href='/gallery'>GALLERY</a></li>
-                    <li data-menu="fqa"><a href='/fqa'>FQA</a></li>
+                    <li data-menu="fqa"><a href='/fqa'>FAQ</a></li>
                     <li data-menu="policy"><a href='/privacy-policy'>PRIVACY POLICY</a></li>
-                    <li data-menu="team"><a href='/team-conditions'>TEAMS & CONDITIONS</a></li>
+                    <li data-menu="team"><a href='/team-conditions'>TERMS & CONDITIONS</a></li>
                     <li data-menu="contact"><a href='/contact'>CONTACT</a></li>
                 </ul>
             </nav>

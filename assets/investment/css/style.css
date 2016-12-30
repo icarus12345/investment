@@ -698,9 +698,10 @@ footer .foot-menu{padding: 20px 0;background: #000;}
 @media (max-width: 767px) {
     .home-content{max-width: 600px}
     .navbar-brand{line-height: 20px;
-    padding-right: 155px;
-    padding: 20px 163px 0 10px;
-    font-size: 14px;}
+        padding: 20px 180px 0 10px;
+        font-size: 14px;
+    }
+    .socials-menu{right: 50px}
     .home-content .lab{font-size: 20px}
     .home-content .tit{font-size: 30px;}
     .foot-menu ul{text-align: center;}
@@ -721,5 +722,7 @@ footer .foot-menu{padding: 20px 0;background: #000;}
     .invest-box>.thumb>div{height: auto;padding-bottom: 75%}
 }
 @media (max-width: 480px) {
-
+    .navbar-brand{
+        padding: 10px 180px 0 10px;
+    }
 }

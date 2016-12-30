@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class=" col-md-4 left">
-                        <div class="tit f24">GALLERY ABOUT <br/>PROPERTY IN VIETNAM</div>
+                        <div class="tit f24">Vietnam Properties' <br/>Gallery</div>
                     </div>
                     <div class="col-md-8 right">
                         <ul class="gal-tab nav nav-tabs">

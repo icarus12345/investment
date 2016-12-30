@@ -2,10 +2,10 @@
 [{include file=$smarty.const.APPPATH|cat:"templates/investment/inc/head.tpl"}]
 <div class="banner-box">
     <div class="tit">
-        <div class="f32">TEAMS AND CONDITION</div>
+        <div class="f32">TERMS AND CONDITION</div>
         <ul>
             <li>Home</li>
-            <li><a href="#">Teams and Condition</a></li>
+            <li><a href="#">Terms and Condition</a></li>
         </ul>
     </div>
 </div>
@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-9 pull-bottom pull-top right-blog">
                 <div class="blog-item">
-                    <div class="tit-h1">TEAM AND <span>CONDITIONS</span></div>
+                    <div class="tit-h1">TERMS AND <span>CONDITIONS</span></div>
                     <div class="gray container">
                         <div class="col-sm-12 pull-bottom">
                             <div class="space-line"></div>
