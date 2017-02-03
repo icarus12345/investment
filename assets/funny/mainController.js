@@ -28,6 +28,13 @@ app.controller('MainController', function($rootScope, $scope, $route) {
             $scope.activedId = id;
         }
     }
+    $scope.toggleVideo = function(id){
+        if($scope.activedId){
+            $scope.activedId = undefined
+        } else {
+            $scope.activedId = id;
+        }
+    }
    
     // 
     // Right Sidebar

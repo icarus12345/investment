@@ -481,7 +481,7 @@ var APP = function() {
     	addNotice('This function to requires an administrative account.<br/>Please check your authority, and try again.','warning');
     	return;
     	[{/if}]
-    	if (pending > 0)return;
+    	// if (pending > 0)return;
             $('#entry-container').html('...');
             httpRequest({
                 'url'         :   me.entryEditUri + me.entryType,

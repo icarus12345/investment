@@ -7,7 +7,7 @@ class FE_Controller extends CI_Controller {
         $this->assigns = new stdClass();
         $this->load->library('pagination');
         $this->load->model('front/category_model');
-        $this->load->model('dashboard/cp/serialize_model');
+        $this->load->model('front/serialize_model');
         $this->serialize_model->status = 'true';
         if(!$this->input->is_ajax_request()){
         }

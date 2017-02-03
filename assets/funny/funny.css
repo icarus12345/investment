@@ -151,6 +151,14 @@ input.scrollable-header {
 }
 
 .toucharea {width: 100%; height: 100%;}
+
+.transition{
+    -webkit-transition: all .5s; /*adjust timing here */
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+ng-view.ng-scope{height: 100%}
 .app-content-loading{background: #3d3d3d}
 .app-body{
     background: #353535;
@@ -163,6 +171,7 @@ input.scrollable-header {
 }
 .navbar-app .btn{color: inherit;text-transform: none;}
 .navbar-app .btn:hover{color: inherit;text-transform: none;}
+.list-group{margin-bottom: 0}
 a.list-group-item,
 .list-group-item {
     padding: 10px;
@@ -201,8 +210,25 @@ a.list-group-item:hover{
 .social-action>div.pull-right{
     border-right-width: 0;border-left:1px solid rgba(0,0,0,.1);
 }
-.frame{position: relative;padding-bottom: 75%}
-.frame>iframe{position: absolute;top:0;left: 0;width: 100%;height: 100%;border:0;}
+.youtube{position: relative;padding-bottom: 56%}
+.youtube>iframe,
+.youtube>img{position: absolute;top:0;left: 0;width: 100%;height: 100%;border:0;}
+.app-content .list-group-item.actived .youtube:after{
+    content: '';position: absolute;z-index: 101;top: 0;right: 0;width: 40px;height: 40px;background: url(img/close.png) center no-repeat;
+    cursor: pointer;
+}
+.app-content .list-group-item .youtube:before{
+    content: '';position: absolute;z-index: 100;top: 50%;left: 50%;width: 60px;height: 60px;
+    margin: -30px 0 0 -30px;
+    background: url(img/play-button.svg) center no-repeat;
+    display: block;
+}
+.app-content .list-group-item .youtube.play:before,
+.app-content .list-group-item.actived .youtube:before{
+    display: none;
+}
+
+
 .pull-top{padding-top: 10px;}
 .pull-bottom{padding-bottom: 10px}
 .frm > div{padding: 10px;}
@@ -213,6 +239,7 @@ a.list-group-item:hover{
     color: #ccc;
 }
 input.ng-invalid, textarea.ng-invalid, .ng-dirty input.ng-invalid{border-color: #E91E63}
+
 .frm [role="alert"]{
     position: relative;
     margin-top: 10px;
@@ -224,6 +251,9 @@ input.ng-invalid, textarea.ng-invalid, .ng-dirty input.ng-invalid{border-color: 
 }
 .frm [role="alert"]:before{content: '';display: block;position: absolute;left: 20px;top: 0;border-bottom: 10px solid rgba(233, 30, 99, 0.29);border-left: 10px solid transparent;border-right: 10px solid transparent;margin-top: -10px;}
 .frm [role="alert"]:after{content: '';display: block;position: absolute;left: 20px;top: 0;border-bottom: 10px solid #333;border-left: 10px solid transparent;border-right: 10px solid transparent;margin-top: -9px;}
+.preview-box{background: rgba(0,0,0,.1);position: relative;margin-top: 10px;padding: 20px;text-align: center;}
+.preview-box:before{content: '';display: block;position: absolute;left: 20px;top: 0;border-bottom: 10px solid rgba(0,0,0,.1);border-left: 10px solid transparent;border-right: 10px solid transparent;margin-top: -10px;}
+.preview-box:after{content: '';display: block;position: absolute;left: 20px;top: 0;border-bottom: 10px solid transparent;border-left: 10px solid transparent;border-right: 10px solid transparent;margin-top: -10px;}
 .modal{
     color: #ccc
 }
@@ -236,6 +266,24 @@ input.ng-invalid, textarea.ng-invalid, .ng-dirty input.ng-invalid{border-color: 
 .modal-overlay .modal-header{position: absolute;top: 0;left: 0;width: 100%;}
 .modal-overlay .modal-footer{position: absolute;bottom: 0;left: 0;width: 100%;}
 .modal-overlay .modal-body{max-height: 100%;overflow: auto;padding: 0;margin: 0;position: absolute;top: 60px;width: 100%;bottom: 0;left: 0;}
+.pages .pagination{margin: 0;width: 100%}
+.pages .pagination:after{content: '';display: block;clear: both;}
+.pages .pagination>li{display: none;}
+.pages .pagination>li.next{display: block;float: left;width: 50%;text-align: center;}
+.pages .pagination>li.prev{display: block;float: right;width: 50%;text-align: center;}
+.pages .pagination>li>a, 
+.pages .pagination>li>span{
+    display: block;background: transparent;border-radius: 0;float: none;
+    border:0;color: inherit;
+    padding: 10px 12px;
+
+}
+
+.app-content .list-group-item[data-from="chatvl"]>h4{margin-top: -33px;background: inherit;position: relative;}
 @media (min-width: 992px){
+    .app-body{
+        /*margin-left: 0;max-width: 720px;*/
+    }
     /*.modal-overlay{left: 300px}*/
 }
+    

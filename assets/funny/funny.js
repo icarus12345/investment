@@ -13,7 +13,8 @@ var app = angular.module('MobileAngularUiExamples', [
     // final pourpose to integrate gestures into default ui interactions like 
     // opening sidebars, turning switches on/off ..
     'mobile-angular-ui.gestures',
-    'toastr'
+    'toastr',
+
 ]);
 
 app.run(function($transform) {

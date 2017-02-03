@@ -5,7 +5,7 @@
 // 
 app.config(function($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: 'funny/home.html',
+        templateUrl: 'funny/home/load/1.html',
         // reload: true,
         reloadOnSearch: false
     });
@@ -23,44 +23,38 @@ app.config(function($routeProvider) {
         controller: 'imageController',
         reloadOnSearch: false
     });
-    $routeProvider.when('/tabs', {
-        templateUrl: 'tabs.html',
+    $routeProvider.when('/page', {
+        templateUrl: function(params){ return 'funny/home/load/1.html'; },
         reloadOnSearch: false
     });
-    $routeProvider.when('/accordion', {
-        templateUrl: 'accordion.html',
+    $routeProvider.when('/page/:page', {
+        templateUrl: function(params){ return 'funny/home/load/'+params.page+'.html'; },
         reloadOnSearch: false
     });
-    $routeProvider.when('/overlay', {
-        templateUrl: 'overlay.html',
+
+    $routeProvider.when('/video', {
+        templateUrl: function(params){ return 'funny/home/video/1.html'; },
         reloadOnSearch: false
     });
-    $routeProvider.when('/forms', {
-        templateUrl: 'forms.html',
+    $routeProvider.when('/video/page/', {
+        templateUrl: function(params){ return 'funny/home/video/1.html'; },
         reloadOnSearch: false
     });
-    $routeProvider.when('/dropdown', {
-        templateUrl: 'dropdown.html',
+    $routeProvider.when('/video/page/:page', {
+        templateUrl: function(params){ return 'funny/home/video/'+params.page+'.html'; },
         reloadOnSearch: false
     });
-    $routeProvider.when('/touch', {
-        templateUrl: 'touch.html',
+
+    $routeProvider.when('/image', {
+        templateUrl: function(params){ return 'funny/home/image/1.html'; },
         reloadOnSearch: false
     });
-    $routeProvider.when('/swipe', {
-        templateUrl: 'swipe.html',
+    $routeProvider.when('/image/page/', {
+        templateUrl: function(params){ return 'funny/home/image/1.html'; },
         reloadOnSearch: false
     });
-    $routeProvider.when('/drag', {
-        templateUrl: 'drag.html',
+    $routeProvider.when('/image/page/:page', {
+        templateUrl: function(params){ return 'funny/home/image/'+params.page+'.html'; },
         reloadOnSearch: false
-    });
-    $routeProvider.when('/drag2', {
-        templateUrl: 'drag2.html',
-        reloadOnSearch: false
-    });
-    $routeProvider.when('/carousel', {
-        templateUrl: 'carousel.html',
-        reloadOnSearch: true
     });
 });

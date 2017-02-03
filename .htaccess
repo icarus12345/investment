@@ -1,6 +1,6 @@
 AddDefaultCharset Off 
 #Header set Access-Control-Allow-Origin *
-#Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+#Header always set Access-Control-Allow-Methods "POST, GET"
 #Header always set Access-Control-Allow-Headers "*"
 RewriteEngine on
 #RewriteCond $1 !^(index\.php|images|core|assets|libraries|data|robots\.txt)

@@ -1,51 +1,122 @@
-app.controller('imageController', function($rootScope, $scope, $http, Utils, toastr) {
-    var old_img;
+app.controller('imageController', function($rootScope, $scope, $http, $sce, toastr) {
+    var old_url;
+    var apikey = '1277df3dc8367f8fa8015d';
     $scope.shownavbarbottom = true;
-    $scope.previewInage = function() {
-        if($scope.image_data.image == old_img) return;
-        if($scope.image_data.urlValid){
-            old_img = $scope.image_data.image;
-            $scope.image_data.image_src = undefined;
-            Utils.isImage($scope.image_data.image)
-                .then(function(result) {
-                    $scope.image_data.result = result;
-                    if(result) $scope.image_data.image_src = $scope.image_data.image;
-                });
+    $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+    }
+    function validImage(url, callback,timeoutT) {
+        return new Promise(function (resolve, reject) {
+            var timeout = timeoutT || 5000;
+            var timer, img = new Image();
+            img.onerror = img.onabort = function () {
+                clearTimeout(timer);
+                callback(url, "error");
+                reject("error");
+            };
+            img.onload = function () {
+                clearTimeout(timer);
+                callback({
+                    url:url,
+                    type:'image'
+                }, "success");
+                resolve("success");
+            };
+            timer = setTimeout(function () {
+                // reset .src to invalid URL so it stops previous
+                // loading, but doesn't trigger new load
+                callback(url, "timeout");
+                reject("timeout");
+            }, timeout);
+            img.src = url;
+        });
+    }
+    function validVideo(url, callback){
+        if (url != undefined || url != '') {
+            var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+            var match = url.match(regExp);
+            if (match && match[2].length == 11) {
+                // Do anything for being valid
+                // if need to change the url to embed url then use below line
+                callback({
+                    url:'https://www.youtube.com/embed/' + match[2] + '?autoplay=0',
+                    id: match[2],
+                    type: 'youtube'
+                },'success');
+            }
+            else {
+                var video = document.createElement('video');
+
+                video.onloadstart  = function() {
+                    console.log('success, it exsist',video.readyState);
+                    // show video element
+                }
+
+                video.onerror = function() {
+                    console.log('error, couldn\'t load');
+                    // don't show video element
+                    callback(undefined, "error");
+                }
+                video.oncanplaythrough = function() {
+                    console.log("This file can be played in the current browser");
+                    callback({
+                        url: url,
+                        type: 'video'
+                    },'success');
+                };
+                video.src = url;
+            }
         }
     }
-    $scope.image_data = {
-        title: '',
-        image: '',
-        urlValid: false,
-        formValid: false
+    $scope.showVideo =
+    $scope.showImage = function(rs){
+        $scope.pdata.info = rs;
+        $scope.$apply();
     }
-    $scope.validImage = function() {
-
-        var deferred = $q.defer();
-
-        var image = new Image();
-        image.onerror = function() {
-            deferred.resolve(false);
-        };
-        image.onload = function() {
-            deferred.resolve(true);
-        };
-        image.src = $scope.image_data.image;
-
-        return deferred.promise;
+    $scope.onPreview = function(){
+        // clear info;
+        if($scope.pdata.url == old_url) return;
+        $scope.pdata.info = undefined;
+        if($scope.pdata.urlValid){
+            // check image
+            old_url = $scope.pdata.url;
+            validImage($scope.pdata.url,function(rs, status){
+                if(status == 'success'){
+                    $scope.showImage(rs);
+                } else {
+                    // check video
+                    validVideo($scope.pdata.url,function(rs, status){
+                        if(status == 'success'){
+                            console.log('rs',rs)
+                            $scope.showVideo(rs);
+                        }
+                    });
+                }
+            });
+        }
     }
+    $scope.pdata = {
+        'title':'',
+        'url': '',
+    };
     $scope.save = function(){
-        if($scope.image_data.formValid){
+        if($scope.pdata.formValid){
+            var params = {
+                title: $scope.pdata.title,
+                url: $scope.pdata.info.url,
+                type: $scope.pdata.info.type
+            }
+            if($scope.pdata.info.id){
+                params.id = $scope.pdata.info.id;
+            }
+            
             $http({
                 url:'/image/onAddImage',
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                data: {
-                    title: $scope.image_data.title,
-                    image: $scope.image_data.image
-                },
+                data: params,
                 // withCredentials: true
             }).then(function(res){
                 if(res.data.result>=0){
@@ -63,22 +134,3 @@ app.controller('imageController', function($rootScope, $scope, $http, Utils, toa
         }
     }
 })
-app.factory('Utils', function($q) {
-    return {
-        isImage: function(src) {
-        
-            var deferred = $q.defer();
-        
-            var image = new Image();
-            image.onerror = function() {
-                deferred.resolve(false);
-            };
-            image.onload = function() {
-                deferred.resolve(true);
-            };
-            image.src = src;
-        
-            return deferred.promise;
-        }
-    };
-});

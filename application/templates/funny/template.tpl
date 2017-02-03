@@ -37,51 +37,19 @@
 
     <!-- Sidebars -->
     <div ng-include="'funny/sidebar.html'" 
-            ui-track-as-search-param='true'
-            class="sidebar sidebar-left"></div>
+        ui-track-as-search-param='true'
+        class="sidebar sidebar-left"></div>
 
     
 
     <div class="app" 
-         ui-swipe-right='Ui.turnOn("uiSidebarLeft")'
-         ui-swipe-left='Ui.turnOff("uiSidebarLeft")'>
+        ui-swipe-right='Ui.turnOn("uiSidebarLeft")'
+        ui-swipe-left='Ui.turnOff("uiSidebarLeft")'>
 
-      <!-- Navbars -->
+        <!-- Navbars -->
 
-      <div class="navbar navbar-app navbar-absolute-top">
-        <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
-          Cười cái coi
-        </div>
-        <div class="btn-group pull-left">
-          <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
-            <i class="fa fa-bars"></i> Menu
-          </div>
-        </div>
-        <div class="btn-group pull-right" >
-          <div  class="btn">
-            <i class="fa fa-user"></i> Login
-          </div>
-        </div>
-      </div>
-
-      <div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="navbar-bottom">
-        <div class="btn-group justified">
-          <a href="#/image/add" class="btn btn-navbar"><i class="fa fa-image fa-navbar"></i> Add Image</a>
-          <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-youtube fa-navbar"></i> Add Video</a>
-          <a href="" ui-turn-on="modal2" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> Issues</a>
-        </div>
-      </div>
-
-      <!-- App Body -->
-      <div class="app-body" ng-class="{loading: loading}">
-        <div ng-show="loading" class="app-content-loading">
-          <i class="fa fa-spinner fa-spin loading-spinner"></i>
-        </div>
-        <div class="app-content">
-          <ng-view></ng-view>
-        </div>
-      </div>
-
+      
+        <ng-view></ng-view>
     </div><!-- ~ .app -->
 
     <div ui-yield-to="modals"></div>

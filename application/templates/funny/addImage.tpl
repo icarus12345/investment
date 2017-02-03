@@ -1,79 +1,103 @@
+<div class="navbar navbar-app navbar-absolute-bottom" ui-yield-to="navbar-bottom">
+        <div class="btn-group justified">
+          <span ng-click="save()" class="btn btn-navbar"><i class="fa fa-save fa-navbar"></i> Đăng bài</span>
+          <a href="#/" class="btn btn-navbar"><i class="fa fa-remove fa-navbar"></i> Hủy</a>
+        </div>
+</div>
+<div class="app-body" ng-class="{loading: loading}">
+        <div ng-show="loading" class="app-content-loading">
+          <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div class="app-content">
 <div ui-content-for="title">
   <span>Add Image</span>
 </div>
-<div ui-content-for="navbar-bottom">
-    <div class="btn-group justified">
-      <span ng-click="save()" class="btn btn-navbar"><i class="fa fa-save fa-navbar"></i> Đăng bài</span>
-      <a href="#/" class="btn btn-navbar"><i class="fa fa-remove fa-navbar"></i> Hủy</a>
-    </div>
-</div>
 <div class="scrollable" >  
     <div class="scrollable-content">
-        <form name="addImageFrm" 
-            id="addImageFrm" class="frm"
+        <form name="addEntryFrm" 
+            id="addEntryFrm" class="frm"
             >
             <div class="">
                 <div class="pull-bottom">
-                    <label for="image_title">Tiêu đề</label>
+                    <label for="frm_title">Tiêu đề</label>
                     <div class=" control-group ">
                         <input 
                             type="text" 
-                            ng-model="image_data.title"
+                            ng-model="pdata.title"
                             class="form-control" 
                             placeholder="Tiêu đề"
-                            id="image_title"
+                            id="frm_title"
                             name="title"
                             required
-                            ng-minlength="4"
+                            ng-minlength="3"
                             ng-maxlength="100"
                             >
                     </div>
-                    <div role="alert" ng-show="!addImageFrm.title.$valid">
-                        <span class="error" ng-show="addImageFrm.title.$error.required">
+                    <div role="alert" ng-show="!addEntryFrm.title.$valid">
+                        <span class="error" ng-show="addEntryFrm.title.$error.required">
                           Không được để trống!</span>
-                        <span class="error" ng-show="addImageFrm.title.$error.minlength">
+                        <span class="error" ng-show="addEntryFrm.title.$error.minlength">
                           Tiêu đề ngắn quá !</span>
-                        <span class="error" ng-show="addImageFrm.title.$error.maxlength">
+                        <span class="error" ng-show="addEntryFrm.title.$error.maxlength">
                           Tiêu đề dài quá !</span>
                     </div>
                 </div>
                 <div class="pull-bottom">
-                    <label for="image_url">Hình Ảnh</label>
+                    <label for="frm_url">Hình Ảnh | Video</label>
                     <div class="control-group">
                         <input 
                             type="url" 
-                            ng-model="image_data.image"
+                            ng-model="pdata.url"
                             class="form-control" 
                             placeholder="Hình ảnh URL" 
-                            name="image" id="image_url"
-                            ng-blur="previewInage()"
+                            name="url" id="frm_url"
+                            ng-blur="onPreview()"
                             required
                             ng-maxlength="255"
                             >
                     </div>
-                    <div role="alert" ng-show="!addImageFrm.image.$valid">
-                        <span class="error" ng-show="addImageFrm.image.$error.required">
+                    <div role="alert" ng-show="!addEntryFrm.url.$valid">
+                        <span class="error" ng-show="addEntryFrm.url.$error.required">
                           Không được để trống!</span>
-                        <span class="error" ng-show="addImageFrm.image.$error.url">
+                        <span class="error" ng-show="addEntryFrm.url.$error.url">
                           Đường dẫn hình không hợp lệ !</span>
-                        <span class="error" ng-show="image_data.image && !image_data.result">
-                          Không tải được hình ảnh!</span>
-                        <span class="error" ng-show="addImageFrm.image.$error.maxlength">
+                        <span class="error" ng-show="image_data.url && !image_data.result">
+                          Không tải được hình ảnh 1!</span>
+                        <span class="error" ng-show="addEntryFrm.url.$error.maxlength">
                           Tiêu đề dài quá !</span>
                     </div>
-                    <div role="alert" ng-show="addImageFrm.image.$valid && !image_data.image_src">
+                    <div role="alert" ng-show="addEntryFrm.url.$valid && !pdata.info">
                         <span class="error">
-                          Không tải được hình ảnh !</span>
+                          Không tải được hình ảnh/video !</span>
                     </div>
                 </div>
                 <span style="display:none" >
-                    {{ image_data.urlValid = addImageFrm.image.$valid}}
-                    {{ image_data.formValid = addImageFrm.$valid}}
+                    {{ pdata.urlValid = addEntryFrm.url.$valid}}
+                    {{ pdata.formValid = addEntryFrm.$valid}}
                 </span>
-                <div class="text-center" ng-show="image_data.image_src && addImageFrm.image.$valid">
-                    <img src="{{image_data.image_src}}">
+                <div class="preview-box" ng-show="pdata.info.type == 'image' && addEntryFrm.url.$valid">
+                    <img src="{{pdata.info.url}}">
+                </div>
+                <div class="preview-box" ng-show="pdata.info.type == 'video' && addEntryFrm.url.$valid">
+                    <video 
+                        id="video" 
+                        crossOrigin="anonymous"
+                        controls autoplay
+                        poster="http://img-9gag-fun.9cache.com/photo/a37NgA8_460s.jpg" 
+                        style="min-height:280.4347826087px;width: 500px;" 
+                        loop
+                        muted
+                        name="media" >
+                        <source src="{{trustSrc(pdata.info.url)}}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="preview-box" ng-show="pdata.info.type == 'youtube' && addEntryFrm.url.$valid">
+                    <iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(pdata.info.url)}}" allowfullscreen frameborder="0">
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+</div>
+      </div>

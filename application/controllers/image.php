@@ -12,6 +12,15 @@ class image extends FE_Controller {
         $this->smarty->view( 'funny/addImage', $this->assigns );
 
     }
+    public function preview(){
+        $apikey = '1277df3dc8367f8fa8015d';
+        $video_url = 'http://img-9gag-fun.9cache.com/photo/aAwvmzL_460sv.mp4';
+        $url = 'http://cdn.iframe.ly/api/oembed?url='.urlencode($video_url).'&key='.$apikey;
+        echo $url;
+        $info = get_data($url);
+        var_dump($info);
+
+    }
     public function detail($Id=''){
         $entry = $this->serialize_model->onGet($Id);
         $this->assigns->entry = $entry;
@@ -23,30 +32,51 @@ class image extends FE_Controller {
         $output["result"] = -1;
         $output["message"]='Cười cái coi ! Bad request.';
         $title = $this->input->post('title');
-        $image = $this->input->post('image');
+        $url = $this->input->post('url');
+        $type = $this->input->post('type');
         $time = $this->session->userdata('time');
         if($time){
-            if(time() - $time < 60){
-                $output["message"]='Mỗi lần post bài cách nhau 1 phút. Cười cái coi !';
+            if(time() - $time < 30){
+                $output["message"]='Mỗi lần post bài cách nhau 30 giây. Cười cái coi !';
                 $wait = true;
             }
         }
+        $img_formats = array("png", "jpg", "jpeg", "gif", "tiff");  
         if(!$wait)
         if(
             !empty($title) &&
-            !empty($image)
+            !empty($url)
             ){
-            $params = array(
-                '_title'     => $title,
-                '_type'      => 'image',
-                '_status'    => 'true',
-                '_data'      => serialize(array(
-                    'url'    => $image,
-                    'author' => 'Cười C.c.',
-                    'type'   => 'Image'
-                    ))
-            );
-            $status = $this->serialize_model->onInsert($params);
+            if($type == 'youtube'){
+                $params = array(
+                    '_title'     => $title,
+                    '_type'      => 'funny',
+                    '_status'    => 'true',
+                    '_data'      => serialize(array(
+                        'url'    => $url,
+                        'author' => 'Cười C.c.',
+                        'type'   => 'youtube',
+                        'id'     => $this->input->post('id')
+                        ))
+                );
+                $status = $this->serialize_model->onInsert($params);
+            }else{
+                $path_info = pathinfo($url);
+                if (in_array(strtolower($path_info['extension']), $img_formats)) {
+                    // image
+                    $params = array(
+                        '_title'     => $title,
+                        '_type'      => 'funny',
+                        '_status'    => 'true',
+                        '_data'      => serialize(array(
+                            'url'    => $url,
+                            'author' => 'Cười C.c.',
+                            'type'   => 'Image'
+                            ))
+                    );
+                    $status = $this->serialize_model->onInsert($params);
+                }
+            }
             if($status){
                 $output["result"] = 1;
                 $output["message"] = 'Đăng bài thành công ! Cười cái coi !';

@@ -3,8 +3,8 @@
   <div class="scrollable-content">
     <div class="list-group" ui-turn-off='uiSidebarLeft'>
       <a class="list-group-item" href="#/">Cười</i></a>
-      <a class="list-group-item" href="#/scroll">Hình Ảnh </i></a>
-      <a class="list-group-item" href="#/toggle">Video </i></a>
+      <a class="list-group-item" href="#/image">Hình Ảnh </i></a>
+      <a class="list-group-item" href="#/video">Video </i></a>
       <a class="list-group-item" href="#/tabs">Girl </i></a>
       <a class="list-group-item" href="#/accordion">Gif </i></a>
       <a class="list-group-item" href="#/overlay">Overlay </i></a>
