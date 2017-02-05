@@ -22,8 +22,10 @@ class serialize extends CP_Controller {
     function viewport($unit='0000000',$type='',$sid = 0){
         $this->setAction($unit);
         $this->assigns->type = $type;
-        $this->assigns->sid = $sid;
-        $this->assigns->entry_setting = $this->serialize_model->onGet($sid);
+        $this->assigns->sid = $this->input->get_post('sid');
+        if(!$this->assigns->sid)
+            $this->assigns->sid = $sid;
+        $this->assigns->entry_setting = $this->serialize_model->onGet($this->assigns->sid);
         $this->smarty->view( 'dashboard/cp/serialize/viewport', $this->assigns );
     }
     function viewportonly($unit='',$Id){
@@ -48,7 +50,7 @@ class serialize extends CP_Controller {
         $type=$this->input->post('type');
         $this->assigns->type=$type;
         $unit=$this->input->post('unit');
-        $sid=$this->input->post('sid');
+        $sid=$this->input->get_post('sid');
         $this->setAction($unit);
         $layout=$this->assigns->action['layout'];
         $this->assigns->entry_setting = $this->serialize_model->onGet($sid);

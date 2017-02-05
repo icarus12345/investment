@@ -111,7 +111,7 @@
                     { name: 'column', type: 'string' },
                     { name: 'title', type: 'string' },
                     { name: 'type', type: 'string' },
-                    { name: 'required', type: 'bool' },
+                    { name: 'valid', type: 'string' }
                 ],
                 updaterow: function (rowid, rowdata, commit) {
                     // synchronize with the server - send update command
@@ -135,7 +135,7 @@
                   { text: 'Column', datafield: 'column', width: 120 },
                   { text: 'Title', datafield: 'title', minWidth: 120 },
                   { text: 'Type', datafield: 'type', width: 80 },
-                  { text: 'Required', datafield: 'required', width: 80 ,columntype: 'checkbox', threestatecheckbox: false,},
+                  { text: 'Valid', datafield: 'valid', width: 120 },
                   { 
                       text: 'Edit', datafield: 'Edit', columntype: 'button', 
                       width: 60,
@@ -145,13 +145,13 @@
                          // open the popup window when the user clicks a button.
                          editrow = row;
                          var offset = $("#jqxgridColumns").offset();
-                         $("#popupWindow").jqxWindow({ position: { x: parseInt(offset.left) + 60, y: parseInt(offset.top) + 60 } });
+                         // $("#popupWindow").jqxWindow();
                          // get the clicked row's data and initialize the input fields.
                          var dataRecord = $("#jqxgridColumns").jqxGrid('getrowdata', editrow);
                          $("#dashboard_column").val(dataRecord.column);
                          $("#dashboard_title").val(dataRecord.title);
                          $("#dashboard_type").val(dataRecord.type);
-                         $("#dashboard_required").val(dataRecord.required);
+                         $("#dashboard_valid").val(dataRecord.valid||'');
                          // show the popup window.
                          $("#popupWindow").jqxWindow('open');
                      }
@@ -173,7 +173,7 @@
                         $("#dashboard_column").val('');
                          $("#dashboard_title").val('');
                          $("#dashboard_type").val('string');
-                         $("#dashboard_required").val('1');
+                         $("#dashboard_valid").val('1');
                          // show the popup window.
                          $("#popupWindow").jqxWindow('open');
                         
@@ -191,7 +191,7 @@
             });
             // initialize the popup window and buttons.
             $("#popupWindow").jqxWindow({
-                width: 250, resizable: false,  isModal: true, autoOpen: false, cancelButton: $("#jqxcancel"), modalOpacity: 0.1 ,theme: 'metro',
+                width: 320, resizable: false,  isModal: true, autoOpen: false, cancelButton: $("#jqxcancel"), modalOpacity: 0.1 ,theme: 'metro',
             });
             $("#popupWindow").on('open', function () {
                 // $("#firstName").jqxInput('selectAll');
@@ -203,7 +203,7 @@
                 column: $("#dashboard_column").val(), 
                 title: $("#dashboard_title").val(), 
                 type: $("#dashboard_type").val(), 
-                required: $("#dashboard_required").val(), 
+                valid: $("#dashboard_valid").val(), 
             };
             if (editrow >= 0) {
                 var rowID = $('#jqxgridColumns').jqxGrid('getrowid', editrow);

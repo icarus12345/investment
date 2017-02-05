@@ -20,7 +20,7 @@
             <div class="pull-bottom control-group">
                 <div>Title :(*)</div>
                 <input type="text" 
-                    class="form-control validate[required]" 
+                    class="form-control validate[required,maxSize[120]]" 
                     data-prompt-position="topLeft:0,20"
                     placeholder="Title"
                     name="_title"
@@ -74,34 +74,30 @@
                 <div class="pull-bottom control-group">
                     <div>[{$foo.title|default:''}] :(*)</div>
                     <input type="text" 
-                        class="form-control validate[[{if $foo.required|default:''}]required,[{/if}]maxSize[255]]" 
+                        class="form-control validate[[{$foo.valid|default:''}]]" 
                         data-prompt-position="topLeft:0,20"
                         placeholder="[{$foo.title|default:''}]"
                         name="_data[[{$foo.column|default:''}]]"
                         value="[{$item->_data[$foo.column|default:'']|quotes_to_entities|default:''}]"
                         />
                 </div>
-                [{/if}]
-
-                [{if $foo.type=='text'}]
+                [{elseif $foo.type=='text'}]
                 <div class="pull-bottom control-group">
                     <div>[{$foo.title|default:''}] :(*)</div>
                     <textarea type="text" 
-                        class="form-control validate[[{if $foo.required|default:''}]required,[{/if}]maxSize[255]]" 
+                        class="form-control validate[[{$foo.valid|default:''}]]" 
                         data-prompt-position="topLeft:0,20"
                         placeholder="[{$foo.title|default:''}]"
                         name="_data[[{$foo.column|default:''}]]"
                         >[{$item->_data[$foo.column|default:'']|quotes_to_entities|default:''}]</textarea>
                 </div>
-                [{/if}]
-
-                [{if $foo.type=='html'}]
+                [{elseif $foo.type=='html'}]
                 <div class="pull-bottom control-group">
                     <div>[{$foo.title|default:''}] :(*)</div>
                     <div>
                         <textarea type="text" 
                             data-isEditor="true"
-                            class="form-control validate[[{if $foo.required|default:''}]required[{/if}]]" 
+                            class="form-control validate[[{$foo.valid|default:''}]]" 
                             data-prompt-position="topLeft:0,20"
                             placeholder="[{$foo.title|default:''}]"
                             name="_data[[{$foo.column|default:''}]]"
@@ -111,15 +107,12 @@
                     </div>
                     <div class="erb" id="error-data-[{$foo.column|default:''}]"></div>
                 </div>
-                [{/if}]
-
-
-                [{if $foo.type=='image'}]
+                [{elseif $foo.type=='image'}]
                 <div class="pull-bottom control-group">
                     <div>[{$foo.title|default:''}] :(*)</div>
                     <div class="input-append">
                         <input type="text" 
-                            class="form-control validate[[{if $foo.required|default:''}]required,[{/if}]maxSize[255]]"
+                            class="form-control validate[[{$foo.valid|default:''}]]"
                             data-prompt-position="topLeft:0,20"
                             value="[{$item->_data[$foo.column|default:'']|quotes_to_entities|default:''}]" 
                             name="_data[[{$foo.column|default:''}]]" 
@@ -138,6 +131,8 @@
                         </span>
                     </div>
                 </div>
+                [{else}]
+                    <div class="code">Type:[{$foo.type}]</div>
                 [{/if}]
                 [{/foreach}]
             </fieldset>

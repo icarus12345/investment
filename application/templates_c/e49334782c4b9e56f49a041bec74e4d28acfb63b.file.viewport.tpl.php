@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-12-10 14:59:27
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-05 15:56:52
          compiled from "application\templates\dashboard\cp\category\viewport.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21749584bb5dfe33fb9-90976376%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e49334782c4b9e56f49a041bec74e4d28acfb63b' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\category\\viewport.tpl',
-      1 => 1436511060,
+      1 => 1481734615,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_584bb5dff203a6_35824218',
   'variables' => 
   array (
     'unit' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'action' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_584bb5dff203a6_35824218',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_584bb5dff203a6_35824218')) {function content_584bb5dff203a6_35824218($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ((@constant('APPPATH')).("templates/dashboard/inc/meta.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -112,6 +112,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <?php }?>
                                     <li data-action="delete" id="jqxDeleteAction"><i class="fa fa-trash-o"></i> Delete Selected Row</li>
                                     <li data-action="view" id="jqxViewAction"><i class="fa fa-eye"></i> View Selected Row</li>
+                                    <li data-action="seo" id="jqxSeoAction"><i class="fa fa-eye"></i> SEO</li>
                                 </ul>
                             </div>
                         </div>

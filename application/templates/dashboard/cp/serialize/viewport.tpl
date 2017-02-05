@@ -136,6 +136,14 @@
                 id="dashboard_title"
                 />
         </div>
+        <div class="pull-bottom control-group">
+            <div>Valid :(*)</div>
+            <input type="text" 
+                class="form-control" 
+                placeholder="Valid"
+                id="dashboard_valid"
+                />
+        </div>
         <div class="row half">
             <div class="col-xs-6 half">
                 <div class="pull-bottom control-group">
@@ -150,13 +158,6 @@
                 </div>
             </div>
             <div class="col-xs-6 half">
-                <div class="pull-bottom control-group">
-                    <div>Require :(*)</div>
-                    <select id="dashboard_required" class="form-control">
-                        <option value="1">true</option>
-                        <option value="0">false</option>
-                    </select>
-                </div>
             </div>
         </div>
         <div class="control-group">

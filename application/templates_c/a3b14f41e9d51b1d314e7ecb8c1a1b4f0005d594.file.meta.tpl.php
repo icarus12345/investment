@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-12-10 14:57:48
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-03 09:28:36
          compiled from "application\templates\dashboard\inc\meta.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2187584bb57c556b27-82439941%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a3b14f41e9d51b1d314e7ecb8c1a1b4f0005d594' => 
     array (
       0 => 'application\\templates\\dashboard\\inc\\meta.tpl',
-      1 => 1437729720,
+      1 => 1482338565,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.21-dev',
   'unifunc' => 'content_584bb57c59f9e6_97958329',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_584bb57c59f9e6_97958329')) {function content_584bb57c59f9e6_97958329($_smarty_tpl) {?><!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
@@ -83,6 +83,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		
 		<?php echo '<script'; ?>
  type="text/javascript" src="/libraries/ui/js/jquery-ui-1.9.2.custom.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="/libraries/plugin/serializeObject.js"><?php echo '</script'; ?>
 >
 
 		<?php echo '<script'; ?>

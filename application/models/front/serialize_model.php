@@ -2,17 +2,19 @@
 
 class serialize_model extends Core_Model {
     public $status;
-    function __construct(){
+    function __construct($type='funny'){
         parent::__construct('serialize','_','id');
-        $this->status=true;
+        $this->status='true';
+        $this->type=$type;;
     }
     function onGet($id) {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
         }
         $query = $this->db
-                ->where("{$this->prefix}{$this->colid}", $id)
-                ->get($this->table);
+            ->where("{$this->prefix}{$this->colid}", $id)
+            ->where('_type', $this->type)
+            ->get($this->table);
         $this->sqlLog('Get Entry');
         $entry = $query->row();
         if($entry) $entry->_data = unserialize($entry->_data);
@@ -23,9 +25,10 @@ class serialize_model extends Core_Model {
             $this->db->where("{$this->prefix}status",$this->status);
         }
         $query = $this->db
-                ->from($this->table)
-                ->order_by($this->prefix . 'insert', 'DESC')
-                ->get();
+            ->from($this->table)
+            ->order_by($this->prefix . 'insert', 'DESC')
+            ->where('_type', $this->type)
+            ->get();
         $this->sqlLog('Get Entrys');
         $entrys = $query->result();
         if($entrys) foreach ($entrys as $key => $value) {
@@ -44,13 +47,16 @@ class serialize_model extends Core_Model {
         return $this->getEntrys($page,$limit, $cat);
     }
     function getEntrys($page=1,$limit=8, $cat = 0){
-        if($cat!=0)$this->db->where("_category",$cat);
+        if($cat!=0){
+            $this->db
+                ->join('_category','cat_id = _category')
+                ->where("{$this->prefix}category",$cat);
+        }
         $query=$this->db
             ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title",false)
             ->from($this->table)
-            ->join('_category',"cat_id = _category",'left')
-            ->where('_type', 'funny')
-            ->where('_status', 'true')
+            ->where('_type', $this->type)
+            ->where('_status', $this->status)
             ->order_by('_insert','DESC')
             ->limit($limit,($page-1)*$limit)
             ->get(); 
@@ -65,11 +71,13 @@ class serialize_model extends Core_Model {
             $this->db->where("{$this->prefix}status",$this->status);
         }
         if($type!=null)$this->db->where("{$this->prefix}type",$type);
-        if($cat!=0)$this->db->where("{$this->prefix}category",$cat);
+        if($cat!=0){
+            $this->db
+                ->join('_category','cat_id = _category')
+                ->where("{$this->prefix}category",$cat);
+        }
         $query=$this->db
             ->from($this->table)
-            ->join('_category','cat_id = _category')
-            ->where('_type',$type)
             ->order_by('_insert','DESC')
             ->limit($limit,($page-1)*$limit)
             ->get(); 
