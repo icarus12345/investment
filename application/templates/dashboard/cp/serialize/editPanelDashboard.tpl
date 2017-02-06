@@ -151,7 +151,7 @@
                          $("#dashboard_column").val(dataRecord.column);
                          $("#dashboard_title").val(dataRecord.title);
                          $("#dashboard_type").val(dataRecord.type);
-                         $("#dashboard_valid").val(dataRecord.valid||'');
+                         $("#dashboard_valid").val(dataRecord.valid || '');
                          // show the popup window.
                          $("#popupWindow").jqxWindow('open');
                      }

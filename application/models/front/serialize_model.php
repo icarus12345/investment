@@ -5,7 +5,10 @@ class serialize_model extends Core_Model {
     function __construct($type='funny'){
         parent::__construct('serialize','_','id');
         $this->status='true';
-        $this->type=$type;;
+        $this->type=$type;
+    }
+    function setType($type=''){
+        $this->type=$type;
     }
     function onGet($id) {
         if($this->status){
@@ -35,6 +38,21 @@ class serialize_model extends Core_Model {
             $entrys[$key]->_data = unserialize($entrys[$key]->_data);
         }
         return $entrys;
+    }
+    function onGetByAlias($alias='') {
+        if($this->status){
+            $this->db->where("{$this->prefix}status",$this->status);
+        }
+        $strLength = strlen($alias);
+        $str = "s:5:\"alias\";s:$strLength:\"$alias\"";
+        $query = $this->db
+            ->like('_data',$str)
+            ->where('_type', $this->type)
+            ->get($this->table);
+        $this->sqlLog('Get Entry');
+        $entry = $query->row();
+        if($entry) $entry->_data = unserialize($entry->_data);
+        return $entry;
     }
     function getVideos($page=1,$limit=8, $cat = 0){
         $str = "s:4:\"type\";s:7:\"youtube\"";
@@ -92,10 +110,10 @@ class serialize_model extends Core_Model {
             $this->db->where("{$this->prefix}status",$this->status);
         }
         $query=$this->db
-            ->from('_data')
-            ->where('data_category',$cat_id)
-            ->order_by('data_position','ASC')
-            ->order_by('data_insert','ASC')
+            ->from($this->table)
+            ->where('_category',$cat_id)
+            ->where('_type', $this->type)
+            ->order_by('_insert','ASC')
             ->get(); 
         $entrys = $query->result();
         if($entrys) foreach ($entrys as $key => $value) {

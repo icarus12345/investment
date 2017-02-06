@@ -9,7 +9,10 @@ class home extends FE_Controller {
         // $serialize_model = new serialize_model('slider');
         $sliders = $this->serialize_model->getByType('slider');
         $this->assigns->sliders = $sliders;
-
+        // echo 'aaa';
+        // $this->serialize_model->setType('content');
+        // $data = $this->serialize_model->onGetByAlias('CORNEAL');
+        // print_r($data);die;
         $this->smarty->view( 'eye/01_home', $this->assigns );
     }
 }

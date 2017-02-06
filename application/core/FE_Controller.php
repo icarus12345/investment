@@ -9,7 +9,10 @@ class FE_Controller extends CI_Controller {
         $this->load->model('front/category_model');
         $this->load->model('front/serialize_model');
         $this->serialize_model->status = 'true';
+        $this->serialize_model->type = 'content';
         if(!$this->input->is_ajax_request()){
+
+            $this->assigns->aContents = $this->serialize_model->getByCategory(0);
         }
     }
     function loadSeo($seo_key=''){

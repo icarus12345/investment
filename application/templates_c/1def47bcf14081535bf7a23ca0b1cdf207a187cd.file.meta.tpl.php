@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-05 15:02:35
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-06 22:38:56
          compiled from "application\templates\eye\inc\meta.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:69025896dc1bc6e3d9-69258689%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1def47bcf14081535bf7a23ca0b1cdf207a187cd' => 
     array (
       0 => 'application\\templates\\eye\\inc\\meta.tpl',
-      1 => 1486281685,
+      1 => 1486395498,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5896dc1bd84ab6_15609457',
   'variables' => 
   array (
     'seo' => 0,
     'settting_data' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5896dc1bd84ab6_15609457',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5896dc1bd84ab6_15609457')) {function content_5896dc1bd84ab6_15609457($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
@@ -94,7 +94,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <link rel="stylesheet" type="text/css" href="/assets/eye/bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/bootstrap/css/bootstrap-select.min.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/bootstrap/css/font-awesome.min.css?t=1">
-        <link rel="stylesheet" type="text/css" href="/assets/eye/plugin/countdown/countdown.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/plugin/owl-carousel/owl.carousel.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/plugin/swipebox/swipebox-dark-1.3.css" >
         <link rel="stylesheet" type="text/css" href="/assets/eye/css/style.css"/>

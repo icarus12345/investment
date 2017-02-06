@@ -46,7 +46,6 @@
         <link rel="stylesheet" type="text/css" href="/assets/eye/bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/bootstrap/css/bootstrap-select.min.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/bootstrap/css/font-awesome.min.css?t=1">
-        <link rel="stylesheet" type="text/css" href="/assets/eye/plugin/countdown/countdown.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/plugin/owl-carousel/owl.carousel.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/eye/plugin/swipebox/swipebox-dark-1.3.css" >
         <link rel="stylesheet" type="text/css" href="/assets/eye/css/style.css"/>
