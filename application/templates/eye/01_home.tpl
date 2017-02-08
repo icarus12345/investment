@@ -9,7 +9,7 @@
                     <img src="[{$foo->_data.image|escape:'html'}]"/>
                     <div class="title">[{$foo->_title|escape:'html'}]</div>
                     <p class="line-clamp-f-4">[{$foo->_data.desc|escape:'html'}]</p>
-                    <a href="[{$foo->_data.alias|escape:'html'|base_url}]" class="reaad-more a">Read more</a>
+                    <a href="[{'content/'|cat:$foo->_alias|escape:'html'|base_url}]" class="reaad-more a">Read more</a>
                 </div>
             </div>
             [{/for}]
@@ -27,3 +27,12 @@
                 </div>
             </div>
         </div>
+        [{assign "foo" $aAbouts[0]}]
+        <div class="accreditation cover" style="background-image:url('[{$foo->_data.image|escape:'html'}]')">
+            <div class="container">
+                <div class="tit">[{$foo->_title|escape:'html'}]</div>
+                <p class="lab">[{$foo->_data.desc|escape:'html'}]</p>
+                <a href="[{'about/'|cat:$foo->_alias|escape:'html'|base_url}]" class="btn btn-default"><span>Read more</span></a>
+            </div>
+        </div>
+[{include file=$smarty.const.APPPATH|cat:"templates/eye/inc/foot.tpl"}]

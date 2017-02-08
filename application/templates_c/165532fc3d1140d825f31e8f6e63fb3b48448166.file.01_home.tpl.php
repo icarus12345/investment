@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-06 23:04:32
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-08 22:01:58
          compiled from "application\templates\eye\01_home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:70575896dc1b706032-99434715%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '165532fc3d1140d825f31e8f6e63fb3b48448166' => 
     array (
       0 => 'application\\templates\\eye\\01_home.tpl',
-      1 => 1486397069,
+      1 => 1486565576,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'i' => 0,
     'aContents' => 0,
     'foo' => 0,
+    'aAbouts' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -47,7 +48,7 @@ $_smarty_tpl->tpl_vars["foo"]->value = $_smarty_tpl->tpl_vars['aContents']->valu
 </div>
                     <p class="line-clamp-f-4"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['desc'], ENT_QUOTES, 'UTF-8', true);?>
 </p>
-                    <a href="<?php echo base_url(htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['alias'], ENT_QUOTES, 'UTF-8', true));?>
+                    <a href="<?php echo base_url(htmlspecialchars(('content/').($_smarty_tpl->tpl_vars['foo']->value->_alias), ENT_QUOTES, 'UTF-8', true));?>
 " class="reaad-more a">Read more</a>
                 </div>
             </div>
@@ -70,4 +71,21 @@ $_smarty_tpl->tpl_vars["foo"]->value = $_smarty_tpl->tpl_vars['aContents']->valu
                     </div>
                 </div>
             </div>
-        </div><?php }} ?>
+        </div>
+        <?php if (isset($_smarty_tpl->tpl_vars["foo"])) {$_smarty_tpl->tpl_vars["foo"] = clone $_smarty_tpl->tpl_vars["foo"];
+$_smarty_tpl->tpl_vars["foo"]->value = $_smarty_tpl->tpl_vars['aAbouts']->value[0]; $_smarty_tpl->tpl_vars["foo"]->nocache = null; $_smarty_tpl->tpl_vars["foo"]->scope = 0;
+} else $_smarty_tpl->tpl_vars["foo"] = new Smarty_variable($_smarty_tpl->tpl_vars['aAbouts']->value[0], null, 0);?>
+        <div class="accreditation cover" style="background-image:url('<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['image'], ENT_QUOTES, 'UTF-8', true);?>
+')">
+            <div class="container">
+                <div class="tit"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_title, ENT_QUOTES, 'UTF-8', true);?>
+</div>
+                <p class="lab"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['desc'], ENT_QUOTES, 'UTF-8', true);?>
+</p>
+                <a href="<?php echo base_url(htmlspecialchars(('about/').($_smarty_tpl->tpl_vars['foo']->value->_alias), ENT_QUOTES, 'UTF-8', true));?>
+" class="btn btn-default"><span>Read more</span></a>
+            </div>
+        </div>
+<?php echo $_smarty_tpl->getSubTemplate ((@constant('APPPATH')).("templates/eye/inc/foot.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+<?php }} ?>

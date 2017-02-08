@@ -13,6 +13,8 @@ class FE_Controller extends CI_Controller {
         if(!$this->input->is_ajax_request()){
 
             $this->assigns->aContents = $this->serialize_model->getByCategory(0);
+            $this->assigns->aAbouts = $this->serialize_model->getByCategory(477);
+            $this->assigns->aServiceCate = $this->category_model->onGetByType('services');
         }
     }
     function loadSeo($seo_key=''){

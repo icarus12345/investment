@@ -25,13 +25,13 @@
                     placeholder="Title"
                     name="_title"
                     [{if $item->content_lock!='true'}]
-                    onblur="AliasTo(this,'#entryForm input[name=\'_data[alias]\']')"
+                    onblur="AliasTo(this,'#entryForm input[name=\'_alias\']')"
                     [{/if}]
                     value="[{$item->_title|quotes_to_entities|default:''}]"
                     />
             </div>
-            <input type="hidden" name="_data[alias]" 
-                value="[{$item->_data.alias|quotes_to_entities|default:''}]"/>
+            <input type="hidden" name="_alias" 
+                value="[{$item->_alias|quotes_to_entities|default:''}]"/>
             <div class="row half">
                 <div class="col-mb-6 half">
                     <div class="pull-bottom control-group">

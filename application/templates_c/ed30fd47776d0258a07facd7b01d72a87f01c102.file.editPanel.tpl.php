@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-06 23:01:29
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-08 21:21:48
          compiled from "application\templates\dashboard\cp\serialize\editPanel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:152535854d37fd33988-15892646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ed30fd47776d0258a07facd7b01d72a87f01c102' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\serialize\\editPanel.tpl',
-      1 => 1486396873,
+      1 => 1486563646,
       2 => 'file',
     ),
   ),
@@ -58,14 +58,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     placeholder="Title"
                     name="_title"
                     <?php if ($_smarty_tpl->tpl_vars['item']->value->content_lock!='true') {?>
-                    onblur="AliasTo(this,'#entryForm input[name=\'_data[alias]\']')"
+                    onblur="AliasTo(this,'#entryForm input[name=\'_alias\']')"
                     <?php }?>
                     value="<?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->_title))===null||$tmp==='' ? '' : $tmp);?>
 "
                     />
             </div>
-            <input type="hidden" name="_data[alias]" 
-                value="<?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->_data['alias']))===null||$tmp==='' ? '' : $tmp);?>
+            <input type="hidden" name="_alias" 
+                value="<?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->_alias))===null||$tmp==='' ? '' : $tmp);?>
 "/>
             <div class="row half">
                 <div class="col-mb-6 half">
