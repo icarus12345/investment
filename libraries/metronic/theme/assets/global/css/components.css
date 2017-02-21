@@ -3385,7 +3385,7 @@ textarea.form-control{padding-top: 4px;padding-bottom: 4px;line-height: 20px;}
 .formError{color: red;cursor: pointer;}
 .dropdown-menu > li > a{padding:4px 12px;}
 .open > .dropdown-toggle.btn-default{border-color:#ddd;box-shadow:none}
-.form-control {padding:1px 8px 1px 8px;font-size:12px;height: 30px;}
+.form-control {padding:1px 8px 1px 8px;font-size:12px;height: 30px;line-height: 26px}
 .form-control[type="number"]{padding-right: 0}
 .input-group-btn>.btn:hover, .input-group-btn>.btn:focus, .input-group-btn>.btn:active, .open>.dropdown-toggle.btn-default
 {

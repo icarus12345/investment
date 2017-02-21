@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-12-10 15:04:15
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-09 21:17:34
          compiled from "application\templates\dashboard\cp\data\editPanelString.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2837584bb6ff74a000-46902072%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '827cb343f8746562f8b12c8188a445c91d171e36' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\data\\editPanelString.tpl',
-      1 => 1436195280,
+      1 => 1481732606,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_584bb6ff831399_09038011',
   'variables' => 
   array (
     'action' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'type' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_584bb6ff831399_09038011',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_584bb6ff831399_09038011')) {function content_584bb6ff831399_09038011($_smarty_tpl) {?><?php if ($_smarty_tpl->tpl_vars['action']->value['ispopup']!=1) {?>
 <div class="widget">
@@ -81,8 +81,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     ><?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->data_content))===null||$tmp==='' ? '' : $tmp);?>
 </textarea>
             </div>
-            <div class="code"><?php echo $_smarty_tpl->tpl_vars['item']->value->data_desc;?>
-</div>
+            <textarea name="data_desc" class="code" style="border:0;display:block;width:100%"><?php echo $_smarty_tpl->tpl_vars['item']->value->data_desc;?>
+</textarea>
         </form>
 <?php if ($_smarty_tpl->tpl_vars['action']->value['ispopup']!=1) {?>
     </div>

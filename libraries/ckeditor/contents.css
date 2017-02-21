@@ -65,6 +65,8 @@ blockquote
 .ckeditor h4,
 .ckeditor h5{
 	margin: 0;
+    font-weight: 100;
+        font-family: 'Roboto','Roboto Condensed', sans-serif;
 }
 .ckeditor h1,.ckeditor h2,.ckeditor h3,.ckeditor h4,.ckeditor h5,.ckeditor h6
 {

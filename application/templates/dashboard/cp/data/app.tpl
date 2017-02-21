@@ -262,7 +262,7 @@ var APP = function() {
 	        width 				: '100%', //
 	        //autoheight:true,
             rowsheight:28,
-	        height 				: '100%',
+	        height 				: $(window).height - 200,
 	        source 				: this._dataAdapter,
 	        theme 				: me.theme,
 	        columns 			: this._columns,

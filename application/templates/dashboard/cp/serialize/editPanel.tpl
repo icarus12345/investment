@@ -142,12 +142,12 @@
                 [{/foreach}]
             </fieldset>
             
+        </form>
+[{if $action.ispopup!=1}]
             <div class="control-group">
                 <button type="button" class="btn btn-default" onclick="myApp.onSave()"><i class="fa fa-save"></i> Save</button>
                 <button type="button" class="btn btn-default" onclick="myApp.onCancel()"><i class="fa fa-close"></i> Cancel</button>
             </div>
-        </form>
-[{if $action.ispopup!=1}]
     </div>
 </div>
 [{/if}]

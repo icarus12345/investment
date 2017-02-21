@@ -26,10 +26,13 @@
                             data-prompt-position="topLeft:0,20"
                             placeholder="Title"
                             name="_title"
+                            onblur="AliasTo(this,'#entryForm input[name=\'_alias\']')"
                             value="[{$item->_title|quotes_to_entities|default:''}]"
                             />
                     </div>
                 </div>
+                <input type="hidden" name="_alias" 
+                value="[{$item->_alias|quotes_to_entities|default:''}]"/>
                 <div class="col-mb-6 half">
                     <div class="pull-bottom control-group">
                         <div>Category :(*)</div>
@@ -71,16 +74,7 @@
             </div>
             <fieldset>
                 <legend>Information</legend>
-                <div class="pull-bottom control-group">
-                    <div>Title :(*)</div>
-                    <input type="text" 
-                        class="form-control validate[required]" 
-                        data-prompt-position="topLeft:0,20"
-                        placeholder="Title"
-                        name="_data[title]"
-                        value="[{$item->_data.title|quotes_to_entities|default:''}]"
-                        />
-                </div>
+                
                 <div id='jqxWidget'>
                     <div id="jqxgridColumns"></div>
                     <div style="margin-top: 30px;">

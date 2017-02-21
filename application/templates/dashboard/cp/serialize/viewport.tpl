@@ -67,11 +67,7 @@
                                     <li data-action="delete" id="jqxDeleteAction"><i class="fa fa-trash-o"></i> Delete Entry</li>
                                     [{if $smarty.session.auth.user->ause_authority=='Administrator'}]
                                     <li data-action="lock" id="jqxLockAction">
-                                        <i class="fa fa-lock"></i> Lock Entry
-                                        <ul>
-                                            <li data-action="lockon" id="jqxLockActionOn"><i class="fa fa-lock"></i> Lock</li>
-                                            <li data-action="lockoff" id="jqxLockActionOff"><i class="fa fa-unlock-alt"></i> Unlock</li>
-                                        </ul>
+                                        <span class="lock-menu-label"><i class="fa fa-lock"></i> Lock Entry</span>
                                     </li>
                                     [{/if}]
                                     <li data-action="view" id="jqxViewAction"><i class="fa fa-eye"></i> View Entry</li>
@@ -143,6 +139,7 @@
                 placeholder="Valid"
                 id="dashboard_valid"
                 />
+            <div class="code">required, minSize[120], maxSize[120], custom[email], custom[url], custom[onlyLetterNumber]</div>
         </div>
         <div class="row half">
             <div class="col-xs-6 half">

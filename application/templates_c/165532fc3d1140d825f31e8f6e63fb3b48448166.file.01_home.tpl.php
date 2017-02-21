@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-08 22:01:58
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-18 10:48:07
          compiled from "application\templates\eye\01_home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:70575896dc1b706032-99434715%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '165532fc3d1140d825f31e8f6e63fb3b48448166' => 
     array (
       0 => 'application\\templates\\eye\\01_home.tpl',
-      1 => 1486565576,
+      1 => 1487389683,
       2 => 'file',
     ),
   ),
@@ -23,10 +23,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aContents' => 0,
     'foo' => 0,
     'aAbouts' => 0,
+    'news_data' => 0,
+    'aSetting' => 0,
+    'aTestimonial' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5896dc1bbc8cd6_72539669')) {function content_5896dc1bbc8cd6_72539669($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ((@constant('APPPATH')).("templates/eye/inc/meta.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5896dc1bbc8cd6_72539669')) {function content_5896dc1bbc8cd6_72539669($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'D:\\xampp\\htdocs\\investment\\application\\third_party\\smarty\\plugins\\modifier.date_format.php';
+?><?php echo $_smarty_tpl->getSubTemplate ((@constant('APPPATH')).("templates/eye/inc/meta.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ((@constant('APPPATH')).("templates/eye/inc/head.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -85,6 +89,78 @@ $_smarty_tpl->tpl_vars["foo"]->value = $_smarty_tpl->tpl_vars['aAbouts']->value[
                 <a href="<?php echo base_url(htmlspecialchars(('about/').($_smarty_tpl->tpl_vars['foo']->value->_alias), ENT_QUOTES, 'UTF-8', true));?>
 " class="btn btn-default"><span>Read more</span></a>
             </div>
+        </div>
+        <div class="blog-box">
+            <div class="container">
+                <div class="text-center">
+                    <div class="h2">LATEST <span>NEWS</span></div>
+                    <p class="desc">
+                        We always update the latest news about the market of property investment in Vietnam, with hope will help you are the informations in investment market at Vietnam.eleifend nisi justo.
+                    </p>
+                </div>
+                <div class="owl-carousel" id="owl-blog">
+                    <?php  $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['foo']->_loop = false;
+ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['news_data']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['foo']->key => $_smarty_tpl->tpl_vars['foo']->value) {
+$_smarty_tpl->tpl_vars['foo']->_loop = true;
+ $_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['foo']->key;
+?>
+                    <div class="item blog-item">
+                        <div class="nailthumb">
+                            <div class="nailthumb-figure-75">
+                                <a href="<?php echo base_url(htmlspecialchars(('news/').($_smarty_tpl->tpl_vars['foo']->value->_alias), ENT_QUOTES, 'UTF-8', true));?>
+" class="nailthumb-container">
+                                    <img class="lazy" src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['image'], ENT_QUOTES, 'UTF-8', true);?>
+">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="date"><div><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['foo']->value->_insert,"%d");?>
+</div><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['foo']->value->_insert,"%b");?>
+</div>
+                        <div class="info">
+                            <div class="tit"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_title, ENT_QUOTES, 'UTF-8', true);?>
+</div>
+                            <div class="desc"><div class="line-clamp-f-3"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['desc'], ENT_QUOTES, 'UTF-8', true);?>
+</div></div>
+                            <a href="<?php echo base_url(htmlspecialchars(('news/').($_smarty_tpl->tpl_vars['foo']->value->_alias), ENT_QUOTES, 'UTF-8', true));?>
+" class='a'>Read More</a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+
+            </div>
+        </div>
+        <div class="adv">
+            <div class="container">
+                <div class="tit"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['aSetting']->value['make-version']->_title, ENT_QUOTES, 'UTF-8', true);?>
+</div>
+                <p class="lab"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['aSetting']->value['make-version']->_data['desc'], ENT_QUOTES, 'UTF-8', true);?>
+</p>
+                <a href="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['aSetting']->value['make-version']->_data['url'], ENT_QUOTES, 'UTF-8', true);?>
+" class="btn btn-default"><span>BOOK NOW</span></a>
+            </div>
+        </div>
+        <div class="owl-carousel" id="owl-testimonial">
+            <?php  $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['foo']->_loop = false;
+ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['aTestimonial']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['foo']->key => $_smarty_tpl->tpl_vars['foo']->value) {
+$_smarty_tpl->tpl_vars['foo']->_loop = true;
+ $_smarty_tpl->tpl_vars['i']->value = $_smarty_tpl->tpl_vars['foo']->key;
+?>
+            <div class="item quote">
+                <p><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['desc'], ENT_QUOTES, 'UTF-8', true);?>
+</p>
+
+                <div><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_title, ENT_QUOTES, 'UTF-8', true);?>
+</div>
+                <span><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['foo']->value->_data['position'], ENT_QUOTES, 'UTF-8', true);?>
+</span>
+            </div>
+            <?php } ?>
         </div>
 <?php echo $_smarty_tpl->getSubTemplate ((@constant('APPPATH')).("templates/eye/inc/foot.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 

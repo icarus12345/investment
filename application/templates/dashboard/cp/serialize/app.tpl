@@ -200,6 +200,7 @@ var APP = function() {
 	                }else if(action == 'delete'){
 	                    me.removeItem(entryId,rowIndex);
                     }else if(action == 'lock'){
+                        me.onCommit(me.entryCommitUri,{[{$frefix}]lock: !rowData.[{$frefix}]lock}, entryId, me.onRefresh);
                     }else if(action == 'lockon'){
 	                    me.onCommit(me.entryCommitUri,{[{$frefix}]lock: 'true'}, entryId, me.onRefresh);
                     }else if(action == 'lockoff'){
@@ -226,6 +227,7 @@ var APP = function() {
 		$('#contextMenu').jqxMenu('disable', 'jqxDeleteAction', true); 
 		[{/if}]
 		// $('#contextMenu').jqxMenu('disable', 'jqxViewAction', true); 
+        $(me.jqxgrid).parent().css('height', Math.max($(window).height() - 260, 420));
 		$(me.jqxgrid).jqxGrid({
 	        width 				: '100%', //
 	        //autoheight:true,
@@ -320,6 +322,11 @@ var APP = function() {
                         var dataRow = $(me.jqxgrid).jqxGrid('getrowdata', event.args.rowindex);
                         $('#contextMenu').jqxMenu('disable', 'jqxStatusActionOn', dataRow.[{$frefix}]status); 
                         $('#contextMenu').jqxMenu('disable', 'jqxStatusActionOff', !dataRow.[{$frefix}]status); 
+                        if(dataRow.[{$frefix}]lock){
+                            $('.lock-menu-label').html('<i class="fa fa-unlock-alt"></i> Unlock Entry');
+                        }else{
+                            $('.lock-menu-label').html('<i class="fa fa-lock"></i> Lock Entry');
+                        }
                     [{/if}]
                     event.stopPropagation();
 	            }
@@ -507,7 +514,12 @@ var APP = function() {
                         })
                         if($('textarea[data-isEditor="true"]').length>0){
                             $('textarea[data-isEditor="true"]').each(function(){
-                                addEditorFeature($(this).attr('id'),240);
+                                if(me.isEntryDialog>0){
+                                    addEditorBasic($(this).attr('id'),160);
+                                }else{
+                                    addEditorFeature($(this).attr('id'),320);
+                                    
+                                }
                             })
                             
                         }

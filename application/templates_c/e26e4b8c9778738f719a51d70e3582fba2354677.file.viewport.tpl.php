@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-03 16:47:13
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-18 08:39:07
          compiled from "application\templates\dashboard\cp\serialize\viewport.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155915854ac01f06a01-56882521%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e26e4b8c9778738f719a51d70e3582fba2354677' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\serialize\\viewport.tpl',
-      1 => 1486114982,
+      1 => 1487381945,
       2 => 'file',
     ),
   ),
@@ -112,11 +112,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <li data-action="delete" id="jqxDeleteAction"><i class="fa fa-trash-o"></i> Delete Entry</li>
                                     <?php if ($_SESSION['auth']['user']->ause_authority=='Administrator') {?>
                                     <li data-action="lock" id="jqxLockAction">
-                                        <i class="fa fa-lock"></i> Lock Entry
-                                        <ul>
-                                            <li data-action="lockon" id="jqxLockActionOn"><i class="fa fa-lock"></i> Lock</li>
-                                            <li data-action="lockoff" id="jqxLockActionOff"><i class="fa fa-unlock-alt"></i> Unlock</li>
-                                        </ul>
+                                        <span class="lock-menu-label"><i class="fa fa-lock"></i> Lock Entry</span>
                                     </li>
                                     <?php }?>
                                     <li data-action="view" id="jqxViewAction"><i class="fa fa-eye"></i> View Entry</li>
@@ -190,6 +186,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 placeholder="Valid"
                 id="dashboard_valid"
                 />
+            <div class="code">required, minSize[120], maxSize[120], custom[email], custom[url], custom[onlyLetterNumber]</div>
         </div>
         <div class="row half">
             <div class="col-xs-6 half">

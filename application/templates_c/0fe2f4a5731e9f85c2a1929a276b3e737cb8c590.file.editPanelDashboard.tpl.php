@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-03 16:48:58
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-18 21:33:46
          compiled from "application\templates\dashboard\cp\serialize\editPanelDashboard.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7455854adb3722094-17488510%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0fe2f4a5731e9f85c2a1929a276b3e737cb8c590' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\serialize\\editPanelDashboard.tpl',
-      1 => 1486115331,
+      1 => 1487428420,
       2 => 'file',
     ),
   ),
@@ -57,11 +57,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             data-prompt-position="topLeft:0,20"
                             placeholder="Title"
                             name="_title"
+                            onblur="AliasTo(this,'#entryForm input[name=\'_alias\']')"
                             value="<?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->_title))===null||$tmp==='' ? '' : $tmp);?>
 "
                             />
                     </div>
                 </div>
+                <input type="hidden" name="_alias" 
+                value="<?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->_alias))===null||$tmp==='' ? '' : $tmp);?>
+"/>
                 <div class="col-mb-6 half">
                     <div class="pull-bottom control-group">
                         <div>Category :(*)</div>
@@ -112,17 +116,7 @@ px;'><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['c']->value->cat_title, 
             </div>
             <fieldset>
                 <legend>Information</legend>
-                <div class="pull-bottom control-group">
-                    <div>Title :(*)</div>
-                    <input type="text" 
-                        class="form-control validate[required]" 
-                        data-prompt-position="topLeft:0,20"
-                        placeholder="Title"
-                        name="_data[title]"
-                        value="<?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->_data['title']))===null||$tmp==='' ? '' : $tmp);?>
-"
-                        />
-                </div>
+                
                 <div id='jqxWidget'>
                     <div id="jqxgridColumns"></div>
                     <div style="margin-top: 30px;">
@@ -195,7 +189,7 @@ px;'><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['c']->value->cat_title, 
                          $("#dashboard_column").val(dataRecord.column);
                          $("#dashboard_title").val(dataRecord.title);
                          $("#dashboard_type").val(dataRecord.type);
-                         $("#dashboard_valid").val(dataRecord.valid||'');
+                         $("#dashboard_valid").val(dataRecord.valid || '');
                          // show the popup window.
                          $("#popupWindow").jqxWindow('open');
                      }

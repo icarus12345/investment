@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-03 09:28:37
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-19 08:54:28
          compiled from "application\templates\dashboard\cp\serialize\app.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:291135854ac0384cb99-59512831%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd06361b2e48c0b3720fda1e090ace326fc2bae4f' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\serialize\\app.tpl',
-      1 => 1486088876,
+      1 => 1487469251,
       2 => 'file',
     ),
   ),
@@ -268,6 +268,9 @@ alias+'" class="add-on" target="_blank">\
 	                }else if(action == 'delete'){
 	                    me.removeItem(entryId,rowIndex);
                     }else if(action == 'lock'){
+                        me.onCommit(me.entryCommitUri,{<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
+lock: !rowData.<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
+lock}, entryId, me.onRefresh);
                     }else if(action == 'lockon'){
 	                    me.onCommit(me.entryCommitUri,{<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
 lock: 'true'}, entryId, me.onRefresh);
@@ -298,6 +301,7 @@ status: 'false'}, entryId, me.onRefresh);
 		$('#contextMenu').jqxMenu('disable', 'jqxDeleteAction', true); 
 		<?php }?>
 		// $('#contextMenu').jqxMenu('disable', 'jqxViewAction', true); 
+        $(me.jqxgrid).parent().css('height', Math.max($(window).height() - 260, 420));
 		$(me.jqxgrid).jqxGrid({
 	        width 				: '100%', //
 	        //autoheight:true,
@@ -395,6 +399,12 @@ id' && me.isMobile)) {
 status); 
                         $('#contextMenu').jqxMenu('disable', 'jqxStatusActionOff', !dataRow.<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
 status); 
+                        if(dataRow.<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
+lock){
+                            $('.lock-menu-label').html('<i class="fa fa-unlock-alt"></i> Unlock Entry');
+                        }else{
+                            $('.lock-menu-label').html('<i class="fa fa-lock"></i> Lock Entry');
+                        }
                     <?php }?>
                     event.stopPropagation();
 	            }
@@ -593,7 +603,12 @@ title;
                         })
                         if($('textarea[data-isEditor="true"]').length>0){
                             $('textarea[data-isEditor="true"]').each(function(){
-                                addEditorFeature($(this).attr('id'),240);
+                                if(me.isEntryDialog>0){
+                                    addEditorBasic($(this).attr('id'),160);
+                                }else{
+                                    addEditorFeature($(this).attr('id'),320);
+                                    
+                                }
                             })
                             
                         }

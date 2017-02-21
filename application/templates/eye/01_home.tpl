@@ -35,4 +35,51 @@
                 <a href="[{'about/'|cat:$foo->_alias|escape:'html'|base_url}]" class="btn btn-default"><span>Read more</span></a>
             </div>
         </div>
+        <div class="blog-box">
+            <div class="container">
+                <div class="text-center">
+                    <div class="h2">LATEST <span>NEWS</span></div>
+                    <p class="desc">
+                        We always update the latest news about the market of property investment in Vietnam, with hope will help you are the informations in investment market at Vietnam.eleifend nisi justo.
+                    </p>
+                </div>
+                <div class="owl-carousel" id="owl-blog">
+                    [{foreach from=$news_data item=foo key=i}]
+                    <div class="item blog-item">
+                        <div class="nailthumb">
+                            <div class="nailthumb-figure-75">
+                                <a href="[{'news/'|cat:$foo->_alias|escape:'html'|base_url}]" class="nailthumb-container">
+                                    <img class="lazy" src="[{$foo->_data.image|escape:'html'}]">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="date"><div>[{$foo->_insert|date_format:"%d"}]</div>[{$foo->_insert|date_format:"%b"}]</div>
+                        <div class="info">
+                            <div class="tit">[{$foo->_title|escape:'html'}]</div>
+                            <div class="desc"><div class="line-clamp-f-3">[{$foo->_data.desc|escape:'html'}]</div></div>
+                            <a href="[{'news/'|cat:$foo->_alias|escape:'html'|base_url}]" class='a'>Read More</a>
+                        </div>
+                    </div>
+                    [{/foreach}]
+                </div>
+
+            </div>
+        </div>
+        <div class="adv">
+            <div class="container">
+                <div class="tit">[{$aSetting['make-version']->_title|escape:'html'}]</div>
+                <p class="lab">[{$aSetting['make-version']->_data.desc|escape:'html'}]</p>
+                <a href="[{$aSetting['make-version']->_data.url|escape:'html'}]" class="btn btn-default"><span>BOOK NOW</span></a>
+            </div>
+        </div>
+        <div class="owl-carousel" id="owl-testimonial">
+            [{foreach from=$aTestimonial item=foo key=i}]
+            <div class="item quote">
+                <p>[{$foo->_data.desc|escape:'html'}]</p>
+
+                <div>[{$foo->_title|escape:'html'}]</div>
+                <span>[{$foo->_data.position|escape:'html'}]</span>
+            </div>
+            [{/foreach}]
+        </div>
 [{include file=$smarty.const.APPPATH|cat:"templates/eye/inc/foot.tpl"}]

@@ -2,7 +2,7 @@
 
 class serialize_model extends Core_Model {
     public $status;
-    function __construct($type='funny'){
+    function __construct($type=false){
         parent::__construct('serialize','_','id');
         $this->status='true';
         $this->type=$type;
@@ -14,9 +14,11 @@ class serialize_model extends Core_Model {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
         }
+        if($this->type){
+            $this->db->where('_type', $this->type);
+        }
         $query = $this->db
             ->where("{$this->prefix}{$this->colid}", $id)
-            ->where('_type', $this->type)
             ->get($this->table);
         $this->sqlLog('Get Entry');
         $entry = $query->row();
@@ -27,10 +29,12 @@ class serialize_model extends Core_Model {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
         }
+        if($this->type){
+            $this->db->where('_type', $this->type);
+        }
         $query = $this->db
             ->from($this->table)
             ->order_by($this->prefix . 'insert', 'DESC')
-            ->where('_type', $this->type)
             ->get();
         $this->sqlLog('Get Entrys');
         $entrys = $query->result();
@@ -43,11 +47,12 @@ class serialize_model extends Core_Model {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
         }
-        $strLength = strlen($alias);
-        $str = "s:5:\"alias\";s:$strLength:\"$alias\"";
+        if($this->type){
+            $this->db->where('_type', $this->type);
+        }
         $query = $this->db
-            ->like('_data',$str)
-            ->where('_type', $this->type)
+            // ->like('_data',$str)
+            ->where('_alias',$alias)
             ->get($this->table);
         $this->sqlLog('Get Entry');
         $entry = $query->row();
@@ -67,11 +72,13 @@ class serialize_model extends Core_Model {
     function getEntrys($page=1,$limit=8, $cat = 0){
         if($cat!=0){
             $this->db
-                ->join('_category','cat_id = _category')
-                ->where("{$this->prefix}category",$cat);
+                ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title,cat_alias",false)
+                ->join('_category','cat_id = _category');
+        }else{
+            $this->db
+                ->select("SQL_CALC_FOUND_ROWS {$this->table}.*",false);
         }
         $query=$this->db
-            ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title",false)
             ->from($this->table)
             ->where('_type', $this->type)
             ->where('_status', $this->status)
@@ -109,9 +116,15 @@ class serialize_model extends Core_Model {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
         }
+        $this->db
+            ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title,cat_alias",false)
+            ->join('_category','cat_id = _category');
+        if($cat_id!=''){
+            $this->db->where("{$this->prefix}category",$cat_id);
+        }
         $query=$this->db
             ->from($this->table)
-            ->where('_category',$cat_id)
+            // ->where('_category',$cat_id)
             ->where('_type', $this->type)
             ->order_by('_insert','ASC')
             ->get(); 
@@ -120,6 +133,32 @@ class serialize_model extends Core_Model {
             $entrys[$key]->_data = unserialize($entrys[$key]->_data);
         }
         return $entrys;
+    }
+    function getNextItem($item){
+        $query = $this->db
+            ->where('_id >',$item->_id)
+            ->from($this->table)
+            ->where('_type', $this->type)
+            ->order_by('_id','ASC')
+            ->limit(1)
+            ->get();
+        $this->sqlLog('Get Entry');
+        $entry = $query->row();
+        if($entry) $entry->_data = unserialize($entry->_data);
+        return $entry;
+    }
+    function getPrevItem($item){
+        $query = $this->db
+            ->where('_id <',$item->_id)
+            ->from($this->table)
+            ->where('_type', $this->type)
+            ->order_by('_id','DESC')
+            ->limit(1)
+            ->get();
+        $this->sqlLog('Get Entry');
+        $entry = $query->row();
+        if($entry) $entry->_data = unserialize($entry->_data);
+        return $entry;
     }
 }
 ?>

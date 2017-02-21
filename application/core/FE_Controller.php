@@ -8,13 +8,15 @@ class FE_Controller extends CI_Controller {
         $this->load->library('pagination');
         $this->load->model('front/category_model');
         $this->load->model('front/serialize_model');
+        $this->load->model('front/data_model');
         $this->serialize_model->status = 'true';
         $this->serialize_model->type = 'content';
         if(!$this->input->is_ajax_request()){
-
+            $this->assigns->settting_data = $this->data_model->loadData('setting');
             $this->assigns->aContents = $this->serialize_model->getByCategory(0);
             $this->assigns->aAbouts = $this->serialize_model->getByCategory(477);
             $this->assigns->aServiceCate = $this->category_model->onGetByType('services');
+            $this->assigns->aSetting = $this->loadData('setting');
         }
     }
     function loadSeo($seo_key=''){
@@ -23,7 +25,13 @@ class FE_Controller extends CI_Controller {
             ->get('_seo');
         $this->assigns->seo = $query->row();
     }
-    
+    function loadData($type){
+        $data = $this->serialize_model->getByType($type);
+        foreach ($data as $key => $value) {
+            $list[$value->_alias] = $value;
+        }
+        return $list;
+    }
     function nothing(){}
     function _addView($table='',$prefix='',$id){
         if($_SESSION["addviews"][date('Y-m-d-H-i')]["$table$id"]) return;

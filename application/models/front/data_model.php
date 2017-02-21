@@ -9,7 +9,7 @@ class data_model extends Core_Model {
     function loadData($type=''){
         $data = $this->onGetByType($type);
         foreach ($data as $foo) {
-            $arr[$foo->data_alias] = $arr[$foo->data_id] = $foo->data_content;
+            $arr[$foo->data_alias] = $arr[$foo->data_id] = $foo;
         }
         return $arr;
     }

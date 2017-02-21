@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-08 21:21:48
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-18 10:41:43
          compiled from "application\templates\dashboard\cp\serialize\editPanel.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:152535854d37fd33988-15892646%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ed30fd47776d0258a07facd7b01d72a87f01c102' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\serialize\\editPanel.tpl',
-      1 => 1486563646,
+      1 => 1487389300,
       2 => 'file',
     ),
   ),
@@ -218,12 +218,12 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
                 <?php } ?>
             </fieldset>
             
+        </form>
+<?php if ($_smarty_tpl->tpl_vars['action']->value['ispopup']!=1) {?>
             <div class="control-group">
                 <button type="button" class="btn btn-default" onclick="myApp.onSave()"><i class="fa fa-save"></i> Save</button>
                 <button type="button" class="btn btn-default" onclick="myApp.onCancel()"><i class="fa fa-close"></i> Cancel</button>
             </div>
-        </form>
-<?php if ($_smarty_tpl->tpl_vars['action']->value['ispopup']!=1) {?>
     </div>
 </div>
 <?php }?>

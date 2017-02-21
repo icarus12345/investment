@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-12-10 15:03:57
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-09 21:00:26
          compiled from "application\templates\dashboard\so\setting\editPanelText.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21870584bb6ed693769-47160535%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '13598aa48b6cb5668006c37babe5ac91e63a3c56' => 
     array (
       0 => 'application\\templates\\dashboard\\so\\setting\\editPanelText.tpl',
-      1 => 1436338320,
+      1 => 1481732520,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_584bb6ed6e5628_53850427',
   'variables' => 
   array (
     'item' => 0,
     'type' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_584bb6ed6e5628_53850427',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_584bb6ed6e5628_53850427')) {function content_584bb6ed6e5628_53850427($_smarty_tpl) {?><div class="col-sm-6">
     <div class="widget">
@@ -81,8 +81,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             ><?php echo (($tmp = @quotes_to_entities($_smarty_tpl->tpl_vars['item']->value->data_content))===null||$tmp==='' ? '' : $tmp);?>
 </textarea>
                     </div>
-                    <div class="code"><?php echo $_smarty_tpl->tpl_vars['item']->value->data_desc;?>
-</div>
+                    <textarea name="data_desc" class="code" style="border:0;display:block;width:100%"><?php echo $_smarty_tpl->tpl_vars['item']->value->data_desc;?>
+</textarea>
                 </form>
             </div>
             <div class="clearfix"></div>

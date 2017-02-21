@@ -65,6 +65,7 @@ body,html{
 body{
     padding-top: 80px;
 }
+.ckeditor{color: #777;font-size: 15px}
 h1,h2,h3,h4,h5,p{margin: 0}
 .nav-collapse{
     -webkit-transition: height 0;
@@ -243,6 +244,12 @@ a:hover{color: #00aff0;text-decoration: none;}
     border-right:1px solid #fff;
 }
 .btn-orange{display: block;padding: 5px 10px;background: #ffba00;color: #fff;border:1px solid #ffba00;position: relative;z-index: 1;border-radius: 0}
+.btn-white{
+    border-radius: 3px;background: #fff;font-family: 'utm-avo','Muli';
+    padding: 10px 30px;
+}
+.btn-white.actived{color: #fff;background: #00aff0}
+.btns>.btn{margin-right: 20px;text-transform: uppercase;}
 body.nav-collapsed{}
 #navbar.is-fix-top{background-color: rgba(255,255,255,.75);color: #111}
 .navbar-collapse.collapse{display: none;}
@@ -566,7 +573,7 @@ body.nav-collapsed{}
 .about-list .item p{font-size: 16px;color: #999;line-height: 25px;height: 100px;overflow: hidden;}
 .about-list .item .btn{text-transform: uppercase;padding: 10px 20px;margin-top: 30px;font-weight: 100}
 
-.about-list .item:hover .num{color:666666;}
+.about-list .item:hover .num{color: #666666;}
 .about-list .item:hover>div{background: #00aff0}
 .about-list .item:hover .tit{color: #fff}
 .about-list .item:hover p{color: #fff}
@@ -575,8 +582,11 @@ body.nav-collapsed{}
 .about-list .item:hover .tit>span{color: #fff}
 .meet-the-team .item{text-align: left;}
 .meet-the-team .item>div{padding-top: 30px}
+.right-bar .tit4{color: #00aff0;font-weight: 100;font-size: 18px;padding: 10px 0}
+.right-bar .tit3,
 .left-bar .tit3{text-transform: uppercase;color: #00aff0;font-weight: 100;font-size: 20px;padding: 10px 0}
-.left-bar {color: #777;padding-top:40px;padding-bottom: 40px}
+.right-bar,
+.left-bar {color: #777;padding-top:40px;padding-bottom: 40px;font-size: 15px}
 .left-bar strong{color: #111}
 .owl-dots{text-align: center;padding: 10px;}
 .owl-dots .owl-dot{
@@ -591,6 +601,10 @@ body.nav-collapsed{}
     background: #ccc;
 }
 .owl-dots .owl-dot.active>span{background: #ffba00}
+
+
+.form-control{border:0;border-radius: 4px !important;background: #f0f0f0;box-shadow: none;font-size: 16px;padding: 0px 20px;line-height: 40px !important;height: 40px}
+
 footer>div{background: #2f2f2f;padding: 80px 0;color:#83817f;-font-size: 13px}
 .foot-logo{margin-bottom: 20px;display: block;color: #fff;font-weight: 100}
 .wicon{position: relative;padding: 0px 0 0px 24px}
@@ -940,9 +954,10 @@ footer .foot-menu{padding: 20px 0;background: #222222;}
         width: 100%;
     }
 }
+#map{height: 500px}
 @media (max-width: 767px) {
 
-
+    #map{height: 280px}
     .home-content{max-width: 600px}
     .navbar-brand{line-height: 20px;
         padding: 20px 180px 0 10px;
@@ -958,9 +973,14 @@ footer .foot-menu{padding: 20px 0;background: #222222;}
     a.call-us{right: 50%;margin-right: 10px;top: 0;margin-top: -20px;}
     a.send-mail{left: 50%;margin-left: 10px;top: 0;margin-top: -20px;right: auto;}
     .f24{font-size: 18px}
+    .navbar-nav > li>a {
+        padding: 10px 10px;
+    }
 }
 @media (max-width: 480px) {
     .navbar-brand{
-        padding: 10px 180px 0 10px;
+            padding: 10px 0px 0 10px;
+    width: 62px;
+    background-position: left center;
     }
 }

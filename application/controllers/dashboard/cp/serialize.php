@@ -68,6 +68,14 @@ class serialize extends CP_Controller {
             case '1':
                 $htmlreponse = $this->smarty->view( 'dashboard/cp/serialize/editPanelDashboard', $this->assigns, true );
                 break;
+            case '2':
+                if($Id){
+                    $entry_setting = $this->serialize_model->onGetByAlias($item->_data['type']);
+                    if($entry_setting)
+                        $this->assigns->entry_setting = $entry_setting;
+                }
+                $htmlreponse = $this->smarty->view( 'dashboard/cp/serialize/editPanelSetting', $this->assigns, true );
+                break;
             default :
                 $htmlreponse = $this->smarty->view( 'dashboard/cp/serialize/editPanel', $this->assigns, true );
         }

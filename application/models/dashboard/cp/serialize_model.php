@@ -32,7 +32,16 @@ class serialize_model extends Core_Model {
         }
         return $entrys;
     }
-    
+    function onGetByAlias($alias='') {
+        $query = $this->db
+            // ->like('_data',$str)
+            ->where('_alias',$alias)
+            ->get($this->table);
+        $this->sqlLog('Get Entry');
+        $entry = $query->row();
+        if($entry) $entry->_data = unserialize($entry->_data);
+        return $entry;
+    }
     function getByType($type=null,$page=1,$limit=8,$cat=0){
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
@@ -68,6 +77,16 @@ class serialize_model extends Core_Model {
             $entrys[$key]->_data = unserialize($entrys[$key]->_data);
         }
         return $entrys;
+    }
+    function getNextItem($item){
+        $query = $this->db
+            ->where('_id >',$item->id)
+            ->limit(1)
+            ->get($this->table);
+        $this->sqlLog('Get Entry');
+        $entry = $query->row();
+        if($entry) $entry->_data = unserialize($entry->_data);
+        return $entry;
     }
 }
 ?>
