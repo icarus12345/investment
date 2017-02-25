@@ -78,7 +78,7 @@ body .ui-widget-overlay{background:rgba(0,0,0,.35);opacity:1}
     background: #fafafa;  
 	
 }
-.ui-dialog .ui-dialog-buttonpane button{margin:0 0 0 4px}
+.ui-dialog .ui-dialog-buttonpane button{margin:0 0 0 10px}
 .ui-dialog .ui-dialog-buttonpane{
 	margin:0 0px;padding: 4px;border-top:1px solid #ddd;position:relative;
 	border-bottom-left-radius:2px;
