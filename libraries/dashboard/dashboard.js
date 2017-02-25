@@ -100,6 +100,7 @@ function uidialog(_option) {
             }else option.uidialog = $div;
         }
         if (typeof(option.message) === "string") {
+            if(!option.buttons)
             option.buttons = {
                 Close: function() {
                     $(this).dialog("destroy");
@@ -115,17 +116,19 @@ function uidialog(_option) {
         'open': function(str) {
             if (str) {
                 option.uidialog.html('<div>' + str + '</div>');
+                if(!option.buttons)
                 option.buttons = {
                     'Close': function() {
                         $(this).dialog("destroy");
                     }
                 };
             }
+            console.log(option.dialogClass + option.type)
             option.uidialog.dialog({
                 'modal': option.modal,
                 /*autoOpen        : option.autoOpen,*/
                 'minwidth': option.minwidth,
-                'dialogClass': option.dialogClass,
+                'dialogClass': option.dialogClass + ' ' + option.type,
                 'resizable': false,
                 'width': option.width,
                 'title': option.title,
