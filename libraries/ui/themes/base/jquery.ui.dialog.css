@@ -201,19 +201,20 @@ body .ui-widget-overlay{background:rgba(0,0,0,.35);opacity:1}
 .ui-dialog.confirm .ui-dialog-content{
     padding: 0 14px;
 }
-.ui-dialog .ui-dialog-titlebar,
-.ui-dialog.notice .ui-dialog-titlebar,
-.ui-dialog.warning .ui-dialog-titlebar,
-.ui-dialog.error .ui-dialog-titlebar,
-.ui-dialog.danger .ui-dialog-titlebar,
-.ui-dialog.success .ui-dialog-titlebar,
-.ui-dialog.info .ui-dialog-titlebar,
-.ui-dialog.confirm .ui-dialog-titlebar{
+.ui-dialog .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog.notice .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog.warning .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog.error .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog.danger .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog.success .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog.info .ui-dialog-titlebar.ui-widget-header,
+.ui-dialog.confirm .ui-dialog-titlebar.ui-widget-header{
     padding: 12px 30px 12px 14px;
     font-size: 15px;
     /*font-weight:normal;*/
     border-bottom: 0;
     line-height: 20px;
+    color: #111
 }
 .ui-dialog .ui-dialog-buttonpane,
 .ui-dialog.notice .ui-dialog-buttonpane,
