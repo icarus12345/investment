@@ -112,14 +112,14 @@ class serialize_model extends Core_Model {
         }
         return $entrys;
     }
-    function getByCategory($cat_id=''){
+    function getByCategory($cat_id=null){
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
         }
         $this->db
             ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title,cat_alias",false)
-            ->join('_category','cat_id = _category');
-        if($cat_id!=''){
+            ->join('_category','cat_id = _category','left');
+        if($cat_id!==null){
             $this->db->where("{$this->prefix}category",$cat_id);
         }
         $query=$this->db

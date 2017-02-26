@@ -184,14 +184,14 @@ function ConfirmMsg(title, message, callback) {
         'type':'confirm',
         'buttons' : [{
             'text': 'Confirm',
-            'class': 'ui-btn',
+            'class': 'btn btn-info',
             'click': function() {
                 if(typeof callback == 'function') callback();
                 $(this).dialog("close");
             }
         }, {
             'text': 'Cancel',
-            'class': 'ui-btn',
+            'class': 'btn',
             'click': function() {
                 $(this).dialog("close");
             }
