@@ -48,15 +48,15 @@ h1,h2,h3,h4,h5,p{margin: 0}
 }
 .capitalize{text-transform: capitalize}
 .nailthumb{position:relative;display: block;}
-.nailthumb .nailthumb-figure{position:relative;width:100%;padding-bottom:56%;display: block;}
-.nailthumb .nailthumb-figure-9-16{position:relative;width:100%;padding-bottom: 42.857142857%;display: block;}
-.nailthumb .nailthumb-figure-75{position:relative;width:100%;padding-bottom:75%;display: block;}
-.nailthumb .nailthumb-figure-72{position:relative;width:100%;padding-bottom:72%;display: block;}
+.nailthumb-figure{position:relative;width:100%;padding-bottom:56%;display: block;}
+.nailthumb-figure-9-16{position:relative;width:100%;padding-bottom: 42.857142857%;display: block;}
+.nailthumb-figure-75{position:relative;width:100%;padding-bottom:75%;display: block;}
+.nailthumb-figure-72{position:relative;width:100%;padding-bottom:72%;display: block;}
 .nailthumb-figure-square{position:relative;width:100%;padding-bottom:100%}
 .nailthumb-mark{position:absolute;width:100%;height:100%;z-index: 2;display: none;top: 0;left: 0}
 .nailthumb:hover>.nailthumb-mark{display: block;}
 .nailthumb:hover>div>.nailthumb-mark{display: block;}
-.nailthumb .nailthumb-container{
+.nailthumb-container{
     position:absolute;width:100%;height:100%;
     overflow:hidden;z-index:1;top: 0;left: 0;
 }
@@ -265,13 +265,14 @@ header{background: rgba(0,0,0,.5)}
 
 footer{
     padding: 10px;position: fixed;left: 0;bottom: 0;width: 100%;color: #ccc;
-    background: rgba(0,0,0,.5)
+    background: rgba(0,0,0,.5);z-index: 101
 }
 .full-page footer{background: transparent;}
 .copyright{line-height: 20px;float: left;font-weight: 100;padding-top: 5px;padding-bottom: 5px;}
 .copyright span{color: red}
 .copyright a{color: orange}
-.socials{float: right;line-height: 20px;color: #fff;padding-top: 5px;padding-bottom: 5px;height: 30px;}
+.socials{line-height: 20px;color: #fff;padding-top: 5px;padding-bottom: 5px;height: 30px;}
+footer .socials{float: right;}
 .socials>a{
     color: #fff;width: 24px;height:24px;display: inline-block;
     top: -5px;border:1px solid rgba(255,255,255,.2);
@@ -292,7 +293,7 @@ footer{
 .home-jssor .slider-cap{
     max-width: 732px;
     top: 50%;
-    height: 200px;
+    /*height: 200px;*/
     width: 100%;
     padding: 0 10px;
     position: absolute;
@@ -356,16 +357,59 @@ footer{
     right: -15px;
     transform: rotate(-45deg);
 }
-
+.boxs{margin: auto;}
 .box{box-shadow: 0 0 1px #000 inset}
-.size11{width: 20%;background: red}
-.size12{width: 20%;background: green}
-.size21{width: 40%;background: yellow}
-.size22{width: 40%;background: orange}
+.box>div{position: relative;}
+.size11{width: 20%;}
+.size12{width: 20%;}
+.size21{width: 40%;}
+.size22{width: 40%;}
 .size11>div{padding-bottom: 100%}
 .size12>div{padding-bottom: 200%}
 .size21>div{padding-bottom: 50%}
 .size22>div{padding-bottom: 100%}
+.box .nailthumb-mark{background: rgba(255, 165, 0, 0.9);padding: 20px;}
+.box .nailthumb-mark:before{
+    position: absolute;content: '';display: block;left: 20px;top: 20px;width: 20px;height: 20px;
+    border-left: 1px solid  rgba(255,255,255,.5);
+    border-top: 1px solid  rgba(255,255,255,.5);
+}
+.box .nailthumb-mark:after{
+    position: absolute;content: '';display: block;right: 20px;bottom: 20px;width: 20px;height: 20px;
+    border-bottom: 1px solid  rgba(255,255,255,.5);
+    border-right: 1px solid  rgba(255,255,255,.5);
+}
+.box .nailthumb-mark>div{
+    max-width: 480px;
+    /*height: 200px;*/
+    width: 100%;
+    padding: 0 10px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    color: #fff;
+}
+.box .nailthumb-mark .title{
+    font-weight: 100;text-transform: uppercase;
+    font-size: 16px;
+
+}
+.box .nailthumb-mark .title:after{
+    content: '';display: block;position: relative;
+    width: 40px;height: 1px;margin: 5px auto 5px auto;
+    border-bottom:1px dashed #fff;
+}
+.box .nailthumb-mark .author{
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+.box.size22 .nailthumb-mark .title,
+.box.size21 .nailthumb-mark .title{
+    font-size: 20px;
+}
+.box.size22 .nailthumb-mark .socials{}
 @media (min-width: 768px) {
 
 }

@@ -96,21 +96,42 @@ function projectMasonry(){
         return Math.floor(Math.random() * (max - min) + min);
     }
     var boxs = []
-    for(var i = 0;i<100;i++){
-        var num = random(0,15);
-        if(num < 3){
-            var ran = random(0,img['22'].length-1);
-            boxs.push('<div class="box size22"><div class="cover" style="background-image:url(images/'+img['22'][ran]+')"></div></div>')
+    for(var i = 0;i<50;i++){
+        var num = random(0,12);
+        var ran, size;
+        if(num < 2){
+            ran = random(0,img['22'].length-1);
+            size = 'size22';
+        } else if(num < 4) {
+            ran = random(0,img['12'].length-1);
+            size = 'size12';
         } else if(num < 6) {
-            var ran = random(0,img['12'].length-1);
-            boxs.push('<div class="box size12"><div class="cover" style="background-image:url(images/'+img['12'][ran]+')"></div></div>')
-        } else if(num < 9) {
-            var ran = random(0,img['21'].length-1);
-            boxs.push('<div class="box size21"><div class="cover" style="background-image:url(images/'+img['21'][ran]+')"></div></div>')
+            ran = random(0,img['21'].length-1);
+            size = 'size21';
         }else{
-            var ran = random(0,img['22'].length-1);
-            boxs.push('<div class="box size11"><div class="cover" style="background-image:url(images/'+img['22'][ran]+')"></div></div>')
+            ran = random(0,img['22'].length-1);
+            size = 'size11';
         }
+        boxs.push([
+            '<div class="box '+size+'">',
+                '<div class="nailthumb">',
+                    '<div class="nailthumb-container">',
+                        '<img class="lazy" data-original="images/'+img['22'][ran]+'"/>',
+                    '</div>',
+                    '<div class="nailthumb-mark">',
+                        '<div>',
+                            '<div class="title">Dự án đầu tư bất động sản</div>',
+                            '<div class="author">Dự án đầu tư bất động sản</div>',
+                            '<div class="socials">',
+                                '<a href="#"><span class="fa fa-facebook"></span></a>',
+                                '<a href="#"><span class="fa fa-twitter"></span></a>',
+                                '<a href="#"><span class="fa fa-google"></span></a>',
+                            '</div>',
+                        '</div>',
+                    '</div>',
+                '</div>',
+            '</div>'
+        ].join('\n'))
     }
     $(elem).html(boxs.join('\n'));
     var msnry;
@@ -146,6 +167,12 @@ function projectMasonry(){
     $(window).on("load", init);
     $(window).on("resize", init);
     $(window).on("orientationchange", init);
+    $("img.lazy").lazyload({
+       load: function() {
+           $(this).removeClass('lazy');
+           $(this.parentNode).nailthumb();
+       }
+    });
 }
 $(document).ready(function(){
     // if(window.innerWidth>960) $('.navbar-toggle').click();
@@ -156,12 +183,12 @@ $(document).ready(function(){
             $('#navbar').removeClass('is-fix-top');
         }
     });
-    // $("img.lazy").lazyload({
-    //    load: function() {
-    //        $(this).removeClass('lazy');
-    //        $(this.parentNode).nailthumb();
-    //    }
-    // });
+    $("img.lazy").lazyload({
+       load: function() {
+           $(this).removeClass('lazy');
+           $(this.parentNode).nailthumb();
+       }
+    });
     // $("img.lazy").each(function(){
     //     $(this).attr('src',$(this).data('original'));
     //     $(this.parentNode).nailthumb();
