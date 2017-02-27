@@ -179,8 +179,14 @@ function fixLine(){
         $('.banner>div').each(function(){
             var w = $(this).outerWidth();
             var bw = $(this).find('.breardcum').outerWidth();
+            var bh = $(this).find('.breardcum').outerHeight();
             var tw = $(this).find('.title').outerWidth();
+            var th = $(this).find('.title').outerHeight();
             console.log(w,bw,tw)
+            $(this).find('.line').css({
+                top: (bh)/2,
+                height: (bh+th)/2
+            });
             $(this).find('.before-line').css({width: w - bw - 10});
             $(this).find('.after-line').css({width: w - tw - 10});
         });
