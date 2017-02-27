@@ -300,6 +300,8 @@ footer .socials{float: right;}
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%) !important;
+    -moz-transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
 }
 .home-jssor .slider-cap>*{position: relative;}
 .cap1 .capitalize{
@@ -356,6 +358,8 @@ footer .socials{float: right;}
     top: 6px;
     right: -15px;
     transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 .boxs{margin: auto;}
 .box{box-shadow: 0 0 1px #000 inset}
@@ -389,6 +393,8 @@ footer .socials{float: right;}
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) !important;
+    -moz-transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
     color: #fff;
 }
 .box .nailthumb-mark .title{
@@ -410,6 +416,31 @@ footer .socials{float: right;}
     font-size: 20px;
 }
 .box.size22 .nailthumb-mark .socials{}
+
+.banner{position: relative;height: 320px;color: #ccc;}
+.banner>div{
+    display: inline-block;position: absolute;left: 50%;top:50%;
+    transform: translate(-50%, -50%) !important;
+    -moz-transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    padding-right: 40px;
+}
+.line{top:10px;height: 38px;border-right: 1px solid rgba(255,255,255,.3);position: absolute;right: 0}
+.line>.before-line{position: absolute;top: 0;right: 0;height: 1px;background: rgba(255,255,255,.3);}
+.line>.after-line{position: absolute;bottom: 0;right: 0;height: 1px;background: rgba(255,255,255,.3);}
+
+.d-table{display: table;width: 100%;}
+.d-table>div{display: table-cell;position: relative;}
+.banner .title{
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 56px;
+    display: inline-block;
+}
+.breardcum{height: 20px;display: inline-block;    text-transform: uppercase;font-size: 12px;}
+.breardcum>span{position: relative;display: inline-block;color:rgba(255,255,255,.7);line-height: 20px}
+.breardcum>span:after{content: '/';display: inline-block;color:rgba(255,255,255,.5);padding: 0 5px;}
+.breardcum>span:last-child:after{display: none;}
 @media (min-width: 768px) {
 
 }

@@ -62,7 +62,7 @@ var jssorHomeSliderInit = function() {
         jssorSlider = new $JssorSlider$("home-jssor", jssor_1_options);
         
     }
-    init();
+    // init();
     /*responsive code begin*/
     /*you can remove responsive code if you don't want the slider scales while window resizing*/
     function ScaleSlider() {
@@ -163,16 +163,31 @@ function projectMasonry(){
           itemSelector: '.box',
           columnWidth: Math.floor(w)
         });
+        $("img.lazy").lazyload({
+           load: function() {
+               $(this).removeClass('lazy');
+               $(this.parentNode).nailthumb();
+           }
+        });
     }
     $(window).on("load", init);
     $(window).on("resize", init);
     $(window).on("orientationchange", init);
-    $("img.lazy").lazyload({
-       load: function() {
-           $(this).removeClass('lazy');
-           $(this.parentNode).nailthumb();
-       }
-    });
+}
+function fixLine(){
+    function init(){
+        $('.banner>div').each(function(){
+            var w = $(this).outerWidth();
+            var bw = $(this).find('.breardcum').outerWidth();
+            var tw = $(this).find('.title').outerWidth();
+            console.log(w,bw,tw)
+            $(this).find('.before-line').css({width: w - bw - 10});
+            $(this).find('.after-line').css({width: w - tw - 10});
+        });
+    }
+    $(window).on("load", init);
+    $(window).on("resize", init);
+    $(window).on("orientationchange", init);
 }
 $(document).ready(function(){
     // if(window.innerWidth>960) $('.navbar-toggle').click();
@@ -194,7 +209,8 @@ $(document).ready(function(){
     //     $(this.parentNode).nailthumb();
     // });
     jssorHomeSliderInit();
-    projectMasonry()
+    projectMasonry();
+    fixLine();
     if($('.swipebox').length>=1)
         $('a.swipebox').swipebox({useCSS: true});
     if($('.validationFrm').length>=1){
