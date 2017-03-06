@@ -418,6 +418,7 @@ footer .socials{float: right;}
 .box.size22 .nailthumb-mark .socials{}
 
 .banner{position: relative;height: 320px;color: #ccc;}
+.banner.mask:before{content: '';display: block;position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
 .banner>div{
     display: inline-block;position: absolute;left: 50%;top:50%;
     transform: translate(-50%, -50%) !important;
@@ -425,9 +426,12 @@ footer .socials{float: right;}
     -webkit-transform: translate(-50%, -50%) !important;
     padding-right: 40px;
 }
+.banner.light.mask:before{background: rgba(255,255,255,.5)}
+.banner.dark.mask:before{background: rgba(0,0,0,.5)}
 .line{top:10px;height: 38px;border-right: 1px solid rgba(255,255,255,.3);position: absolute;right: 0}
 .line>.before-line{position: absolute;top: 0;right: 0;height: 1px;background: rgba(255,255,255,.3);}
 .line>.after-line{position: absolute;bottom: 0;right: 0;height: 1px;background: rgba(255,255,255,.3);}
+.banner.light{color: #000}
 
 .d-table{display: table;width: 100%;}
 .d-table>div{display: table-cell;position: relative;}
@@ -441,6 +445,11 @@ footer .socials{float: right;}
 .breardcum>span{position: relative;display: inline-block;color:rgba(255,255,255,.7);line-height: 20px}
 .breardcum>span:after{content: '/';display: inline-block;color:rgba(255,255,255,.5);padding: 0 5px;}
 .breardcum>span:last-child:after{display: none;}
+.banner.light .line{border-right-color: #777}
+.banner.light .line>.before-line,
+.banner.light .line>.after-line{background: #777}
+.banner.light .breardcum>span{color: #666}
+.banner.light .breardcum>span:after{color: #999}
 @media (min-width: 768px) {
 
 }
