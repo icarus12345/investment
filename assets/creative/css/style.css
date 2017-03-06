@@ -248,7 +248,8 @@ header{background: rgba(0,0,0,.5)}
 .navbar-nav  li > a{color: #fff;font-weight: 100}
 .navbar-nav  li > a:focus,
 .navbar-nav  li > a:hover{color: orange;background: transparent;text-decoration: line-through;}
-.navbar-nav > li > a{padding-left: 30px;text-transform: uppercase;}
+.navbar-nav > li > a{padding-left: 30px;text-transform: uppercase;background: transparent;}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{background: transparent;}
 .navbar-nav > li > ul {display: block;background: none;border:none;box-shadow: none;position: relative;padding: 0;margin:0;float: none;padding-left: 30px;}
 .navbar-nav > li > ul > li {display: inline-block;}
 .navbar-header{width: 100%;z-index: 1;position: relative;}
