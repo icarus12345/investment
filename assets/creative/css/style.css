@@ -27,8 +27,9 @@ body{
   }
 }
 body,html{
-    display: block;height: 100%;font-size: 14px;
+    display: block;font-size: 14px;
     font-family: 'Roboto','Roboto Condensed', sans-serif;
+    background: #333;
 }
 .ckeditor{color: #777;font-size: 15px}
 h1,h2,h3,h4,h5,p{margin: 0}
@@ -147,6 +148,14 @@ a,a:link,a:active{}
 }
 
 body.full-page{display: block;height: 100%;overflow: hidden;}
+.btn-default{
+    border: 1px solid #ccc;border-radius: 3px;
+    padding: 6px 20px;background: #fff;
+}
+.btn-default:focus,
+.btn-default:hover{
+    border: 1px solid orange;background: #fff;
+}
 .btn-white{
     position: relative;display: inline-block;
     padding: 8px 15px;line-height: 20px;
@@ -361,7 +370,7 @@ footer .socials{float: right;}
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
-.boxs{margin: auto;}
+.boxs{margin: auto;background: #333;}
 .box{box-shadow: 0 0 1px #000 inset}
 .box>div{position: relative;}
 .size11{width: 20%;}
@@ -417,9 +426,21 @@ footer .socials{float: right;}
 }
 .box.size22 .nailthumb-mark .socials{}
 
-.banner{position: relative;height: 320px;color: #ccc;}
+.banner{position: relative;height: 320px;color: #ccc;overflow: hidden;}
 .banner.mask:before{content: '';display: block;position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
-.banner>div{
+.banner .banner-bg{
+    position: relative;width: 100%;height: 100%;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+.banner .blur{
+    position: absolute;top: -10px;right: -10px;left: -10px;bottom: -10px;
+    padding: 10px;
+}
+.banner .banner-content{
     display: inline-block;position: absolute;left: 50%;top:50%;
     transform: translate(-50%, -50%) !important;
     -moz-transform: translate(-50%, -50%) !important;
@@ -440,16 +461,25 @@ footer .socials{float: right;}
     font-size: 40px;
     line-height: 56px;
     display: inline-block;
+    white-space: nowrap;
+    color: #fff
 }
-.breardcum{height: 20px;display: inline-block;    text-transform: uppercase;font-size: 12px;}
+.breardcum{height: 20px;display: inline-block;    text-transform: uppercase;font-size: 12px;white-space: nowrap;}
 .breardcum>span{position: relative;display: inline-block;color:rgba(255,255,255,.7);line-height: 20px}
 .breardcum>span:after{content: '/';display: inline-block;color:rgba(255,255,255,.5);padding: 0 5px;}
 .breardcum>span:last-child:after{display: none;}
+
 .banner.light .line{border-right-color: #777}
 .banner.light .line>.before-line,
 .banner.light .line>.after-line{background: #777}
 .banner.light .breardcum>span{color: #666}
 .banner.light .breardcum>span:after{color: #999}
+
+.slogan{background: #fff;padding: 20px}
+.slogan>.title{font-size: 20px;font-weight: 100;text-transform: uppercase;;padding: 10px 0;text-align: center;margin: auto;max-width: 640px}
+.slogan>.btns{text-align: center;padding: 10px 0 0 0}
+.slogan>.btns>button{margin: 0 4px;margin-bottom: 10px;}
+.date-title{padding: 10px;background: #fff}
 @media (min-width: 768px) {
 
 }
@@ -474,6 +504,8 @@ footer .socials{float: right;}
     .home-jssor .slider-cap h2{font-size: 40px}
     .navbar-fixed-top .navbar-collapse.collapse{left: 100%}
     .nav-collapsed .navbar-fixed-top .navbar-collapse.collapse.in{left: 0}
+    .banner{height: 280px}
+    .banner .title{font-size: 36px;line-height: 48px}
 }
 @media (max-width: 768px) {
     .navbar-fixed-top .navbar-collapse.collapse{
@@ -481,11 +513,15 @@ footer .socials{float: right;}
     }
     .cap1 .capitalize{font-size: 13px}
     .home-jssor .slider-cap h2{font-size: 36px}
+    .banner{height: 240px}
+    .banner .title{font-size: 32px;line-height: 44px}
 }
 @media (max-width: 479px) {
     .cap1 .capitalize{font-size: 12px}
     .home-jssor .slider-cap h2{font-size: 20px}
     .copyright{width: 100%;text-align: center;}
+    .banner{height: 220px}
+    .banner .title{font-size: 30px;line-height: 40px}
 }
 
 @media (min-width: 1201px) and (max-width: 1600px) {
