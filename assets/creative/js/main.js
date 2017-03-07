@@ -195,6 +195,51 @@ function fixLine(){
     $(window).on("resize", init);
     $(window).on("orientationchange", init);
 }
+function initScrollreveal(){
+    var config = {
+        viewFactor : 0.15,
+        duration   : 800,
+        distance   : "0px",
+        scale      : 0.8,
+    }
+
+    window.sr = new ScrollReveal(config)
+    var hero = {
+        reset: true,
+        origin   : "top",
+        distance : "24px",
+        duration : 1500,
+        scale    : 1.05,
+    }
+
+    var intro = {
+        origin   : "bottom",
+        distance : "64px",
+        duration : 900,
+        delay    : 1500,
+        scale    : 1,
+    }
+
+    var github = {
+        origin   : "top",
+        distance : "32px",
+        duration : 600,
+        delay    : 1800,
+        scale    : 0,
+    }
+
+    var block = {
+        reset: true,
+        viewOffset: { top: 64 }
+    }
+
+    sr.reveal(".box-thumb .nailthumb-container", block)
+    sr.reveal(".box-text .text-content", hero)
+    // sr.reveal(".box-text", hero)
+    sr.reveal(".intro", intro)
+    sr.reveal(".hero .github", github)
+    sr.reveal(".seq-1", block, 200)
+}
 $(document).ready(function(){
     // if(window.innerWidth>960) $('.navbar-toggle').click();
     $(window).scroll(function(){
@@ -217,6 +262,7 @@ $(document).ready(function(){
     jssorHomeSliderInit();
     projectMasonry();
     fixLine();
+    initScrollreveal();
     if($('.swipebox').length>=1)
         $('a.swipebox').swipebox({useCSS: true});
     if($('.validationFrm').length>=1){
