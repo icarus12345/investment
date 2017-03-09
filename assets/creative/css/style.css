@@ -499,6 +499,69 @@ footer .socials{float: right;}
 .text-content>.title{text-align: center;font-weight: 100;font-size: 20px;}
 .text-content>.desc{font-size: 14px}
 .box-thumb>div{padding-bottom: 50%}
+
+.service-list{background: #fff;padding: 20px 0}
+.service-item{
+    padding-top:10px;padding-bottom: 10px;
+
+}
+.service-item>div{
+    background: #f0f0f0;padding:20px 10px;text-align: center;
+    border-radius: 4px;
+    -webkit-transition: all .5s; /*adjust timing here */
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+.service-item:hover>div{background: #fecd08;}
+.service-item .service-icon{
+    width: 100px;height: 50px;
+    background-image: url(../images/services.png);
+    background-repeat: no-repeat;
+    margin: auto;
+    -webkit-transition: all .5s; /*adjust timing here */
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+.service-item:nth-child(1) .service-icon{
+    background-position: 0 0;
+}
+.service-item:nth-child(1):hover .service-icon{
+    background-position: 0 -50px;
+}
+.service-item:nth-child(2) .service-icon{
+    background-position: -100px 0;
+}
+.service-item:nth-child(2):hover .service-icon{
+    background-position: -100px -50px;
+}
+.service-item:nth-child(3) .service-icon{
+    background-position: -200px 0;
+}
+.service-item:nth-child(3):hover .service-icon{
+    background-position: -200px -50px;
+}
+.service-item:nth-child(4) .service-icon{
+    background-position: -300px 0;
+}
+.service-item:nth-child(4):hover .service-icon{
+    background-position: -300px -50px;
+}
+.service-item:nth-child(5) .service-icon{
+    background-position: -400px 0;
+}
+.service-item:nth-child(5):hover .service-icon{
+    background-position: -400px -50px;
+}
+.service-item:nth-child(6) .service-icon{
+    background-position: -500px 0;
+}
+.service-item:nth-child(6):hover .service-icon{
+    background-position: -500px -50px;
+}
+.service-item .title{line-height: 20px;font-weight: bold;text-transform: uppercase;font-size: 16px;padding: 10px 0 5px 0;}
+.service-item .desc{}
 @media (min-width: 768px) {
     .box-text>div{padding-bottom: 64%;}
     .box-thumb>div{padding-bottom: 64%;}

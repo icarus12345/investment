@@ -262,7 +262,7 @@ $(document).ready(function(){
     jssorHomeSliderInit();
     projectMasonry();
     fixLine();
-    initScrollreveal();
+    // initScrollreveal();
     if($('.swipebox').length>=1)
         $('a.swipebox').swipebox({useCSS: true});
     if($('.validationFrm').length>=1){
