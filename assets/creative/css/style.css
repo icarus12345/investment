@@ -1,6 +1,7 @@
 
 body{
     overflow-x: hidden;
+    padding-bottom: 50px;
 }
 @-webkit-keyframes spin {
   to {
@@ -26,6 +27,7 @@ body{
     transform: rotate(360deg);
   }
 }
+html{display: block;height: 100%}
 body,html{
     display: block;font-size: 14px;
     font-family: 'Roboto','Roboto Condensed', sans-serif;
