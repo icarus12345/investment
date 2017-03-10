@@ -64,7 +64,7 @@ var jssorTabSliderInit = function() {
         
         var tabJssorOptions = {
             $StartIndex: StartIndex<0?0:StartIndex,
-            $AutoPlay: true,
+            $AutoPlay: false,
             $SlideDuration: 1000,
             $Idle: 5000,
             $LazyLoading: true,
