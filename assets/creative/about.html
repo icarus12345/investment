@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="plugin/owl-carousel/owl.carousel.css"/>
         <link rel="stylesheet" type="text/css" href="plugin/swipebox/swipebox-dark-1.3.css" >
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="/libraries/plugin/scrollreveal/anicollection.css"/>
+        <link rel="stylesheet" type="text/css" href="/libraries/plugin/scrollreveal/animate.css"/>
 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
@@ -25,9 +25,11 @@
         <script type="text/javascript" src="/libraries/plugin/masonry.js"></script>
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
+        <script type="text/javascript" src="/libraries/jssor/jssor.slider-22.2.16.min.js"></script>
+        <script src="/libraries/jssor/jssor-transitions.js" type="text/javascript"></script>
         
         <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/about-jssor.js"></script>
         <!--[if IE]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
         <![endif]-->
@@ -126,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="slogan" data-scroll-reveal="move 25px">
+        <div class="slogan" data-anijs="if: load, on: window, do: zoomInDown animated, before: scrollReveal">
             <div class="title">Những dự án đã và đang thực hiện cho đối tác & khách hàng của chúng tôi.</div>
             <div class="btns">
                 <button class="btn btn-default">XEM THÀNH VIÊN</button>
@@ -136,12 +138,29 @@
         <div class="boxs">
             <div class="box-thumb">
                 <div class="nailthumb" >
-                    <div class="nailthumb-container">
+                    <div class="nailthumb-container" data-anijs="if: scroll, on: window, do: zoomIn animated, before: scrollReveal">
                         <img class="lazy" data-original="images/101.jpg"/>
                     </div>
                 </div>
             </div>
             <div class="box-text" >
+                <div>
+                    <div class="text-content">
+                        <div class="title" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">-- CHÚNG TÔI LÀ --</div>
+                        <div class="desc" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="boxs invert">
+            <div class="box-thumb">
+                <div class="nailthumb" >
+                    <div class="nailthumb-container" data-anijs="if: scroll, on: window, do: zoomIn animated, before: scrollReveal">
+                        <img class="lazy" data-original="images/102.jpg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="box-text">
                 <div>
                     <div class="text-content">
                         <div class="title" data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim">-- CHÚNG TÔI LÀ --</div>
@@ -150,29 +169,16 @@
                 </div>
             </div>
         </div>
-        <div class="boxs invert">
-            <div class="box-thumb">
-                <div class="nailthumb">
-                    <div class="nailthumb-container">
-                        <img class="lazy" data-original="images/102.jpg"/>
-                    </div>
-                </div>
-            </div>
-            <div class="box-text">
-                <div>
-                    <div class="text-content">
-                        <div class="title" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal, after: removeAnim">-- CHÚNG TÔI LÀ --</div>
-                        <div class="desc" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal, after: removeAnim">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
         
         <div class=" service-list">
             <div class="container">
-                <div>
+                <div class="row">
+                    <div class="slogan" data-anijs="if: scroll, on: window, do: rollIn animated, before: scrollReveal">
+                        <div class="title">-- Công việc của chúng tôi --</div>
+                        <div class="desc">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                    </div>
                     <div class="col-xs-6 col-sm-4 service-item">
-                        <div data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
+                        <div data-anijs="if: scroll, on: window, do: fadeInLeft animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
                             <div class="service-icon"></div>
                                 <div class="title">
                                     <span class="line-clamp-1">Thiết kế đồ họa</span>
@@ -194,7 +200,7 @@
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-4 service-item">
-                        <div data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
+                        <div data-anijs="if: scroll, on: window, do: fadeInRight animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
                             <div class="service-icon"></div>
                                 <div class="title">
                                     <span class="line-clamp-1">Thiết kế đồ họa</span>
@@ -205,7 +211,7 @@
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-4 service-item">
-                        <div data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
+                        <div data-anijs="if: scroll, on: window, do: fadeInLeft animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
                             <div class="service-icon"></div>
                                 <div class="title">
                                     <span class="line-clamp-1">Thiết kế đồ họa</span>
@@ -227,7 +233,7 @@
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-4 service-item">
-                        <div data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
+                        <div data-anijs="if: scroll, on: window, do: fadeInRight animated, before: scrollReveal; if: load, on: window, do: fadeInUp animated;">
                             <div class="service-icon"></div>
                                 <div class="title">
                                     <span class="line-clamp-1">Thiết kế đồ họa</span>
@@ -240,7 +246,210 @@
                 </div>
             </div>
         </div>
-        <div style="height:1000px"></div>
+        <div class="staff-box cls">
+            <div class="slider" data-anijs="if: scroll, on: window, do: rollIn animated, before: scrollReveal;">
+                <style>
+                    /* jssor slider bullet navigator skin 03 css */
+                    /*
+                    .jssorb05 div           (normal)
+                    .jssorb05 div:hover     (normal mouseover)
+                    .jssorb05 .av           (active)
+                    .jssorb05 .av:hover     (active mouseover)
+                    .jssorb05 .dn           (mousedown)
+                    */
+                    .jssorb05 {
+                        position: absolute;
+                    }
+                    .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                        position: absolute;
+                        /* size of bullet elment */
+                        width: 16px;
+                        height: 16px;
+                        background: url('images/b05.png') no-repeat;
+                        overflow: hidden;
+                        cursor: pointer;
+                    }
+                    .jssorb05 div { background-position: -7px -7px; }
+                    .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+                    .jssorb05 .av { background-position: -67px -7px; }
+                    .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+                    .thumb-image{
+                        width: 280px;
+                        height: 180px;
+                    }
+                    .jssort16 .p {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 280px;
+                        height: 180px;
+                    }
+                    .jssort16 .t {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 280px;
+                        height: 180px;
+                        border: none;
+                    }
+                    .jssort16 .p img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        filter: alpha(opacity=55);
+                        opacity: .55;
+                        transition: opacity .6s;
+                        -moz-transition: opacity .6s;
+                        -webkit-transition: opacity .6s;
+                        -o-transition: opacity .6s;
+                    }
+                    .jssort16 .pav img, .jssort16 .pav:hover img, .jssort16 .p:hover img {
+                        filter: alpha(opacity=100);
+                        opacity: 1;
+                        transition: none;
+                        -moz-transition: none;
+                        -webkit-transition: none;
+                        -o-transition: none;
+                    }
+                    .jssort16 .pav:hover img, .jssort16 .p:hover img {
+                        filter: alpha(opacity=70);
+                        opacity: .7;
+                    }
+                    .jssort16 .title, .jssort16 .title_back {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        color: #000;
+                        /*font-size: 20px;*/
+                    }
+                    .jssort16 .title_back {
+                        background-color: #fff;
+                        filter: alpha(opacity=50);
+                        opacity: .5;
+                    }
+                    .jssort16 .pav .title_back {
+                        background-color: #000;
+                        filter: alpha(opacity=50);
+                        opacity: .5;
+                    }
+                    .jssort16 .pav .title {
+                        color: #fff;
+                    }
+                    .jssort16 .p.pav:hover .title_back, .jssort16 .p:hover .title_back {
+                        filter: alpha(opacity=40);
+                        opacity: .4;
+                    }
+                    .jssort16 .p.pdn img {
+                        filter: alpha(opacity=100);
+                        opacity: 1;
+                    }
+                </style>
+                <div id="tab-jssor" style="position:relative;margin:0 auto;top:0px;left:0px;width:960px;height:400px;overflow:hidden;visibility:hidden;">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+                        <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                        <div style="position:absolute;display:block;background:url('/theme/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                    </div>
+                    <div data-u="slides" class="slider-content" style="cursor:default;position:relative;top:0px;left:0px;width:600px;height:300px;overflow:hidden;">
+                        <div>
+                            <div data-u="image" >
+                                <div class="slider-image cover" style="background-image:url(images/1.jpg)"></div>
+                                <!-- <div class="slider-info"></div> -->
+                            </div>
+                            <div data-u="thumb" style="">
+                                <div class="thumb-image cover" style="background-image:url(images/1.jpg)"></div>
+                                <div class="title_back"></div>
+                                <div class="title">
+                                            Landscape
+                                        
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div data-u="image" >
+                                <div class="slider-image cover" style="background-image:url(http://cdn.jssor.com/demos/img/motor/001.jpg)"></div>
+                                <!-- <div class="slider-info"></div> -->
+                            </div>
+                            <div data-u="thumb" style="">
+                                <div class="thumb-image">
+                                    <img src="http://cdn.jssor.com/demos/img/tab-thumb/motor.jpg" />
+                                </div>
+                                <div class="title_back"></div>
+                                <div class="title">
+                                            Motor
+                                        
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div data-u="image">
+                                <div class="slider-image cover" style="background-image:url(http://cdn.jssor.com/demos/img/landscape/05.jpg)"></div>
+                                <!-- <div class="slider-info"></div> -->
+                            </div>
+                            <div data-u="thumb" style="">
+                                <div class="thumb-image">
+                                    <img src="http://cdn.jssor.com/demos/img/tab-thumb/landscape.jpg" />
+                                </div>
+                                <div class="title_back"></div>
+                                <div class="title">
+                                            Landscape
+                                        
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div data-u="image">
+                                <div class="slider-image cover" style="background-image:url(http://cdn.jssor.com/demos/img/photography/004.jpg)"></div>
+                                <!-- <div class="slider-info"></div> -->
+                            </div>
+                            <div data-u="thumb" style="">
+                                <div class="thumb-image">
+                                    <img src="http://cdn.jssor.com/demos/img/tab-thumb/photography.jpg" />
+                                </div>
+                                <div class="title_back"></div>
+                                <div class="title">
+                                            Photography
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thumbnail Navigator -->
+                    <div data-u="thumbnavigator" class="jssort16" style="position:absolute;left:0px;bottom:0px;width:960px;height:180px;" data-autocenter="2">
+                        <!-- Thumbnail Item Skin Begin -->
+                        <div data-u="slides" style="cursor: default;">
+                            <div data-u="prototype" class="p">
+                                <div data-u="thumbnailtemplate" class="t"></div>
+                            </div>
+                        </div>
+                        <!-- Thumbnail Item Skin End -->
+                    </div>
+                    <!-- Bullet Navigator -->
+                    <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+                        <!-- bullet navigator item prototype -->
+                        <div data-u="prototype" style="width:16px;height:16px;">
+                            <!-- <div data-u="numbertemplate"></div> -->
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                jssorTabSliderInit()
+                </script>
+            </div>
+            <div class="info" data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal;">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
         <footer>
             <div class="socials">
                 <a href="#"><span class="fa fa-facebook"></span></a>

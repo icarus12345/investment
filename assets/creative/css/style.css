@@ -484,6 +484,7 @@ footer .socials{float: right;}
 
 .slogan{background: #fff;padding: 20px}
 .slogan>.title{font-size: 20px;font-weight: 100;text-transform: uppercase;;padding: 10px 0;text-align: center;margin: auto;max-width: 640px}
+.slogan>.desc{text-align: center;max-width: 640px;margin: auto}
 .slogan>.btns{text-align: center;padding: 10px 0 0 0}
 .slogan>.btns>button{margin: 0 4px;margin-bottom: 10px;}
 .date-title{padding: 10px;background: #fff}
@@ -502,7 +503,8 @@ footer .socials{float: right;}
 .text-content>.desc{font-size: 14px}
 .box-thumb>div{padding-bottom: 50%}
 
-.service-list{background: #fff;padding: 20px 0}
+.service-list{background: #fff;padding: 40px 0;background: #f7f7f7}
+.service-list .slogan{background: transparent;}
 .service-item{
     padding-top:10px;padding-bottom: 10px;
 
@@ -564,6 +566,17 @@ footer .socials{float: right;}
 }
 .service-item .title{line-height: 20px;font-weight: bold;text-transform: uppercase;font-size: 16px;padding: 10px 0 5px 0;}
 .service-item .desc{}
+
+.staff-box{}
+.staff-box>.slider{width: 50%;position: relative;float: left;}
+.staff-box>.info{width: 50%;float: left;}
+.staff-box>.info>div{padding-bottom: 50%;background: #fff;display: none;}
+.staff-box>.info>div.actived{display: block;}
+.staff-box>.info>div:nth-child(1){background: #ff0000}
+.staff-box>.info>div:nth-child(2){background: #ccc}
+.staff-box>.info>div:nth-child(3){background: yellow}
+#tab-jssor .slider-image{width: 100%;height: 100%;top:0;left: 0;position: relative;}
+/*#tab-jssor .slider-info{width: 50%;height: 100%;top:0;right: 0;position: absolute;background: #fff}*/
 @media (min-width: 768px) {
     .box-text>div{padding-bottom: 64%;}
     .box-thumb>div{padding-bottom: 64%;}
@@ -617,6 +630,9 @@ footer .socials{float: right;}
         margin: auto;
         padding: 40px 0px
     }
+
+    .staff-box>.slider{width: 100%;position: relative;float: left;}
+    .staff-box>.info{width: 100%;float: left;}
 }
 @media (max-width: 479px) {
     .cap1 .capitalize{font-size: 12px}
