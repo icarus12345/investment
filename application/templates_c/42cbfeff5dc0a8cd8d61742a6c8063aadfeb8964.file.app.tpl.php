@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-12-10 15:01:04
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-25 16:29:49
          compiled from "application\templates\dashboard\cp\content\app.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:22206584bb640622530-58987775%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '42cbfeff5dc0a8cd8d61742a6c8063aadfeb8964' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\content\\app.tpl',
-      1 => 1481336035,
+      1 => 1481958849,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_584bb64082ef06_72045691',
   'variables' => 
   array (
     'ci' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'unit' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_584bb64082ef06_72045691',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_584bb64082ef06_72045691')) {function content_584bb64082ef06_72045691($_smarty_tpl) {?><?php if (false) {?><?php echo '<script'; ?>
  type="text/javascript"><?php }?>
@@ -220,9 +220,11 @@ lock: 'false'}, entryId, me.onRefresh);
                 	}else if(action == 'statuson'){
                 		me.onCommit(me.entryCommitUri,{<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
 status: 'true'}, entryId, me.onRefresh);
-            		}else if(action == 'statusoff'){
-            			me.onCommit(me.entryCommitUri,{<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
+                    }else if(action == 'statusoff'){
+                        me.onCommit(me.entryCommitUri,{<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
 status: 'false'}, entryId, me.onRefresh);
+            		}else if(action == 'seo'){
+            			loadSeo('content-'+entryId)
 	                }else{
 	                    addNotice("Function is updating !",'warning');
 	                }

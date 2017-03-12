@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-19 08:41:25
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-03-11 09:03:40
          compiled from "application\templates\eye\04_about_detail.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:5171589fe76d6b37d8-73248330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7974b921df5eaa04ece19444e96a0dd330ca5e1c' => 
     array (
       0 => 'application\\templates\\eye\\04_about_detail.tpl',
-      1 => 1487468479,
+      1 => 1487472150,
       2 => 'file',
     ),
   ),
@@ -44,7 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div class="row">
                     <?php if ($_smarty_tpl->tpl_vars['content_detail']->value->_data['image']) {?>
                     <img src="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['content_detail']->value->_data['image'], ENT_QUOTES, 'UTF-8', true);?>
-" style="width: 100%" />
+" style="display:block;margin:auto;max-width: 100%" />
                     <?php }?>
                     <link rel="stylesheet" type="text/css" href="/libraries/ckeditor/contents.css" >
                     <div class="ckeditor" style="padding:40px 0">

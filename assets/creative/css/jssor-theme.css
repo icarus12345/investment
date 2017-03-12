@@ -48,6 +48,8 @@
     width: 280px;
     height: 180px;
     border: none;
+    border-radius: 3px;
+    overflow: hidden;
 }
 .jssor-thumb .p .thumb-image {
     position: absolute;
@@ -98,7 +100,8 @@
     text-align: center;
 }
 .thumb-mask .socials{text-align: center;margin-top: 10px;}
-.thumb-mask .socials>a{border-color: #fff;margin: 0 4px;}
+.thumb-mask .socials>a{border-color: #fff;margin: 0 4px;border-radius: 3px;}
+.thumb-mask .socials>a:hover{border-color: #111;margin: 0 4px;color: #fff;background: #111}
 .bor1:before,
 .bor1:after,
 .bor2:before,
@@ -122,4 +125,10 @@
     right: 15px;bottom: 15px;
     border-right: 1px solid #fff;
     border-bottom: 1px solid #fff;
+}
+.slider-title{
+    font-weight: bold;
+    text-align: center;z-index: 10;position: absolute;
+    left: 0;top: 16%;color: #fff;width: 100%;
+    
 }

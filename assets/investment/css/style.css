@@ -82,6 +82,7 @@ h1,h2,h3,h4,h5,p{margin: 0}
 .nailthumb .nailthumb-figure-9-16{position:relative;width:100%;padding-bottom: 42.857142857%;display: block;}
 .nailthumb .nailthumb-figure-75{position:relative;width:100%;padding-bottom:75%;display: block;}
 .nailthumb .nailthumb-figure-72{position:relative;width:100%;padding-bottom:72%;display: block;}
+.nailthumb .nailthumb-figure-64{position:relative;width:100%;padding-bottom:64%;display: block;}
 .nailthumb-figure-square{position:relative;width:100%;padding-bottom:100%}
 .nailthumb-mark{position:absolute;width:100%;height:100%;z-index: 2;display: none;top: 0;left: 0}
 .nailthumb:hover>.nailthumb-mark{display: block;}

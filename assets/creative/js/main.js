@@ -238,6 +238,23 @@ $(document).ready(function(){
     projectMasonry();
     fixLine();
     initScrollreveal();
+    if($('#owl-partner').length==1){
+        $("#owl-partner").owlCarousel({
+            autoPlay: false,
+            items : 6,
+            // lazyLoad: true,
+            nav : true,
+            margin: 20,
+            dots: false,
+            navText : ["", ""],
+            responsive : {
+                0:      {items: 3},
+                480:    {items: 3},
+                960:    {items: 3},
+                1200:   {items: 3},
+            }
+        });
+    }
     if($('.swipebox').length>=1)
         $('a.swipebox').swipebox({useCSS: true});
     if($('.validationFrm').length>=1){

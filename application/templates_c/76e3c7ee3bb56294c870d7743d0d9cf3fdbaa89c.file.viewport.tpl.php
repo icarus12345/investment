@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2016-12-10 14:58:55
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-02-25 16:29:48
          compiled from "application\templates\dashboard\cp\content\viewport.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2005584bb5bff33fd6-24712488%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '76e3c7ee3bb56294c870d7743d0d9cf3fdbaa89c' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\content\\viewport.tpl',
-      1 => 1436511000,
+      1 => 1481735086,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_584bb5c011ba05_16967664',
   'variables' => 
   array (
     'unit' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'action' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_584bb5c011ba05_16967664',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_584bb5c011ba05_16967664')) {function content_584bb5c011ba05_16967664($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ((@constant('APPPATH')).("templates/dashboard/inc/meta.tpl"), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -116,6 +116,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     </li>
                                     <?php }?>
                                     <li data-action="view" id="jqxViewAction"><i class="fa fa-eye"></i> View Entry</li>
+                                    <li data-action="seo" id="jqxSeoAction"><i class="fa fa-eye"></i> View Entry</li>
                                 </ul>
                             </div>
                         </div>
