@@ -1,27 +1,29 @@
 body{
     font-size: 16px;
 }
-*[data-fz="bigger"]{font-size: 28px}
-*[data-fz="big"]{font-size: 26px;line-height: 38px}
-*[data-fz="medium"]{font-size: 20px;line-height: 28px}
+*[data-fz="bigger"]{font-size: 28px;line-height: 1.46em;}
+*[data-fz="big"]{font-size: 26px;line-height: 1.46em;}
+*[data-fz="medium"]{font-size: 20px;line-height: 1.46em;}
 
 @media (max-width: 1600px) {
     *[data-fz="bigger"]{font-size: 22px;}
-    *[data-fz="big"]{font-size: 21px;line-height: 30px}
-    *[data-fz="medium"]{font-size: 18px;line-height: 26px}
+    *[data-fz="big"]{font-size: 21px;}
+    *[data-fz="medium"]{font-size: 18px;}
 }
 @media (max-width: 1200px) {
     *[data-fz="bigger"]{font-size: 22px}
     *[data-fz="big"]{font-size: 20px}
-    *[data-fz="medium"]{font-size: 17px}
+    *[data-fz="medium"]{font-size: 16px}
 }
 @media (max-width: 960px) {
     *[data-fz="bigger"]{font-size: 22px}
     *[data-fz="big"]{font-size: 20px}
-    *[data-fz="medium"]{font-size: 17px}
+    *[data-fz="medium"]{font-size: 15px}
 }
 @media (max-width: 768px) {
     *[data-fz="bigger"]{font-size: 20px}
     *[data-fz="big"]{font-size: 18px}
-    *[data-fz="medium"]{font-size: 16px}
+    *[data-fz="medium"]{
+        font-size: 14px;
+    }
 }
