@@ -147,8 +147,10 @@ function projectMasonry(){
             colsNum = 4;
         } else if(windowWith > 720){
             colsNum = 3;
-        } else {
+        } else if(windowWith > 480){
             colsNum = 2;
+        } else {
+            colsNum = 1;
         }
         console.log(colsNum)
         var w = Math.floor(windowWith/colsNum);
@@ -156,8 +158,14 @@ function projectMasonry(){
             width: w*colsNum,
             height:''
         })
-        $('.size11,.size12').width(w);
-        $('.size21,.size22').width(w*2);
+        if(colsNum==1) {
+            $('.size11,.size12').width(windowWith);
+            $('.size21,.size22').width(windowWith);
+        } else {
+            
+            $('.size11,.size12').width(w);
+            $('.size21,.size22').width(w*2);
+        }
         msnry = new Masonry( elem, {
           // options
           itemSelector: '.box',
@@ -248,10 +256,28 @@ $(document).ready(function(){
             dots: false,
             navText : ["", ""],
             responsive : {
-                0:      {items: 3},
-                480:    {items: 3},
+                0:      {items: 1},
+                480:    {items: 2},
                 960:    {items: 3},
                 1200:   {items: 3},
+            }
+        });
+    }
+    if($('#owl-release').length==1){
+        $("#owl-release").owlCarousel({
+            autoPlay: false,
+            items : 4,
+            // lazyLoad: true,
+            nav : true,
+            margin: 20,
+            dots: false,
+            navText : ["", ""],
+            responsive : {
+                0:      {items: 1},
+                480:    {items: 2},
+                960:    {items: 3},
+                1200:   {items: 3},
+                1600:   {items: 4},
             }
         });
     }
