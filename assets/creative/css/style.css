@@ -544,8 +544,8 @@ footer .socials{float: right;}
 }
 .box.size22 .nailthumb-mark .socials{}
 
-.banner{/*padding-bottom: 15.62500%;*/position: relative;margin-top:40px;height: 300px;}
-.banner>div{position: absolute;color: #ccc;width: 100%;height: 100%}
+.banner{/*padding-bottom: 15.62500%;*/position: relative;padding-top:40px;height: 340px;background: #fff;padding-top: 40px}
+.banner>div{position: relative;color: #ccc;width: 100%;height: 100%}
 .banner.mask>div:before{content: '';display: block;position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
 .banner .banner-bg{
     position: absolute;width: 100%;height: 100%;
@@ -1025,7 +1025,7 @@ footer .socials{float: right;}
     .home-jssor .slider-cap h2{font-size: 40px}
     .navbar-fixed-top .navbar-collapse.collapse{left: 100%}
     .nav-collapsed .navbar-fixed-top .navbar-collapse.collapse.in{left: 0}
-    .banner{height: 280px}
+    .banner{height: 320px}
     .banner .title{font-size: 36px;line-height: 48px}
     #map{width:100%;height:320px;}
 }
@@ -1036,7 +1036,7 @@ footer .socials{float: right;}
     }
     .cap1 .capitalize{font-size: 13px}
     .home-jssor .slider-cap h2{font-size: 36px}
-    .banner{height: 240px}
+    .banner{height: 300px}
     .banner .title{font-size: 32px;line-height: 44px}
     .box-thumb{position: relative;width: 100%;height: auto;max-width: 520px;margin: auto}
     .box-text{padding-left: 0}
@@ -1119,7 +1119,7 @@ footer .socials{float: right;}
     .cap1 .capitalize{font-size: 12px}
     .home-jssor .slider-cap h2{font-size: 20px}
     .copyright{width: 100%;text-align: center;}
-    .banner{height: 220px}
+    .banner{height: 260px}
     .banner .title{font-size: 30px;line-height: 40px}
     .size12>div{padding-bottom: 100%}
     .size21>div{padding-bottom: 100%}

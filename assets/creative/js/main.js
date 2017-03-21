@@ -270,6 +270,7 @@ $(document).ready(function(){
                 480:    {items: 2},
                 960:    {items: 3},
                 1200:   {items: 3},
+                1600:   {items: 4},
             }
         });
     }
@@ -300,6 +301,7 @@ $(document).ready(function(){
                 validateNonVisibleFields:true
             });
     }
+    if(typeof WOW == 'function') new WOW().init();
 });
 
 $(window).resize(function(){
