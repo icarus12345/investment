@@ -1019,10 +1019,10 @@ footer .socials{float: right;}
     
 }
 @media (max-width: 1200px) {
-    .home-jssor .slider-cap h2{font-size: 46px}
+    .slider-cap h2{font-size: 46px}
 }
 @media (max-width: 960px) {
-    .home-jssor .slider-cap h2{font-size: 40px}
+    .slider-cap h2{font-size: 40px}
     .navbar-fixed-top .navbar-collapse.collapse{left: 100%}
     .nav-collapsed .navbar-fixed-top .navbar-collapse.collapse.in{left: 0}
     .banner{height: 320px}
@@ -1035,7 +1035,7 @@ footer .socials{float: right;}
         margin-left: 100%;
     }
     .cap1 .capitalize{font-size: 13px}
-    .home-jssor .slider-cap h2{font-size: 36px}
+    .slider-cap h2{font-size: 36px}
     .banner{height: 300px}
     .banner .title{font-size: 32px;line-height: 44px}
     .box-thumb{position: relative;width: 100%;height: auto;max-width: 520px;margin: auto}
@@ -1117,7 +1117,7 @@ footer .socials{float: right;}
 }
 @media (max-width: 480px) {
     .cap1 .capitalize{font-size: 12px}
-    .home-jssor .slider-cap h2{font-size: 20px}
+    .slider-cap h2{font-size: 20px}
     .copyright{width: 100%;text-align: center;}
     .banner{height: 260px}
     .banner .title{font-size: 30px;line-height: 40px}
