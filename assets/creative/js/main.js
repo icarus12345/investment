@@ -176,7 +176,7 @@ function projectMasonry(){
 }
 function fixLine(){
     function init(){
-        $('.banner>div').each(function(){
+        $('.banner .banner-content').each(function(){
             var w = $(this).outerWidth();
             var bw = $(this).find('.breardcum').outerWidth();
             var bh = $(this).find('.breardcum').outerHeight();
@@ -190,6 +190,7 @@ function fixLine(){
             $(this).find('.before-line').css({width: w - bw - 10});
             $(this).find('.after-line').css({width: w - tw - 10});
         });
+        // fixBanner();
     }
     $(window).on("load", init);
     $(window).on("resize", init);
@@ -214,6 +215,15 @@ function initScrollreveal(){
     //     behavior: 'fadeInUp animated', //do
     //     behaviorTarget: '.service-item', //to
     // }]);
+}
+function fixBanner(){
+    // function init(){
+        var w = $(window).outerWidth();
+        var scale = w/1920;
+        $('.banner>div').css({
+            'transform':'scale(' + scale + ')'
+        })
+    // }
 }
 $(document).ready(function(){
     // if(window.innerWidth>960) $('.navbar-toggle').click();
