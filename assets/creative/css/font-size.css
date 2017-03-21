@@ -1,19 +1,20 @@
 body{
     font-size: 16px;
 }
-*[data-fz="bigger"]{font-size: 28px;line-height: 1.46em;}
-*[data-fz="big"]{font-size: 26px;line-height: 1.46em;}
-*[data-fz="medium"]{font-size: 20px;line-height: 1.46em;}
+*[data-fz="bang"]{font-size: 40px;line-height: 58px;}
+*[data-fz="bigger"]{font-size: 28px;line-height: 40px;}
+*[data-fz="big"]{font-size: 26px;line-height: 38px;}
+*[data-fz="medium"]{font-size: 20px;line-height: 30px;}
 
 @media (max-width: 1600px) {
-    *[data-fz="bigger"]{font-size: 22px;}
-    *[data-fz="big"]{font-size: 21px;}
-    *[data-fz="medium"]{font-size: 18px;}
+    *[data-fz="bigger"]{font-size: 22px;line-height: 30px}
+    *[data-fz="big"]{font-size: 21px;line-height: 30px}
+    *[data-fz="medium"]{font-size: 18px;line-height: 28px}
 }
 @media (max-width: 1200px) {
-    *[data-fz="bigger"]{font-size: 22px}
-    *[data-fz="big"]{font-size: 20px}
-    *[data-fz="medium"]{font-size: 16px}
+    *[data-fz="bigger"]{font-size: 22px;line-height: 30px}
+    *[data-fz="big"]{font-size: 20px;line-height: 30px;}
+    *[data-fz="medium"]{font-size: 16px;line-height: 24px}
 }
 @media (max-width: 960px) {
     *[data-fz="bigger"]{font-size: 22px}

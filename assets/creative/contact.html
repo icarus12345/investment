@@ -1,28 +1,40 @@
 <html lang="en">
     <head>
-        <title>Eye</title>
+        <title>Creative</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width; initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="bootstrap/css/hover.css"/>
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-select.min.css"/>
         <link rel="stylesheet" type="text/css" href="bootstrap/css/font-awesome.min.css?t=1">
-        <link rel="stylesheet" type="text/css" href="plugin/countdown/countdown.css"/>
         <link rel="stylesheet" type="text/css" href="plugin/owl-carousel/owl.carousel.css"/>
         <link rel="stylesheet" type="text/css" href="plugin/swipebox/swipebox-dark-1.3.css" >
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/button.css"/>
+        <link rel="stylesheet" type="text/css" href="css/jssor-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="css/font-size.css"/>
+        <link rel="stylesheet" type="text/css" href="/libraries/plugin/scrollreveal/animate.css"/>
 
-        <script type="text/javascript" src="bootstrap/js/jquery-1.9.1.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+
+        <script type="text/javascript" src="http://anijs.github.io/examples/scrollreveal/js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
         <script type="text/javascript" src="plugin/owl-carousel/owl.carousel.js"></script>
         <script type="text/javascript" src="plugin/jquery.nailthumb.1.1.js"></script>
         <script type="text/javascript" src="plugin/jquery.lazyload.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="plugin/validation-engine/jquery.validationEngine.js"></script>
         <script type="text/javascript" src="plugin/validation-engine/jquery.validationEngine-en.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/masonry.js"></script>
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="/libraries/jssor/jssor.slider-22.2.16.min.js"></script>
+        <script src="/libraries/jssor/jssor-transitions.js" type="text/javascript"></script>
+        
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/about-jssor.js"></script>
         <!--[if IE]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
         <![endif]-->
@@ -36,194 +48,267 @@
         <header id="navbar" class="navbar navbar-fixed-top" role="banner">
             <!-- Menu [ -->
             <div class="">
-
-                    <div class="navbar-header">
-                        <a href="#" class="navbar-brand"></a>
-                        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navigation">
-                            <span>
-                                <span class="icon-bar line-1"></span>
-                                <span class="icon-bar line-2"></span>
-                                <span class="icon-bar line-3"></span>
-                            </span>
-                        </button>
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand"></a>
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navigation">
+                        <span>
+                            <span class="icon-bar line-1"></span>
+                            <span class="icon-bar line-2"></span>
+                            <span class="icon-bar line-3"></span>
+                        </span>
+                    </button>
+                    <div class="navbar-search-lang">
+                        <div class="navbar-langs">
+                            <span>Language: </span>
+                            <div class="lang-control">
+                                <a href="#" data-toggle="dropdown">Tiếng Việt <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu invert">
+                                    <li><a href='#'>Tiếng Việt</a></li>
+                                    <li><a href='#'>English</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navbar-search">
+                            <!-- <input class="navbar-search-input"> -->
+                            <button class="navbar-search-button"><span class="fa fa-search"></span></button>
+                        </div>
                     </div>
-                    <nav id="navigation" class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-                        <ul class="nav navbar-nav">
-                            <li ><a href='#'>HOME</a></li>
-                            <li><a href='#'>PATIENTS</a></li>
-                            <li><a href='#'>ABOUT AE&LC</a></li>
-                            <li><a href='#'>REFERRALS</a></li>
-                            <li><a href='#'>SERVICES</a></li>
-                            <li><a href='#'>LAST NEWS</a></li>
-                            <li  class="active"><a href='#'>CONTACT US</a></li>
-                        </ul>
-                    </nav>
-                    <div class="search-box">
-                        <button class="btn btn-info">VIRTUAL TOUR</button>
-                        <a class="fb"></a>
-                        <a class="search"></a>
-                    </div>
+                </div>
+                <nav id="navigation" class="navbar-collapse bs-navbar-collapse collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href='home.html'>HOME</a></li>
+                        <li><a href='about.html'>ABOUT</a></li>
+                        <li>
+                            <a href="service.html" -data-toggle="dropdown">SERVICE</a>
+                            <ul class="dropdown-menu">
+                                <li><a href='#'>Web Development</a></li>
+                                <li><a href='#'>Mobile Development</a></li>
+                                <li><a href='#'>Software Development</a></li>
+                                <li><a href='#'>Ecommerce</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="event.html" -data-toggle="dropdown">EVENTS</a>
+                            <ul class="dropdown-menu">
+                                <li><a href='#'>2048</a></li>
+                                <li><a href='#'>Jumb flight</a></li>
+                                <li><a href='#'>Terit</a></li>
+                                <li><a href='#'>Ecommerce</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="project.html" -data-toggle="dropdown">PROJECT</a>
+                            <ul class="dropdown-menu">
+                                <li><a href='#'>Web Development</a></li>
+                                <li><a href='#'>Mobile Development</a></li>
+                                <li><a href='#'>Software Development</a></li>
+                                <li><a href='#'>Ecommerce</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='news.html'>NEWS</a></li>
+                        <li><a href='recruitment.html'>TUYỂN DỤNG</a></li>
+                        <li><a href='contact.html'>CONTACT</a></li>
+                    </ul>
+                </nav>
             </div>
             <!-- Menu ] -->
         </header>
+        <div class="banner mask light">
+            <!-- <div class="blur"> -->
+                <div class="banner-bg cover" style="background-image:url(images/about.jpg)"></div>
+            <!-- </div> -->
+            <div class="banner-content">
+                <div>
+                    <div class="breardcum">
+                        <span data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim;if: load, on: window,do: fadeInUp animated;">Trang Chủ</span>
+                        <span data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim;if: load, on: window,do: fadeInUp animated;">Liên hệ</span>
+                    </div>
+                </div>
+                <div data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim;if: load, on: window,do: fadeInUp animated;">
+                    <div class="title">LIÊN HỆ</div>
+                </div>
+                <div class="line">
+                    <span class="before-line"></span>
+                    <span class="after-line"></span>
+                </div>
+            </div>
+        </div>
         <div class="map">
-            <div id="map" style="width:100%;height:500px;"></div>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyB6TJrMx3v003kFpoOUSgugZSk8j1WWK_s"></script>
-    <script type="text/javascript">
-        // When the window has finished loading create our google map below
-        google.maps.event.addDomListener(window, 'load', init);
-        function init() {
-            var latlon = [-34.940685, 138.621633];
-            var lat  = latlon[0], lon = latlon[1];
-            // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-            
-            var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
-                zoom: 16,
+            <div id="map" style=""></div>
+            <script type="text/javascript" src="js/map-style.js"></script>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyB6TJrMx3v003kFpoOUSgugZSk8j1WWK_s"></script>
+            <script type="text/javascript">
+                // When the window has finished loading create our google map below
+                google.maps.event.addDomListener(window, 'load', init);
+                function init() {
+                    var latlon = [10.792048, 106.679982];
+                    var lat  = latlon[0], lon = latlon[1];
 
-                // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(lat, lon), // New York
+                    // Basic options for a simple Google Map
+                    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                    
+                    var mapOptions = {
+                        // How zoomed in you want the map to start at (always required)
+                        zoom: 17,
 
-                // How you would like to style the map. 
-                // This is where you would paste any style found on Snazzy Maps.
+                        // The latitude and longitude to center the map (always required)
+                        center: new google.maps.LatLng(lat, lon), // New York
+
+                        // How you would like to style the map. 
+                        // This is where you would paste any style found on Snazzy Maps.
+                        styles: mapstyle,
+                        scrollwheel: false,
+
+                    };
+                    
+                    // Get the HTML DOM element that will contain your map 
+                    // We are using a div with id="map" seen below in the <body>
+                    var mapElement = document.getElementById('map');
+
+                    // Create the Google Map using our element and options defined above
+                    var map = new google.maps.Map(mapElement, mapOptions);
+
+                    // Let's also add a marker while we're at it
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(lat, lon),
+                        map: map,
+                        icon: new google.maps.MarkerImage(
+                            'images/pin_happy.png',
+                            new google.maps.Size(30, 42),
+                            new google.maps.Point(0, 0),
+                            new google.maps.Point(15, 21),
+                            new google.maps.Size(30, 42)
+                        ),
+                        title: 'ADELAIDE EYE & LASER'
+                    });
+                    var infowindow = new google.maps.InfoWindow();
+                    var content_info ='\
+                          <div style="width:360px;font-size:13px;">\
+                              <img src="images/logo-black.png" style="float:left;margin-right:10px"/>\
+                              <div><h4 style="margin:0;padding:4px 0;color:#ee4034;font-weight:100">CREATIVE DESIGN STUDIO</h4></div>\
+                              <div>Phone : +61 8 8274 7000 - 1800 809 991<br/>Email: cds@gmail.com</div>\
+                              <div>Address : <i>215 Greenhill Rd, Eastwood SA 5063, Australia</i></div>\
+                          </div>';
+                    infowindow.setPosition(new google.maps.LatLng(lat, lon));
+                    infowindow.setContent(content_info);
+                    infowindow.open(map,marker); 
+                    google.maps.event.addListener(marker, 'click', (function(marker) {
+                        
+                        return function() {
+                            infowindow.open(map, marker);
+                        };
+                    })(marker));
+                }
                 
-            };
-            
-            // Get the HTML DOM element that will contain your map 
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('map');
-
-            // Create the Google Map using our element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(lat, lon),
-                map: map,
-                icon: new google.maps.MarkerImage(
-                    'images/pin_happy.png',
-                    new google.maps.Size(30, 42),
-                    new google.maps.Point(0, 0),
-                    new google.maps.Point(15, 21),
-                    new google.maps.Size(30, 42)
-                ),
-                title: 'ADELAIDE EYE & LASER'
-            });
-            var infowindow = new google.maps.InfoWindow();
-            var content_info ='\
-                  <div style="width:360px;font-size:13px;">\
-                      <div><h4 style="margin:0;padding:4px 0;color:#ee4034">ADELAIDE EYE & LASER</h4></div>\
-                      <div>Phone : +61 8 8274 7000 - 1800 809 991<br/>Email: eye@gmail.com</div>\
-                      <div>Address : <i>215 Greenhill Rd, Eastwood SA 5063, Australia</i></div>\
-                  </div>';
-            infowindow.setPosition(new google.maps.LatLng(lat, lon));
-            infowindow.setContent(content_info);
-            infowindow.open(map,marker); 
-            google.maps.event.addListener(marker, 'click', (function(marker) {
-                
-                return function() {
-                    infowindow.open(map, marker);
-                };
-            })(marker));
-        }
-        
-        $(document).ready(function(){
-            
-        });
-    </script>
+                $(document).ready(function(){
+                    
+                });
+            </script>
         </div>
-        <div class="wrap">
-            <div class="container">
-            <div class="col-sm-4 left-bar">
-                <div class="tit3">ADELAIDE EYE & LASER CENTRE</div>
-                215 Greenhill Road<br/>
-                Eastwood, South Australia 5063.<br/><br/>
-                Phone: <strong>+61 8 8274 7000</strong><br/>
-                FAX: <strong>+61 8 8274 7099</strong><br/><br/>
-                For Laser Vision Telephone:<br/>
-                <strong>1300 366 564</strong><br/><br/>
-                Free call: (Excluding Adelaide Metro Area)<br/>
-                <strong>1800 809 991</strong><br/><br/>
-                <img src="images/fb.jpg"> AE&LC on Facebook<br/>
-                <div class="tit3">ADELAIDE EYE & LASER CENTRE</div>
-                
+        <div class="boxs contact-box">
+            <div class="box-thumb">
+                <div class="nailthumb" >
+                    <div class="nailthumb-container cover" style="background-image:url(images/map.jpg)" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal">
+                    </div>
+                    <div class="text-content">
+                        <div class="title" data-fz="big" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">-- CREATIVE DESIGN --</div>
+                        <div class="desc" data-fz="medium" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">
+                            - Địa chỉ : Lorem Ipsum is simply dummy text<br/>
+                            - Địa chỉ : Lorem Ipsum is simply dummy text<br/>
+                            - Địa chỉ : Lorem Ipsum is simply dummy text<br/>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-8">
+            <div class="box-text" >
+                <div>
+                    <div class="text-content">
+                        <div class="title" data-fz="big" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">-- LIÊN HỆ VỚI CHÚNG TÔI --</div>
+                        <div class="desc" data-fz="medium" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <form name="contactForm" id="contactForm" target="integration_asynchronous">
+                            <div>
+                                <div class="row half">
+                                    <div class="col-xs-6 half pull-bottom">
+                                        <!-- <div class="input-group"> -->
+                                            <input 
+                                                name="contact_name" data-fz="medium"
+                                                class="form-control dark validate[required,minSize[4],maxSize[255]]" 
+                                                data-prompt-position="topLeft:0,20"
+                                                placeholder="Họ và Tên">
+                                            <!-- <label>Họ và tên</label> -->
+                                        <!-- </div> -->
+                                        <!-- <div class="space-line"></div> -->
+                                    </div>
+                                    <div class="col-xs-6 half pull-bottom">
+                                        <!-- <div class="input-group"> -->
+                                            <!-- <div>Số điện thoại</div> -->
+                                            <input 
+                                                name="contact_phone" data-fz="medium"
+                                                class="form-control dark validate[required,minSize[7],maxSize[12]]" 
+                                                data-prompt-position="topLeft:0,20"
+                                                placeholder="Số Điện thoại">
+                                        <!-- </div> -->
+                                        <!-- <div class="space-line"></div> -->
+                                    </div>
+                                </div>
+                                <div class="row half">
+                                    <div class="col-xs-6 half pull-bottom">
+                                        <!-- <div class="input-group"> -->
+                                            <!-- <div>Email</div> -->
+                                            <input 
+                                                name="contact_email" value="" data-fz="medium"
+                                                class="form-control dark validate[required,custom[email],maxSize[100]]" 
+                                                data-prompt-position="topLeft:0,20"
+                                                placeholder="Email">
+                                        <!-- </div> -->
+                                        <!-- <div class="space-line"></div> -->
+                                    </div>
+                                    <div class="col-xs-6 half pull-bottom">
+                                        <!-- <div class="input-group"> -->
+                                            <!-- <div>Địa chỉ</div> -->
+                                            <input 
+                                                name="contact_data" data-fz="medium"
+                                                class="form-control dark validate[required,minSize[10],maxSize[255]]" 
+                                                data-prompt-position="topLeft:0,20"
+                                                placeholder="Địa chỉ">
+                                        <!-- </div> -->
+                                        <!-- <div class="space-line"></div> -->
+                                    </div>
+                                </div>
+                                <div class="row half">
+                                    <div class="col-xs-12 half">
+                                        <!-- <div class="input-group"> -->
+                                            <!-- <div>Nội dung</div> -->
+                                            <textarea 
+                                                name="contact_message" 
+                                                rows="2" data-fz="medium"
+                                                class="form-control dark validate[required,minSize[10],maxSize[4000]]"
+                                                data-prompt-position="topLeft:0,20"
+                                                placeholder="Nội dung"></textarea>
+                                        <!-- </div> -->
+                                        <!-- <div class="space-line"></div> -->
+                                    </div>
+                                </div>
+                            
+                                <input type="hidden" name="contact_type" value="Contact us">
+                                <div style="height:50px"></div>
+                            </div>
+                        </form>
 
+
+                    </div>
+                    <div class="contact-submit">GỬI THÔNG TIN</div>
+                </div>
             </div>
         </div>
-                
+
         <footer>
-            <div>
-                <div class="container">
-                    <div class="row f16">
-                        <div class="col-md-6 cls">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="foot-logo f16">ADELAIDE EYE & LASER CENTRE</div>
-                                    <div class="wicon">
-                                        <i class="fa fa-phone f18"></i> 
-                                        
-Free call: 1800 809 991<br/>
-(Excluding Adelaide Metro Area)
-
-
-                                    </div>
-                                    <div class="space-line"></div>
-                                    <div class="space-line"></div>
-                                    <div class="wicon">
-                                        <i class="fa fa-map-marker f16"></i> 
-                                        215 Greenhill Road<br/>
-Eastwood, South Australia 5063.
-                                    </div>
-                                    <div class="space-line"></div>
-                                    <div class="space-line"></div>
-                                    <div class="wicon">
-                                        <i class="fa fa-envelope-o f16"></i> 
-                                        companyname@email.com
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="foot-tit f16">SERVICES</div>
-                                    <div class="foot-list">
-                                        <a href="#">Laser Vision Correction</a>
-                                        <a href="#">Other Refractive Surgery</a>
-                                        <a href="#">Cataract Surgery</a>
-                                        <a href="#">Keratoconus</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 cls">
-                            <div class="row">
-                            <div class="col-sm-6 col-xs-12">
-                                <div class="foot-tit f16">INFORMATION</div>
-                                <div class="foot-list">
-                                    <a href="">About AE&LC</a>
-                                    <a href="">Vision & Mission Statement</a>
-                                    <a href="">History of AE&LC</a>
-                                    <a href="">Our Preferred Charities</a>
-                                    <a href="">Latest News</a>
-                                    <a href="">Accreditation</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xs-12">
-                                <div class="foot-tit f16">ACCREDITATION</div>
-                                <img src="images/logo-foot.jpg">
-                                <div>Global Mark &copy; Accreditation</div>
-
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="socials">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-google"></span></a>
             </div>
-            <div class="foot-menu">
-                <div class="container">
-                    <div class="text-center">
-                        ALL RIGHTS RESERVED &copy; 2016 <span>ADELAIDE EYE & LASER CENTRE</span> &reg;
-                    </div>
-                </div>
-            </div>
+            <div class="copyright">&copy; 2016 All right reserved. Development with <span class="fa fa-heart"></span> by <a href="#">Creative Design</a></div>
         </footer>
+        <script src="/libraries/plugin/scrollreveal/anijs.js"></script>
+        <script src="/libraries/plugin/scrollreveal/anijs-helper-scrollreveal.js"></script>
