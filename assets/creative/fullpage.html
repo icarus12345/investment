@@ -105,28 +105,28 @@
         </header>
         <div id="fullpage">
             <div class="section">
-                <div data-pos="tl"><div style="background:red"></div></div>
-                <div data-pos="tr"><div style="background: red"></div></div>
-                <div data-pos="bl"><div style="background: red"></div></div>
-                <div data-pos="br"><div style="background: red"></div></div>
+                <div data-pos="tl"><div style="background:red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="tr"><div style="background: red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="bl"><div style="background: red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="br"><div style="background: red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
             </div>
             <div class="section">
-                <div data-pos="tl"><div style="background:#4BBFC3"></div></div>
-                <div data-pos="tr"><div style="background:#4BBFC3"></div></div>
-                <div data-pos="bl"><div style="background:#4BBFC3"></div></div>
-                <div data-pos="br"><div style="background:#4BBFC3"></div></div>
+                <div data-pos="tl"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="tr"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="bl"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="br"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
             </div>
             <div class="section">
-                <div data-pos="tl"><div style="background: red"></div></div>
-                <div data-pos="tr"><div style="background: red"></div></div>
-                <div data-pos="bl"><div style="background: red"></div></div>
-                <div data-pos="br"><div style="background: red"></div></div>
+                <div data-pos="tl"><div style="background:red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="tr"><div style="background: red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="bl"><div style="background: red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="br"><div style="background: red"><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
             </div>
             <div class="section">
-                <div data-pos="tl"><div style="background:#4BBFC3"></div></div>
-                <div data-pos="tr"><div style="background:#4BBFC3"></div></div>
-                <div data-pos="bl"><div style="background:#4BBFC3"></div></div>
-                <div data-pos="br"><div style="background:#4BBFC3"></div></div>
+                <div data-pos="tl"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="tr"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="bl"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                <div data-pos="br"><div style="background:#4BBFC3"><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
             </div>
         </div>
         <style type="text/css">
@@ -164,7 +164,18 @@
             .fp-section div[data-pos="bl"]>div,
             .fp-section div[data-pos="br"]>div{
                 position: relative;width: 100%;height: 100%;
+                overflow: hidden;
             }
+            .fp-section div[data-pos="tl"]>div>div,
+            .fp-section div[data-pos="tr"]>div>div,
+            .fp-section div[data-pos="bl"]>div>div,
+            .fp-section div[data-pos="br"]>div>div{
+                position: absolute;width: 200%;height: 200%;
+            }
+            .fp-section div[data-pos="tl"]>div>div{top:0;left: 0}
+            .fp-section div[data-pos="tr"]>div>div{top:0;right: 0}
+            .fp-section div[data-pos="bl"]>div>div{left: 0;bottom: 0}
+            .fp-section div[data-pos="br"]>div>div{right: 0;bottom: 0}
             .fp-section div[data-pos="tl"]{top:0;left: 0}
             .fp-section div[data-pos="tr"]{top:0;left: 50%}
             .fp-section div[data-pos="bl"]{top:50%;left: 0}
@@ -222,7 +233,7 @@
                                 })
                             $("#fullpage>div:eq("+i+") div[data-pos='tr']>div")
                                 .removeClass()
-                                .addClass('slideOutRight animated')
+                                .addClass('slideOutLeft animated')
                                 .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                                     $(this).removeClass();
                                 })
