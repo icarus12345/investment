@@ -6,7 +6,7 @@
 body{
     overflow-x: hidden;
     padding-bottom: 50px;
-    padding-top: 50px;
+    padding-top: 85px;
 }
 @-webkit-keyframes spin {
   to {
@@ -165,7 +165,7 @@ h1,h2,h3,h4,h5,p{margin: 0}
     background-repeat: no-repeat;
     background-position: center;
     padding: 9px 5px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .navbar-collapse{padding-right: 0;padding-left: 0;border:0;max-height: none}
 .navbar-fixed-top .navbar-collapse, 
@@ -281,7 +281,7 @@ body.full-page{display: block;height: 100%;overflow: hidden;}
 .pagination>li.active>span:hover{background: #333;}
 .pagination>li .fa{line-height: 20px}
 
-header{background: #232323}
+header{background: #232323;padding: 10px 0}
 .full-page header{background: transparent;}
 
 
@@ -312,7 +312,11 @@ header{background: #232323}
     margin-left: 0%;
     height: 100% !important;
 }
-.navbar-brand{}
+.navbar-brand{
+    background: url(../images/logo-orange.png) no-repeat center;
+    width: 64px;height: 64px;
+    margin-left: 40px
+}
 .navbar-nav{width: 100%}
 .navbar-nav > li{display: block;float: none;}
 .navbar-nav  li > a{color: #fff;font-weight: 100}
@@ -327,13 +331,13 @@ header{background: #232323}
 
 .navbar-search-lang{
     position: absolute;
-    top: 50%;right: 50px;
+    top: 50%;right: 60px;
     margin-top: -15px;
     color: #ccc;
     height: 30px;
     font-weight: 100;
 }
-.navbar-langs{float: left;height: 20px;line-height: 20px;margin-top: 5px;}
+.navbar-langs{float: left;height: 20px;line-height: 20px;margin-top: 5px;font-size: 13px;}
 .lang-control a{color: #fff;text-decoration: none;}
 .navbar-search{float: left;height: 30px;position: relative;}
 .navbar-search-button{
@@ -345,7 +349,7 @@ header{background: #232323}
 
 footer{
     padding: 10px;position: fixed;left: 0;bottom: 0;width: 100%;color: #ccc;
-    background: rgba(0,0,0,.5);z-index: 101
+    background: #232323;z-index: 101
 }
 .full-page footer{background: transparent;}
 .copyright{line-height: 20px;float: left;font-weight: 100;padding-top: 5px;padding-bottom: 5px;}
@@ -371,11 +375,11 @@ footer .socials{float: right;}
     background: rgba(0,0,0,.5)
 }
 .slider-cap{
-    max-width: 732px;
+    max-width: 880px;
     top: 50%;
     /*height: 200px;*/
     width: 100%;
-    padding: 0 10px;
+    padding: 0 60px;
     position: absolute;
     left: 50%;
     text-align: center;
@@ -391,8 +395,14 @@ footer .socials{float: right;}
     border-bottom:1px solid #999;
     display: inline-block;
     text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
 }
-.slider-cap h2{color: #fff;font-weight: 100;font-size: 50px;margin: 10px 0;line-height: 1.4em}
+.slider-cap h2{
+    color: #fff;/*font-weight: 100;*/font-size: 50px;line-height: 1.4em;
+    /*margin: 10px 0;*/
+    margin: .4em 0 .7em 0
+}
 .jssorb01 {
     position: absolute;
 }
@@ -838,6 +848,7 @@ footer .socials{float: right;}
 
 .release-box{background: #f0f0f0;padding: 40px 20px}
 @media (min-width: 769px) {
+    .navbar-toggle{margin-top: 15px;}
     .events .box-thumb{position: relative;padding-right: 33.333333333%;height: auto;width: 100%}
     .events .box-text{padding-left: 0;position: absolute;right: 0;left: auto;width: 33.333333333%;top:0;}
     .events .box-thumb>div{padding-bottom: 50%}
@@ -1031,6 +1042,10 @@ footer .socials{float: right;}
 }
     
 @media (max-width: 768px) {
+    body{padding-top: 50px}
+    header{padding:0}
+    .navbar-brand{margin-left: 0;background-size: 50px 50px;position: absolute;height: 50px}
+    .navbar-toggle{margin-right: 10px}
     .navbar-fixed-top .navbar-collapse.collapse{
         margin-left: 100%;
     }
@@ -1052,7 +1067,7 @@ footer .socials{float: right;}
         -moz-transform: translate(0%, 0%) !important;
         -webkit-transform: translate(0%, 0%) !important;
         margin: auto;
-        padding: 40px 0px;
+        padding: 40px 0px 40px 0;
     }
 
     .staff-box>.slider{width: 100%;position: relative;float: left;}
@@ -1062,7 +1077,10 @@ footer .socials{float: right;}
 
     .blogs>div .box-text>div>.text-content,
     .events>div .box-text>div>.text-content,
-    .services>div .box-text>div>.text-content,
+    .services>div .box-text>div>.text-content{
+        padding-top: 20px;
+        
+    }
     .blogs>div .box-text>div>.text-content .title,
     .events>div .box-text>div>.text-content .title,
     .services>div .box-text>div>.text-content .title{
