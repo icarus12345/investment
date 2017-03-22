@@ -274,7 +274,7 @@ function fullPageIntroInit(){
                 anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
                 // menu: '#menu',
                 css3: true,
-                scrollingSpeed: 500,
+                scrollingSpeed: 0,
                 // loopBottom: true,
                 // loopTop: true,
                 continuousVertical: true,
@@ -303,64 +303,66 @@ function fullPageIntroInit(){
                     $('.slider-nav.prev .number .left').text(prevNum)
                     $('.slider-nav.next .number .left').text(nextNum)
                     var i = index - 1;
-                    $("#fullpage>div:eq("+i+")").addClass('page-animating')
+                    console.log(i,$("#fullpage>div:eq("+i+")").html())
+                    $("#fullpage>div[data-index='"+i+"']").addClass('page-animating')
                     if(direction == 'up'){
-                        $("#fullpage>div:eq("+i+") div[data-pos='tl']>div")
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='tl']>div")
                             .removeClass()
                             .addClass('slideOutRight animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
-                        $("#fullpage>div:eq("+i+") div[data-pos='tr']>div")
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='tr']>div")
                             .removeClass()
                             .addClass('slideOutDown animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
-                        $("#fullpage>div:eq("+i+") div[data-pos='bl']>div")
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='bl']>div")
                             .removeClass()
                             .addClass('slideOutUp animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
-                        $("#fullpage>div:eq("+i+") div[data-pos='br']>div")
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='br']>div")
                             .removeClass()
                             .addClass('slideOutLeft animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
                     } else if(direction == 'down'){
-                        $("#fullpage>div:eq("+i+") div[data-pos='tl']>div")
+
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='tl']>div")
                             .removeClass()
                             .addClass('slideOutDown animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
-                        $("#fullpage>div:eq("+i+") div[data-pos='tr']>div")
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='tr']>div")
                             .removeClass()
                             .addClass('slideOutLeft animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
-                        $("#fullpage>div:eq("+i+") div[data-pos='bl']>div")
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='bl']>div")
                             .removeClass()
                             .addClass('slideOutRight animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
-                        $("#fullpage>div:eq("+i+") div[data-pos='br']>div")
+                        $("#fullpage>div[data-index='"+i+"'] div[data-pos='br']>div")
                             .removeClass()
                             .addClass('slideOutUp animated')
                             // .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                             //     $(this).removeClass();
-                            //     $("#fullpage>div:eq("+i+")").removeClass('page-animating')
+                            //     $("#fullpage>div[data-index='"+i+"']").removeClass('page-animating')
                             // })
                     }
                 }
