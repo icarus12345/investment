@@ -303,7 +303,6 @@ function fullPageIntroInit(){
                     $('.slider-nav.prev .number .left').text(prevNum)
                     $('.slider-nav.next .number .left').text(nextNum)
                     var i = index - 1;
-                    console.log(i,$("#fullpage>div:eq("+i+")").html())
                     $("#fullpage>div[data-index='"+i+"']").addClass('page-animating')
                     if(direction == 'up'){
                         $("#fullpage>div[data-index='"+i+"'] div[data-pos='tl']>div")
