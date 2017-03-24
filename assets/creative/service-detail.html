@@ -15,14 +15,15 @@
         <link rel="stylesheet" type="text/css" href="css/font-size.css"/>
         <link rel="stylesheet" type="text/css" href="/libraries/plugin/scrollreveal/animate.css"/>
 
+
         <script type="text/javascript" src="http://anijs.github.io/examples/scrollreveal/js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
         <script type="text/javascript" src="plugin/owl-carousel/owl.carousel.js"></script>
         <script type="text/javascript" src="plugin/jquery.nailthumb.1.1.js"></script>
         <script type="text/javascript" src="plugin/jquery.lazyload.min.js"></script>
-        <script type="text/javascript" src="plugin/wow.min.js"></script>
         <script type="text/javascript" src="plugin/validation-engine/jquery.validationEngine.js"></script>
         <script type="text/javascript" src="plugin/validation-engine/jquery.validationEngine-en.js"></script>
+        <script type="text/javascript" src="/libraries/plugin/masonry.js"></script>
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script type="text/javascript" src="/libraries/jssor/jssor.slider-22.2.16.min.js"></script>
@@ -117,12 +118,12 @@
                     <div>
                         <div class="breardcum">
                             <span data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim;if: load, on: window,do: fadeInUp animated;">Trang Chủ</span>
-                        <span data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim;if: load, on: window,do: fadeInUp animated;">Service</span>
+                        <span data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim;if: load, on: window,do: fadeInUp animated;">Web Designs</span>
 
                         </div>
                     </div>
                     <div data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim;if: load, on: window,do: fadeInUp animated;">
-                        <div class="title">Service of CDS</div>
+                        <div class="title">Web Designs</div>
                     </div>
 
                     <div class="line">
@@ -132,31 +133,30 @@
                 </div>
             </div>
         </div>
-        <div data-wow-delay="1.2s" class="slogan wow fadeInUp">
+        <div class="slogan" data-anijs="if: load, on: window, do: zoomInDown animated, before: scrollReveal">
             <div class="title" data-fz="bigger">Những dự án đã và đang thực hiện cho đối tác & khách hàng của chúng tôi.</div>
         </div>
-        <div class="services">
+        <div class="events">
             <div class="boxs">
                 <div class="box-thumb">
                     <div class="nailthumb" >
-                        <a href="service-detail.html" class="nailthumb-container wow fadeInUp" data-wow-delay="0.5s">
-                            <img class="lazy" data-original="images/107.jpg"/>
+                        <a href="detail.html" class="nailthumb-container" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal">
+                            <img class="lazy" data-original="http://vgexploit.com/wp-content/uploads/2016/11/maxresdefault-2-2-960x480.jpg"/>
                         </a>
                     </div>
                 </div>
                 <div class="box-text" >
                     <div>
                         <div class="text-content">
-                            <div class="box-title">
-                                <div class="title wow fadeInUp" data-fz="big" data-wow-delay="0.5s"><span class="line-clamp-1">Lorem Ipsum is simply dummy text</span></div>
-                                <div class="sub-title">Lorem Ipsum is simply dummy text </div>
+                            <div class="box-number">
+                                01.
                             </div>
-                            <div class="desc wow fadeInUp" data-fz="medium" data-wow-delay="0.5s">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                            <ul class="wow fadeInUp" data-wow-delay="0.5s">
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                            </ul>
+                            <div class="title">Đấu giá ngược quà khủng</div>
+                            <div class="desc -line-clamp-4" data-fz="medium" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="btns">
+                            <button class="btn btn-dark">XEM THÊM</button>
+                            <button class="btn btn-dark">ĐĂNG KÝ MUA</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -164,24 +164,23 @@
             <div class="boxs">
                 <div class="box-thumb">
                     <div class="nailthumb" >
-                        <a href="service-detail.html" class="nailthumb-container wow fadeInUp" data-wow-delay="0.5s">
-                            <img class="lazy" data-original="images/107.jpg"/>
+                        <a href="detail.html" class="nailthumb-container" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal">
+                            <img class="lazy" data-original="https://wildfiregames.com/img/5.jpg"/>
                         </a>
                     </div>
                 </div>
                 <div class="box-text">
                     <div>
                         <div class="text-content">
-                            <div class="box-title">
-                                <div class="title wow fadeInUp" data-fz="big" data-wow-delay="0.5s"><span class="line-clamp-1">Lorem Ipsum is simply dummy text</span></div>
-                                <div class="sub-title">Lorem Ipsum is simply dummy text </div>
+                            <div class="box-number">
+                                02.
                             </div>
-                            <div class="desc wow fadeInUp" data-fz="medium" data-wow-delay="0.5s">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                            <ul class="wow fadeInUp" data-wow-delay="0.5s">
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                            </ul>
+                            <div class="title">Đấu giá ngược quà khủng</div>
+                            <div class="desc -line-clamp-4" data-fz="medium" data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="btns">
+                            <button class="btn btn-dark">XEM THÊM</button>
+                            <button class="btn btn-dark">ĐĂNG KÝ MUA</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,24 +188,23 @@
             <div class="boxs">
                 <div class="box-thumb">
                     <div class="nailthumb" >
-                        <a href="service-detail.html" class="nailthumb-container wow fadeInUp" data-wow-delay="0.5s">
-                            <img class="lazy" data-original="images/107.jpg"/>
+                        <a href="detail.html" class="nailthumb-container" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal">
+                            <img class="lazy" data-original="http://weirdbeard.nl/wp/wp-content/uploads/2016/02/Banner_TrickyTowers-960x480.png"/>
                         </a>
                     </div>
                 </div>
                 <div class="box-text" >
                     <div>
                         <div class="text-content">
-                            <div class="box-title">
-                                <div class="title wow fadeInUp" data-fz="big" data-wow-delay="0.5s"><span class="line-clamp-1">Lorem Ipsum is simply dummy text</span></div>
-                                <div class="sub-title">Lorem Ipsum is simply dummy text </div>
+                            <div class="box-number">
+                                03.
                             </div>
-                            <div class="desc wow fadeInUp" data-fz="medium" data-wow-delay="0.5s">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                            <ul class="wow fadeInUp" data-wow-delay="0.5s">
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                            </ul>
+                            <div class="title">Đấu giá ngược quà khủng</div>
+                            <div class="desc -line-clamp-4" data-fz="medium" data-anijs="if: scroll, on: window, do: slideInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="btns">
+                            <button class="btn btn-dark">XEM THÊM</button>
+                            <button class="btn btn-dark">ĐĂNG KÝ MUA</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -214,24 +212,23 @@
             <div class="boxs">
                 <div class="box-thumb">
                     <div class="nailthumb" >
-                        <a href="service-detail.html" class="nailthumb-container wow fadeInUp" data-wow-delay="0.5s">
-                            <img class="lazy" data-original="images/107.jpg"/>
+                        <a href="detail.html" class="nailthumb-container" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal">
+                            <img class="lazy" data-original="https://deepthegame.files.wordpress.com/2015/12/si_wiiu_splatoon.jpg?w=960"/>
                         </a>
                     </div>
                 </div>
                 <div class="box-text">
                     <div>
                         <div class="text-content">
-                            <div class="box-title">
-                                <div class="title" data-fz="big" data-wow-delay="0.5s"><span class="line-clamp-1">Lorem Ipsum is simply dummy text</span></div>
-                                <div class="sub-title">Lorem Ipsum is simply dummy text </div>
+                            <div class="box-number">
+                                04.
                             </div>
-                            <div class="desc" data-fz="medium" >Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                            <ul class="wow fadeInUp" data-wow-delay="0.5s">
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                            </ul>
+                            <div class="title">Đấu giá ngược quà khủng</div>
+                            <div class="desc -line-clamp-4" data-fz="medium" data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="btns">
+                            <button class="btn btn-dark">XEM THÊM</button>
+                            <button class="btn btn-dark">ĐĂNG KÝ MUA</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -239,24 +236,23 @@
             <div class="boxs">
                 <div class="box-thumb">
                     <div class="nailthumb" >
-                        <a href="service-detail.html" class="nailthumb-container wow fadeInUp" data-wow-delay="0.5s">
-                            <img class="lazy" data-original="images/107.jpg"/>
+                        <a href="detail.html" class="nailthumb-container" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal">
+                            <img class="lazy" data-original="https://static-ssl.businessinsider.com/image/5858496ca1a45e8b3f8b5e81-960-720/theres-also-animal-crossing-new-leaf-a-very-chill-game-that-casts-you-as-the-mayor-of-a-town-full-of-friendly-animals-it-just-got-a-big-update-that-adds-support-for-nintendos-amiibo-figurines-among-other-features-too.jpg"/>
                         </a>
                     </div>
                 </div>
                 <div class="box-text">
                     <div>
                         <div class="text-content">
-                            <div class="box-title">
-                                <div class="title wow fadeInUp" data-fz="big" data-wow-delay="0.5s"><span class="line-clamp-1">Lorem Ipsum is simply dummy text</span></div>
-                                <div class="sub-title">Lorem Ipsum is simply dummy text </div>
+                            <div class="box-number">
+                                05.
                             </div>
-                            <div class="desc wow fadeInUp" data-fz="medium" data-wow-delay="0.5s">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                            <ul class="wow fadeInUp" data-wow-delay="0.5s">
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                            </ul>
+                            <div class="title">Đấu giá ngược quà khủng</div>
+                            <div class="desc -line-clamp-4" data-fz="medium" data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="btns">
+                            <button class="btn btn-dark">XEM THÊM</button>
+                            <button class="btn btn-dark">ĐĂNG KÝ MUA</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -264,24 +260,23 @@
             <div class="boxs">
                 <div class="box-thumb">
                     <div class="nailthumb" >
-                        <a href="service-detail.html" class="nailthumb-container wow fadeInUp" data-wow-delay="0.5s">
-                            <img class="lazy" data-original="images/107.jpg"/>
+                        <a href="detail.html" class="nailthumb-container" data-anijs="if: scroll, on: window, do: fadeIn animated, before: scrollReveal">
+                            <img class="lazy" data-original="images/112.jpg"/>
                         </a>
                     </div>
                 </div>
                 <div class="box-text">
                     <div>
                         <div class="text-content">
-                            <div class="box-title">
-                                <div class="title wow fadeInUp" data-fz="big" data-wow-delay="0.5s"><span class="line-clamp-1">Lorem Ipsum is simply dummy text</span></div>
-                                <div class="sub-title">Lorem Ipsum is simply dummy text </div>
+                            <div class="box-number">
+                                06.
                             </div>
-                            <div class="desc wow fadeInUp" data-fz="medium" data-wow-delay="0.5s">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                            <ul class="wow fadeInUp" data-wow-delay="0.5s">
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                                <li>Ipsum is simply dummy text</li>
-                            </ul>
+                            <div class="title">Đấu giá ngược quà khủng</div>
+                            <div class="desc -line-clamp-4" data-fz="medium" data-anijs="if: scroll, on: window, do: fadeInUp animated, before: scrollReveal, after: removeAnim">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="btns">
+                            <button class="btn btn-dark">XEM THÊM</button>
+                            <button class="btn btn-dark">ĐĂNG KÝ MUA</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -295,8 +290,14 @@
                 </ul>
             </div> -->
         </div>
-        
-        <div class="space-linex5 white-bg"></div>
+        <div class="yellow-box">
+            <div>
+                <div class="sub-title">TIẾP THEO LÀ GÌ ?</div>
+                <div class="title" data-fz="big">BẠN ĐÃ SẴN SÀNG CHƯA ?</div>
+                <div class="title" data-fz="big">CHÚNG TA HÃY BẮT ĐẦU CÔNG VIỆC</div>
+            </div>
+        </div>
+        <div class="space-linex2 white-bg"></div>
         <footer>
             <div class="socials">
                 <a href="#"><span class="fa fa-facebook"></span></a>
@@ -305,3 +306,5 @@
             </div>
             <div class="copyright">&copy; 2016 All right reserved. Development with <span class="fa fa-heart"></span> by <a href="#">Creative Design</a></div>
         </footer>
+        <script src="/libraries/plugin/scrollreveal/anijs.js"></script>
+        <script src="/libraries/plugin/scrollreveal/anijs-helper-scrollreveal.js"></script>
