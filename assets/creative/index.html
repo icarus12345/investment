@@ -2,16 +2,17 @@
     <head>
         <title>Creative</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="bootstrap/css/hover.css"/>
         <!-- <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-select.min.css"/> -->
         <link rel="stylesheet" type="text/css" href="bootstrap/css/font-awesome.min.css?t=1">
         <!-- <link rel="stylesheet" type="text/css" href="plugin/owl-carousel/owl.carousel.css"/> -->
         <!-- <link rel="stylesheet" type="text/css" href="plugin/swipebox/swipebox-dark-1.3.css" > -->
-        <link rel="stylesheet" type="text/css" href="/libraries/plugin/fullpage/jquery.fullPage.css"/>
-        <link rel="stylesheet" type="text/css" href="/libraries/plugin/scrollreveal/animate.css"/>
+        <link rel="stylesheet" type="text/css" href="plugin/fullpage/jquery.fullPage.css"/>
+        <link rel="stylesheet" type="text/css" href="plugin/scrollreveal/animate.css"/>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/font-size.css"/>
         <link rel="stylesheet" type="text/css" href="css/button.css"/>
         <link rel="stylesheet" type="text/css" href="css/home.css"/>
 
@@ -19,17 +20,11 @@
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-
-        <script type="text/javascript" src="plugin/route/cbsplit.js"></script>
-        <script type="text/javascript" src="plugin/route/jquery.ba-hashchange.js"></script>
-        <script type="text/javascript" src="plugin/route/jquery.router.js"></script>
-
         <script type="text/javascript" src="plugin/owl-carousel/owl.carousel.js"></script>
         <script type="text/javascript" src="plugin/jquery.nailthumb.1.1.js"></script>
         <script type="text/javascript" src="plugin/jquery.lazyload.min.js"></script>
-        <script type="text/javascript" src="/libraries/plugin/fullpage//jquery.fullPage.min.js"></script>
+        <script type="text/javascript" src="plugin/fullpage/jquery.fullPage.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="js/route.js"></script>
         <!--[if IE]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
         <![endif]-->
@@ -37,7 +32,185 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
     </head>
     <body class="full-page">
-        
+        <header id="navbar" class="navbar navbar-fixed-top" role="banner">
+            <!-- Menu [ -->
+            <div class="">
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand"></a>
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navigation">
+                        <span>
+                            <span class="icon-bar line-1"></span>
+                            <span class="icon-bar line-2"></span>
+                            <span class="icon-bar line-3"></span>
+                        </span>
+                    </button>
+                    <div class="navbar-search-lang">
+                        <div class="navbar-langs">
+                            <span>Language: </span>
+                            <div class="lang-control">
+                                <a href="#" data-toggle="dropdown">Tiếng Việt <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu invert">
+                                    <li><a href='#'>Tiếng Việt</a></li>
+                                    <li><a href='#'>English</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navbar-search">
+                            <!-- <input class="navbar-search-input"> -->
+                            <button class="navbar-search-button"><span class="fa fa-search"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <nav id="navigation" class="navbar-collapse bs-navbar-collapse collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href='home.html'>HOME</a></li>
+                        <li><a href='about.html'>ABOUT</a></li>
+                        <li>
+                            <a href="service.html" -data-toggle="dropdown">SERVICE</a>
+                            <ul class="dropdown-menu">
+                                <li><a href='#'>Web Development</a></li>
+                                <li><a href='#'>Mobile Development</a></li>
+                                <li><a href='#'>Software Development</a></li>
+                                <li><a href='#'>Ecommerce</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="event.html" -data-toggle="dropdown">EVENTS</a>
+                            <ul class="dropdown-menu">
+                                <li><a href='#'>2048</a></li>
+                                <li><a href='#'>Jumb flight</a></li>
+                                <li><a href='#'>Terit</a></li>
+                                <li><a href='#'>Ecommerce</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="project.html" -data-toggle="dropdown">PROJECT</a>
+                            <ul class="dropdown-menu">
+                                <li><a href='#'>Web Development</a></li>
+                                <li><a href='#'>Mobile Development</a></li>
+                                <li><a href='#'>Software Development</a></li>
+                                <li><a href='#'>Ecommerce</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='news.html'>NEWS</a></li>
+                        <li><a href='recruitment.html'>TUYỂN DỤNG</a></li>
+                        <li><a href='contact.html'>CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Menu ] -->
+        </header>
+        <span class="slider-nav prev">
+            <span class="arrow"></span>
+            <span class="number">
+                <span class="left"></span>
+                <span class="middle"></span>
+                <span class="right"></span>
+            </span>
+        </span>
+        <span class="slider-nav next">
+            <span class="arrow"></span>
+            <span class="number">
+                <span class="left">2</span>
+                <span class="middle"></span>
+                <span class="right"></span>
+            </span>
+        </span>
+        <div id="fullpage">
+            <div class="section" data-index="0">
+                <div class="section-image">
+                    <div data-pos="tl"><div><div style="background-image:url(http://cdn2.crumina.net/modesto/wp-content/uploads/2016/06/background-33-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="tr"><div><div style="background-image:url(http://cdn2.crumina.net/modesto/wp-content/uploads/2016/06/background-33-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="bl"><div><div style="background-image:url(http://cdn2.crumina.net/modesto/wp-content/uploads/2016/06/background-33-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="br"><div><div style="background-image:url(http://cdn2.crumina.net/modesto/wp-content/uploads/2016/06/background-33-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                </div>
+                <div class="slider-cap">
+                    <div class="cap1">
+                        <div class="capitalize text-animation">
+                            thiết kế đồ họa - Thiết kế website - thiết kế & in ấn - thiết kế thương hiệu
+                        </div>
+                    </div>
+                    <h2 class="delay-1 text-animation-2">XIN CHÀO CHÚNG TÔI LÀ<br/>GIẢI PHÁP THIẾT KẾ SÁNG TẠO</h2>
+                    <a class="btn-white text-animation-2 delay-2" href="#">
+                        Xem Thêm
+                    </a>
+                </div>
+                
+            </div>
+            <div class="section" data-index="1">
+                <div class="section-image">
+                    <div data-pos="tl"><div><div style="background-image:url(http://cdn1.crumina.net/modesto/wp-content/uploads/2016/06/background-35-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="tr"><div><div style="background-image:url(http://cdn1.crumina.net/modesto/wp-content/uploads/2016/06/background-35-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="bl"><div><div style="background-image:url(http://cdn1.crumina.net/modesto/wp-content/uploads/2016/06/background-35-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="br"><div><div style="background-image:url(http://cdn1.crumina.net/modesto/wp-content/uploads/2016/06/background-35-1920x1000.jpg)" class="cover slider-bg"></div></div></div>
+                </div>
+                <div class="slider-cap">
+                    <div class="cap1">
+                        <div class="capitalize text-animation">
+                            thiết kế đồ họa - Thiết kế website - thiết kế & in ấn - thiết kế thương hiệu
+                        </div>
+                    </div>
+                    <h2 class="delay-1 text-animation-2">XIN CHÀO CHÚNG TÔI LÀ<br/>GIẢI PHÁP THIẾT KẾ SÁNG TẠO</h2>
+                    <a class="btn-white text-animation-2 delay-2" href="#">
+                        Xem Thêm
+                    </a>
+                </div>
+            </div>
+            <div class="section" data-index="2">
+                <div class="section-image">
+                    <div data-pos="tl"><div><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="tr"><div><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="bl"><div><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="br"><div><div style="background-image:url(images/slider1.jpg)" class="cover slider-bg"></div></div></div>
+                </div>
+                <div class="slider-cap">
+                    <div class="cap1">
+                        <div class="capitalize text-animation">
+                            thiết kế đồ họa - Thiết kế website - thiết kế & in ấn - thiết kế thương hiệu
+                        </div>
+                    </div>
+                    <h2 class="delay-1 text-animation-2">XIN CHÀO CHÚNG TÔI LÀ<br/>GIẢI PHÁP THIẾT KẾ SÁNG TẠO</h2>
+                    <a class="btn-white text-animation-2 delay-2" href="#">
+                        Xem Thêm
+                    </a>
+                </div>
+            </div>
+            <div class="section" data-index="3">
+                <div class="section-image">
+                    <div data-pos="tl"><div><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="tr"><div><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="bl"><div><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                    <div data-pos="br"><div><div style="background-image:url(images/slider2.jpg)" class="cover slider-bg"></div></div></div>
+                </div>
+                <div class="slider-cap">
+                    <div class="cap1">
+                        <div class="capitalize text-animation">
+                            thiết kế đồ họa - Thiết kế website - thiết kế & in ấn - thiết kế thương hiệu
+                        </div>
+                    </div>
+                    <h2 class="delay-1 text-animation-2">XIN CHÀO CHÚNG TÔI LÀ<br/>GIẢI PHÁP THIẾT KẾ SÁNG TẠO</h2>
+                    <a class="btn-white text-animation-2 delay-2" href="#">
+                        Xem Thêm
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                
+            });
+        </script>
+
+        <footer>
+            <div class="socials">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-google"></span></a>
+            </div>
+            <div class="copyright">&copy; 2016 All right reserved. Development with <span class="fa fa-heart"></span> by <a href="#">Creative Design</a></div>
+        </footer>
+
 

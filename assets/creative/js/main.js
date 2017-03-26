@@ -118,17 +118,17 @@ function projectMasonry(){
                     '<div class="nailthumb-container">',
                         '<img class="lazy" data-original="images/'+img['22'][ran]+'"/>',
                     '</div>',
-                    '<div class="nailthumb-mark">',
+                    '<a href="project-detail.html" class="nailthumb-mark">',
                         '<div>',
                             '<div class="title">Dự án đầu tư bất động sản</div>',
                             '<div class="author">Dự án đầu tư bất động sản</div>',
                             '<div class="socials">',
-                                '<a href="#"><span class="fa fa-facebook"></span></a>',
-                                '<a href="#"><span class="fa fa-twitter"></span></a>',
-                                '<a href="#"><span class="fa fa-google"></span></a>',
+                                '<span href="#"><span class="fa fa-facebook"></span></span>',
+                                '<span href="#"><span class="fa fa-twitter"></span></span>',
+                                '<span href="#"><span class="fa fa-google"></span></span>',
                             '</div>',
                         '</div>',
-                    '</div>',
+                    '</a>',
                 '</div>',
             '</div>'
         ].join('\n'))
@@ -295,7 +295,7 @@ function fullPageIntroInit(){
                     //     .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                     //         $(this).removeClass('zoomOutDown animated');
                     //     })
-                    
+                    $(".page-animating").removeClass('page-animating')
                     var prevNum = nextIndex-1;
                     var nextNum = nextIndex+1;
                     if(nextNum>length) nextNum = 1;
