@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i');
+@import url('../creative/bootstrap/css/font-awesome.min.css?t=1');
 *,*::after,*::before{
       -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -11,7 +13,7 @@
     -o-background-size: cover;
     background-size: cover;
 }
-html,body,#content-block{overflow: hidden;display: block;height: 100%}
+html,body,#content-block{overflow: hidden;display: block;height: 100%;font-family: 'Open Sans';font-size: 14px}
 #content-block{position: absolute;left: 0;top:0;bottom: 0;right: 0}
 .homepage-3-container, .slice-slider-container {
     position: absolute;
@@ -216,6 +218,60 @@ html,body,#content-block{overflow: hidden;display: block;height: 100%}
 .slice-slider-slide-right-bg{
     background-image: url(images/home-bg.jpg);position: absolute;top: -40px;left: -40px;right: -40px;bottom: -40px;
 }
+.slice-slider-slide-left>.parallax .title{
+    color: #fff;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+}
+.slice-slider-slide-left>.parallax .title>span{
+    color: #475d97
+}
+.slice-slider-slide-left>.parallax>div{
+
+}
+.slice-slider-slide-left>.parallax .more{color: #fff;font-style: italic;}
+
+.slice-slider-slide-right h3{
+    text-transform: uppercase;
+    color: #fff;font-size: 28px;
+}
+@media (min-width: 991px) {
+    .slice-slider-slide-left>.parallax>div{
+        width: 50%;
+        padding-right: 80px;
+        padding-left: 40px;
+        top: 50%;position: relative;
+        transform: translateY(-50%);
+    }
+    .slice-slider-slide-left>.parallax .title{
+        font-size: 28px;
+        line-height: 40px;
+        padding: 10px 0;
+    }
+}
+@media (min-width: 1200px) {
+    .slice-slider-slide-left>.parallax>div{
+        padding-right: 100px;
+        padding-left: 60px;
+    }
+    .slice-slider-slide-left>.parallax .title{
+        font-size: 30px;
+        line-height: 44px;
+    }
+}
+@media (min-width: 1600px) {
+    .slice-slider-slide-left>.parallax>div{
+        padding-right: 120px;
+        padding-left: 80px;
+    }
+    .slice-slider-slide-left>.parallax .title{
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+}
+
 @media (max-height: 600px), (max-width: 1300px) {
     .slice-slider-align-1 {
         width: 84%;
@@ -227,6 +283,19 @@ html,body,#content-block{overflow: hidden;display: block;height: 100%}
     .slice-slider-align-1.bottom {
         bottom: 30px
     }
+}
+@media (max-width: 1600px) {
+    .slice-slider-slide-right h3{
+        font-size: 24px;
+    }
+}
+@media (max-width: 1200px) {
+    .slice-slider-slide-right h3{
+        font-size: 20px;
+    }
+}
+@media (max-width: 990px) {
+
 }
 @media (max-width: 991px) {
     html{overflow-y:auto;}
@@ -317,22 +386,6 @@ html,body,#content-block{overflow: hidden;display: block;height: 100%}
 .slice-slider-container.style-1 .pagination {
     z-index: 2;
     right: 80px
-}
-.inline-tags:before, .inline-tags:after {
-    width: 15px;
-    height: 1px;
-    background: currentColor;
-    display: inline-block;
-    content: "";
-    vertical-align: middle;
-    margin-right: 15px;
-    position: relative;
-    top: -1px
-}
-.inline-tags:after {
-    margin-right: 0;
-    margin-left: 15px;
-    display: none
 }
 @media (max-height: 600px), (max-width: 1300px) {
     .slice-slider-container.style-1 .slice-slider-align-1 {
