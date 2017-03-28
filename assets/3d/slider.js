@@ -34,7 +34,9 @@ String.prototype.times = function(n) {
 				'transition': 'all ' + $settings.speed + 'ms ' + $settings.easing,
 				'-webkit-transition': 'all ' + $settings.speed + 'ms ' + $settings.easing
 			});
-
+			$this.find('.pagination>.point').each(function(elm,index){
+				$(this).text('0' + ($(this).index()+1))
+			})
 			function init() {
 				setActiveSlice($leftWrapper, $leftSlide.filter('.active').index());
 				setActiveSlice($rightWrapper, $rightSlide.filter('.active').index());
