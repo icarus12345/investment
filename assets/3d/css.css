@@ -365,11 +365,118 @@ html,body,#content-block{overflow: hidden;display: block;height: 100%;font-famil
 .slice-slider-slide-left>.parallax .contact-info p{padding: 3px 0}
 .slice-slider-slide-left>.parallax .contact-info p .fa{margin-right: 10px}
 header>div{
-    position: absolute;z-index: 10;
-    left: 0;top: 0;width: 100px;
+    position: fixed;z-index: 1001;
+    left: 0;top: 0;width: 100%;
 }
 .logo{padding: 10px;display: inline-block;}
 .logo>img{}
+.menu{
+    position: absolute;right: 20px;top: 20px;width: 30px;height: 30px;
+    background: url(images/menu.png) center no-repeat;
+    cursor: pointer;
+}
+body.in .menu{background-image: url(images/menu-close.png)}
+.overlay{
+    position: fixed;
+    z-index: 1000;
+    left: 0;top: 0;width: 100%;
+    height: 100%;
+    /*background: #599fd2;*/
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: .5s;
+    -webkit-transition-delay: .5s;
+}
+.full-size {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/*body.in #menu{display: block;}*/
+.overlay .animation-wrapper {
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    background: #599fd2;
+    /*background: rgba(34, 34, 34, .95);*/
+    transform: perspective(1000px) rotateX(66deg) scale(0.3) skewX(32deg) skewY(-40deg) rotateY(12deg);
+    -webkit-transform: perspective(1000px) rotateX(66deg) scale(0.3) skewX(32deg) skewY(-40deg) rotateY(12deg);
+}
+body.in .overlay{
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+    -webkit-transition-delay: 0s;
+}
+body.in .overlay .animation-wrapper {
+    transform: perspective(1000px) rotateX(0deg) scale(1) skewX(0deg) skewY(0deg) rotateY(0deg);
+    -webkit-transform: perspective(1000px) rotateX(0deg) scale(1) skewX(0deg) skewY(0deg) rotateY(0deg);
+}
+.overlay .animation-wrapper ul{
+    list-style: none;display: block;
+    top: 50%;position: relative;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.overlay .animation-wrapper ul>li{}
+.overlay .animation-wrapper ul>li>a{
+    text-decoration: none;
+    color: #fff;display: block;
+    text-align: center;
+    font-size: 48px;
+    line-height: 70px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.overlay .animation-wrapper ul>li>a:hover{
+    color: #ccc;
+    text-shadow:
+        1px 0 0 #014377, 
+       -1px 0 0 #014377, 
+        0 1px 0 #014377, 
+       0 -1px 0 #014377, 
+        1px 1px #014377, 
+       -1px -1px 0 #014377,
+        1px -1px 0 #014377, 
+        -1px 1px 0 #014377;
+    -moz-text-shadow:
+        1px 0 0 #014377, 
+       -1px 0 0 #014377, 
+        0 1px 0 #014377, 
+       0 -1px 0 #014377, 
+        1px 1px #014377, 
+       -1px -1px 0 #014377,
+        1px -1px 0 #014377, 
+        -1px 1px 0 #014377;
+    -webkit-text-shadow:
+        1px 0 0 #014377, 
+       -1px 0 0 #014377, 
+        0 1px 0 #014377, 
+       0 -1px 0 #014377, 
+        1px 1px #014377, 
+       -1px -1px 0 #014377,
+        1px -1px 0 #014377, 
+        -1px 1px 0 #014377;
+}
+footer{position: fixed;z-index: 1001;left: 0;bottom: 0;width: 100%;font-size: 13px}
+footer>.copy-right{line-height: 20px;position: absolute;left: 40px;bottom: 20px;color: #fff;}
+footer>.socials{line-height: 20px;position: absolute;right: 40px;bottom: 20px;color: #fff}
+footer>.socials>a{
+    display: inline-block;
+    width: 30px;text-align: center;
+    color: #fff;text-decoration: none;
+    position: relative;
+}
+footer>.socials>a:after{
+    width: 30px;height: 30px;border: 1px solid rgba(255,255,255,.3);
+    position: absolute;left: 50%;top:50%;
+    margin-left: -15px;margin-top: -15px;
+    content: '';display: block;border-radius: 3px;
+}
+footer>.socials>a:hover:after{
+    background: rgba(255,255,255,.5)
+}
 @media (min-width: 991px) {
     .slice-slider-slide-left>.parallax>div{
         width: 50%;
@@ -385,7 +492,7 @@ header>div{
     }
     .service-contents>div{
         position: absolute;
-        left: 0;top: 0;width: 100%
+        left: 0;top: 0;width: 100%;height: 0;overflow: hidden;
         transform: translateY(200px);
         transition-delay: .5s;
         opacity: 0;
@@ -393,7 +500,7 @@ header>div{
     .service-contents>div.active{
         position: relative;
         transform: translateY(0px);
-        opacity: 1
+        opacity: 1;height: auto
     }
     .slice-slider-slide .service-contents>div,
     .slice-slider-slide .service-item{
@@ -413,6 +520,21 @@ header>div{
         transform: translateY(-50%);
     }
     .logo{padding-left: 50px}
+    .slice-slider-container .pagination{right: 20px}
+
+    .slice-slider-right-column .slice-slider-slide-left {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition-delay: .5s;
+        -webkit-transition-delay: .5s;
+            -webkit-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+    }
+     .slice-slider-right-column .slice-slider-slide.active .slice-slider-slide-left {
+        opacity: .01;
+        visibility: visible;
+    }
 }
 @media (min-width: 1200px) {
     .slice-slider-slide-left>.parallax>div{
@@ -444,7 +566,7 @@ header>div{
         bottom: -70px;
     }
     .slice-slider-slide-left>.parallax .contact-info{padding-left: 160px}
-    .slice-slider-container .pagination{right: 20px}
+    .slice-slider-container .pagination{right: 30px}
 }
 
 @media (max-height: 600px), (max-width: 1300px) {
@@ -468,6 +590,10 @@ header>div{
     }
     .our-works.service-list{margin: 0 -10px}
     .our-works.service-list .service-item{padding:10px;}
+    .overlay .animation-wrapper ul>li>a{
+        font-size: 40px;
+        line-height: 60px;
+    }
 }
 @media (min-width: 990px) and (max-width: 1200px){
     .service-list>.service-item:after{
@@ -485,7 +611,10 @@ header>div{
     }
     .service-list{margin: 0 -15px}
     .service-list .service-item{padding:15px;}
-    
+    .overlay .animation-wrapper ul>li>a{
+        font-size: 30px;
+        line-height: 44px;
+    }
 }
 @media (max-width: 990px) {
 
@@ -540,6 +669,10 @@ header>div{
     }
     .contact-info .title{padding: 10px 0;margin-top: 10px}
     .contact-info .title:after{margin-top: 5px}
+    .overlay .animation-wrapper ul>li>a{
+        font-size: 26px;
+        line-height: 40px;
+    }
 }
 @media (max-width: 767px) {
     .slice-slider-align-2 .rotate-wrapper {
@@ -645,6 +778,7 @@ header>div{
     .slice-slider-slide.invert{padding-top: 320px}
     .slice-slider-slide.invert .slice-slider-slide-right,
     .slice-slider-slide-right-bg{height: 320px}
+    footer>.socials{display: none;}
 }
 .row{margin:0 -10px;position: relative;}
 .row:after{content: '';display: block;clear: both;}

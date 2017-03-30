@@ -15,8 +15,33 @@
             <a href="#" class="logo">
                 <img src="images/logo.png"/>
             </a>
+            <div class="menu">
+
+            </div>
         </div>
     </header>
+    <footer>
+        <div class="copy-right">Powered by Redmine © 2006-2014</div>
+        <div class="socials">
+        Ket noi voi chung toi 
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-google"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-skype"></a>
+        </div>
+    </footer>
+    <div id="menu" class="overlay active" data-rel="1">
+        <div class="animation-wrapper full-size">
+            <ul>
+                <li><a href="#home" onclick="gotopage(0)">Home</a></li>
+                <li><a href="#about" onclick="gotopage(1)">About us</a></li>
+                <li><a href="#process" onclick="gotopage(2)">our process</a></li>
+                <li><a href="#service" onclick="gotopage(3)">Service us</a></li>
+                <li><a href="#">becom a partner</a></li>
+                <li><a href="#">carefers join us</a></li>
+            </ul>
+        </div>
+    </div>
     <div id="content-block">
 	<div class="slice-slider-container style-1">
 		<div class="slice-slider-right-column">
@@ -29,7 +54,7 @@
                                     We create digital solutions to solve 
                                     <span>business challenges</span>
                                 </div>
-                                <div class="more">Interested ? <span class="fa fa-arrow-right"></span></div>
+                                <a class="more a" href="#about" onclick="gotopage(1)">Interested ? <span class="fa fa-arrow-right"></span></a>
                             </div>
                         </div>
 					</div>
@@ -68,7 +93,7 @@
 								</div>
 								<div class="empty-space col-xs-b35"></div>
                                 <div class="simple-article-bottom">
-                                <a class="more " href="#"><span>Onward <span class="fa fa-arrow-right"></span></span></a>
+                                <a class="more " href="#process" onclick="gotopage(2)"><span>Onward <span class="fa fa-arrow-right"></span></span></a>
                                 </div>
 							</div>
 						</div>
@@ -131,7 +156,7 @@
                                 </div>
                                 <div class="empty-space col-xs-b35"></div>
                                 <div class="simple-article-bottom">
-                                    <a class="more " href="#"><span>Onward <span class="fa fa-arrow-right"></span></span></a>
+                                    <a class="more " href="#" onclick="gotopage(3)"><span>Onward <span class="fa fa-arrow-right"></span></span></a>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +216,7 @@
                                 </div>
                                 <div class="empty-space col-xs-b35"></div>
                                 <div class="simple-article-bottom">
-                                    <a class="more " href="#"><span>Onward <span class="fa fa-arrow-right"></span></span></a>
+                                    <a class="more " href="#" onclick="gotopage(4)"><span>Onward <span class="fa fa-arrow-right"></span></span></a>
                                     <a class="more pull-right" href="#"><span>Join our team <span class="fa fa-arrow-left"></span></span></a>
                                 </div>
                             </div>
@@ -260,7 +285,7 @@
                                 </div>
                                 <div class="empty-space col-xs-b35"></div>
                                 <div class="simple-article-bottom">
-                                <a class="more " href="#"><span>Back <span class="fa fa-arrow-right"></span></span></a>
+                                <a class="more " href="#" onclick="gotopage(3)"><span>Back <span class="fa fa-arrow-right"></span></span></a>
                                 <a href="#" class="btn pull-right btn-success">MAKE OFFER</a>
                                 </div>
                             </div>

@@ -7,4 +7,11 @@ $(document).ready(function(){
         $(this).parents('.service-list').next().find('.active').removeClass('active');
         $(this).parents('.service-list').next().find('>div:eq(' + index + ')').addClass('active');
     })
+    $('.menu').click(function(){
+        $('body').toggleClass('in')
+    })
 })
+function gotopage(p){
+    $('body').removeClass('in')
+    $('.pagination>.point:eq('+p+')').click()
+}
