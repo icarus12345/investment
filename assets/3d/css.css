@@ -490,17 +490,20 @@ footer>.socials>a:hover:after{
         line-height: 40px;
         padding: 10px 0;
     }
+    .service-contents{overflow: hidden;}
     .service-contents>div{
         position: absolute;
-        left: 0;top: 0;width: 100%;height: 0;overflow: hidden;
+        left: 0;top: 0;width: 100%;overflow: hidden;
         transform: translateY(200px);
         transition-delay: .5s;
         opacity: 0;
+        z-index: -1;
     }
     .service-contents>div.active{
         position: relative;
         transform: translateY(0px);
-        opacity: 1;height: auto
+        opacity: 1;height: auto;
+        z-index: 1;
     }
     .slice-slider-slide .service-contents>div,
     .slice-slider-slide .service-item{
@@ -673,6 +676,7 @@ footer>.socials>a:hover:after{
         font-size: 26px;
         line-height: 40px;
     }
+    div[data-hidden-sm="1"]{display: none;}
 }
 @media (max-width: 767px) {
     .slice-slider-align-2 .rotate-wrapper {
