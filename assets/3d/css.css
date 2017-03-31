@@ -363,13 +363,13 @@ html,body,#content-block{overflow: hidden;display: block;height: 100%;font-famil
     display: block;
 }
 .slice-slider-slide-left>.parallax .contact-info p{padding: 3px 0}
-.slice-slider-slide-left>.parallax .contact-info p .fa{margin-right: 10px}
+.slice-slider-slide-left>.parallax .contact-info p .fa{width: 26px}
 header>div{
     position: fixed;z-index: 1001;
     left: 0;top: 0;width: 100%;
 }
 .logo{padding: 10px;display: inline-block;}
-.logo>img{}
+
 .menu{
     position: absolute;right: 20px;top: 20px;width: 30px;height: 30px;
     background: url(images/menu.png) center no-repeat;
