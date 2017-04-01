@@ -102,9 +102,19 @@ body{height: auto}
 .box-thumb .text-content{
     color: #fff;
 }
-.text-content ul{width: 48%;display: inline-block;text-align: left;color: #e1e8ed;padding-top: 15px}
+.text-content ul{
+    width: 50%;display: inline-block;text-align: left;color: #e1e8ed;padding-top: 15px;float: left;
+    padding-right: 30px;
+}
 .text-content ul>li{color: #e1e8ed}
 .text-content ul>li>div{color: #111}
+.control-group{display: block;padding-bottom: 10px;color: #111}
+.form-control{
+    width: 100%;
+    border-radius: 0;box-shadow: none;
+    border-color: #e1e8ed;background: transparent;
+    margin-top: 4px;
+}
 @media (max-width: 1600px) {
     .becom{padding: 80px 40px 0 40px}
     .box{padding: 40px;}
