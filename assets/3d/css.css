@@ -4,7 +4,7 @@
       -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-    padding: 0;margin: 0;
+    margin: 0;
 }
 .cover{
     background-repeat: no-repeat;
@@ -373,7 +373,7 @@ header>div{
 .menu{
     position: absolute;right: 20px;top: 20px;width: 30px;height: 30px;
     background: url(images/menu.png) center no-repeat;
-    cursor: pointer;
+    cursor: pointer;z-index: 1002
 }
 body.in .menu{background-image: url(images/menu-close.png)}
 .overlay{
@@ -459,8 +459,9 @@ body.in .overlay .animation-wrapper {
         1px -1px 0 #014377, 
         -1px 1px 0 #014377;
 }
-footer{position: fixed;z-index: 1001;left: 0;bottom: 0;width: 100%;font-size: 13px}
+footer{position: fixed;z-index: 999;left: 0;bottom: 0;width: 100%;font-size: 13px}
 footer>.copy-right{line-height: 20px;position: absolute;left: 40px;bottom: 20px;color: #fff;}
+footer>.copy-right>.fa{color: red}
 footer>.socials{line-height: 20px;position: absolute;right: 40px;bottom: 20px;color: #fff}
 footer>.socials>a{
     display: inline-block;
