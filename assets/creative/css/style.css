@@ -869,11 +869,13 @@ footer .socials{float: right;}
 }
 .box-title:after{
     position: absolute;content: '';display: block;
-    left: 5px;top: 5px; height: 100%;
+    left: 0;top: 5px; height: 100%;
     width: 100px;
     border:1px solid #ffcc00;
-    z-index: 0;
+    z-index: 0;margin-left: 5px;
 }
+.box-title.text-center:before{left: 50%;margin-left: -50px}
+.box-title.text-center:after{left: 50%;margin-left: -45px}
 .services .text-content ul{padding: 5px 0 0 0px;font-size: 14px;list-style: none;margin-top: 10px}
 .services .text-content ul>li{
     position: relative;line-height: 20px;padding: 0px 10px 0px 16px;

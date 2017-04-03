@@ -439,7 +439,7 @@ $(document).ready(function(){
             $('.validationFrm').validationEngine({
                 'scroll': false,
                 'isPopup' : true,
-                validateNonVisibleFields:true
+                // validateNonVisibleFields:true
             });
     }
     if(typeof WOW == 'function') new WOW().init();
