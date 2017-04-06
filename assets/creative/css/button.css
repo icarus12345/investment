@@ -33,10 +33,10 @@
     font-weight: 100;
     text-decoration: none;
     background: transparent;
-    -webkit-transition: all .5s; /*adjust timing here */
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
+    -webkit-transition: all .2s; /*adjust timing here */
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
 }
 .btn-dark:focus,
 .btn-dark:hover
@@ -46,29 +46,41 @@
 }
 .btn-dark:before,
 .btn-dark:after{
-    content: '';display: block;position: absolute;left: 0;width: 100%;height: 100%;top: 0;
-    -webkit-transition: all .5s; /*adjust timing here */
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
+    content: '';display: block;position: absolute;
+    top:0;height: 100%;
+    -webkit-transition: all .2s; /*adjust timing here */
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
 }
 .btn-dark:before{
     border-left: 1px solid #666;
     border-bottom: 1px solid #666;
-    left: -4px;
+    right: 8px;left: 0;
 }
 .btn-dark:after{
     border-right: 1px solid #666;
     border-top: 1px solid #666;
-    left: 4px;
+    left: 8px;right: 0;
 }
 .btn-dark:focus:before,
 .btn-dark:hover:before,
 .btn-dark:focus:after,
-.btn-dark:hover:after{left: 0}
+.btn-dark:hover:after{left: 0;right: 0}
 @media (max-width: 1200px) {
     .btn{padding: 6px 10px}
 }
 @media (max-width: 960px) {
     .btn{padding: 5px 10px}
+}
+@media (min-width: 768px) {
+    .modal-footer,
+    .modal-body{padding: 10px 40px}
+}
+.modal-footer,
+.modal-header{border:0;}
+.modal-footer{text-align: center;}
+/*.modal-footer .btn{width: 40%}*/
+.modal-body .form-control{
+    border:1px solid #111;border-radius: 0;
 }
