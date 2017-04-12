@@ -47,7 +47,7 @@
                                 data-live-search="true"
                                 data-size="10"
                                 >
-                                <option value="">Nothing Selected</option>
+                                <option value="0">Nothing Selected</option>
                                 [{if $cates|default:null}]
                                 [{foreach from=$cates item=c}]
                                     <option 
