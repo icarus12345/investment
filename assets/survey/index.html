@@ -6,12 +6,15 @@
         <meta name="viewport" content="width=device-width; initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" type="text/css" href="main.css"/>
         <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="validation-engine/jquery.validationEngine.js"></script>
+        <script type="text/javascript" src="validation-engine/jquery.validationEngine-en.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
         <header>
             <div></div>
         </header>
+        <form class="validationFrm" id="frm" name="frm">
         <div class="container">
             <h2>Phần I. Quí khách vui lòng chọn câu trả lời phù hợp</h2>
             <div class="question" data-qid="1">
@@ -19,26 +22,27 @@
                 <div class="radios">
                     <div class="radio col-3">
                         <label>
-                            <input type="radio" name="r-01" checked="1" value="Công Việc">
+                            <input type="radio" name="r-01" id="r1" value="Công Việc" class="validate[required]" data-putto="#e-01">
                             <span>Công việc</span>
                         </label>
                     </div>
                     <div class="radio col-3">
                         <label>
-                            <input type="radio" name="r-01" value="Nghỉ ngơi/Thư giãn">
+                            <input type="radio" name="r-01" id="r2" value="Nghỉ ngơi/Thư giãn" class="validate[required]" data-putto="#e-01">
                             <span>Nghỉ ngơi/Thư giãn</span>
                         </label>
                     </div>
                     <div class="radio col-3">
                         <label>
-                            <input type="radio" name="r-01" value="more">
+                            <input type="radio" name="r-01" id="r3" value="more" class="validate[required]" data-putto="#e-01">
                             <span>Khác</span>
                         </label>
                     </div>
                     <div class="radio col-12" role="more">
-                        <textarea rows="3" placeholder="Xin điền nội dung ở đây"></textarea>
+                        <textarea rows="3" placeholder="Xin điền nội dung ở đây" class="validate[condRequired[r3]]" data-putto="#e-01"></textarea>
                     </div>
                 </div>
+                <div id="e-01"></div>
             </div>
             <div class="question" data-qid="2">
                 <h3><span>2.</span>Bạn du lịch cùng ai :</h3>
@@ -391,4 +395,5 @@
                 <button class="btn btn-block" >NEXT</button>
             </div>
         </div>
+        </form>
     </body>
