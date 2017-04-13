@@ -9,6 +9,7 @@ class serialize_model extends Core_Model {
     }
     function setType($type=''){
         $this->type=$type;
+        return $this;
     }
     function onGet($id) {
         if($this->status){
