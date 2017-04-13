@@ -1,0 +1,19 @@
+$(document).ready(function(){
+    $('div[data-qid]').each(function(){
+        var $questElm = $(this );
+        $questElm.find('.btn-group>div').click(function(){
+            $questElm.find('.btn-group>div.active').removeClass('active');
+            $(this).addClass('active');
+            $questElm.find('div[role="popover"]').text($(this).data('value')).show()
+        });
+        $questElm.find('input[type="radio"]').change(function(){
+            if($(this).val()=='more'){
+                $questElm.find('div[role="more"]').show();
+            }else{
+                $questElm.find('div[role="more"]').hide();
+            }
+        });
+        $questElm.find('div[role="more"]').hide();
+        $questElm.find('.btn-group>div.active').click();
+    })
+});
