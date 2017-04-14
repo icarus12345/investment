@@ -39,10 +39,10 @@
 .container{width: auto;max-width: 1200px;position: relative}
 
 .menu{
-    background-image: url(images/menu-blue.png);
+    background-image: url(../images/menu-blue.png);
 }
-.logo>.img-logo{width: 209px;height: 44px;background-image: url(images/logo-blue.png)}
-body.in .logo>.img-logo{width: 209px;height: 44px;background-image: url(images/logo.png)}
+.logo>.img-logo{width: 209px;height: 44px;background-image: url(../images/logo-blue.png)}
+body.in .logo>.img-logo{width: 209px;height: 44px;background-image: url(../images/logo.png)}
 html{overflow-y: auto}
 body{height: auto}
 .becom{padding: 80px 75px 0 75px;position: relative;}

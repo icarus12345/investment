@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i');
-@import url('../creative/bootstrap/css/font-awesome.min.css?t=1');
+@import url('bootstrap/css/font-awesome.min.css?t=1');
 *,*::after,*::before{
       -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -203,7 +203,7 @@ html,body,#content-block{overflow: hidden;display: block;height: 100%;font-famil
     -webkit-transform: rotateX(0deg) perspective(1000px)
 }
 .slice-slider-slide-right-bg{
-    background-image: url(images/home-bg.jpg);position: absolute;top: -40px;left: -40px;right: -40px;bottom: -40px;
+    background-image: url(../images/home-bg.jpg);position: absolute;top: -40px;left: -40px;right: -40px;bottom: -40px;
 }
 .slice-slider-slide-left>.parallax .title{
     color: #fff;
@@ -249,68 +249,68 @@ html,body,#content-block{overflow: hidden;display: block;height: 100%;font-famil
     max-width: 160px;margin: auto;
 }
 .service-item:nth-child(1)>div{
-    background-image: url(images/p1.png);
+    background-image: url(../images/p1.png);
     
 }
 .service-item:nth-child(1):hover>div,
 .service-item.active:nth-child(1)>div{
-    background-image: url(images/p1-atv.png)
+    background-image: url(../images/p1-atv.png)
 }
 .service-item:nth-child(2)>div{
-    background-image: url(images/p2.png)
+    background-image: url(../images/p2.png)
 }
 .service-item:nth-child(2):hover>div,
 .service-item.active:nth-child(2)>div{
-    background-image: url(images/p2-atv.png)
+    background-image: url(../images/p2-atv.png)
 }
 .service-item:nth-child(3)>div{
-    background-image: url(images/p3.png)
+    background-image: url(../images/p3.png)
 }
 .service-item:nth-child(3):hover>div,
 .service-item.active:nth-child(3)>div{
-    background-image: url(images/p3-atv.png)
+    background-image: url(../images/p3-atv.png)
 }
 .service-item:nth-child(4)>div{
-    background-image: url(images/p4.png)
+    background-image: url(../images/p4.png)
 }
 .service-item:nth-child(4):hover>div,
 .service-item.active:nth-child(4)>div{
-    background-image: url(images/p4-atv.png)
+    background-image: url(../images/p4-atv.png)
 }
 
 .our-works .service-item:nth-child(1)>div{
-    background-image: url(images/s1.png);
+    background-image: url(../images/s1.png);
     
 }
 .our-works .service-item:nth-child(1):hover>div,
 .our-works .service-item.active:nth-child(1)>div{
-    background-image: url(images/s1-atv.png)
+    background-image: url(../images/s1-atv.png)
 }
 .our-works .service-item:nth-child(2)>div{
-    background-image: url(images/s2.png)
+    background-image: url(../images/s2.png)
 }
 .our-works .service-item:nth-child(2):hover>div,
 .our-works .service-item.active:nth-child(2)>div{
-    background-image: url(images/s2-atv.png)
+    background-image: url(../images/s2-atv.png)
 }
 .our-works .service-item:nth-child(3)>div{
-    background-image: url(images/s3.png)
+    background-image: url(../images/s3.png)
 }
 .our-works .service-item:nth-child(3):hover>div,
 .our-works .service-item.active:nth-child(3)>div{
-    background-image: url(images/s3-atv.png)
+    background-image: url(../images/s3-atv.png)
 }
 .our-works .service-item:nth-child(4)>div{
-    background-image: url(images/s4.png)
+    background-image: url(../images/s4.png)
 }
 .our-works .service-item:nth-child(4):hover>div,
 .our-works .service-item.active:nth-child(4)>div{
-    background-image: url(images/s4-atv.png)
+    background-image: url(../images/s4-atv.png)
 }
 .our-works.service-list>.service-item:after{display: none;}
 .service-list>.service-item:after{
     position: absolute;right: 0;top: 50%;width: 50px;height: 34px;
-    background: url(images/next.png) no-repeat center;
+    background: url(../images/next.png) no-repeat center;
     margin-top: -17px;content: '';display: block;
     margin-right: -25px;
 }
@@ -372,10 +372,10 @@ header>div{
 
 .menu{
     position: absolute;right: 20px;top: 20px;width: 30px;height: 30px;
-    background: url(images/menu.png) center no-repeat;
+    background: url(../images/menu.png) center no-repeat;
     cursor: pointer;
 }
-body.in .menu{background-image: url(images/menu-close.png)}
+body.in .menu{background-image: url(../images/menu-close.png)}
 .overlay{
     position: fixed;
     z-index: 1000;
