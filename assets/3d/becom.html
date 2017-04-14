@@ -35,7 +35,7 @@
             </div>
         </header>
         <footer>
-            <div class="copy-right">Powered by Redmine © 2006-2014</div>
+            <div class="copy-right">Powered by Redmine © 2006-2014. Developer <span class="fa fa-heart"></span> <a href="#">Speranzainc</a></div>
             <div class="socials">
             Ket noi voi chung toi 
             <a href="#" class="fa fa-facebook"></a>
@@ -51,8 +51,8 @@
                     <li><a href="index.html#about/" onclick="gotopage(1)">About us</a></li>
                     <li><a href="index.html#process/" onclick="gotopage(2)">our process</a></li>
                     <li><a href="index.html#service/" onclick="gotopage(3)">Service us</a></li>
-                    <li><a href="#">becom a partner</a></li>
-                    <li><a href="#">carefers join us</a></li>
+                    <li><a href="becom.html">becom a partner</a></li>
+                    <li><a href="join.html">carefers join us</a></li>
                 </ul>
             </div>
         </div>
@@ -104,121 +104,292 @@
                 </div>
             </div>
         </div>
+        <div class="box">
         <div class="box" style="background: #f5f8fa">
         <div class="h1" data-fz="big">
-                To become a member of Speranza
+                PARTNERSHIP COM
         </div>
-        <div class="text-center">or to obtain more information on the program</div>
+        <div class="text-center">Please complete the form below. All field marked with * are mandatory</div>
 
          <form name="contactForm" id="contactForm" target="integration_asynchronous">
-                    <div>
-                        <div class="row -half">
-                            <div class="col-xs-6 -half">
-                                <div class="control-group">
-                                    <div>Họ và tên</div>
-                                    <input 
-                                        name="contact_name" 
-                                        class="form-control validate[required,minSize[4],maxSize[255]]" 
-                                        data-prompt-position="topLeft:0,20"
-                                        placeholder="">
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
-                            <div class="col-xs-6 -half">
-                                <div class="control-group">
-                                    <div>Số điện thoại</div>
-                                    <input 
-                                        name="contact_phone" 
-                                        class="form-control validate[required,minSize[7],maxSize[12]]" 
-                                        data-prompt-position="topLeft:0,20"
-                                        placeholder="">
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
+            <div class="group-title">Company Information</div>
+            <div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Họ và tên</div>
+                            <input 
+                                name="contact_name" 
+                                class="form-control validate[required,minSize[4],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
                         </div>
-                        <div class="row -half">
-                            <div class="col-xs-6 -half">
-                                <div class="control-group">
-                                    <div>Email</div>
-                                    <input 
-                                        name="contact_email" value="" 
-                                        class="form-control validate[required,custom[email],maxSize[100]]" 
-                                        data-prompt-position="topLeft:0,20"
-                                        placeholder="">
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
-                            <div class="col-xs-6 -half">
-                                <div class="control-group">
-                                    <div>Địa chỉ</div>
-                                    <input 
-                                        name="contact_data" 
-                                        class="form-control validate[required,minSize[10],maxSize[255]]" 
-                                        data-prompt-position="topLeft:0,20"
-                                        placeholder="">
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
-                        </div>
-                        <div class="row -half">
-                            <div class="col-xs-6 -half">
-                                <div class="control-group">
-                                    <div>Email</div>
-                                    <select class="form-control">
-                                        <option>Chọn</option>
-                                    </select>
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
-                            <div class="col-xs-6 -half">
-                                <div class="control-group">
-                                    <div>Địa chỉ</div>
-                                    <input 
-                                        name="contact_data" 
-                                        class="form-control validate[required,minSize[10],maxSize[255]]" 
-                                        data-prompt-position="topLeft:0,20"
-                                        placeholder="">
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
-                        </div>
-                        <div class="row -half">
-                            <div class="col-xs-12 -half">
-                                <div class="control-group">
-                                    <div>Tiêu đề</div>
-                                    <input 
-                                        name="contact_subject" 
-                                        class="form-control validate[required,minSize[10],maxSize[255]]" 
-                                        data-prompt-position="topLeft:0,20"
-                                        placeholder="">
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
-                        </div>
-                        <div class="row -half">
-                            <div class="col-xs-12 -half">
-                                <div class="control-group">
-                                    <div>Nội dung</div>
-                                    <textarea 
-                                        name="contact_message" 
-                                        rows="8" 
-                                        class="form-control validate[required,minSize[10],maxSize[4000]]"
-                                        data-prompt-position="topLeft:0,20"
-                                        placeholder=""></textarea>
-                                </div>
-                                <div class="space-line"></div>
-                            </div>
-                        </div>
-                    
-                        <input type="hidden" name="contact_type" value="Contact us">
-                        <div class="message"></div>
-                        <div class="row -half">
-                            <div class="col-xs-6 -half">
-                                
-                            </div>
-                            <div class="col-xs-6 -half">
-                                <button class="btn btn-info btn-block" type="button" onclick="contactus()">Gửi yêu cầu</button>
-                            </div>
-                        </div>
+                        <div class="space-line"></div>
                     </div>
-                </form>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Số điện thoại</div>
+                            <input 
+                                name="contact_phone" 
+                                class="form-control validate[required,minSize[7],maxSize[12]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Email</div>
+                            <input 
+                                name="contact_email" value="" 
+                                class="form-control validate[required,custom[email],maxSize[100]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Địa chỉ</div>
+                            <input 
+                                name="contact_data" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Email</div>
+                            <select class="form-control">
+                                <option>Chọn</option>
+                            </select>
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Địa chỉ</div>
+                            <input 
+                                name="contact_data" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-12 -half">
+                        <div class="control-group">
+                            <div>Tiêu đề</div>
+                            <input 
+                                name="contact_subject" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group-title">Company Information</div>
+            <div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Họ và tên</div>
+                            <input 
+                                name="contact_name" 
+                                class="form-control validate[required,minSize[4],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Số điện thoại</div>
+                            <input 
+                                name="contact_phone" 
+                                class="form-control validate[required,minSize[7],maxSize[12]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Email</div>
+                            <input 
+                                name="contact_email" value="" 
+                                class="form-control validate[required,custom[email],maxSize[100]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Địa chỉ</div>
+                            <input 
+                                name="contact_data" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Email</div>
+                            <select class="form-control">
+                                <option>Chọn</option>
+                            </select>
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Địa chỉ</div>
+                            <input 
+                                name="contact_data" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-12 -half">
+                        <div class="control-group">
+                            <div>Tiêu đề</div>
+                            <input 
+                                name="contact_subject" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="group-title">Company Information</div>
+            <div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Họ và tên</div>
+                            <input 
+                                name="contact_name" 
+                                class="form-control validate[required,minSize[4],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Số điện thoại</div>
+                            <input 
+                                name="contact_phone" 
+                                class="form-control validate[required,minSize[7],maxSize[12]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Email</div>
+                            <input 
+                                name="contact_email" value="" 
+                                class="form-control validate[required,custom[email],maxSize[100]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Địa chỉ</div>
+                            <input 
+                                name="contact_data" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Email</div>
+                            <select class="form-control">
+                                <option>Chọn</option>
+                            </select>
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                    <div class="col-xs-6 -half">
+                        <div class="control-group">
+                            <div>Địa chỉ</div>
+                            <input 
+                                name="contact_data" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-12 -half">
+                        <div class="control-group">
+                            <div>Tiêu đề</div>
+                            <input 
+                                name="contact_subject" 
+                                class="form-control validate[required,minSize[10],maxSize[255]]" 
+                                data-prompt-position="topLeft:0,20"
+                                placeholder="">
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <div class="row -half">
+                    <div class="col-xs-12 -half pull-bottom">
+                        <div class="control-group">
+                            <div>Nội dung</div>
+                            <textarea 
+                                name="contact_message" 
+                                rows="8" 
+                                class="form-control validate[required,minSize[10],maxSize[4000]]"
+                                data-prompt-position="topLeft:0,20"
+                                placeholder=""></textarea>
+                        </div>
+                        <div class="space-line"></div>
+                    </div>
+                </div>
+                <input type="hidden" name="contact_type" value="Contact us">
+                <div class="message"></div>
+                <div class="row -half pull-top">
+                    <div class="col-xs-12 -half">
+                        <button class="btn btn-info btn-block" type="button">BECOM A PARTNER</button>
+                    </div>
+                </div>
+            </div>
+        </form>
