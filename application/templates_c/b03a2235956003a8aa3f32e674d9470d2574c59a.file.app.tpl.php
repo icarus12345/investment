@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-04-12 14:41:17
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2017-04-14 14:12:17
          compiled from "application\templates\dashboard\cp\serialize\app.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3235558edda1d9810d9-27371042%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b03a2235956003a8aa3f32e674d9470d2574c59a' => 
     array (
       0 => 'application\\templates\\dashboard\\cp\\serialize\\app.tpl',
-      1 => 1488157394,
+      1 => 1492153910,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_58edda1dd34f69_50991093',
   'variables' => 
   array (
     'ci' => 0,
@@ -24,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'unit' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_58edda1dd34f69_50991093',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58edda1dd34f69_50991093')) {function content_58edda1dd34f69_50991093($_smarty_tpl) {?><?php if (false) {?><?php echo '<script'; ?>
  type="text/javascript"><?php }?>
@@ -284,7 +284,9 @@ status: 'true'}, entryId, me.onRefresh);
             		}else if(action == 'statusoff'){
             			me.onCommit(me.entryCommitUri,{<?php echo $_smarty_tpl->tpl_vars['frefix']->value;?>
 status: 'false'}, entryId, me.onRefresh);
-	                }else{
+	                }else if(action == 'seo'){
+                        loadSeo('serialize-'+entryId)
+                    }else{
 	                    addNotice("Function is updating !",'warning');
 	                }
 	            }

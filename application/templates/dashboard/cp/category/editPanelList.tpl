@@ -74,7 +74,7 @@
                     <div class="control-group pull-bottom">
                         <div>Position :</div>
                         <input type="number" 
-                                class="form-control" value="[{$item->cat_position|default:''}]" 
+                                class="form-control" value="[{$item->cat_position|default:'0'}]" 
                                 name="cat_position"
                                 >
                     </div>

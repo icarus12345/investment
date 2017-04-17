@@ -1,9 +1,4 @@
-// Preload some images
-$.each([
-    "loading.gif",
-    "ui-icons_black.png",
-    "ui-icons_grey.png",
-    "ui-icons_white.png"
-], function(i, img) {
-    new Image().src = "themes/dark/img/" + img;
-});
+// If this file exists in theme directory, it will be loaded in <head> section
+
+var imgLoading = new Image();
+imgLoading.src = 'themes/dark/img/loading.gif';
