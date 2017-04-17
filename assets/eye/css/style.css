@@ -249,7 +249,7 @@ a:hover{color: #00aff0;text-decoration: none;}
     padding: 10px 30px;
 }
 .btn-white.actived{color: #fff;background: #00aff0}
-.btns>.btn{margin-right: 20px;text-transform: uppercase;}
+.btns>.btn{margin-right: 20px;text-transform: uppercase;margin-bottom: 10px}
 body.nav-collapsed{}
 #navbar.is-fix-top{background-color: rgba(255,255,255,.75);color: #111}
 .navbar-collapse.collapse{display: none;}
@@ -975,6 +975,22 @@ footer .foot-menu{padding: 20px 0;background: #222222;}
     .f24{font-size: 18px}
     .navbar-nav > li>a {
         padding: 10px 10px;
+    }
+    .about-detail>.container>div{padding: 100px 20px 0px 20px;background: #fff}
+    .about-control{    padding: 0 50px;}
+    .about-next{width: 100%;position: relative;padding: 20px 60px 20px 0}
+    .about-prev{width: 100%;position: relative;padding: 20px 0px 20px 60px}
+    .about-menu{
+            position: relative;
+        left: 0;
+        height: 80px;
+        width: 100%;
+        margin-left: 0;
+        background: url(../images/menu.jpg) center no-repeat #fff;
+        border-left: 1px solid #ebebeb;
+        border-right: 1px solid #ebebeb;
+        display: block;
+        float: left;
     }
 }
 @media (max-width: 480px) {

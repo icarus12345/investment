@@ -38,9 +38,9 @@
         <div class="blog-box">
             <div class="container">
                 <div class="text-center">
-                    <div class="h2">LATEST <span>NEWS</span></div>
+                    <div class="h2">Latest <span>News</span></div>
                     <p class="desc">
-                        We always update the latest news about the market of property investment in Vietnam, with hope will help you are the informations in investment market at Vietnam.eleifend nisi justo.
+                        Adelaide Eye & Laser Centre's ISO/NSQHS Certification review took place on the 12th April 2016.We have just received...
                     </p>
                 </div>
                 <div class="owl-carousel" id="owl-blog">

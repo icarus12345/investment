@@ -4,7 +4,7 @@
                     <div class="row f16">
                         <div class="col-md-6 cls">
                             <div class="row">
-                                <div class="col-sm-6 col-xs-12">
+                                <div class="col-sm-6 col-xs-12 pull-top pull-bottom">
                                     <div class="foot-logo f16">ADELAIDE EYE & LASER CENTRE</div>
                                     <div class="wicon">
                                         <i class="fa fa-phone f18"></i> 
@@ -28,7 +28,7 @@ Eastwood, South Australia 5063.
                                         companyname@email.com
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-xs-12">
+                                <div class="col-sm-6 col-xs-12 pull-top pull-bottom">
                                     <div class="foot-tit f16">SERVICES</div>
                                     <div class="foot-list">
                                         [{foreach from=$aServiceCate item=foo key=i}]
@@ -40,7 +40,7 @@ Eastwood, South Australia 5063.
                         </div>
                         <div class="col-md-6 cls">
                             <div class="row">
-                            <div class="col-sm-6 col-xs-12">
+                            <div class="col-sm-6 col-xs-12 pull-top pull-bottom">
                                 <div class="foot-tit f16">INFORMATION</div>
                                 <div class="foot-list">
                                     [{foreach from=$aAbouts item=foo key=i}]
@@ -48,7 +48,7 @@ Eastwood, South Australia 5063.
                                     [{/foreach}]
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-xs-12">
+                            <div class="col-sm-6 col-xs-12 pull-top pull-bottom">
                                 <div class="foot-tit f16">ACCREDITATION</div>
                                 <img src="/assets/eye/images/logo-foot.jpg">
                                 <div>Global Mark &copy; Accreditation</div>
