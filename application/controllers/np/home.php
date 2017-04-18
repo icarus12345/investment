@@ -11,6 +11,9 @@ class home extends FE_Controller {
     public function index(){
         $this->assigns->actived_menu = 'home';
         $this->assigns->sliders = $this->image_model->onGetByType('slider');
+        $sliders = $this->serialize_model->getByType('np-slider');
+        $this->assigns->sliders = $sliders;
+
         $this->assigns->gallery_cates = $this->category_model->onGetByType($this->assigns->fecog['gallery']);
         $data = $this->cdata_model->getInCategories(null,1,100);
         foreach ($data as $value) {

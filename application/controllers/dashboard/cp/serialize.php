@@ -78,9 +78,13 @@ class serialize extends CP_Controller {
                 break;
             case '3':
                 if($Id){
+                    if($item->_data['type']){
+                        
                     $entry_setting = $this->serialize_model->onGetByAlias($item->_data['type']);
-                    if($entry_setting)
+                    }
+                    if($entry_setting){
                         $this->assigns->entry_setting = $entry_setting;
+                    }
                 }
                 $htmlreponse = $this->smarty->view( 'dashboard/cp/serialize/editPanelList', $this->assigns, true );
                 break;

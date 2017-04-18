@@ -50,7 +50,7 @@
         <link rel="stylesheet" type="text/css" href="/assets/investment/plugin/countdown/countdown.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/investment/plugin/owl-carousel/owl.carousel.css"/>
         <link rel="stylesheet" type="text/css" href="/assets/investment/plugin/swipebox/swipebox-dark-1.3.css" >
-        <link rel="stylesheet" type="text/css" href="/assets/investment/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/assets/investment/css/np.css"/>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/libraries/metronic/theme/assets/global/plugins/bootstrap-toastr/toastr.min.css"/>
 
