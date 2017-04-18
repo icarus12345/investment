@@ -6,6 +6,7 @@ class FE_Controller extends CI_Controller {
         $this->smarty->caching = false;
         $this->assigns = new stdClass();
         $this->load->library('pagination');
+        $this->load->model('front/image_model');
         $this->load->model('front/category_model');
         $this->load->model('front/serialize_model');
         $this->load->model('front/data_model');
