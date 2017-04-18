@@ -74,7 +74,7 @@ We showcase and share our experiences and give you up to date information on whe
                         <div class="nailthumb">
                             <div class="nailthumb-figure-75">
                                 <a href="/blogs/[{$foo->content_alias|escape:'html'}]" class="nailthumb-container">
-                                    <img class="lazy" src="[{$foo->content_thumb|escape:'html'}]">
+                                    <img class="lazy" -src="[{$foo->content_thumb|escape:'html'}]" src="http://lorempixel.com/1920/1280">
                                 </a>
                             </div>
                         </div>
