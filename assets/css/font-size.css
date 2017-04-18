@@ -1,0 +1,35 @@
+*[data-fz="bang"]{font-size: 40px;line-height: 58px;}
+*[data-fz="bigger"]{font-size: 28px;line-height: 40px;}
+*[data-fz="big"]{font-size: 26px;line-height: 38px;}
+*[data-fz="medium"]{font-size: 16px;line-height: 30px;}
+
+.glyphicon-option-horizontal:before {
+    content: "\e234";
+}
+*[data-fz="36"]{font-size: 36px;line-height: 44px}
+*[data-fz="24"]{font-size: 24px;line-height: 28px}
+@media (max-width: 1600px) {
+    *[data-fz="bigger"]{font-size: 22px;line-height: 30px}
+    *[data-fz="big"]{font-size: 21px;line-height: 30px}
+    *[data-fz="medium"]{font-size: 15px;line-height: 28px}
+}
+@media (max-width: 1200px) {
+    *[data-fz="bigger"]{font-size: 22px;line-height: 30px}
+    *[data-fz="big"]{font-size: 20px;line-height: 30px;}
+    *[data-fz="medium"]{font-size: 14px;line-height: 24px}
+
+    *[data-fz="36"]{font-size: 28px;line-height: 32px}
+    *[data-fz="24"]{font-size: 18px;line-height: 24px}
+}
+@media (max-width: 960px) {
+    *[data-fz="bigger"]{font-size: 22px}
+    *[data-fz="big"]{font-size: 20px}
+    *[data-fz="medium"]{font-size: 14px;line-height: 20px}
+}
+@media (max-width: 768px) {
+    *[data-fz="bigger"]{font-size: 20px}
+    *[data-fz="big"]{font-size: 18px}
+    *[data-fz="medium"]{
+        font-size: 13px;line-height: 18px
+    }
+}

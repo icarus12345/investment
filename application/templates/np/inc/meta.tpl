@@ -43,16 +43,7 @@
         <meta name="geo.position" content="10.792166;106.679810" />
         <meta name="ICBM" content="10.792166,106.679810"/>
 
-        <link rel="stylesheet" type="text/css" href="/assets/investment/bootstrap/css/bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="/assets/investment/bootstrap/css/hover.css"/>
-        <link rel="stylesheet" type="text/css" href="/assets/investment/bootstrap/css/bootstrap-select.min.css"/>
-        <link rel="stylesheet" type="text/css" href="/assets/investment/bootstrap/css/font-awesome.min.css?t=1">
-        <link rel="stylesheet" type="text/css" href="/assets/investment/plugin/countdown/countdown.css"/>
-        <link rel="stylesheet" type="text/css" href="/assets/investment/plugin/owl-carousel/owl.carousel.css"/>
-        <link rel="stylesheet" type="text/css" href="/assets/investment/plugin/swipebox/swipebox-dark-1.3.css" >
-        <link rel="stylesheet" type="text/css" href="/assets/investment/css/np.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/libraries/metronic/theme/assets/global/plugins/bootstrap-toastr/toastr.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/assets/np/main.css"/>
 
 
         <script type="text/javascript" src="/assets/investment/bootstrap/js/jquery-1.9.1.min.js"></script>
@@ -60,7 +51,7 @@
         <script type="text/javascript" src="/assets/investment/plugin/owl-carousel/owl.carousel.js"></script>
         <script type="text/javascript" src="/assets/investment/plugin/jquery.nailthumb.1.1.js"></script>
         <script type="text/javascript" src="/assets/investment/plugin/jquery.lazyload.min.js"></script>
-        <script type="text/javascript" src="/assets/investment/js/main.js"></script>
+        <script type="text/javascript" src="/assets/np/js/main.js"></script>
         <script src="/libraries/metronic/theme/assets/global/plugins/bootstrap-toastr/toastr.min.js"></script>
         <script type="text/javascript" src="/libraries/plugin/serializeObject.js"></script>
         <script type="text/javascript" src="/libraries/plugin/validation-engine/jquery.validationEngine.js"></script>
