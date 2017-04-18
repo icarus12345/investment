@@ -208,7 +208,9 @@ var APP = function() {
                 	}else if(action == 'statuson'){
                 		me.onCommit(me.entryCommitUri,{[{$frefix}]status: 'true'}, entryId, me.onRefresh);
             		}else if(action == 'statusoff'){
-            			me.onCommit(me.entryCommitUri,{[{$frefix}]status: 'false'}, entryId, me.onRefresh);
+                        me.onCommit(me.entryCommitUri,{[{$frefix}]status: 'false'}, entryId, me.onRefresh);
+                    }else if(action == 'seo'){
+                        loadSeo('serialize-'+entryId)
 	                }else{
 	                    addNotice("Function is updating !",'warning');
 	                }
