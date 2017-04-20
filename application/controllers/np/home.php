@@ -14,16 +14,8 @@ class home extends FE_Controller {
         $sliders = $this->serialize_model->getByType('np-slider');
         $this->assigns->sliders = $sliders;
 
-        $this->assigns->gallery_cates = $this->category_model->onGetByType($this->assigns->fecog['gallery']);
-        $data = $this->cdata_model->getInCategories(null,1,100);
-        foreach ($data as $value) {
-            $gallery_data[] = array(
-                'type'=>$value->data_category,
-                'data'=>$value->data_data['thumb'],
-                'url'=>'/gallery/'.$value->data_data['alias']
-                );
-        }
-        $this->assigns->gallery_data = $gallery_data;
+        $welcome = $this->serialize_model->setType(null)->onGet(118);
+        $this->assigns->welcome = $welcome;
         $this->smarty->view( 'np/home', $this->assigns );
     }
     public function policy(){

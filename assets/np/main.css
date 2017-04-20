@@ -153,6 +153,8 @@ body{
     background: #ffcc00;
     color: #fff
 }
+.welcome .thumb{}
+.welcome .thumb>img{ max-width: 100%;margin:auto; display: block; }
 @media (max-width: 1599px) {
     
 }

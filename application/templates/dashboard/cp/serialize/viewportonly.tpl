@@ -28,7 +28,7 @@
                     <script type="text/javascript" src="/libraries/ckeditor/ckeditor.js" ></script>
                     <script type="text/javascript">
                         var myApp = {};
-                        myApp.entryCommitUri = '/dashboard/cp/entry/oncommit/';
+                        myApp.entryCommitUri = '/dashboard/cp/serialize/oncommit/';
                         myApp.onCommit = function(Url,Params, Id,callback) {
                             httpRequest({
                                 'url': Url,

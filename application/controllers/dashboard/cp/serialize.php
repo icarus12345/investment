@@ -35,12 +35,26 @@ class serialize extends CP_Controller {
         //     $cates=$this->cate_model->buildTreeArray($cates);
         //     $this->assigns->cates=$cates;
         // }
+        $sid=$this->input->get_post('sid');
+        $this->assigns->entry_setting = $this->serialize_model->onGet($sid);
+        $layout=$this->assigns->action['layout'];
         if($Id){
             $item = $this->serialize_model->onGet($Id);
             $this->assigns->item = $item;
         }
         $layout = $this->assigns->action['layout'];
         switch ($layout){
+            case '3':
+                if($Id){
+                    if($item->_data['type']){
+                        $entry_setting = $this->serialize_model->onGetByAlias($item->_data['type']);
+                    }
+                    if($entry_setting){
+                        $this->assigns->entry_setting = $entry_setting;
+                    }
+                }
+                $this->assigns->formhtml = $this->smarty->view( 'dashboard/cp/serialize/editPanelList', $this->assigns, true );
+                break;
             default :
                 $this->assigns->formhtml = $this->smarty->view( 'dashboard/cp/serialize/editPanel', $this->assigns, true );
         }
