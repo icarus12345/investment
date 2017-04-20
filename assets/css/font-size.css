@@ -8,6 +8,7 @@
 }
 *[data-fz="36"]{font-size: 36px;line-height: 44px}
 *[data-fz="24"]{font-size: 24px;line-height: 28px}
+*[data-fz="18"]{font-size: 18px;line-height: 22px}
 @media (max-width: 1600px) {
     *[data-fz="bigger"]{font-size: 22px;line-height: 30px}
     *[data-fz="big"]{font-size: 21px;line-height: 30px}
@@ -20,11 +21,15 @@
 
     *[data-fz="36"]{font-size: 28px;line-height: 32px}
     *[data-fz="24"]{font-size: 18px;line-height: 24px}
+    *[data-fz="18"]{font-size: 16px;line-height: 20px}
 }
-@media (max-width: 960px) {
+@media (max-width: 992px) {
     *[data-fz="bigger"]{font-size: 22px}
     *[data-fz="big"]{font-size: 20px}
     *[data-fz="medium"]{font-size: 14px;line-height: 20px}
+    *[data-fz="36"]{font-size: 22px;line-height: 26px}
+    *[data-fz="24"]{font-size: 16px;line-height: 20px}
+    *[data-fz="18"]{font-size: 15px;line-height: 18px}
 }
 @media (max-width: 768px) {
     *[data-fz="bigger"]{font-size: 20px}
@@ -32,4 +37,7 @@
     *[data-fz="medium"]{
         font-size: 13px;line-height: 18px
     }
+    *[data-fz="36"]{font-size: 18px;line-height: 22px}
+    *[data-fz="24"]{font-size: 15px;line-height: 18px}
+    *[data-fz="18"]{font-size: 14px;line-height: 18px}
 }

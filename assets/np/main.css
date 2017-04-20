@@ -153,8 +153,50 @@ body{
     background: #ffcc00;
     color: #fff
 }
-.welcome .thumb{}
-.welcome .thumb>img{ max-width: 100%;margin:auto; display: block; }
+.box{
+    padding: 80px 0;position: relative;
+    color: #fff;
+}
+.box:before{
+    content: '';display: block;position: absolute;left: 0;width: 100%;height: 100%;top:0;z-index: 0;
+    background: rgba(0,0,0,.7)
+}
+.box>div{position: relative;z-index: 1}
+.box-title{position: relative;padding: 15px}
+.box-title>*{z-index: 1;position: relative;}
+.box-title>div{text-transform: uppercase;font-size: 24px;line-height: 30px}
+.box-title>span{text-transform: capitalize;font-size: 16px;line-height: 20px;display: block;}
+.box-title:before{
+    content: '';display: block;position: absolute;left: 0;width: 100px;height: 80px;top:50%;z-index: 0;
+    left: 50px;margin: -40px 0 0 -50px;
+    background: #ffcc00;z-index: 0
+}
+.box-title:after{
+    content: '';display: block;position: absolute;left: 0;width: 100px;height: 80px;top:50%;z-index: 0;
+    left: 50px;margin: -35px 0 0 -45px;
+    border: 1px solid #ffcc00;z-index: 0
+}
+.box-title.text-center:before{
+    left: 50%;
+}
+.box-title.text-center:after{
+    left: 50%;
+}
+.report-nums{text-align: center;}
+.report-nums .num{
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+.report-nums .num>div{font-size: 85px;font-weight: bold;}
+.report-nums .num>span{font-size: 18px}
+.services-list{text-align: center;}
+.services-list>div{padding-top: 10px;padding-bottom: 10px;text-transform: uppercase;}
+.line-thumb>div{position: relative;height: 100%}
+.line-thumb>div:after{
+    content: '';position: absolute;top:0;left: 20px;height: 100%;
+    width: 7px;background: url(images/line.png)
+}
+.line-thumb.right>div:after{left: auto;right: 20px}
 @media (max-width: 1599px) {
     
 }
@@ -191,7 +233,8 @@ body{
     }
 }
 
-@media (max-width: 959px){
+@media (max-width: 991px){
+    .home-slider .owl-carousel .item{padding: 100px 0}
     .navbar-header{
         float: none;
         margin-right: -10px;
@@ -203,11 +246,28 @@ body{
     .navbar-toggle .icon-bar{
         background: #000
     }
+    .report-nums .num>div{font-size: 60px;}
+    .report-nums .num>span{font-size: 16px}
+    .line-thumb{float: left;width: 100%}
+    .line-thumb>div{padding-bottom: 50%}
+
+}
+@media (max-width: 767px){
+    .home-slider .owl-carousel .item{padding: 40px 0}
 }
 @media (min-width: 1200px){
     .navbar-collapse{}
 }
-@media (min-width: 960px){
+@media (min-width: 992px){
     .navbar-collapse{padding: 0}
-
+    .line-thumb{
+        height: 100%;
+        position: absolute;
+        left: 0;
+    }
+    .line-thumb.right{
+        left: auto;right: 0
+    }
+    .line-thumb>div{margin-left: -10px}
+    .line-thumb.right>div{margin-right: -10px;margin-left: 0}
 }
