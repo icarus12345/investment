@@ -9,13 +9,10 @@ class home extends FE_Controller {
         $this->cdata_model->type = 'gallery';
     }
     public function index(){
-        $this->assigns->actived_menu = 'home';
-        $this->assigns->sliders = $this->image_model->onGetByType('slider');
-        $sliders = $this->serialize_model->getByType('np-slider');
-        $this->assigns->sliders = $sliders;
-
-        $welcome = $this->serialize_model->setType(null)->onGet(118);
-        $this->assigns->welcome = $welcome;
+        $this->assigns->featuredwork = $this->serialize_model->getByType('np-featured-work');
+        $this->assigns->news = $this->serialize_model->getByType('np-news');
+        $this->assigns->sliders = $this->serialize_model->getByType('np-slider');
+        $this->assigns->welcome = $this->serialize_model->setType(null)->onGet(118);
         $this->smarty->view( 'np/home', $this->assigns );
     }
     public function policy(){

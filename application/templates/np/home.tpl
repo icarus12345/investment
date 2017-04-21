@@ -16,17 +16,17 @@
             <div class="work-flow">
                 <div class="title2">Our Process</div>
                 <img style="max-width: 100%;-margin:auto;display:block" src="/assets/np/images/work-flow.png"/>
-                <div><a href="#" class="btn btn-orange">View Portfolio</a></div>
+                <div><a href="#" class="btn btn-orange btn-lg">View Portfolio</a></div>
             </div>
             <div class="space-linex2"></div>
         </div>
         <div class="col-md-4 line-thumb space-linex2">
             <div class="cover" style="background-image:url(/assets/np/images/Layer-6.jpg"></div>
-            <div class=""></div>
         </div>
     </div>
 </div>
-<div class="box cover" style="background-image:url(/assets/np/images/Layer-7.jpg">
+<script type="text/javascript" src="/libraries/plugin/masonry.js"></script>
+<div class="box-main cover" style="background-image:url(/assets/np/images/Layer-7.jpg">
     <div class="container">
         <div>
             <div class="box-title text-center">
@@ -95,6 +95,56 @@
         </div>
         <div class="col-md-4 line-thumb right">
             <div class="cover" style="background-image:url(/assets/np/images/Layer-8.jpg"></div>
+        </div>
+    </div>
+</div>
+<div class="gray-box space-linex3-before space-linex3-after">
+    <div class="">
+        <div class="box-title text-center">
+            <div>OUR FEATURED WORKS</div>
+            <span>Our Proud Projects</span>
+        </div>
+        <div class="space-linex2-before">
+            <div id="container" class="boxs"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var featuredwork = [{$featuredwork|json_encode}]
+</script>
+<div class="white-box space-linex3-before space-linex3-after">
+    <div class="container">
+        <div class="box-title text-center">
+            <div>NEWS & BLOGS</div>
+            <span>Read about the latest trends and updates</span>
+        </div>
+        <div class="space-linex2-before">
+            <div class="owl-carousel" id="owl-blog">
+                    [{foreach from=$news item=foo}]
+                    <div class="item">
+                        <div class="nailthumb">
+                            <div class="nailthumb-figure-75">
+                                <a href="JavaScript:void(0)" class="nailthumb-container">
+                                    <img class="lazy" src="[{$foo->_data.image|escape:'html'}]">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <!-- <div class="cat">Property Investment</div> -->
+                            <div class="blog-title">
+                                <div class="line-clamp-f-3">[{$foo->_title}]</div>
+                            </div>
+                            <div class="date">
+                            By N&P 2016/12/12
+                                <div class="pull-right">
+                                <span class="fa fa-eye"></span> 123
+                                </div>
+                            </div>
+                            <p class="line-clamp-f-3">[{$foo->_data.desc}]</p>
+                        </div>
+                    </div>
+                    [{/foreach}]
+                </div>
         </div>
     </div>
 </div>
