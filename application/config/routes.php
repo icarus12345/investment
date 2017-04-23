@@ -54,9 +54,9 @@
 // $route["investing-vietnam"] = "invest/index";
 // $route["investing-vietnam/(:any)"] = "invest/detail/$1";
 
-$route["services"] = "eye/home/services";
-$route["services/(:any)/(:any)"] = "eye/home/serviceDetail/$1/$2";
-$route["services/(:any)"] = "eye/home/services/$1";
+$route["services"] = "np/home/services";
+// $route["services/(:any)/(:any)"] = "np/home/servicedetail/$1/$2";
+$route["services/(:any)"] = "np/home/servicedetail/$1";
 
 $route["privacy-policy"] = "home/policy";
 $route["team-conditions"] = "home/teamcondition";

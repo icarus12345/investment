@@ -755,6 +755,7 @@ var APP = function() {
             addNotice('This function to requires an administrative account.<br/>Please check your authority, and try again.','warning');
             return;
         [{/if}]
+        $('#subentry-container').html('...');
         $('#entry-container').html('...');
         httpRequest({
             'url'         :   me.subEntryEditUri + me.subEntryType,
@@ -770,7 +771,7 @@ var APP = function() {
                 if(rsdata.result<0){
                     addNotice(rsdata.message,'error');
                 }else{
-                    $('#entry-container').html(rsdata.htmlreponse);
+                    $('#subentry-container').html(rsdata.htmlreponse);
                     $('#entryForm').validationEngine({
                         'scroll': false,
                         'isPopup' : me.isEntryDialog,
@@ -834,7 +835,7 @@ var APP = function() {
     		// $('#entry-container').addClass('metronic-popup').show();
     	// }else if(me.isEntryDialog==1){
 	    	uidialog({
-	            'message' : $('#entry-container'),
+	            'message' : $('#subentry-container'),
 	            'title': title,
 	            'dialogClass':'metronic-modal',
 	            'width':'[{($action.col|default:3)*120}]px',
@@ -869,7 +870,7 @@ var APP = function() {
         $(me.jqxgrid).jqxGrid('updatebounddata');
     };
     this.onSubCancel = this.cancelSubEdit = function(){
-    	$('#entry-container').dialog("close");
+    	$('#subentry-container').dialog("close");
     };
     this.refreshSubList = this.onSubRefresh = function(){
     	$(me.subjqxgrid).jqxGrid('updatebounddata');

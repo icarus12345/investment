@@ -157,14 +157,16 @@ body{
     padding: 80px 0;position: relative;
     color: #fff;
 }
+.banner{padding: 100px 0}
 .box-main:before{
     content: '';display: block;position: absolute;left: 0;width: 100%;height: 100%;top:0;z-index: 0;
     background: rgba(0,0,0,.7)
 }
 .box-main>div{position: relative;z-index: 1}
-.box-title{position: relative;padding: 15px}
-.box-title>*{z-index: 1;position: relative;}
-.box-title>div{text-transform: uppercase;font-size: 24px;line-height: 30px}
+.box-title{position: relative;padding: 15px;display: block;}
+.box-title:hover{text-decoration: none;}
+.box-title>*{z-index: 1;position: relative;text-decoration: none;}
+.box-title>div{text-transform: uppercase;font-size: 24px;line-height: 30px;}
 .box-title>span{text-transform: capitalize;font-size: 16px;line-height: 20px;display: block;}
 .box-title:before{
     content: '';display: block;position: absolute;left: 0;width: 100px;height: 80px;top:50%;z-index: 0;
@@ -401,6 +403,17 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
 .custom-box>.content ul{
     padding-left: 20px
 }
+.breadcum{
+    position: absolute;right: 10px;top: 50%;line-height: 20px;
+    z-index: 2;max-width: 50%;text-align: right;
+    transform: translate(0, -50%) ;
+    -moz-transform: translate(0, -50%) ;
+    -webkit-transform: translate(0, -50%) ;
+}
+.breadcum a{color: #fff;position: relative;text-decoration: none;}
+.breadcum a:after{content: '/'; padding: 0 5px}
+.breadcum span{color: #ffcc00}
+.blog-cover img{max-width: 100%}
 @media (max-width: 1599px) {
     
 }
@@ -454,7 +467,14 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
     .report-nums .num>span{font-size: 16px}
     .line-thumb{float: left;width: 100%}
     .line-thumb>div{padding-bottom: 50%}
-
+    .breadcum{
+        position: relative;top: 0;right: auto;
+        transform: translate(0, 0) ;
+        -moz-transform: translate(0, 0) ;
+        -webkit-transform: translate(0, 0) ;
+        text-align: left;
+        margin-top: 20px;
+    }
 }
 @media (max-width: 767px){
     .home-slider .owl-carousel .item{padding: 40px 0}

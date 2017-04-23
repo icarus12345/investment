@@ -17,10 +17,30 @@ class home extends FE_Controller {
         $this->assigns->welcome = $this->serialize_model->setType(null)->onGet(118);
         $this->smarty->view( 'np/home', $this->assigns );
     }
-    public function service(){
+    public function services(){
         $this->assigns->featuredwork = $this->serialize_model->getByType('np-featured-work');
         $this->assigns->services = $this->serializedata_model->getByType('np-service');
         $this->smarty->view( 'np/service', $this->assigns );
+    }
+    public function servicedetail($alias=""){
+
+        $this->assigns->servicedetail = $this->serializedata_model
+            ->setType('np-service')
+            ->onGetByAlias($alias);
+        if(empty($this->assigns->servicedetail)){
+            show_404();
+        }
+        $this->assigns->doing = $this->serializedata_model
+            ->setType('np-service-doing-'.$this->assigns->servicedetail->data_id)
+            ->onGets();
+        $this->assigns->process = $this->serializedata_model
+            ->setType('np-service-process-'.$this->assigns->servicedetail->data_id)
+            ->onGets();
+        $this->assigns->services = $this->serializedata_model
+            ->setType('np-service')
+            ->onGets();
+        $this->assigns->featuredwork = $this->serialize_model->getByType('np-featured-work');
+        $this->smarty->view( 'np/service-detail', $this->assigns );
     }
     public function policy(){
         $this->assigns->actived_menu = 'policy';

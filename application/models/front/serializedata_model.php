@@ -2,6 +2,7 @@
 
 class serializedata_model extends Core_Model {
     public $status;
+    public $type;
     function __construct(){
         parent::__construct('cdata','data_','id');
     }
@@ -24,6 +25,9 @@ class serializedata_model extends Core_Model {
     function onGets() {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
+        }
+        if($this->type){
+            $this->db->where("{$this->prefix}type",$this->type);
         }
         $query = $this->db
                 ->from($this->table)
