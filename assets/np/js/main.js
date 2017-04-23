@@ -131,7 +131,10 @@ $(document).ready(function(){
     // });
     $("img.lazy").each(function(){
         $(this).attr('src',$(this).data('original'));
-        $(this.parentNode).nailthumb();
+        var opt={}
+        var method = $(this).data('method');
+        if(method) opt.method = method
+        $(this.parentNode).nailthumb(opt);
     });
     if($('#owl-home').length==1){
         $("#owl-home").owlCarousel({
@@ -168,6 +171,22 @@ $(document).ready(function(){
             }
         });
     }
+    if($('#owl-testimonial').length==1){
+        $("#owl-testimonial").owlCarousel({
+            autoPlay: true,
+            items : 1,
+            dots: true,
+            // lazyLoad: true,
+            nav : false,
+            navText : ["", ""],
+            // responsive : {
+            //     0:      {items: 1, nav: true},
+            //     480:    {items: 2, nav: true},
+            //     960:    {items: 3, nav: true},
+            //     1200:   {items: 1, nav: true},
+            // }
+        });
+    }
     projectMasonry()
     if($('.swipebox').length>=1)
         $('a.swipebox').swipebox({useCSS: true});
@@ -183,6 +202,9 @@ $(document).ready(function(){
 
 $(window).resize(function(){
 	$('.nailthumb-image').each(function(){
-		$(this.parentNode).nailthumb();
+        var opt={}
+        var method = $(this).data('method');
+        if(method) opt.method = method
+		$(this.parentNode).nailthumb(opt);
 	});
 });

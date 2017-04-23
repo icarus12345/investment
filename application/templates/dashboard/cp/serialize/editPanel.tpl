@@ -24,7 +24,7 @@
                     data-prompt-position="topLeft:0,20"
                     placeholder="Title"
                     name="_title"
-                    [{if $item->content_lock!='true'}]
+                    [{if $item->_lock!='true'}]
                     onblur="AliasTo(this,'#entryForm input[name=\'_alias\']')"
                     [{/if}]
                     value="[{$item->_title|quotes_to_entities|default:''}]"
@@ -66,7 +66,7 @@
                         <div>Status :</div>
                         <select name="_status" class="form-control selectpicker">
                             <option value="true">Enable</option>
-                            <option value="false" [{if $item->image_status|default:''=='false'}]selected[{/if}]>Disable</option>
+                            <option value="false" [{if $item->_status|default:''=='false'}]selected[{/if}]>Disable</option>
                         </select>
                     </div>
                 </div>

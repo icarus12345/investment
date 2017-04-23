@@ -119,32 +119,66 @@
             <span>Read about the latest trends and updates</span>
         </div>
         <div class="space-linex2-before">
-            <div class="owl-carousel" id="owl-blog">
-                    [{foreach from=$news item=foo}]
-                    <div class="item">
-                        <div class="nailthumb">
-                            <div class="nailthumb-figure-75">
-                                <a href="JavaScript:void(0)" class="nailthumb-container">
-                                    <img class="lazy" src="[{$foo->_data.image|escape:'html'}]">
-                                </a>
+            <div class="owl-carousel" id="owl-blog" role="dot-orange">
+                [{foreach from=$news item=foo}]
+                <div class="item">
+                    <div class="nailthumb">
+                        <div class="nailthumb-figure-75">
+                            <a href="JavaScript:void(0)" class="nailthumb-container">
+                                <img class="lazy" src="[{$foo->_data.image|escape:'html'}]">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <!-- <div class="cat">Property Investment</div> -->
+                        <div class="blog-title">
+                            <div class="line-clamp-f-3">[{$foo->_title}]</div>
+                        </div>
+                        <div class="date">
+                        By N&P 2016/12/12
+                            <div class="pull-right">
+                            <span class="fa fa-eye"></span> 123
                             </div>
                         </div>
-                        <div class="info">
-                            <!-- <div class="cat">Property Investment</div> -->
-                            <div class="blog-title">
-                                <div class="line-clamp-f-3">[{$foo->_title}]</div>
+                        <p class="line-clamp-f-3">[{$foo->_data.desc}]</p>
+                    </div>
+                </div>
+                [{/foreach}]
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box-main cover" style="background-image:url(/assets/np/images/Layer-21.jpg">
+    <div class="container">
+        <div class="row ">
+            <div class="col-sm-6 space-line-before space-line-after">
+                <div class="owl-carousel" id="owl-testimonial" role="dot-orange">
+                    [{foreach from=$testimonials item=foo}]
+                    <div class="item">
+                        <div class="que">
+                            <p class="line-clamp-f-5">[{$foo->_data.desc}]</p>
+                        </div>
+                        <span>[{$foo->_data.position}]</span>
+                    </div>
+                    [{/foreach}]
+                </div>
+            </div>
+            <div class="col-sm-6 space-line-before ">
+                <div class="row partners-list half">
+                    [{foreach from=$partners item=foo}]
+                    <div class="col-xs-4 half">
+                        <div class="nailthumb">
+                            <div class="nailthumb-figure">
+                                <a href="JavaScript:void(0)" class="nailthumb-container">
+                                    <img class="lazy nailthumb-image" data-method='resize' src="[{$foo->_data.src}]">
+                                </a>
                             </div>
-                            <div class="date">
-                            By N&P 2016/12/12
-                                <div class="pull-right">
-                                <span class="fa fa-eye"></span> 123
-                                </div>
-                            </div>
-                            <p class="line-clamp-f-3">[{$foo->_data.desc}]</p>
                         </div>
                     </div>
                     [{/foreach}]
                 </div>
+            </div>
         </div>
     </div>
 </div>
+[{include file=$smarty.const.APPPATH|cat:"templates/np/inc/foot.tpl"}]

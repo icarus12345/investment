@@ -36,6 +36,7 @@
                             $(document).ready(function(){
                                 myApp = new APP();
                                 myApp.sid='[{$sid|default:0}]';
+                                myApp.ctype='[{$ctype|default:''}]';
                                 myApp.entryType='[{$type|default:''}]';
                                 [{if $action.add!=false}]
                                     myApp.isAddItem = true;

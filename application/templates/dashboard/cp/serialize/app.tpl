@@ -498,6 +498,7 @@ var APP = function() {
                     'Id'  :   Id,
                     'type':   me.entryType,
                     'sid' : me.sid,
+                    'ctype' : me.ctype,
                     'unit': '[{$unit}]'
                 },
                 'callback'    :   function(rsdata){

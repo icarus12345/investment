@@ -90,7 +90,7 @@
                         <div>Status :</div>
                         <select name="_status" class="form-control selectpicker">
                             <option value="true">Enable</option>
-                            <option value="false" [{if $item->image_status|default:''=='false'}]selected[{/if}]>Disable</option>
+                            <option value="false" [{if $item->_status|default:''=='false'}]selected[{/if}]>Disable</option>
                         </select>
                     </div>
                 </div>

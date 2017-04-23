@@ -16,7 +16,7 @@ class serialize_model extends Core_Model {
             $this->db->where("{$this->prefix}status",$this->status);
         }
         if($this->type){
-            $this->db->where('_type', $this->type);
+            $this->db->where("{$this->prefix}type", $this->type);
         }
         $query = $this->db
             ->where("{$this->prefix}{$this->colid}", $id)
@@ -31,7 +31,7 @@ class serialize_model extends Core_Model {
             $this->db->where("{$this->prefix}status",$this->status);
         }
         if($this->type){
-            $this->db->where('_type', $this->type);
+            $this->db->where("{$this->prefix}type", $this->type);
         }
         $query = $this->db
             ->from($this->table)
@@ -49,11 +49,11 @@ class serialize_model extends Core_Model {
             $this->db->where("{$this->prefix}status",$this->status);
         }
         if($this->type){
-            $this->db->where('_type', $this->type);
+            $this->db->where("{$this->prefix}type", $this->type);
         }
         $query = $this->db
             // ->like('_data',$str)
-            ->where('_alias',$alias)
+            ->where("{$this->prefix}alias",$alias)
             ->get($this->table);
         $this->sqlLog('Get Entry');
         $entry = $query->row();
@@ -81,9 +81,9 @@ class serialize_model extends Core_Model {
         }
         $query=$this->db
             ->from($this->table)
-            ->where('_type', $this->type)
-            ->where('_status', $this->status)
-            ->order_by('_insert','DESC')
+            ->where("{$this->prefix}type", $this->type)
+            ->where("{$this->prefix}status", $this->status)
+            ->order_by("{$this->prefix}insert",'DESC')
             ->limit($limit,($page-1)*$limit)
             ->get(); 
         $entrys = $query->result();

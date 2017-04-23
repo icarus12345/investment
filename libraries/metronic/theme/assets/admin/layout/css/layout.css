@@ -2667,6 +2667,7 @@ fieldset {
     margin: 0 0 10px 0;
     border: 1px solid #ddd;
 }
+fieldset:last-child {margin-bottom: 0}
 legend{    
     margin-bottom: 10px;
     font-size: inherit;
