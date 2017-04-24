@@ -18,17 +18,17 @@
         <div class="custom-box">
             <div class="thumb">
                 <a href="/services/[{$foo->data_alias|escape:'html'}]" class="nailthumb-container">
-                    <img class="lazy" data-original="[{$foo->data_data.thumb|escape:'html'}]">
+                    <img class="lazy" data-original="[{$foo->_data.thumb|escape:'html'}]">
                 </a>
             </div>
             <div class="content">
                 <div>
                     <a href="/services/[{$foo->data_alias|escape:'html'}]" class="box-title">
                         <div>[{$foo->data_title|escape:'html'}]</div>
-                        <span>[{$foo->data_data.subtitle|escape:'html'}]</span>
+                        <span>[{$foo->_data.subtitle|escape:'html'}]</span>
                     </a>
-                    <p class="pull-top pull-bottom">[{$foo->data_data.desc|escape:'html'}]</p>
-                    [{$foo->data_data.links}]
+                    <p class="pull-top pull-bottom">[{$foo->_data.desc|escape:'html'}]</p>
+                    [{$foo->_data.links}]
                 </div>
             </div>
         </div>

@@ -11,34 +11,34 @@
 [{/if}]
         <input 
             type="hidden" 
-            value="[{$item->data_id|default:''}]" 
+            value="[{$item->_id|default:''}]" 
             id="EntryId"
             />
         <form name="entryForm" id="entryForm" target="integration_asynchronous">
-            <input type="hidden" name="data_type" 
-                value="[{$item->data_type|default:$type|default:''}]"/>
+            <input type="hidden" name="_type" 
+                value="[{$item->_type|default:$type|default:''}]"/>
             <div class="pull-bottom control-group">
                 <div>Title :(*)</div>
                 <input type="text" 
                     class="form-control validate[required,maxSize[120]]" 
                     data-prompt-position="topLeft:0,20"
                     placeholder="Title"
-                    name="data_title"
-                    [{if $item->data_lock!='true'}]
-                    onblur="AliasTo(this,'#entryForm input[name=\'data_alias\']')"
+                    name="_title"
+                    [{if $item->_lock!='true'}]
+                    onblur="AliasTo(this,'#entryForm input[name=\'_alias\']')"
                     [{/if}]
-                    value="[{$item->data_title|quotes_to_entities|default:''}]"
+                    value="[{$item->_title|quotes_to_entities|default:''}]"
                     />
             </div>
-            <input type="hidden" name="data_alias" 
-                value="[{$item->data_alias|quotes_to_entities|default:''}]"/>
+            <input type="hidden" name="_alias" 
+                value="[{$item->_alias|quotes_to_entities|default:''}]"/>
             <div class="row half">
                 <div class="col-mb-6 half">
                     <div class="pull-bottom control-group">
                         <div>Category :(*)</div>
                         <div class="row-fluid">
                             <select 
-                                name="data_category" 
+                                name="_category" 
                                 class="form-control selectpicker validate[required]"
                                 data-prompt-position="topLeft:0,20"
                                 data-putto="#frm-err-category"
@@ -50,7 +50,7 @@
                                 [{foreach from=$cates item=c}]
                                     <option 
                                         data-data="<span style='padding-left: [{$c->cat_level*20}]px;'>[{$c->cat_title|escape}]</span>"
-                                        [{if $c->cat_id == $item->data_category}]selected="1"[{/if}]
+                                        [{if $c->cat_id == $item->_category}]selected="1"[{/if}]
                                         value="[{$c->cat_id|default:''}]">
                                             [{$c->cat_title|default:''}]
                                     </option>
@@ -64,9 +64,9 @@
                 <div class="col-mb-3 half">
                     <div class="control-group pull-bottom">
                         <div>Status :</div>
-                        <select name="data_status" class="form-control selectpicker">
+                        <select name="_status" class="form-control selectpicker">
                             <option value="true">Enable</option>
-                            <option value="false" [{if $item->data_status|default:''=='false'}]selected[{/if}]>Disable</option>
+                            <option value="false" [{if $item->_status|default:''=='false'}]selected[{/if}]>Disable</option>
                         </select>
                     </div>
                 </div>
@@ -82,8 +82,8 @@
                         class="form-control validate[[{$foo.valid|default:''}]]" 
                         data-prompt-position="topLeft:0,20"
                         placeholder="[{$foo.title|default:''}]"
-                        name="data_data[[{$foo.column|default:''}]]"
-                        value="[{$item->data_data[$foo.column|default:'']|quotes_to_entities|default:''}]"
+                        name="_data[[{$foo.column|default:''}]]"
+                        value="[{$item->_data[$foo.column|default:'']|quotes_to_entities|default:''}]"
                         />
                 </div>
                 [{elseif $foo.type=='text'}]
@@ -93,8 +93,8 @@
                         class="form-control validate[[{$foo.valid|default:''}]]" 
                         data-prompt-position="topLeft:0,20"
                         placeholder="[{$foo.title|default:''}]"
-                        name="data_data[[{$foo.column|default:''}]]"
-                        >[{$item->data_data[$foo.column|default:'']|quotes_to_entities|default:''}]</textarea>
+                        name="_data[[{$foo.column|default:''}]]"
+                        >[{$item->_data[$foo.column|default:'']|quotes_to_entities|default:''}]</textarea>
                 </div>
                 [{elseif $foo.type=='html'}]
                 <div class="pull-bottom control-group">
@@ -105,10 +105,10 @@
                             class="form-control validate[[{$foo.valid|default:''}]]" 
                             data-prompt-position="topLeft:0,20"
                             placeholder="[{$foo.title|default:''}]"
-                            name="data_data[[{$foo.column|default:''}]]"
+                            name="_data[[{$foo.column|default:''}]]"
                             data-putto="#error-data-[{$foo.column|default:''}]"
                             id="ckeditor-[{$foo.column|default:''}]-[{$foo.uid|default:''}]"
-                            >[{$item->data_data[$foo.column|default:'']}]</textarea>
+                            >[{$item->_data[$foo.column|default:'']}]</textarea>
                     </div>
                     <div class="erb" id="error-data-[{$foo.column|default:''}]"></div>
                 </div>
@@ -119,8 +119,8 @@
                         <input type="text" 
                             class="form-control validate[[{$foo.valid|default:''}]]"
                             data-prompt-position="topLeft:0,20"
-                            value="[{$item->data_data[$foo.column|default:'']|quotes_to_entities|default:''}]" 
-                            name="data_data[[{$foo.column|default:''}]]" 
+                            value="[{$item->_data[$foo.column|default:'']|quotes_to_entities|default:''}]" 
+                            name="_data[[{$foo.column|default:''}]]" 
                             id="image-[{$foo.column|default:''}]-[{$foo.uid|default:''}]"
                             >
                         <span class="add-on popovers" 
@@ -128,7 +128,7 @@
                               data-trigger="hover" 
                               data-placement="top" 
                               data-toggle="popover"
-                              data-content="<img style='max-width:100px' src='[{$item->data_data[$foo.column|default:'']|escape:'html'|default:'/libraries/images/no_image_available.png'}]'/>" 
+                              data-content="<img style='max-width:100px' src='[{$item->_data[$foo.column|default:'']|escape:'html'|default:'/libraries/images/no_image_available.png'}]'/>" 
                               data-original-title="Image Preview"
                               title="Choose Image"
                             onclick="BrowseServer('#image-[{$foo.column|default:''}]-[{$foo.uid|default:''}]')">

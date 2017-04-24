@@ -3,10 +3,28 @@
 .btn-white:hover{}
 .btn-white:active{;}
 .btn-lg{line-height: 20px;padding: 15px 60px;font-size: 16px}
+.btn-md{line-height: 20px;padding: 10px 20px;font-size: 14px;border-radius: 3px}
+.btn-gray{background: #111;color: #eee;border-radius: 3px;border:1px solid #111;}
+.btn-gray:hover{color: #fff}
+.btn-gray:active{color: #fff}
+
+.btn-warning{background: #ffcc00;border:1px solid #ffcc00;}
+.btn-warning:hover,
+.btn-warning:active{
+    background: #ffcc00;border:1px solid #ffcc00;
+}
+
+.btn-warning-hvr{background: #fff;border:1px solid #ccc;color: #111}
+.btn-warning-hvr:hover,
+.btn-warning-hvr:active{
+    background: #ffcc00;border:1px solid #ffcc00;color: #fff
+}
+
 @media (max-width: 1199px) {
     .btn-lg{padding: 8px 25px;}
-
+    .btn-md{padding: 6px 10px;}
 }
 @media (max-width: 767px) {
     .btn-lg{padding: 5px 15px;font-size: 14px}
+    .btn-md{padding: 5px 15px;font-size: 14px}
 }

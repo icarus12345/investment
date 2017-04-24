@@ -1,5 +1,5 @@
 [{if false}]<script type="text/javascript">[{/if}]
-[{assign 'frefix' 'data_'}]
+[{assign 'frefix' '_'}]
 [{assign 'catfrefix' 'cat_'}]
 var APP = function() {
     this.subdata = JSON.parse(($A.QueryString.data));

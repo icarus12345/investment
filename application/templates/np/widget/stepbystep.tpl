@@ -11,8 +11,8 @@
         <div class="steps">
         [{foreach from=$step_data item=foo}]
             <div class="step">
-                <h4>[{$foo->data_title|escape:'html'}]</h4>
-                <p>[{$foo->data_content|escape:'html'}]</p>
+                <h4>[{$foo->_title|escape:'html'}]</h4>
+                <p>[{$foo->_content|escape:'html'}]</p>
             </div>
         [{/foreach}]
         </div>

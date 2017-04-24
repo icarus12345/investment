@@ -9,37 +9,50 @@ class home extends FE_Controller {
         $this->cdata_model->type = 'gallery';
     }
     public function index(){
-        $this->assigns->featuredwork = $this->serialize_model->getByType('np-featured-work',1,13);
-        $this->assigns->news = $this->serialize_model->getByType('np-news');
-        $this->assigns->sliders = $this->serialize_model->getByType('np-slider');
-        $this->assigns->testimonials = $this->serialize_model->getByType('np-testimonial');
-        $this->assigns->partners = $this->serialize_model->getByType('np-partner');
-        $this->assigns->welcome = $this->serialize_model->setType(null)->onGet(118);
+        $this->assigns->featuredwork = $this->serialize_model
+            ->getByType('np-featured-work',1,13);
+        $this->assigns->news = $this->serialize_model
+            ->getByType('np-news');
+        $this->assigns->sliders = $this->serialize_model
+            ->getByType('np-slider');
+        $this->assigns->testimonials = $this->serialize_model
+            ->getByType('np-testimonial');
+        $this->assigns->partners = $this->serialize_model
+            ->getByType('np-partner');
+        $this->assigns->welcome = $this->serialize_model
+            ->setType(null)
+            ->onGet(118);
         $this->smarty->view( 'np/home', $this->assigns );
     }
     public function services(){
-        $this->assigns->featuredwork = $this->serialize_model->getByType('np-featured-work');
-        $this->assigns->services = $this->serializedata_model->getByType('np-service');
+        $this->assigns->featuredwork = $this->serialize_model
+            ->getByType('np-featured-work');
+        $this->assigns->services = $this->serializedata_model
+            ->getByType('np-service');
         $this->smarty->view( 'np/service', $this->assigns );
     }
     public function servicedetail($alias=""){
 
-        $this->assigns->servicedetail = $this->serializedata_model
+        $this->assigns->entrydetail = $this->serializedata_model
             ->setType('np-service')
             ->onGetByAlias($alias);
-        if(empty($this->assigns->servicedetail)){
+        if(empty($this->assigns->entrydetail)){
             show_404();
         }
         $this->assigns->doing = $this->serializedata_model
-            ->setType('np-service-doing-'.$this->assigns->servicedetail->data_id)
+            ->setType('np-service-doing-'.$this->assigns->entrydetail->_id)
             ->onGets();
         $this->assigns->process = $this->serializedata_model
-            ->setType('np-service-process-'.$this->assigns->servicedetail->data_id)
+            ->setType('np-service-process-'.$this->assigns->entrydetail->_id)
             ->onGets();
         $this->assigns->services = $this->serializedata_model
             ->setType('np-service')
             ->onGets();
-        $this->assigns->featuredwork = $this->serialize_model->getByType('np-featured-work');
+        $this->assigns->featuredwork = $this->serialize_model
+            ->getByType('np-featured-work');
+
+        $this->assigns->testimonials = $this->serialize_model
+            ->getByType('np-testimonial');
         $this->smarty->view( 'np/service-detail', $this->assigns );
     }
     public function policy(){
@@ -54,12 +67,26 @@ class home extends FE_Controller {
         $this->assigns->content_detail = $this->content_model->onGet(1);
         $this->smarty->view( 'np/team', $this->assigns );
     }
-    public function about(){
-        $this->assigns->actived_menu = 'about';
-        $this->cdata_model->type = '';
-        $item = $this->cdata_model->onGet(13);
-        $this->assigns->cdata = $item;
-        $this->assigns->testimonials = $this->image_model->onGetByType('testimonial');
+    public function about($alias=''){
+        $this->assigns->abouts = $this->serialize_model
+            ->setType('np-about')
+            // ->sort()
+            ->onGets();
+        if($alias==''){
+            $alias = $this->assigns->abouts[0]->_alias;
+        }
+        $this->assigns->entrydetail = $this->serialize_model
+            ->setType('np-about')
+            ->onGetByAlias($alias);
+        if(empty($this->assigns->entrydetail)){
+            show_404();
+        }
+        $this->assigns->featuredwork = $this->serialize_model
+            ->getByType('np-featured-work');
+
+        $this->assigns->testimonials = $this->serialize_model
+            ->getByType('np-testimonial');
+
         $this->smarty->view( 'np/about', $this->assigns );
     }
 }

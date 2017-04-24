@@ -26,6 +26,10 @@ class serialize_model extends Core_Model {
         if($entry) $entry->_data = unserialize($entry->_data);
         return $entry;
     }
+    function sort(){
+        $this->db->order_by($this->prefix . 'insert', 'DESC');
+        return $this;
+    }
     function onGets() {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
@@ -35,7 +39,7 @@ class serialize_model extends Core_Model {
         }
         $query = $this->db
             ->from($this->table)
-            ->order_by($this->prefix . 'insert', 'DESC')
+            // ->order_by($this->prefix . 'insert', 'DESC')
             ->get();
         $this->sqlLog('Get Entrys');
         $entrys = $query->result();

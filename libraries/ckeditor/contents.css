@@ -19,8 +19,8 @@ body.cke_editable{
 @import '/assets/css/nta.css';
 .cke_editable
 {
-	font-size: 13px;
-	line-height: 1.6;
+	/*font-size: 13px;*/
+	line-height: 1.4;
 }
 
 blockquote

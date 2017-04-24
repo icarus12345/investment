@@ -2,7 +2,7 @@
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class serializedata extends CP_Controller {
 	function __construct() {
-        parent::__construct('cdata', 'data_', 'id');
+        parent::__construct('serializedata', '_', 'id');
         $this->load->model('dashboard/cp/serializedata_model');
         $this->load->model('dashboard/cp/serialize_model');
     }
@@ -64,7 +64,7 @@ class serializedata extends CP_Controller {
             case '3':
                 if($Id){
                     if($item->_data['type']){
-                        $entry_setting = $this->serialize_model->onGetByAlias($item->data_data['type']);
+                        $entry_setting = $this->serialize_model->onGetByAlias($item->_data['type']);
                     }
                     if($entry_setting){
                         $this->assigns->entry_setting = $entry_setting;
@@ -104,7 +104,7 @@ class serializedata extends CP_Controller {
                 break;
             case '2':
                 if($Id){
-                    $entry_setting = $this->serialize_model->onGetByAlias($item->data_data['type']);
+                    $entry_setting = $this->serialize_model->onGetByAlias($item->_data['type']);
                     if($entry_setting)
                         $this->assigns->entry_setting = $entry_setting;
                 }
@@ -113,7 +113,7 @@ class serializedata extends CP_Controller {
             case '3':
                 if($Id){
                     if($item->_data['type']){
-                        $entry_setting = $this->serialize_model->onGetByAlias($item->data_data['type']);
+                        $entry_setting = $this->serialize_model->onGetByAlias($item->_data['type']);
                     }
                     if($entry_setting){
                         $this->assigns->entry_setting = $entry_setting;
@@ -176,12 +176,12 @@ class serializedata extends CP_Controller {
         $item = $this->serializedata_model->onGet($Id);
         if($item){
             $data = $item->_data;
-            if(is_array($data) && isset($_POST['Params']['data_data'])){
+            if(is_array($data) && isset($_POST['Params']['_data'])){
                 // $_POST['Params']['_data'] = array_merge_recursive_extend($data, $_POST['Params']['_data']);
             }
         }
-        if(isset($_POST['Params']['data_data'])) {
-            $_POST['Params']['data_data'] = serialize($_POST['Params']['data_data']);
+        if(isset($_POST['Params']['_data'])) {
+            $_POST['Params']['_data'] = serialize($_POST['Params']['_data']);
         }
     }
     

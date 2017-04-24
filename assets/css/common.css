@@ -1,3 +1,7 @@
+@import url('button.css');
+@import url('font-size.css');
+@import url('validate.css');
+@import url('form.css');
 @-webkit-keyframes spin {
   to {
     -moz-transform: rotate(360deg);
@@ -155,7 +159,6 @@ div[data-sole="1"] .custom-box:nth-child(even){
 div[data-sole="1"] .custom-box:nth-child(even) > .thumb{
     left: 50%
 }
-
 footer{
     background: #181818;
     color: #999999;

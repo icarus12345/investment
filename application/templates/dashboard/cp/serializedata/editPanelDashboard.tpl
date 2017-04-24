@@ -11,12 +11,12 @@
 [{/if}]
         <input 
             type="hidden" 
-            value="[{$item->data_id|default:''}]" 
+            value="[{$item->_id|default:''}]" 
             id="EntryId"
             />
         <form name="entryForm" id="entryForm" target="integration_asynchronous">
-            <input type="hidden" name="data_type" 
-                value="[{$item->data_type|default:$type|default:''}]"/>
+            <input type="hidden" name="_type" 
+                value="[{$item->_type|default:$type|default:''}]"/>
             <div class="row half">
                 <div class="col-mb-6 half">
                     <div class="pull-bottom control-group">
@@ -25,20 +25,20 @@
                             class="form-control validate[required]" 
                             data-prompt-position="topLeft:0,20"
                             placeholder="Title"
-                            name="data_title"
-                            onblur="AliasTo(this,'#entryForm input[name=\'data_alias\']')"
-                            value="[{$item->data_title|quotes_to_entities|default:''}]"
+                            name="_title"
+                            onblur="AliasTo(this,'#entryForm input[name=\'_alias\']')"
+                            value="[{$item->_title|quotes_to_entities|default:''}]"
                             />
                     </div>
                 </div>
-                <input type="hidden" name="data_alias" 
-                value="[{$item->data_alias|quotes_to_entities|default:''}]"/>
+                <input type="hidden" name="_alias" 
+                value="[{$item->_alias|quotes_to_entities|default:''}]"/>
                 <div class="col-mb-6 half">
                     <div class="pull-bottom control-group">
                         <div>Category :(*)</div>
                         <div class="row-fluid">
                             <select 
-                                name="data_category" 
+                                name="_category" 
                                 class="form-control selectpicker validate[required]"
                                 data-prompt-position="topLeft:0,20"
                                 data-putto="#frm-err-category"
@@ -50,7 +50,7 @@
                                 [{foreach from=$cates item=c}]
                                     <option 
                                         data-data="<span style='padding-left: [{$c->cat_level*20}]px;'>[{$c->cat_title|escape}]</span>"
-                                        [{if $c->cat_id == $item->data_category}]selected="1"[{/if}]
+                                        [{if $c->cat_id == $item->_category}]selected="1"[{/if}]
                                         value="[{$c->cat_id|default:''}]">
                                             [{$c->cat_title|default:''}]
                                     </option>
@@ -68,8 +68,8 @@
                 </div>
                 <textarea class="form-control validate[required]" 
                         rows="3"
-                        name="data_data[desc]"
-                        >[{$item->data_data.desc|quotes_to_entities|default:''}]</textarea>
+                        name="_data[desc]"
+                        >[{$item->_data.desc|quotes_to_entities|default:''}]</textarea>
                         
             </div>
             <fieldset>
