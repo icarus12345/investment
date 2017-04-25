@@ -9,7 +9,7 @@ class home extends FE_Controller {
         $this->cdata_model->type = 'gallery';
     }
     public function index(){
-        $this->assigns->featuredwork = $this->serialize_model
+        $this->assigns->featuredwork = $this->serializedata_model
             ->getByType('np-featured-work',1,13);
         $this->assigns->news = $this->serialize_model
             ->getByType('np-news');
@@ -25,14 +25,15 @@ class home extends FE_Controller {
         $this->smarty->view( 'np/home', $this->assigns );
     }
     public function services(){
-        $this->assigns->featuredwork = $this->serialize_model
+        $this->assigns->selected_menu = 'service';
+        $this->assigns->featuredwork = $this->serializedata_model
             ->getByType('np-featured-work');
         $this->assigns->services = $this->serializedata_model
             ->getByType('np-service');
         $this->smarty->view( 'np/service', $this->assigns );
     }
     public function servicedetail($alias=""){
-
+        $this->assigns->selected_menu = 'service';
         $this->assigns->entrydetail = $this->serializedata_model
             ->setType('np-service')
             ->onGetByAlias($alias);
@@ -48,7 +49,7 @@ class home extends FE_Controller {
         $this->assigns->services = $this->serializedata_model
             ->setType('np-service')
             ->onGets();
-        $this->assigns->featuredwork = $this->serialize_model
+        $this->assigns->featuredwork = $this->serializedata_model
             ->getByType('np-featured-work');
 
         $this->assigns->testimonials = $this->serialize_model
@@ -68,6 +69,7 @@ class home extends FE_Controller {
         $this->smarty->view( 'np/team', $this->assigns );
     }
     public function about($alias=''){
+        $this->assigns->selected_menu = 'about';
         $this->assigns->abouts = $this->serialize_model
             ->setType('np-about')
             // ->sort()
@@ -81,12 +83,81 @@ class home extends FE_Controller {
         if(empty($this->assigns->entrydetail)){
             show_404();
         }
-        $this->assigns->featuredwork = $this->serialize_model
+        $this->assigns->featuredwork = $this->serializedata_model
             ->getByType('np-featured-work');
 
         $this->assigns->testimonials = $this->serialize_model
             ->getByType('np-testimonial');
-
+        if($this->assigns->entrydetail->_id == 143){
+            $this->assigns->subEntrys = $this->serialize_model
+                ->getByType('np-business-regis');
+        }
+        if($this->assigns->entrydetail->_id == 151){
+            $this->assigns->subEntrys = $this->serialize_model
+                ->getByType('np-staff');
+        }
         $this->smarty->view( 'np/about', $this->assigns );
+    }
+    function blogs($page = 1, $catalias = null){
+        $this->perpage = 5;
+        $this->assigns->selected_menu = 'blogs';
+        $this->assigns->featuredwork = $this->serializedata_model
+            ->getByType('np-featured-work');
+
+        $this->assigns->categorys = $this->category_model
+            ->onGetByType('np-news');
+        if($catalias){
+            $this->assigns->catdetail = $this->category_model
+                ->onGetByAlias($catalias);
+            if(empty($this->assigns->catdetail)){
+                show_404();
+            }
+            // $this->serialize_model->setCate($this->assigns->catdetail->cat_id);
+            $catid = $this->assigns->catdetail->cat_id;
+        }
+        $this->assigns->blogs = $this->serialize_model
+            ->joinCate()
+            // ->setType('np-news')
+            ->getByType('np-news',$page,$this->perpage,$catid);
+
+        $this->assigns->paging = $this->_getPaging($page,$this->perpage,'blogs/page/');
+        $this->smarty->view( 'np/blogs', $this->assigns );
+    }
+    function blogdetail($catalias = null,$alias = null){
+        $this->assigns->selected_menu = 'blogs';
+        $this->assigns->featuredwork = $this->serializedata_model
+            ->getByType('np-featured-work');
+
+        $this->assigns->categorys = $this->category_model
+            ->onGetByType('np-news');
+        if($catalias){
+            $this->assigns->catdetail = $this->category_model
+                ->onGetByAlias($catalias);
+            if(empty($this->assigns->catdetail)){
+                show_404();
+            }
+            // $this->serialize_model->setCate($this->assigns->catdetail->cat_id);
+            $catid = $this->assigns->catdetail->cat_id;
+        }
+
+        $this->assigns->entrydetail = $this->serialize_model
+            ->setType('np-news')
+            ->joinCate()
+            ->onGetByAlias($alias);
+        if(empty($this->assigns->entrydetail)){
+            show_404();
+        }else{
+            $this->_addView('serialize','_',$this->assigns->entrydetail->_id);
+        }
+        
+        $this->smarty->view( 'np/blog-detail', $this->assigns );
+    }
+    function project(){
+        $this->assigns->selected_menu = 'project';
+        $this->assigns->featuredwork = $this->serialize_model
+            ->getByType('np-featured-work');
+        $this->assigns->featuredwork2 = $this->serialize_model
+            ->getByType('np-featured-work');
+        $this->smarty->view( 'np/project', $this->assigns );
     }
 }

@@ -11,6 +11,16 @@ class serialize_model extends Core_Model {
         $this->type=$type;
         return $this;
     }
+    function setCate($cateid=''){
+        $this->db->where("{$this->prefix}category",$this->cateid);
+        return $this;
+    }
+    function joinCate(){
+        $this->db
+            ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title,cat_alias",false)
+            ->join('_category','cat_id = _category');
+        return $this;
+    }
     function onGet($id) {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
@@ -75,14 +85,6 @@ class serialize_model extends Core_Model {
         return $this->getEntrys($page,$limit, $cat);
     }
     function getEntrys($page=1,$limit=8, $cat = 0){
-        if($cat!=0){
-            $this->db
-                ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title,cat_alias",false)
-                ->join('_category','cat_id = _category');
-        }else{
-            $this->db
-                ->select("SQL_CALC_FOUND_ROWS {$this->table}.*",false);
-        }
         $query=$this->db
             ->from($this->table)
             ->where("{$this->prefix}type", $this->type)
@@ -97,13 +99,13 @@ class serialize_model extends Core_Model {
         return $entrys;
     }
     function getByType($type=null,$page=1,$limit=8,$cat=0){
+        
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);
         }
         if($type!=null)$this->db->where("{$this->prefix}type",$type);
         if($cat!=0){
             $this->db
-                ->join('_category','cat_id = _category')
                 ->where("{$this->prefix}category",$cat);
         }
         $query=$this->db

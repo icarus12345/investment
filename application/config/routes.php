@@ -61,17 +61,22 @@ $route["services/(:any)"] = "np/home/servicedetail/$1";
 $route["privacy-policy"] = "home/policy";
 $route["team-conditions"] = "home/teamcondition";
 
-$route["news"] = "eye/home/news";
-$route["news/page"] = "eye/home/news/1";
-$route["news/page/(:num)"] = "eye/home/news/$1";
-$route["news/([a-z0-9-]{4,255})"] = "eye/home/newsDetail/$1";
+$route["blogs"] = "np/home/blogs";
+
+$route["blogs/page"] = "np/home/blogs";
+$route["blogs/page/(:num)"] = "np/home/blogs/$1";
+
+$route["blogs/([a-z0-9-]{4,255})"] = "np/home/blogs/1/$1";
+$route["blogs/([a-z0-9-]{4,255})/page"] = "np/home/blogs/1/$1";
+$route["blogs/([a-z0-9-]{4,255})/page/([0-9])"] = "np/home/blogs/$2/$1";
+$route["blogs/([a-z0-9-]{4,255})/([a-z0-9-]{4,255})"] = "np/home/blogdetail/$1/$2";
 
 $route["patients"] = "eye/home/patients";
 $route["patients/([a-z0-9-]{4,255})"] = "eye/home/patientDetail/$1";
 $route["about"] = "np/home/about";
 // $route["about/meet-the-team"] = "eye/home/meetTheTeam";
 $route["about/([a-z0-9-]{4,255})"] = "np/home/about/$1";
-$route["referrals"] = "eye/home/referrals";
+$route["project"] = "np/home/project";
 
 
 $route["contact"] = "eye/home/contact";

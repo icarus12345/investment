@@ -109,6 +109,7 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
     var featuredwork = [{$featuredwork|json_encode}]
 </script>

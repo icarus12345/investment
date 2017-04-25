@@ -153,6 +153,22 @@ a,a:link,a:active{color: inherit;}
 .custom-box>.thumb{position: absolute;top: 0;left: 0;width: 50%;height: 100%;background: #eee;margin-bottom: 20px}
 .custom-box>.content{position: relative;padding: 80px 40px;}
 .custom-box>.content>div{}
+.pagination{text-align: center;margin: auto;padding-bottom: 20px;padding-top: 10px}
+.pagination>li>span,
+.pagination>li>a{
+    margin-left: 2px;margin-right: 2px;min-width: 32px;height: 32px;line-height: 20px;padding: 5px;
+    box-shadow: none;border-color: #f7f8f9;
+    background-color: #f7f8f9;border-radius: 0 !important;
+    color: #000;
+}
+.pagination>li>a:hover,
+.pagination>li>span:hover{border-color: #ffcc00}
+.pagination>li.active>a,
+.pagination>li.active>span,
+.pagination>li.active>a:hover,
+.pagination>li.active>span:hover{background: #ffcc00;border-color: #ffcc00}
+.pagination>li .fa{line-height: 20px}
+
 div[data-sole="1"] .custom-box:nth-child(even){
     padding-left: 0;padding-right: 50%
 }

@@ -16,14 +16,49 @@
 <div class="white-box space-linex3-before space-linex1-after">
     <div class="container">
         <div class="row">
-            <div class="pull-right col-md-9 space-linex2-after">
+            <div class="pull-right col-md-9 space-linex2-after col-xs-12">
                 <div class="blog-cover">
                     <img src="[{$entrydetail->_data.image}]">
                 </div>
                 <div>
                     <div class="h3-title">[{$entrydetail->_data.title}]</div>
+
                     <link rel="stylesheet" type="text/css" href="/libraries/ckeditor/contents.css"/>
                     <div class="cke_editable">[{$entrydetail->_data.content}]</div>
+
+                    [{if $entrydetail->_id == 143}]
+                    <div class="row space-line-before">
+                        [{foreach from=$subEntrys item=foo}]
+                        <div class="col-sm-6 space-line-before">
+                        <img style="max-width: 100%;margin: auto;display: block;"
+                            src="[{$foo->_data.image}]">
+                        </div>
+                        [{/foreach}]
+                    </div>
+                    [{elseif $entrydetail->_id == 151}]
+                    <div class="row space-line-before">
+                        [{foreach from=$subEntrys item=foo}]
+                        <div class="col-sm-4 col-xs-6 space-line-before">
+                            <div class="staff-item">
+                                <div class="nailthumb">
+                                    <div class="nailthumb-figure-square">
+                                        <a href="JavaScript:void(0)" class="nailthumb-container">
+                                            <img class="lazy" src="[{$foo->_data.image|escape:'html'}]">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="gray-box info text-center text-uppercase space-line-before space-line-after">
+                                    <h4>[{$foo->_title|escape:'html'}]</h4>
+                                    <div class="gray">--[{$foo->_data.position|escape:'html'}]--</div>
+                                    <div class="gray">[{$foo->_data.desc|escape:'html'}]</div>
+                                </div>
+                            </div>
+                        </div>
+                        [{/foreach}]
+                    </div>
+                    [{else}]
+                    
+                    [{/if}]
                 </div>
                 
                 <div class="clearfix"></div>

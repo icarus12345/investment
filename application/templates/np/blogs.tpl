@@ -8,8 +8,7 @@
         </div>
         <div class="breadcum">
             <span>You are here:</span>
-            <a href="/blogs">Blogs</a>
-            <span>[{$entrydetail->_title|escape:'html'}]</span>
+            <span>Blogs</span>
         </div>
     </div>
 </div>
@@ -17,27 +16,27 @@
     <div class="container">
         <div class="row">
             <div class="pull-right col-md-9 space-linex2-after col-xs-12">
-                [{if $entrydetail}]
+                [{foreach from=$blogs item=foo}]
                 <div class="blog-item">
-                    <div class="blog-thumb cover" style="background-image:url([{$entrydetail->_data.image|escape:'html'}])">
-                        <span>[{$entrydetail->_insert|date_format:'%B<br/>%e'}]</span>
-                    </div>
+                    <a href="/blogs/[{$foo->cat_alias}]/[{$foo->_alias}]/" class="blog-thumb cover" style="background-image:url([{$foo->_data.image}])">
+                        <span>[{$foo->_insert|date_format:'%B<br/>%e'}]</span>
+                    </a>
                     <div class="info">
                         <div class="count cls row">
                             <div class="col-sm-6">
                                 <span><i class="fa fa-user"></i> [{$foo->_data.author|default:'N&P'}]</span>
-                                <span><i class="fa fa-eye"></i> 0</span>
-                                <span><i class="fa fa-comments"></i> 0</span>
+                                <span><i class="fa fa-eye"></i> [{$foo->_view}]</span>
+                                <span><i class="fa fa-comments"></i> [{$foo->_like}]</span>
                             </div>
                             <div class="col-sm-6">
                                 <div>
                                     <div style="display:inline-block">
                                         <span class="fb-like">
-                                            <div class="fb-like" data-href="[{''|base_url}]blogs/[{$entrydetail->cat_alias}]/[{$entrydetail->_alias}]" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+                                            <div class="fb-like" data-href="[{''|base_url}]blogs/[{$foo->cat_alias}]/[{$foo->_alias}]" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
                                         </span>
                                         <!-- Đặt thẻ này vào nơi bạn muốn Nút +1 kết xuất. -->
                                         <span class="google-plus pull-left">
-                                            <div class="g-plusone" data-href="[{''|base_url}]blogs/[{$entrydetail->cat_alias}]/[{$entrydetail->_alias}]" data-size="medium"></div>
+                                            <div class="g-plusone" data-href="[{''|base_url}]blogs/[{$foo->cat_alias}]/[{$foo->_alias}]" data-size="medium"></div>
                                         </span>
                                         <span class="google-plus pull-left">
                                             <div class="g-plus" data-action="share"  data-annotation="bubble"></div>
@@ -47,38 +46,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tit">[{$entrydetail->_title|escape:'html'}]</div>
-                        <div class="desc">Catalogue : <a href="/blogs/[{$catdetail->cat_alias|escape:'html'}]" ><i>[{$catdetail->cat_title|escape:'html'}]</i></a></div>
-                        <div class="space-line"></div>
-                        <div class="space-line"></div>
-                        <link rel="stylesheet" type="text/css" href="/libraries/ckeditor/contents.css">
-                        <div class="ckeditor">
-                        [{$entrydetail->_data.content}]
-                        </div>
-                        [{assign "tags" explode(",",$entrydetail->_data.tag)}]
-                        [{if $tags && $entrydetail->_data.tag}]
-                        <div class="space-line"></div>
-                        <div class="space-line"></div>
-                        <div class="blog-tags">Tags : 
-                        [{foreach $tags 'tag'}]
-                        <span>[{$tag}]</span>
-                        [{/foreach}]
-                        </div>
-                        [{/if}]
-                        <div class="space-line"></div>
-                        <div class="space-line"></div>
+                        <a href="/blogs/[{$foo->cat_alias}]/[{$foo->_alias}]/" class="tit">[{$foo->_title}]</a>
+                        <div class="desc">[{$foo->_data.desc}]</div>
                     </div>
                 </div>
-
-                <div class="">
-                    <div class="h3-title">Comments</div>
-                    <div>
-                        [{include file=$smarty.const.APPPATH|cat:"templates/np/widget/facebook-comment.tpl"}]
-                    </div>
-                </div>
-                [{else}]
+                [{foreachelse}]
                 <h2 class="text-center" style="padding:80px 0">No data to display.</h2>
-                [{/if}]
+                [{/foreach}]
+                <div class="text-center">
+                    [{$paging}]
+                </div>
                 <!-- Đặt thẻ này sau thẻ Nút +1 cuối cùng. -->
                 <script type="text/javascript">
                   window.___gcfg = {lang: 'vi'};

@@ -140,7 +140,7 @@ body{
     margin-top: 10px;
 }
 
-.navbar-nav > li > a.active, 
+.navbar-nav > li.active > a, 
 .navbar-nav > li > a:hover, 
 .navbar-nav > li > a:focus{
     background: transparent;
@@ -216,17 +216,27 @@ body{
 .title2:before{content: '';display: block;width: 80px;height: 2px;background: #ffcc00;margin-bottom: 5px;}
 .gray-box{background: #f0f0f0}
 
-.boxs{margin: auto;background: #333;position: relative;}
-.box{box-shadow: 0 0 1px #000 inset}
+.boxs{margin: auto;-background: #333;position: relative;}
+.box{-box-shadow: 0 0 1px #000 inset}
 .box>div{position: relative;}
 .box>.nailthumb{overflow: hidden;}
+.hasgutter .nailthumb{padding-bottom: 0;height: 100%}
+.hasgutter .nailthumb-container,
+.hasgutter .nailthumb-mark{
+    width: auto;
+    height: auto;
+    top: 0px;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
+}
 .size11{width: 20%;}
 .size12{width: 20%;}
 .size21{width: 40%;}
 .size22{width: 40%;}
 .size11>div{padding-bottom: 75%}
 .size12>div{padding-bottom: 150%}
-.size21>div{padding-bottom: 35.25%}
+.size21>div{padding-bottom: 37.5%}
 .size22>div{padding-bottom: 75%}
 .box .nailthumb-mark,
 .size12 .nailthumb-mark,
@@ -464,6 +474,19 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
 .right-bar-list>li.active>a{
     background: #ffcc00;text-decoration: none;
 }
+
+.blog-item{background-color: #fff;margin-bottom: 40px}
+.blog-thumb{height: 280px;display: block;position: relative;}
+.blog-thumb > span{
+    position: absolute;left: 20px;bottom: 0;background-color: #ffcc00;color: #fff;text-align: center;padding: 10px;display: block;opacity: .93;
+}
+.blog-item .info{padding: 10px;}
+.blog-item .tit{padding: 10px 0;font-weight: bold;text-transform: uppercase;display: block;font-size: 15px}
+.blog-item .desc{color: #777;text-align: justify;}
+.count > div > span{color: #777;margin-right: 20px}
+.count > div > span > i{color: #ffcc00}
+
+
 @media (max-width: 1599px) {
     
 }
@@ -525,6 +548,7 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
         text-align: left;
         margin-top: 20px;
     }
+
 }
 @media (max-width: 767px){
     .home-slider .owl-carousel .item{padding: 40px 0}
@@ -544,4 +568,7 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
     }
     .line-thumb>div{margin-left: -10px}
     .line-thumb.right>div{margin-right: -10px;margin-left: 0}
+}
+@media (min-width: 768px){
+    .count>div:last-child{text-align: right;}
 }

@@ -17,6 +17,8 @@
         <form name="entryForm" id="entryForm" target="integration_asynchronous">
             <input type="hidden" name="_type" 
                 value="[{$item->_type|default:$type|default:''}]"/>
+            <input type="hidden" name="_data[author]" 
+                value="[{$item->_data.author|quotes_to_entities|default:$smarty.session.auth.user->ause_name|default:'Unknown'}]"/>
             <div class="pull-bottom control-group">
                 <div>Title :(*)</div>
                 <input type="text" 

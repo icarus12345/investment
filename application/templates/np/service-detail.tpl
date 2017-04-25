@@ -16,7 +16,7 @@
 <div class="white-box space-linex3-before space-linex1-after">
     <div class="container">
         <div class="row">
-            <div class="pull-right col-md-9 space-linex2-after">
+            <div class="pull-right col-md-9 space-linex2-after col-xs-12">
                 <div class="blog-cover">
                     <img src="[{$entrydetail->_data.cover}]">
                 </div>

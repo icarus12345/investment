@@ -17,14 +17,14 @@
         [{foreach from=$services item=foo}]
         <div class="custom-box">
             <div class="thumb">
-                <a href="/services/[{$foo->data_alias|escape:'html'}]" class="nailthumb-container">
+                <a href="/services/[{$foo->_alias|escape:'html'}]" class="nailthumb-container">
                     <img class="lazy" data-original="[{$foo->_data.thumb|escape:'html'}]">
                 </a>
             </div>
             <div class="content">
                 <div>
-                    <a href="/services/[{$foo->data_alias|escape:'html'}]" class="box-title">
-                        <div>[{$foo->data_title|escape:'html'}]</div>
+                    <a href="/services/[{$foo->_alias|escape:'html'}]" class="box-title">
+                        <div>[{$foo->_title|escape:'html'}]</div>
                         <span>[{$foo->_data.subtitle|escape:'html'}]</span>
                     </a>
                     <p class="pull-top pull-bottom">[{$foo->_data.desc|escape:'html'}]</p>

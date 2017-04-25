@@ -62,10 +62,11 @@ class chart_model extends Core_Model {
 
     function add($table,$row){
         $query = $this->db
+            // ->select('',false)
             ->where("chart_table", $table)
             ->where("chart_insert", date('Y-m-d'))
             ->where("chart_row", $row)
-            ->group_by('chart_type')
+            // ->group_by('chart_type')
             ->get($this->table);
         $oRow = $query->row();
         if($oRow){

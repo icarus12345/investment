@@ -17,7 +17,8 @@
         <form name="entryForm" id="entryForm" target="integration_asynchronous">
             <input type="hidden" name="_type" 
                 value="[{$item->_type|default:$type|default:''}]"/>
-            
+            <input type="hidden" name="_data[author]" 
+                value="[{$item->_data.author|quotes_to_entities|default:$smarty.session.auth.user->ause_name|default:'Unknown'}]"/>
             <input type="hidden" name="_alias" 
                 value="[{$item->_alias|quotes_to_entities|default:''}]"/>
             <div class="row half">

@@ -10,6 +10,16 @@ class serializedata_model extends Core_Model {
         $this->type=$type;
         return $this;
     }
+    function setCate($cateid=''){
+        $this->db->where("{$this->prefix}category",$this->cateid);
+        return $this;
+    }
+    function joinCate(){
+        $this->db
+            ->select("SQL_CALC_FOUND_ROWS {$this->table}.*,cat_title,cat_alias",false)
+            ->join('_category','cat_id = _category');
+        return $this;
+    }
     function onGet($id) {
         if($this->status){
             $this->db->where("{$this->prefix}status",$this->status);

@@ -15,13 +15,13 @@
                 <ul class="nav navbar-nav">
                     <li data-menu="home"><a href='/'>HOME</a></li>
                     <li data-menu="about"><a href='/about'>ABOUT US</a></li>
-                    <li data-menu="investing">
-                        <a href="/investing-vietnam" >PORTFOLIO</a>
+                    <li data-menu="project">
+                        <a href="/project" >PROJECT</a>
                     </li>
                     <li data-menu="service">
-                        <a href="#">SERVICES</a>
+                        <a href="/services">SERVICES</a>
                     </li>
-                    <li data-menu="blogs"><a href='/blogs'>PARTNER & CUSTOMERS</a></li>
+                    <li data-menu="partner"><a href='/blogs'>PARTNER & CUSTOMERS</a></li>
                     <li data-menu="blogs"><a href='/blogs'>BLOGS</a></li>
                     <li data-menu="contact"><a href='/contact'>CONTACT</a></li>
                     <li data-menu="more" class="more-menu">
@@ -37,7 +37,7 @@
     <!-- Menu ] -->
     <script type="text/javascript">
     $(document).ready(function(){
-        $('[data-menu="[{$actived_menu|default:''}]"]').addClass('active');
+        $('[data-menu="[{$selected_menu|default:''}]"]').addClass('active');
     })
     </script>
 </header>
