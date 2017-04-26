@@ -76,7 +76,9 @@ $route["patients/([a-z0-9-]{4,255})"] = "eye/home/patientDetail/$1";
 $route["about"] = "np/home/about";
 // $route["about/meet-the-team"] = "eye/home/meetTheTeam";
 $route["about/([a-z0-9-]{4,255})"] = "np/home/about/$1";
+$route["partner"] = "np/home/partner";
 $route["project"] = "np/home/project";
+$route["project/([a-z0-9-]{4,255})"] = "np/home/project/$1";
 
 
 $route["contact"] = "eye/home/contact";

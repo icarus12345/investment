@@ -19,7 +19,54 @@
 .btn-warning-hvr:active{
     background: #ffcc00;border:1px solid #ffcc00;color: #fff
 }
-
+.btn-link{background: transparent;border-color: transparent;color: inherit;}
+.btn-link:hover{}
+.btn-link:active{}
+.btn-none{background: transparent;border-color: transparent;color: inherit;}
+.btn-default{}
+.btn-primary{}
+.btn-secondary{}
+.btn-success{}
+.btn-info{}
+.btn-warning{}
+.btn-danger{}
+.btn-outline-primary{
+    color: #0275d8;
+    background-image: none;
+    background-color: transparent;
+    border-color: #0275d8;
+}
+.btn-outline-secondary{
+    color: #ccc;
+    background-image: none;
+    background-color: transparent;
+    border-color: #ccc;
+}
+.btn-outline-success{
+    color: #5cb85c;
+    background-image: none;
+    background-color: transparent;
+    border-color: #5cb85c;
+}
+.btn-outline-info{
+    color: #5bc0de;
+    background-image: none;
+    background-color: transparent;
+    border-color: #5bc0de;
+}
+.btn-outline-warning{
+    color: #f0ad4e;
+    background-image: none;
+    background-color: transparent;
+    border-color: #f0ad4e;
+}
+.btn-outline-danger{
+    color: #d9534f;
+    background-image: none;
+    background-color: transparent;
+    border-color: #d9534f;
+}
+.btn-min{min-width: 100px}
 @media (max-width: 1199px) {
     .btn-lg{padding: 8px 25px;}
     .btn-md{padding: 6px 10px;}

@@ -32,6 +32,14 @@ class home extends FE_Controller {
             ->getByType('np-service');
         $this->smarty->view( 'np/service', $this->assigns );
     }
+    public function partner(){
+        $this->assigns->selected_menu = 'partner';
+        $this->assigns->featuredwork = $this->serializedata_model
+            ->getByType('np-featured-work');
+        $this->assigns->partner = $this->serialize_model
+            ->getByType('np-partner');
+        $this->smarty->view( 'np/partner', $this->assigns );
+    }
     public function servicedetail($alias=""){
         $this->assigns->selected_menu = 'service';
         $this->assigns->entrydetail = $this->serializedata_model
@@ -152,12 +160,47 @@ class home extends FE_Controller {
         
         $this->smarty->view( 'np/blog-detail', $this->assigns );
     }
-    function project(){
+    function project($alias=null){
         $this->assigns->selected_menu = 'project';
-        $this->assigns->featuredwork = $this->serialize_model
-            ->getByType('np-featured-work');
-        $this->assigns->featuredwork2 = $this->serialize_model
+        $page = 1;
+        $perpage = 100;
+        $this->assigns->categorys = $this->category_model
+            ->onGetByType('np-featured-work');
+        if($alias){
+            $this->assigns->catdetail = $this->category_model
+                ->onGetByAlias($alias);
+            if(empty($this->assigns->catdetail)){
+                $this->assigns->entrydetail = $this->serializedata_model
+                    ->setType('np-featured-work')
+                    ->joinCate()
+                    ->onGetByAlias($alias);
+                if(empty($this->assigns->entrydetail)){
+                    show_404();
+                }else{
+                    $this->assigns->images = $this->serializedata_model
+                        ->setType('np-featured-work-'.$this->assigns->entrydetail->_id)
+                        ->onGets();
+                    $this->assigns->nextentry = $this->serializedata_model
+                        ->setType('np-featured-work-'.$this->assigns->entrydetail->_id)
+                        ->getNextItem($this->assigns->entrydetail);
+                    $this->assigns->preventry = $this->serializedata_model
+                        ->setType('np-featured-work-'.$this->assigns->entrydetail->_id)
+                        ->getPrevItem($this->assigns->entrydetail);
+                        
+                    $this->_addView('serializedata','_',$this->assigns->entrydetail->_id);
+                }
+                
+            }else{
+                // $this->serialize_model->setCate($this->assigns->catdetail->cat_id);
+                $catid = $this->assigns->catdetail->cat_id;
+            }
+        }
+        $this->assigns->featuredwork2 = $this->serializedata_model
+            ->getByType('np-featured-work',$page,$perpage,$catid);
+
+        $this->assigns->featuredwork = $this->serializedata_model
             ->getByType('np-featured-work');
         $this->smarty->view( 'np/project', $this->assigns );
     }
+
 }

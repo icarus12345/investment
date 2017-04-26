@@ -21,7 +21,7 @@
                     <li data-menu="service">
                         <a href="/services">SERVICES</a>
                     </li>
-                    <li data-menu="partner"><a href='/blogs'>PARTNER & CUSTOMERS</a></li>
+                    <li data-menu="partner"><a href='/partner'>PARTNER & CUSTOMERS</a></li>
                     <li data-menu="blogs"><a href='/blogs'>BLOGS</a></li>
                     <li data-menu="contact"><a href='/contact'>CONTACT</a></li>
                     <li data-menu="more" class="more-menu">

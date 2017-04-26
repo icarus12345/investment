@@ -159,16 +159,15 @@ function projectMasonry2(){
             ran = random(0,img['22'].length-1);
             size = 'size11';
         }
-        console.log(keys[i])
-        ran = random(0,img[keys[i]].length-1);
-        size = 'size'+keys[i];
+        ran = random(0,img[keys[i%keys.length]].length-1);
+        size = 'size'+keys[i%keys.length];
         boxs.push([
             '<div class="box '+size+'">',
                 '<div class="nailthumb">',
                     '<div class="nailthumb-container">',
                         '<img class="lazy" data-original="'+ featuredwork2[i]._data.image+'"/>',
                     '</div>',
-                    '<a href="project-detail.html" class="nailthumb-mark">',
+                    '<a href="project/'+featuredwork2[i]._alias+'" class="nailthumb-mark">',
                         '<div>',
                             '<div>',
                                 '<div class="title">'+featuredwork2[i]._title+'</div>',
@@ -207,23 +206,25 @@ function projectMasonry2(){
         var gutter = 10;
         console.log(colsNum)
         var w = Math.floor((windowWith - gutter*(colsNum-1))/colsNum);
-        var h = w*.75;
+        var scale = .82;
+        var h = Math.floor(w*scale);
         $(elem).css({
             width: w*colsNum + gutter*(colsNum-1),
             height:''
         })
         if(colsNum==1) {
             w =windowWith; 
+            h = Math.floor(w*scale)
             $('.size11,.size12').width(w);
             $('.size21,.size22').width(w);
-            $('.size21,.size22').height(w*.75);
-            $('.size21,.size22').width(w*.75);
+            $('.size21,.size22').height(h);
+            $('.size21,.size22').width(h);
         } else {
             
             $('.size11,.size12').width(w);
-            $('.size11,.size21').height(w*.75);
+            $('.size11,.size21').height(h);
             $('.size21,.size22').width(w*2 + gutter);
-            $('.size12,.size22').height(w*.75*2);
+            $('.size12,.size22').height(h*2);
         }
         msnry = new Masonry( elem, {
           // options
@@ -307,6 +308,22 @@ $(document).ready(function(){
             // lazyLoad: true,
             nav : false,
             navText : ["", ""],
+            // responsive : {
+            //     0:      {items: 1, nav: true},
+            //     480:    {items: 2, nav: true},
+            //     960:    {items: 3, nav: true},
+            //     1200:   {items: 1, nav: true},
+            // }
+        });
+    }
+    if($('#owl-product').length==1){
+        $("#owl-product").owlCarousel({
+            autoPlay: true,
+            items : 1,
+            dots: true,
+            // lazyLoad: true,
+            nav : true,
+            navText : ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
             // responsive : {
             //     0:      {items: 1, nav: true},
             //     480:    {items: 2, nav: true},

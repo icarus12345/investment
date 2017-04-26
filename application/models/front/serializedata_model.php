@@ -134,5 +134,16 @@ class serializedata_model extends Core_Model {
         if($entry) $entry->_data = unserialize($entry->_data);
         return $entry;
     }
+    function getPrevItem($item){
+        $query = $this->db
+            ->where('_id <',$item->_id)
+            ->order_by('_insert','DESC')
+            ->limit(1)
+            ->get($this->table);
+        $this->sqlLog('Get Entry');
+        $entry = $query->row();
+        if($entry) $entry->_data = unserialize($entry->_data);
+        return $entry;
+    }
 }
 ?>
