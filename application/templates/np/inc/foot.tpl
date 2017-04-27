@@ -25,10 +25,10 @@
                         
                         <ul class="foot-list">
                             <li><a href="/about">About us</a></li>
-                            <li><a href="/blogs">Blog</a></li>
-                            <li><a href="/fqa">FAQ</a></li>
-                            <li><a href="/privacy-policy">Privacy Policy</a></li>
-                            <li><a href="/team-conditions">Terms & Conditions</a></li>
+                            <li><a href="/blogs">News & Blog</a></li>
+                            <li><a href="/project">Project</a></li>
+                            <li><a href="/service">Service</a></li>
+                            <li><a href="/partner">Partner & Customer</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>

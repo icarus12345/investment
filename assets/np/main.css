@@ -513,7 +513,9 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
     display: inline-block;content: "\f178";
     position: absolute;left: -0px
 }
-
+.partner-item{
+    background: #f4f4f4;border-radius: 4px;margin-bottom: 20px;
+}
 @media (max-width: 1599px) {
     
 }

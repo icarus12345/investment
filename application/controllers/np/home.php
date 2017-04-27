@@ -36,7 +36,7 @@ class home extends FE_Controller {
         $this->assigns->selected_menu = 'partner';
         $this->assigns->featuredwork = $this->serializedata_model
             ->getByType('np-featured-work');
-        $this->assigns->partner = $this->serialize_model
+        $this->assigns->partners = $this->serialize_model
             ->getByType('np-partner');
         $this->smarty->view( 'np/partner', $this->assigns );
     }

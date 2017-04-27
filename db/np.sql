@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-04-26 17:01:17
+Date: 2017-04-27 11:20:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -121,6 +121,7 @@ CREATE TABLE `ci_sessions` (
 -- Records of ci_sessions
 -- ----------------------------
 INSERT INTO `ci_sessions` VALUES ('0513fd33ed67c9689ba685c4c5f671c1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36', '1493198260', '');
+INSERT INTO `ci_sessions` VALUES ('1f4e6fff459a10c318746728f5551223', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36', '1493266020', '');
 
 -- ----------------------------
 -- Table structure for member
