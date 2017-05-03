@@ -20,6 +20,11 @@ html{
 body{
     font-family: 'Open Sans';
 }
+a.a-orange,
+a.a-orange:link,
+a.a-orange:hover,
+a.a-orange:active
+{color: #ffcc00;text-orientation: none}
 .home-slider .owl-carousel .item{
     padding: 280px 0;text-align: center;position: relative;
 }
@@ -211,6 +216,7 @@ body{
 .report-nums .num>span{font-size: 18px}
 .services-list{text-align: center;}
 .services-list>div{padding-top: 10px;padding-bottom: 10px;text-transform: uppercase;}
+.services-list>div>img{margin-bottom: 10px}
 .services-item{
     padding-top: 10px;
     border-radius: 4px;
@@ -235,6 +241,7 @@ body{
 .title2:before{content: '';display: block;width: 80px;height: 2px;background: #ffcc00;margin-bottom: 5px;}
 .gray-box{background: #f0f0f0}
 
+.project-btns>a{margin-top: 10px;}
 .boxs{margin: auto;-background: #333;position: relative;}
 .box{-box-shadow: 0 0 1px #000 inset}
 .box>div{position: relative;}
@@ -461,7 +468,7 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
 .breadcum a{color: #fff;position: relative;text-decoration: none;}
 .breadcum a:after{content: '/'; padding: 0 5px}
 .breadcum span{color: #ffcc00}
-.blog-cover img{max-width: 100%}
+.blog-cover img{max-width: 100%;display: block;margin: auto}
 .gray{color: #999}
 .h3-title{padding: 10px 0;font-size: 20px;margin-top: 20px;color: #000}
 .h3-title:after{content: '';display: block;height: 2px;width: 40px;background: #ffcc00;margin-top: 10px}
@@ -516,6 +523,7 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
 .partner-item{
     background: #f4f4f4;border-radius: 4px;margin-bottom: 20px;
 }
+#map{width:100%;height:500px;}
 @media (max-width: 1599px) {
     
 }
@@ -578,9 +586,12 @@ div[role="dot-orange"] .owl-dots .owl-dot.active>span{background: #ffba00}
         margin-top: 20px;
     }
     #owl-product .item{padding-bottom: 64%;}
+    #map{width:100%;height:320px;}
 }
 @media (max-width: 767px){
     .home-slider .owl-carousel .item{padding: 40px 0}
+    .home-slider .owl-nav{display: none;}
+    #map{width:100%;height:240px;}
 }
 @media (min-width: 1200px){
     .navbar-collapse{}

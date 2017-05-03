@@ -16,7 +16,7 @@
             <div class="work-flow">
                 <div class="title2">Our Process</div>
                 <img style="max-width: 100%;-margin:auto;display:block" src="/assets/np/images/work-flow.png"/>
-                <div><a href="#" class="btn btn-orange btn-lg">View Portfolio</a></div>
+                <div class="space-line-before"><a href="/project" class="btn btn-orange btn-lg">View Portfolio</a></div>
             </div>
             <div class="space-linex2"></div>
         </div>

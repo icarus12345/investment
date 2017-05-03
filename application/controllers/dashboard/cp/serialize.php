@@ -4,6 +4,7 @@ class serialize extends CP_Controller {
 	function __construct() {
         parent::__construct('serialize', '_', 'id');
         $this->load->model('dashboard/cp/serialize_model');
+        
     }
     private function setAction($unit){
     	$this->assigns->unit = $unit;

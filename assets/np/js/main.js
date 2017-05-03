@@ -189,7 +189,7 @@ function projectMasonry2(){
     function init(){
         if(msnry) msnry.destroy();
         var colsNum = 5;
-        var windowWith = $(window).width();
+        var windowWith = Math.min(1180,$(window).width()-20);
         if(windowWith > 1600){
             colsNum = 4;
         } else if(windowWith > 1200){
@@ -218,7 +218,7 @@ function projectMasonry2(){
             $('.size11,.size12').width(w);
             $('.size21,.size22').width(w);
             $('.size21,.size22').height(h);
-            $('.size21,.size22').width(h);
+            $('.size21,.size22').height(h);
         } else {
             
             $('.size11,.size12').width(w);

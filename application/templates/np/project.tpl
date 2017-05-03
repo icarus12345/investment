@@ -33,7 +33,7 @@
                 <div>
 
                     <link rel="stylesheet" type="text/css" href="/libraries/ckeditor/contents.css"/>
-                    <div class="cke_editable">[{$entrydetail->_data.content}]</div>
+                    <div class="ckeditor">[{$entrydetail->_data.content}]</div>
                 </div>
             </div>
             <div class="col-md-3 space-linex2-after col-xs-12">
@@ -47,11 +47,11 @@
         </div>
         <div class=" space-line-before space-line-after">
             [{if $preventry}]
-            <a href="/project/[{$preventry->_alias}]">Prev Project</a>
+            <a href="/project/[{$preventry->_alias}]" class="a-orange">Prev Project</a>
             [{/if}]
             &nbsp;
-            [{if $preventry}]
-            <a href="/project/[{$nextentry->_alias}]" class="pull-right">Next Project</a>
+            [{if $nextentry}]
+            <a href="/project/[{$nextentry->_alias}]" class="pull-right a-orange">Next Project</a>
             [{/if}]
         </div>
         [{else}]
@@ -59,7 +59,7 @@
             <div>N&P PROJECT PORTFOLIO</div>
             <span>Our Proud Projects</span>
         </div>
-        <div class="text-center">
+        <div class="text-center project-btns">
             <a href="/project" class="[{if !$catdetail}]btn-warning[{/if}] btn btn-min">All</a>
             [{foreach from=$categorys item=foo}]
             <a href="/project/[{$foo->cat_alias|escape:'html'}]" class="btn  btn-min [{if $catdetail->cat_id == $foo->cat_id}]btn-warning[{else}]btn-none[{/if}]">[{$foo->cat_title|escape:'html'}]</a>

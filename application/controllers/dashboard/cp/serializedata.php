@@ -15,11 +15,13 @@ class serializedata extends CP_Controller {
         $action['ispopup'] = (bool)$arr[3];
         $action['layout'] = $arr[4];
         $action['col'] = max((int)$arr[5],3);
-        if(!empty($this->input->get_post('layout'))){
-            $action['layout'] = $this->input->get_post('layout');
+        $layout = $this->input->get_post('layout');
+        if(!empty($layout)){
+            $action['layout'] = $layout;
         }
-        if(!empty($this->input->get_post('popup'))){
-            $action['ispopup'] = $this->input->get_post('popup');
+        $ispopup = $this->input->get_post('popup');
+        if(!empty($ispopup)){
+            $action['ispopup'] = $ispopup;
         }
         $this->assigns->action = $action;
     }

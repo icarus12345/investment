@@ -24,13 +24,16 @@
                     <li data-menu="partner"><a href='/partner'>PARTNER & CUSTOMERS</a></li>
                     <li data-menu="blogs"><a href='/blogs'>BLOGS</a></li>
                     <li data-menu="contact"><a href='/contact'>CONTACT</a></li>
+                    [{if $other_contents}]
                     <li data-menu="more" class="more-menu">
                         <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-option-horizontal"></span></a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href='/'>HOME</a></li>
-                            <li><a href='/'>HOME</a></li>
+                            [{foreach from=$other_contents item=foo}]
+                            <li><a href='/content/[{$foo->_alias}]'>[{$foo->_title}]</a></li>
+                            [{/foreach}]
                         </ul>
                     </li>
+                    [{/if}]
                 </ul>
             </nav>
     </div>

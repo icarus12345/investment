@@ -7,6 +7,9 @@ class home extends FE_Controller {
         $this->perpage = 5;
         $this->load->model('front/cdata_model');
         $this->cdata_model->type = 'gallery';
+
+        $this->assigns->other_contents = $this->serialize_model
+            ->getByType('np-content');
     }
     public function index(){
         $this->assigns->featuredwork = $this->serializedata_model
@@ -23,6 +26,16 @@ class home extends FE_Controller {
             ->setType(null)
             ->onGet(118);
         $this->smarty->view( 'np/home', $this->assigns );
+    }
+    public function contact(){
+        $this->assigns->featuredwork = $this->serializedata_model
+            ->getByType('np-featured-work',1,13);
+        $this->assigns->partners = $this->serialize_model
+            ->getByType('np-partner');
+        $this->assigns->welcome = $this->serialize_model
+            ->setType(null)
+            ->onGet(118);
+        $this->smarty->view( 'np/contact', $this->assigns );
     }
     public function services(){
         $this->assigns->selected_menu = 'service';
@@ -106,6 +119,30 @@ class home extends FE_Controller {
         }
         $this->smarty->view( 'np/about', $this->assigns );
     }
+
+    public function contentdetail($alias=''){
+        $this->assigns->selected_menu = 'other';
+        $this->assigns->abouts = $this->serialize_model
+            ->setType('np-about')
+            // ->sort()
+            ->onGets();
+
+        
+        $this->assigns->entrydetail = $this->serialize_model
+            ->setType('np-content')
+            ->onGetByAlias($alias);
+        if(empty($this->assigns->entrydetail)){
+            show_404();
+        }
+        $this->assigns->featuredwork = $this->serializedata_model
+            ->getByType('np-featured-work');
+
+        $this->assigns->testimonials = $this->serialize_model
+            ->getByType('np-testimonial');
+        
+        $this->smarty->view( 'np/content', $this->assigns );
+    }
+
     function blogs($page = 1, $catalias = null){
         $this->perpage = 5;
         $this->assigns->selected_menu = 'blogs';
@@ -181,10 +218,10 @@ class home extends FE_Controller {
                         ->setType('np-featured-work-'.$this->assigns->entrydetail->_id)
                         ->onGets();
                     $this->assigns->nextentry = $this->serializedata_model
-                        ->setType('np-featured-work-'.$this->assigns->entrydetail->_id)
+                        ->setType('np-featured-work')
                         ->getNextItem($this->assigns->entrydetail);
                     $this->assigns->preventry = $this->serializedata_model
-                        ->setType('np-featured-work-'.$this->assigns->entrydetail->_id)
+                        ->setType('np-featured-work')
                         ->getPrevItem($this->assigns->entrydetail);
                         
                     $this->_addView('serializedata','_',$this->assigns->entrydetail->_id);
